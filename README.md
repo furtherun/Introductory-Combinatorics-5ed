@@ -1,4 +1,4 @@
 # Introductory-Combinatorics-5ed
 组合数学第五版（Introductory-Combinatorics-5ed）作业
 
-使用Typora编辑
+使用VScode编辑
