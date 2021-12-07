@@ -1,10 +1,12 @@
+# 排列与组合EX
+
 ## EX1
 
 > For each of the four subsets of the two properties (a) and (b), count the number  of four-digit numbers whose digits are either 1,2,3,4, or 5:  
 >
 > (a) The digits are distinct.  
 >
-> (b) The number is even. 
+> (b) The number is even.
 >
 > Note that there are four problems here: $\emptyset$ (no further restriction), {a} (property  (a) holds), {b} (property (b) holds), {a,b} (both properties (a) and (b) hold)
 
@@ -24,7 +26,7 @@
 
 ## EX3
 
-> In how many ways can a poker hand (five cards) be dealt? How many different  poker hands are there? 
+> In how many ways can a poker hand (five cards) be dealt? How many different  poker hands are there?
 
 题目的难点在于题意：有多少种五张牌的发牌方式？五张牌的手牌有几种？（一副牌默认是52张）
 
@@ -36,9 +38,9 @@
 >
 > (a) $3^4 \times 5^2 \times 7^6 \times 11$  
 >
-> (b) 620 
+> (b) 620
 >
-> (c) $10^{10}$ 
+> (c) $10^{10}$
 
 ### Q(a)
 
@@ -54,11 +56,11 @@ $10^{10} = 2^{10} \times 5^{10}$，有$11 \times 11=121$个不同的正因子。
 
 ## EX5
 
-> Determine the largest power of 10 that is a factor of the following numbers  (equivalently, the number of terminal 0s, using ordinary base 10 representation): 
+> Determine the largest power of 10 that is a factor of the following numbers  (equivalently, the number of terminal 0s, using ordinary base 10 representation):
 >
->  (a) 50! 
+> (a) 50!
 >
->  (b) 1000!
+> (b) 1000!
 
 数字末尾0的数量等于10因子的数量，10因子的数量又受限于5因子的数量，下面考虑有多少个5因子。
 
@@ -88,7 +90,7 @@ $10^{10} = 2^{10} \times 5^{10}$，有$11 \times 11=121$个不同的正因子。
 
 > How many integers greater than 5400 have both of the following properties?  
 >
-> (a) The digits are distinct. 
+> (a) The digits are distinct.
 >
 > (b) The digits 2 and 7 do not occur.
 
@@ -96,15 +98,13 @@ $10^{10} = 2^{10} \times 5^{10}$，有$11 \times 11=121$个不同的正因子。
 
 显然，5位、6位、7位、8位均符合要求，只需要保证最高位不为0即可，记$S_i$为满足要求的i位数集合。
 
-|  $S_i$  |      $S_8$       |      $S_7$       |      $S_6$       |      $S_5$       |
-| :-----: | :--------------: | :--------------: | :--------------: | :--------------: |
-| $|S_i|$ | $7\times P(7,7)$ | $7\times P(7,6)$ | $7\times P(7,5)$ | $7\times P(7,4)$ |
-
-
+| $S_i$ | $S_8$ | $S_7$ |      $S_6$       |      $S_5$       |
+| :---: | :---: | :---: | :--------------: | :--------------: |
+|   $   |  S_i  |   $   | $7\times P(7,7)$ | $7\times P(7,6)$ | $7\times P(7,5)$ | $7\times P(7,4)$ |
 
 对于4位数，进行分类：第一类是以{6, 8, 9}开头的；第二类是以5开头，第二位是{6, 8, 9}；第三类是以54开头的所有数。
 $$
-S_4 = 3 \times P(7,3) + 1\times 3 \times P(6,2) + 1 \times 1 \times P(6,2) 
+S_4 = 3 \times P(7,3) + 1\times 3 \times P(6,2) + 1 \times 1 \times P(6,2)
 $$
 
 ### PS
@@ -125,7 +125,7 @@ $$
 
 ## EX9
 
-> In how many ways can 15 people be seated at a round table if B refuses to sit  next to A? What if B only refuses to sit on A's right? 
+> In how many ways can 15 people be seated at a round table if B refuses to sit  next to A? What if B only refuses to sit on A's right?
 
 A先入座，之后B从与A不相邻的12个座位中选择一个位置，剩下的人依次落座。共$12 \times 13!$种排法，如果仅限制A的右边，则是$13 \times 13!$种排法。
 
@@ -135,17 +135,17 @@ A先入座，之后B从与A不相邻的12个座位中选择一个位置，剩下
 
 按照包含女性人数进行分类，记$S_i$为包含i名女性的组合方式。
 
-|  $S_i$  |                 $S_2$                  |                 $S_3$                  |                 $S_4$                  |                 $S_5$                  |
-| :-----: | :------------------------------------: | :------------------------------------: | :------------------------------------: | :------------------------------------: |
-| $|S_i|$ | $\dbinom{12}{2} \times \dbinom{10}{3}$ | $\dbinom{12}{3} \times \dbinom{10}{2}$ | $\dbinom{12}{4} \times \dbinom{10}{1}$ | $\dbinom{12}{5} \times \dbinom{10}{0}$ |
+| $S_i$ | $S_2$ | $S_3$ |                 $S_4$                  |                 $S_5$                  |
+| :---: | :---: | :---: | :------------------------------------: | :------------------------------------: |
+|   $   |  S_i  |   $   | $\dbinom{12}{2} \times \dbinom{10}{3}$ | $\dbinom{12}{3} \times \dbinom{10}{2}$ | $\dbinom{12}{4} \times \dbinom{10}{1}$ | $\dbinom{12}{5} \times \dbinom{10}{0}$ |
 
 23562，之后讨论对于每种$S_i$，是否出现女性(Alice)和男性(Bob)。
 
-|  A   |  B   |                 $S_2$                 |                 $S_3$                 |                 $S_4$                 |                 $S_5$                 |
-| :--: | :--: | :-----------------------------------: | :-----------------------------------: | :-----------------------------------: | :-----------------------------------: |
-| 没有 | 没有 | $\dbinom{11}{2} \times \dbinom{9}{3}$ | $\dbinom{11}{3} \times \dbinom{9}{2}$ | $\dbinom{11}{4} \times \dbinom{9}{1}$ | $\dbinom{11}{5} \times \dbinom{9}{0}$ |
-|  有  | 没有 | $\dbinom{11}{1} \times \dbinom{9}{3}$ | $\dbinom{11}{2} \times \dbinom{9}{2}$ | $\dbinom{11}{3} \times \dbinom{9}{1}$ | $\dbinom{11}{4} \times \dbinom{9}{0}$ |
-| 没有 |  有  | $\dbinom{11}{2} \times \dbinom{9}{2}$ | $\dbinom{11}{3} \times \dbinom{9}{1}$ | $\dbinom{11}{4} \times \dbinom{9}{0}$ |          $\text{impossible}$          |
+|   A   |   B   |                 $S_2$                 |                 $S_3$                 |                 $S_4$                 |                 $S_5$                 |
+| :---: | :---: | :-----------------------------------: | :-----------------------------------: | :-----------------------------------: | :-----------------------------------: |
+| 没有  | 没有  | $\dbinom{11}{2} \times \dbinom{9}{3}$ | $\dbinom{11}{3} \times \dbinom{9}{2}$ | $\dbinom{11}{4} \times \dbinom{9}{1}$ | $\dbinom{11}{5} \times \dbinom{9}{0}$ |
+|  有   | 没有  | $\dbinom{11}{1} \times \dbinom{9}{3}$ | $\dbinom{11}{2} \times \dbinom{9}{2}$ | $\dbinom{11}{3} \times \dbinom{9}{1}$ | $\dbinom{11}{4} \times \dbinom{9}{0}$ |
+| 没有  |  有   | $\dbinom{11}{2} \times \dbinom{9}{2}$ | $\dbinom{11}{3} \times \dbinom{9}{1}$ | $\dbinom{11}{4} \times \dbinom{9}{0}$ |          $\text{impossible}$          |
 
 ## EX11
 
@@ -153,11 +153,7 @@ A先入座，之后B从与A不相邻的12个座位中选择一个位置，剩下
 
 参考[文章](https://math.stackexchange.com/questions/3465771/how-many-sets-of-three-integers-between-1-and-20-are-possible-if-no-two-consecut)中的解法，求直观的方式还是逆向求解。
 
-
-
 选出三个数一共有$\dbinom{20}{3}$种方案，减掉1开头，2开头……等两个连续数和随机第三个数的方案$19 \times 18$种，还需要补回重复减去的三个连续数$18$种，总计816种。
-
-
 
 ![blue_balls](https://i.stack.imgur.com/V1TL7.png)
 
@@ -171,11 +167,11 @@ A先入座，之后B从与A不相邻的12个座位中选择一个位置，剩下
 
 ## EX12
 
-> A football team of 11 players is to be selected from a set of 15 players, 5 of  whom can play only in the backfield, 8 of whom can play only on the line, and  2 of whom can play either in the backfield or on the line. Assuming a football  team has 7 men on the line and 4 men in the backfield, determine the number  of football teams possible. 
+> A football team of 11 players is to be selected from a set of 15 players, 5 of  whom can play only in the backfield, 8 of whom can play only on the line, and  2 of whom can play either in the backfield or on the line. Assuming a football  team has 7 men on the line and 4 men in the backfield, determine the number  of football teams possible.
 
 不选双位球员（既能踢后卫又能踢边卫的球员）；选一个双位球员踢后卫；选两个双位球员踢后卫；后卫和边卫各有一个双位球员；边卫有一个双位球员；边卫有两个双位球员。
 $$
-\binom{5}{4}  \binom{8}{7} + \binom{5}{3}\binom{2}{1} \binom{8}{7} + \binom{5}{2}\binom{2}{2} \binom{8}{7} + \binom{5}{3}\binom{2}{1} \binom{8}{6}\binom{2}{1} + \binom{5}{4}\binom{8}{6}\binom{2}{1} + \binom{5}{4}\binom{8}{5}\binom{2}{2} = 1400 
+\binom{5}{4}  \binom{8}{7} + \binom{5}{3}\binom{2}{1} \binom{8}{7} + \binom{5}{2}\binom{2}{2} \binom{8}{7} + \binom{5}{3}\binom{2}{1} \binom{8}{6}\binom{2}{1} + \binom{5}{4}\binom{8}{6}\binom{2}{1} + \binom{5}{4}\binom{8}{5}\binom{2}{2} = 1400
 $$
 
 ## EX13
@@ -193,7 +189,6 @@ $$
 \binom{100}{25}\binom{75}{35}\binom{40}{40}
 $$
 
-
 ### Q(b)
 
 $$
@@ -202,7 +197,7 @@ $$
 
 ## EX14
 
-> A classroom has two rows of eight seats each. There are 14 students, 5 of whom  always sit in the front row and 4 of whom always sit in the back row. In how  many ways can the students be seated? 
+> A classroom has two rows of eight seats each. There are 14 students, 5 of whom  always sit in the front row and 4 of whom always sit in the back row. In how  many ways can the students be seated?
 
 座位是有序的，需要使用排列。
 $$
@@ -211,11 +206,11 @@ $$
 
 ## EX15
 
-> At a party there are 15 men and 20 women. 
+> At a party there are 15 men and 20 women.
 >
->  (a) How many ways are there to form 15 couples consisting of one man and  one woman? 
+> (a) How many ways are there to form 15 couples consisting of one man and  one woman?
 >
->  (b) How many ways are there to form 10 couples consisting of one man and  one woman? 
+> (b) How many ways are there to form 10 couples consisting of one man and  one woman?
 
 ### Q(a)
 
@@ -223,7 +218,6 @@ $$
 $$
 P(20, 15) = 20 \times 19 \cdots \times 5
 $$
-
 
 ### Q(b)
 
@@ -238,7 +232,7 @@ $$
 > $$
 > \binom{n}{r} = \binom{n}{n-r}
 > $$
->   
+>
 >
 > by using a combinatorial argument and not the values of these numbers as given  in Theorem 3.3.1.
 
@@ -246,7 +240,7 @@ $$
 
 ## EX17
 
-> In how many ways can six indistinguishable rooks be placed on a 6-by-6 board  so that no two rooks can attack one another? In how many ways if there are  two red and four blue rooks? 
+> In how many ways can six indistinguishable rooks be placed on a 6-by-6 board  so that no two rooks can attack one another? In how many ways if there are  two red and four blue rooks?
 
 没有区别：从第一行开始，每行选择不同列进行摆放，第一行有6种选法，第二行有5种，故共有6!=720种放置方法。
 
@@ -283,7 +277,6 @@ $$
 $$
 \frac{(8!)^2}{3! \times 5!} = 2257920
 $$
-
 
 ### Q(b)
 
@@ -333,7 +326,7 @@ $$
 
 ## EX22
 
-> A footrace takes place among four runners. If ties are allowed (even all four  runners finishing at the same time), how many ways are there for the race to  finish? 
+> A footrace takes place among four runners. If ties are allowed (even all four  runners finishing at the same time), how many ways are there for the race to  finish?
 
 可以所有人都是第一名，但不能所有人都是第四名。
 
@@ -352,15 +345,15 @@ $$
 
 ## EX23
 
-> Bridge is played with four players and an ordinary deck of 52 cards. Each player  begins with a hand of 13 cards. In how many ways can a bridge game start?  (Ignore the fact that bridge is played in partnerships.) 
+> Bridge is played with four players and an ordinary deck of 52 cards. Each player  begins with a hand of 13 cards. In how many ways can a bridge game start?  (Ignore the fact that bridge is played in partnerships.)
 
 $$
-\dbinom{52}{13} \dbinom{39}{13} \dbinom{26}{13} = \frac{52!}{(13!)^4} 
+\dbinom{52}{13} \dbinom{39}{13} \dbinom{26}{13} = \frac{52!}{(13!)^4}
 $$
 
 ## EX24
 
-> A roller coaster has five cars, each containing four seats, two in front and two  in back. There are 20 people ready for a ride. In how many ways can the ride  begin? What if a certa:in two people want to sit in different cars? 
+> A roller coaster has five cars, each containing four seats, two in front and two  in back. There are 20 people ready for a ride. In how many ways can the ride  begin? What if a certa:in two people want to sit in different cars?
 
 $$
 P(20, 4) \times P(16, 4) \times P(12, 4) \times P(8, 4) \times P(4, 4) = 20!
@@ -384,7 +377,6 @@ $$
 \frac{20}{5} \times 16 \times 18! = 64 \times 18!
 $$
 
-
 ### PS
 
 同样是道英语问题，roller coaster是过山车，ferries wheel是大缆车，这是书上的翻译。后者通俗来说叫“摩天轮”就不会产生疑惑了。
@@ -393,9 +385,9 @@ $$
 
 ## EX26
 
-> A group of mn people are to be arranged into m teams each with n players. 
+> A group of mn people are to be arranged into m teams each with n players.
 >
-> (a) Determine the number of ways if each team has a different name. 
+> (a) Determine the number of ways if each team has a different name.
 >
 > (b) Determine the number of ways if the teams don't have names.
 
@@ -419,20 +411,20 @@ $$
 
 ## EX27
 
-> In how many ways can five indistinguishable rooks be placed on an 8-by-8 chessboard so that no rook can attack another and neither the first row nor the first  column is empty? 
+> In how many ways can five indistinguishable rooks be placed on an 8-by-8 chessboard so that no rook can attack another and neither the first row nor the first  column is empty?
 
 根据是否包含坐标(1, 1)进行划分。
 
-| 坐标(1, 1) |                            棋盘数                            |
-| :--------: | :----------------------------------------------------------: |
-|     是     |       $\dbinom{7}{4} \dbinom{7}{4} \times 4! = 29400$        |
+| 坐标(1, 1) |                              棋盘数                              |
+| :--------: | :--------------------------------------------------------------: |
+|     是     |         $\dbinom{7}{4} \dbinom{7}{4} \times 4! = 29400$          |
 |     否     | $7 \times 7 \times \dbinom{6}{3}\dbinom{6}{3} \times 3!= 117600$ |
 
 放置方法一共有147000。
 
 ## EX28
 
-> A secretary works in a building located nine blocks east and eight blocks north  of h.is home. Every day he walks 17 blocks to work. (See the map that follows.) 
+> A secretary works in a building located nine blocks east and eight blocks north  of h.is home. Every day he walks 17 blocks to work. (See the map that follows.)
 >
 > (a) How many different routes are possible for him?  
 >
@@ -458,7 +450,7 @@ $$
 
 ## EX29
 
-> Let S be a multiset with repetition numbers $n_1, n_2, \dots , n_k$, where $n_1 = 1$. Let  $n =  n_2 + \cdots + n_k$. Prove that the number of circular permutations of S equals 
+> Let S be a multiset with repetition numbers $n_1, n_2, \dots , n_k$, where $n_1 = 1$. Let  $n =  n_2 + \cdots + n_k$. Prove that the number of circular permutations of S equals
 > $$
 > \frac{n!}{ n_2! \cdots n_k !}
 > $$
@@ -488,7 +480,7 @@ $$
 
 ## EX31
 
-> In a soccer tournament of 15 teams, the top three teams are awarded gold, silver,  and bronze cups, and the last three teams are dropped to a lower league. We  regard two outcomes of the tournament as the same if the teams that receive  the gold, silver, and bronze cups, respectively, are identical and the teams which  drop to a lower league are also identical. How many different possible outcomes  are there for the tournament? 
+> In a soccer tournament of 15 teams, the top three teams are awarded gold, silver,  and bronze cups, and the last three teams are dropped to a lower league. We  regard two outcomes of the tournament as the same if the teams that receive  the gold, silver, and bronze cups, respectively, are identical and the teams which  drop to a lower league are also identical. How many different possible outcomes  are there for the tournament?
 
 前三名有序，后三名无序。
 $$
@@ -501,7 +493,7 @@ $$
 
 ## EX32
 
-> Determine the number of 11-permutations of the multiset  S = {3·a, 4·b, 5·c}. 
+> Determine the number of 11-permutations of the multiset  S = {3·a, 4·b, 5·c}.
 
 多重集合的大小为12，考虑去掉一个元素后的集合进行11排列。
 
@@ -519,7 +511,7 @@ $$
 
 ## EX33
 
-> Determine the number of 10-permutations of the multiset  S = {3·a, 4·b, 5·c}. 
+> Determine the number of 10-permutations of the multiset  S = {3·a, 4·b, 5·c}.
 
 |                  集合                   |                   排列数                   |
 | :-------------------------------------: | :----------------------------------------: |
@@ -538,7 +530,7 @@ $$
 
 ## EX34
 
-> Determine the number of 11-permutations of the multiset  S = {3·a,  3·b, 3·c, 3·d}. 
+> Determine the number of 11-permutations of the multiset  S = {3·a,  3·b, 3·c, 3·d}.
 
 多重集合大小为12，11排列数等于12排列数。
 $$
@@ -547,7 +539,7 @@ $$
 
 ## EX35
 
-> List all 3-combinations and 4-combinations of the multiset  {2·a, 1·b, 3·c}. 
+> List all 3-combinations and 4-combinations of the multiset  {2·a, 1·b, 3·c}.
 
 *本题求组合，而不是排列。*
 
@@ -557,7 +549,7 @@ $$
 
 ## EX36
 
-> Determine the total number of combinations (of any size) of a multiset of objects  of k different types with finite repetition numbers $n_1, n_2, \dots , n_k$, respectively. 
+> Determine the total number of combinations (of any size) of a multiset of objects  of k different types with finite repetition numbers $n_1, n_2, \dots , n_k$, respectively.
 
 设$x_i$表示从重复数为$n_i$的对象中取出$x_i$个，显然$x_i$有$n_i +1$个取值。
 
@@ -593,13 +585,13 @@ $$
 > $$
 > \text{| | | | | | | | | | | | | | | | | | | | | | | | |}
 > $$
-> Six of them are to be chosen. 
+> Six of them are to be chosen.
 >
->  (a) How many choices are there?  
+> (a) How many choices are there?  
 >
 > (b) How many choices are there if no two of the chosen sticks can be consecutive?  
 >
-> (c) How many choices are there if there must be at least two sticks between  each pair of chosen sticks? 
+> (c) How many choices are there if there must be at least two sticks between  each pair of chosen sticks?
 
 ### Q(a)
 
@@ -626,11 +618,11 @@ $$
 
 > There are n sticks lined up in a row, and k of them are to be chosen.  
 >
-> (a) How many choices are there? 
+> (a) How many choices are there?
 >
 > (b) How many choices are there if no two of the chosen sticks can be consecutive?  
 >
-> (c) How many choices are there if there must be at least I sticks between each  pair of chosen sticks? 
+> (c) How many choices are there if there must be at least I sticks between each  pair of chosen sticks?
 
 ### Q(a)
 
@@ -658,13 +650,11 @@ $$
 
 设每个孩子分到的水果数为$x_i \ge 1$，有方程$y_1 + y_2 + y_3 = 13-3$，因此分配数有$\dbinom{10 + 3-1}{3-1} = \dbinom{12}{2}$种，再考虑把一个孩子苹果换成橘子有三种换法，因此一共有198种方法。
 
-
-
 或者换一种思路，先分配橘子，之后给其他孩子补一个苹果，保证每人都有水果，之后考虑分配10个苹果给三个孩子。
 
 ## EX42
 
-> Determine the number of ways to distribute 10 orange drinks, 1 lemon drink,  and 1 lime drink to four thirsty students so that each student gets at least one  drink, and the lemon and lime drinks go to different students. 
+> Determine the number of ways to distribute 10 orange drinks, 1 lemon drink,  and 1 lime drink to four thirsty students so that each student gets at least one  drink, and the lemon and lime drinks go to different students.
 
 先选择两名学生分配柠檬汁和酸橙汁，有P(4, 2)种分配方式；之后给剩余两名学生各发1罐橘子汁，确保每人都有一罐饮料；最后把剩余的橘子汁进行分配。
 $$
@@ -692,11 +682,11 @@ $$
 
 > Twenty different books are to be put on five book shelves, each of which holds  at least twenty books.  
 >
-> (a) How many different arrangements are there if you only care about the  number of books on the shelves (and not which book is where)? 
+> (a) How many different arrangements are there if you only care about the  number of books on the shelves (and not which book is where)?
 >
 > (b) How many different arrangements are there if you care about which books  are where, but the order of the books on the shelves doesn't matter?  
 >
-> (c) How many different arrangements are there if the order on the shelves does  matter? 
+> (c) How many different arrangements are there if the order on the shelves does  matter?
 
 ### Q(a)
 
@@ -741,7 +731,7 @@ $$
 
 ## EX47
 
-> There are 2n + 1 identical books to be put in a bookcase with three shelves. In  how many ways can this be done if each pair of shelves together contains more  books than the other shelf? 
+> There are 2n + 1 identical books to be put in a bookcase with three shelves. In  how many ways can this be done if each pair of shelves together contains more  books than the other shelf?
 
 [参考链接](https://math.stackexchange.com/questions/66383/combinatorics-how-many-ways-to-sort-books-on-a-shelf)中提供的思路，不妨设三层中书的数量分别是$x_1, x_2, x_3$，由$x_1 + x_2 > x_3$和$x_1 + x_2 + x_3 = 2n+1$，可以推出$x_3 < n+\frac{1}{2}$，考虑到$x_3$是整数，因此$x_3 \le n$，再由对称性可知，$x_1 \le n, n_2 \le n$。
 
@@ -749,13 +739,11 @@ $$
 
 当$x_1 = 1$时，$x_2$只能取n；当$x_1 = 2$时，$x_2$可以取n或n-1。因此，$1 + 2 + 3 + \cdots + n = \frac{n(n-1)}{2} = \binom{n+1}{2}$。
 
-
-
 参考答案采用逆向思维，假设每层都放了n本书（最多放n本），再分别从中抽走$b_i$本，这样有$b_1 + b_2 + b_3 = n-1, b_i >= 0$，满足方程非负整数解的模型。
 
 ## EX48
 
-> Prove that the number of permutations of m A's and at most n B's equals 
+> Prove that the number of permutations of m A's and at most n B's equals
 > $$
 > \binom{m+n+1}{m+1}
 > $$
@@ -779,7 +767,7 @@ QED. 本题参考[链接](https://math.stackexchange.com/questions/65947/combina
 
 ## EX49
 
-> Prove that the number of permutations of at most m A's and at most n B's  equals 
+> Prove that the number of permutations of at most m A's and at most n B's  equals
 > $$
 > \binom{m+n+2}{m+1} -1
 > $$
@@ -799,7 +787,6 @@ $$
 \end{aligned}
 $$
 
-
 ## EX50
 
 > In how many ways can five identical rooks be placed on the squares of an 8-by-8  board so that four of them form the corners of a rectangle with sides parallel to  the sides of the board?
@@ -808,7 +795,7 @@ $$
 
 ## EX51
 
-> Consider the multiset $\{n \cdot a,1, 2, 3, \cdots, n \}$ of size 2n. Determine the number of  its n-combinations. 
+> Consider the multiset $\{n \cdot a,1, 2, 3, \cdots, n \}$ of size 2n. Determine the number of  its n-combinations.
 
 |             分类             |      组合数       |
 | :--------------------------: | :---------------: |
@@ -823,7 +810,7 @@ $$
 
 ## EX52
 
-> Consider the multiset $\{n \cdot a, n \cdot b, 1, 2, 3, \cdots,  n+1 \}$ of size 3n + 1. Determine the  number of its n-combinations. 
+> Consider the multiset $\{n \cdot a, n \cdot b, 1, 2, 3, \cdots,  n+1 \}$ of size 3n + 1. Determine the  number of its n-combinations.
 
 $S = \{1, 2, \cdots, n+1\}$，记k为从集合S中取出元素的数量，有$\dbinom{n+1}{k}$种选法；剩余n-k项从a和b中选择，有n-k+1种选法（定理2.5,1）。因此，一共有$(n-k+1)\dbinom{n+1}{k}$种选法。
 $$
@@ -838,7 +825,7 @@ $$
 
 ## EX53
 
-> Find a one-to-one correspondence between the permutations of the set $\{ 1, 2, 3, \cdots,  n \}$ and the towers $A_0 \subset A_1 \subset A_2 \cdots \subset A_n$ where $|A_k| = k$ for $k=0, 1, 2, \dots, n$. 
+> Find a one-to-one correspondence between the permutations of the set $\{ 1, 2, 3, \cdots,  n \}$ and the towers $A_0 \subset A_1 \subset A_2 \cdots \subset A_n$ where $|A_k| = k$ for $k=0, 1, 2, \dots, n$.
 
 记集合$\{ 1, 2, 3, \cdots,  n \}$的排列为$x_1x_2x_3 \cdots x_n$，对应的塔集则为$\emptyset \subset {x_1} \subset \{x_1, x_2\} \cdots \subset \{x_1, x_2, x_3, \cdots, x_n\}$。
 
@@ -868,13 +855,13 @@ $$
 
 > How many permutations are there of the letters in the words  
 >
-> (a) TRISKAIDEKAPHOBIA (fear of the number 13)? 
+> (a) TRISKAIDEKAPHOBIA (fear of the number 13)?
 >
-> (b) FLOCCINAUCINIHILIPILIFICATION (estimating something as worthless)? 
+> (b) FLOCCINAUCINIHILIPILIFICATION (estimating something as worthless)?
 >
 > (c) PNEUMONOULTRAMICROSCOPICSILICOVOLCANOCONIOSIS (a lung disease  caused by inhaling fine particles of silica)? (This word is, by some accounts,  the longest word in the English language.)  
 >
-> (d) DERMATOGLYPHICS (skin patterns or the study of them)? (This word  is the (current) longest word in the English language that doesn't repeat a  letter; another word of the same length is UNCOPYRIGHTABLE) 
+> (d) DERMATOGLYPHICS (skin patterns or the study of them)? (This word  is the (current) longest word in the English language that doesn't repeat a  letter; another word of the same length is UNCOPYRIGHTABLE)
 
 *Life is short, **I** need Python!*
 
@@ -907,8 +894,6 @@ $$
 \frac{29!}{9! \cdot 4! \cdot (3!)^2 \cdot (2!)^3}
 $$
 
-
-
 ### Q(c)
 
 ```python
@@ -921,8 +906,6 @@ print(len(s), Counter(s).most_common())
 $$
 \frac{45!}{9! \cdot (6!)^2 \cdot (4!)^2 \cdot 3! \cdot (2!)^5}
 $$
-
-
 
 ### Q(d)
 
@@ -939,13 +922,12 @@ $$
 
 ## EX56
 
-What is the probability that a poker hand contains a *flush* (that is, five cards of  the same suit)? 
+What is the probability that a poker hand contains a *flush* (that is, five cards of  the same suit)?
 
 本题计算概率，样本空间的大小为$\dbinom{52}{5}$；事件集是同花$4 \times \dbinom{13}{5}$。因此抽出同花的概率为
 $$
 \frac{4 \times \dbinom{13}{5}}{\dbinom{52}{5}} \times 100 \% = 0.198\%
 $$
-
 
 ### PS
 
@@ -975,14 +957,13 @@ $$
 \frac{\dbinom{13}{5}\times4^5 - 10 \times 4^5 - \dbinom{13}{5} \times 4  + 4 \times 10}{\dbinom{52}{5}} \times 100 \% = 50.1\%
 $$
 
-
 ### PS
 
  [Straight](https://en.wikipedia.org/wiki/Texas_hold_%27em) :  Sequence of 5 cards in increasing value (Ace can precede 2 and follow up King) ，顺子有10种，从A开头到10开头。
 
 ## EX59
 
-> Consider the deck of 40 cards obtained from an ordinary deck of 52 cards by  removing the jacks (11s), queens (12s), and kings (13s), where now the 1 (ace)  can be used to follow a 10. Compute the probabilities for the various poker  hands described in the example in Section 3.6. 
+> Consider the deck of 40 cards obtained from an ordinary deck of 52 cards by  removing the jacks (11s), queens (12s), and kings (13s), where now the 1 (ace)  can be used to follow a 10. Compute the probabilities for the various poker  hands described in the example in Section 3.6.
 
 ### 满堂红
 
@@ -1021,7 +1002,7 @@ $$
 
 ## EX60
 
-> A bagel store sells six different kinds of bagels. Suppose you choose 15 bagels at  random. What is the probability that your choice contains at least one bagel of  each kind? If one of the kinds of bagels is Sesame, what is the probability that  your choice contains at least three Sesame bagels? 
+> A bagel store sells six different kinds of bagels. Suppose you choose 15 bagels at  random. What is the probability that your choice contains at least one bagel of  each kind? If one of the kinds of bagels is Sesame, what is the probability that  your choice contains at least three Sesame bagels?
 
 设每种百吉饼的有$x_i$张，并且有$\displaystyle \sum_{i= 1}^6 x_i = 15, x_i \ge 0$，因此样本空间的大小就是该方程的非负整数解的个数$\dbinom{15+6-1}{6-1} = 15504$。
 
@@ -1045,7 +1026,7 @@ $$
 >
 > (b) four cards of one rank and three of a different rank  
 >
-> (c) three cards of one rank and two cards of each of two different ranks 
+> (c) three cards of one rank and two cards of each of two different ranks
 >
 > (d) two cards of each of three different ranks, and a card of a fourth rank  
 >
@@ -1103,7 +1084,7 @@ $$
 >
 > (d) The probability that the four numbers of dots shown are all different  
 >
-> (e) The probability that there are exactly two different numbers of dots shown 
+> (e) The probability that there are exactly two different numbers of dots shown
 
 ### Q(a)
 
@@ -1115,15 +1096,11 @@ $$
 \frac{5^4+\dbinom{4}{1}\times 5^3 + \dbinom{4}{2} \times5^2}{6^4} \times 100\% = 98.4\%
 $$
 
-
-
 ### Q(c)
 
 $$
 \frac{5^4}{6^4} \times 100\% = 48.2\%
 $$
-
-
 
 ### Q(d)
 

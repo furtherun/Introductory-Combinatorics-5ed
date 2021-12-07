@@ -1,5 +1,7 @@
-#! https://zhuanlan.zhihu.com/p/431776251
+# ! <https://zhuanlan.zhihu.com/p/431776251>
+
 ## 序
+
 押的题目就考了EX1，命中率很低QAQ。本章的题目很难，特别后20道题，有的题目甚至不知道参考答案在说什么。
 而考试题目几乎都是从前30题中选的，可惜了后面需要琢磨的题目。
 时间关系，这一章我也有许多疏漏，~~恰好就漏了考试最后一题~~，不过应付考试应该是没问题的，有深度的神仙题目应该就留给后人填坑了。
@@ -14,7 +16,7 @@
 $$
 \begin{matrix}
 1  & 2\\
-2  & 1 
+2  & 1
 \end{matrix}
 $$
 插入3之前需要把表的每一行复制成三行，之后可以画出3位排列的表，定位312在第3行（奇数行）。
@@ -215,7 +217,7 @@ int main()
 
 ## EX5
 
-> Let $i_1 i_2 \cdots i_n$ in be a permutation of {1, 2, ... , n} with inversion sequence $b_1, b_2, \cdots, b_n$  and let $k = b_1 + b_2+ \cdots + b_n$. Show by induction that we cannot bring $i_1 i_2 \cdots i_n$ by fewer than k successive switches of adjacent terms. 
+> Let $i_1 i_2 \cdots i_n$ in be a permutation of {1, 2, ... , n} with inversion sequence $b_1, b_2, \cdots, b_n$  and let $k = b_1 + b_2+ \cdots + b_n$. Show by induction that we cannot bring $i_1 i_2 \cdots i_n$ by fewer than k successive switches of adjacent terms.
 
 对于相邻的两个数$i_x， i_y$，交换它们要么会增多一组逆序，要么会减少一组逆序，因此要消除k组逆序，交换相邻两个数的次数不能少于k次。
 
@@ -253,7 +255,7 @@ int main()
 >
 > (a) 2,5,5,0,2,1,1,0  
 >
-> (b) 6,6,1,4,2,1,0,0 
+> (b) 6,6,1,4,2,1,0,0
 
 ### Q(a)
 
@@ -267,10 +269,9 @@ $$
 &48657 \\
 &486573 \\
 &4865723 \\
-&48165723 
+&48165723
 \end{aligned}
 $$
-
 
 ### Q(b)
 
@@ -297,7 +298,7 @@ $$
 >
 > (b) exactly 14 inversions?  
 >
-> (c) exactly 13 inversions? 
+> (c) exactly 13 inversions?
 
 ### Q(a)
 
@@ -323,7 +324,7 @@ $$
 
 ## EX10
 
-> Bring the permutations 256143 and 436251 to 123456 by successive switches of  adjacent numbers. 
+> Bring the permutations 256143 and 436251 to 123456 by successive switches of  adjacent numbers.
 
 略
 
@@ -333,7 +334,7 @@ $$
 
 ## EX11
 
-> Let S = $\{x_7, x_6, \cdots , x_1, x_0\}$. Determine the 8-tuples of 0s and Is corresponding  to the following subsets of S: 
+> Let S = $\{x_7, x_6, \cdots , x_1, x_0\}$. Determine the 8-tuples of 0s and Is corresponding  to the following subsets of S:
 >
 > (a) $\{x_5, x_4, x_3\}$
 >
@@ -391,7 +392,7 @@ $$
 
 ## EX15
 
-> For each of the following subsets of $\{x_7, x_6, \cdots , x_1, x_0\}$, determine the subset  that immediately follows it by using the base 2 arithmetic generating scheme: 
+> For each of the following subsets of $\{x_7, x_6, \cdots , x_1, x_0\}$, determine the subset  that immediately follows it by using the base 2 arithmetic generating scheme:
 >
 > (a) $\{x_4, x_1, x_0\}$
 >
@@ -409,7 +410,7 @@ $$
 
 ## EX16
 
-> For each of the subsets (a), (b), (c), and (d) in the preceding exercise, determine the subset that immediately precedes it in the base 2 arithmetic generating  scheme. 
+> For each of the subsets (a), (b), (c), and (d) in the preceding exercise, determine the subset that immediately precedes it in the base 2 arithmetic generating  scheme.
 
 ### PS
 
@@ -423,7 +424,7 @@ $150 = 2^7 + 2^4 + 2^2 + 2^1$，对应的二进制为10010110B，对应的子集
 
 ## EX18
 
-> Build (the corners and edges of) the 4-cube, and indicate the reflected Gray code  on it. 
+> Build (the corners and edges of) the 4-cube, and indicate the reflected Gray code  on it.
 
 同样，我们还是给出验证程序。
 
@@ -488,7 +489,7 @@ int main()
 
 ## EX20
 
-> Give an example of a cyclic Gray code of order 3 that is not the reflected Gray  code. 
+> Give an example of a cyclic Gray code of order 3 that is not the reflected Gray  code.
 
 | 序号 | 编码 |
 | ---- | ---- |
@@ -517,13 +518,13 @@ Gray码：每个顶点访问一次；
 >
 > (a) using the inductive definition, and  
 >
-> (b) using the Gray code algorithm. 
+> (b) using the Gray code algorithm.
 
 参考EX18的验证代码。
 
 ## EX22
 
-> Determine the reflected Gray code of order 6. 
+> Determine the reflected Gray code of order 6.
 
 同上。
 
@@ -535,7 +536,7 @@ Gray码：每个顶点访问一次；
 >
 > (b) 110001100  
 >
-> (c) 111111111 
+> (c) 111111111
 
 ### Q(a)
 
@@ -551,7 +552,7 @@ $\sigma(a_7\cdots a_1a_0) = 9$为奇数，从右向左寻找第一位1，并翻�
 
 ## EX24
 
-> Determine the predecessors of each of the 9-tuples in Exercise 23 in the reflected  Gray code of order 9. 
+> Determine the predecessors of each of the 9-tuples in Exercise 23 in the reflected  Gray code of order 9.
 
 ### Q(a)
 
@@ -567,7 +568,7 @@ $\sigma(a_7\cdots a_1a_0) = 9$为奇数，前驱$\sigma(a_7\cdots a_1a_0) = 8$�
 
 ## EX25
 
->  \* The reflected Gray code of order n is properly called the reflected binary Gray  code since it is a listing of the n-tuples of Os and Is. It can be generalized  to any base system, in particular the ternary and decimal system. Thus, the  reflected decimal Gray code of order n is a listing of all the decimal numbers of  n digits such that consecutive numbers in the list differ in only one place and the  absolute value of the difference is 1. Determine the reflected decimal Gray codes  of orders 1 and 2. (Note that we have not said precisely what a reflected decimal  Gray code is. Part of the problem is to discover what it is.) Also, determine the  reflected ternary Gray codes of orders 1,2, and 3. 
+> \* The reflected Gray code of order n is properly called the reflected binary Gray  code since it is a listing of the n-tuples of Os and Is. It can be generalized  to any base system, in particular the ternary and decimal system. Thus, the  reflected decimal Gray code of order n is a listing of all the decimal numbers of  n digits such that consecutive numbers in the list differ in only one place and the  absolute value of the difference is 1. Determine the reflected decimal Gray codes  of orders 1 and 2. (Note that we have not said precisely what a reflected decimal  Gray code is. Part of the problem is to discover what it is.) Also, determine the  reflected ternary Gray codes of orders 1,2, and 3.
 
 ### PS
 
@@ -575,7 +576,7 @@ $\sigma(a_7\cdots a_1a_0) = 9$为奇数，前驱$\sigma(a_7\cdots a_1a_0) = 8$�
 
 ## EX26
 
-> Generate the 2-subsets of {1, 2, 3, 4, 5} in lexicographic order by using the algorithm described in Section 4.4. 
+> Generate the 2-subsets of {1, 2, 3, 4, 5} in lexicographic order by using the algorithm described in Section 4.4.
 
 给出验证程序。
 
@@ -627,13 +628,13 @@ int main()
 
 ## EX27
 
-> Generate the 3-subsets of {1, 2, 3, 4, 5, 6} in lexicographic order by using the  algorithm described in Section 4.4. 
+> Generate the 3-subsets of {1, 2, 3, 4, 5, 6} in lexicographic order by using the  algorithm described in Section 4.4.
 
 同上。
 
 ## EX28
 
-> Determine the 6-subset of {1, 2, ... ,10} that immediately follows 2,3,4,6,9,10  in the lexicographic order. Determine the 6-subset that immediately precedes  2,3,4,6,9,10. 
+> Determine the 6-subset of {1, 2, ... ,10} that immediately follows 2,3,4,6,9,10  in the lexicographic order. Determine the 6-subset that immediately precedes  2,3,4,6,9,10.
 
 首先从右向左寻找$a_k$，使$a_k < 10$并且$a_k + 1$不在序列中，则定位到$a_k = 6$，然后进行$a_{k+i} = a_{k+i-1}+1, 1 \le i \lt r-k$替换，可以得到后继为2,3,4,7,8,9。这也是EX26算法的求解步骤。
 
@@ -641,7 +642,7 @@ int main()
 
 ## EX29
 
-> Determine the 7-subset of {1, 2, ... , 15} that immediately follows 1,2,4,6,8,14,15  in the lexicographic order. Then determine the 7-subset that immediately precedes 1,2,4,6,8,14,15. 
+> Determine the 7-subset of {1, 2, ... , 15} that immediately follows 1,2,4,6,8,14,15  in the lexicographic order. Then determine the 7-subset that immediately precedes 1,2,4,6,8,14,15.
 
 同上，我们只给出结果，后继为1,2,4,6,9,10,11；前驱为1,2,4,6,8,13,15。
 
@@ -836,7 +837,7 @@ $$
 \binom{9}{4} - \binom{9-2}{4} - \binom{9-4}{3} - \binom{9-8}{2} - \binom{9-9}{1} = 81
 $$
 
-从所有排列中，依次减去_ _ _ _ 型，2 _ _ _ 型，2 4 _ _ 型和2 4 8 _型，确定2489所在位置。
+从所有排列中，依次减去__ __ 型，2 __ _型，2 4_ _型和2 4 8_型，确定2489所在位置。
 
 ### PS
 
@@ -848,7 +849,7 @@ $$
 >
 > (a) What are the first (n - r + 1) r-subsets?
 >
-> (b) What are the last (r + 1) r-subsets? 
+> (b) What are the last (r + 1) r-subsets?
 
 ### Q(a)
 
@@ -861,7 +862,7 @@ $$
 
 容易验证最后一个子集是$(n-r+1)(n-r+2) \cdots n$，它的前驱子集为$(n-r)(n-r+2)\cdots n$，再计算一次前驱子集$(n-r)(n-r+1) (n-r+3) \cdots n$，则可以发现规律，那么倒数第r+1个子集为$(n-r)(n-r+1) \cdots (n-1)$，综上，
 $$
-(n-r)(n-r+1) \cdots (n-1)\\ 
+(n-r)(n-r+1) \cdots (n-1)\\
 \cdots \\
 (n-r)(n-r+1) (n-r+3) \cdots n \\
 (n-r)(n-r+2)\cdots n \\
@@ -910,8 +911,6 @@ $$
 
 此题必考！~~（就因为我看了很久才弄懂？）~~
 
-
-
 反对称和非对称是两个概念。
 
 ### 参考链接
@@ -922,7 +921,7 @@ $$
 
 ## EX37
 
-> Let R' and R" be two partial orders on a set X. Define a new relation R on X  by xRy if and only if both xR'y and xR"y hold. Prove that R is also a partial  order on X. (R is called the intersection of R' and R".) 
+> Let R' and R" be two partial orders on a set X. Define a new relation R on X  by xRy if and only if both xR'y and xR"y hold. Prove that R is also a partial  order on X. (R is called the intersection of R' and R".)
 
 证明R是X上的偏序关系，即证明R满足自反性、反对称性和传递性。
 
@@ -948,7 +947,7 @@ $$
 > $$
 > (x_1, x_2)T(x_1', x_2') \text{ if and only if } x_1 \le_1 x_1' \text{ and } x_2 \le_2 x_2'
 > $$
-> Prove that $(X_1 \times X_2, T)$ is a partially ordered set. $(X_1 \times X_2, T)$ is called the *direct  product* of $(X_1, \le_1)$ and $(X_2, \le_2)$  and is also denoted by  $(X_1, \le_1) \times (X_2, \le_2)$ .  More generally, prove that the direct product $(X_1, \le_1) \times (X_2, \le_2) \times \cdots \times (X_M ,\le_m)$  of partially ordered sets is also a partially ordered set. 
+> Prove that $(X_1 \times X_2, T)$ is a partially ordered set. $(X_1 \times X_2, T)$ is called the *direct  product* of $(X_1, \le_1)$ and $(X_2, \le_2)$  and is also denoted by  $(X_1, \le_1) \times (X_2, \le_2)$ .  More generally, prove that the direct product $(X_1, \le_1) \times (X_2, \le_2) \times \cdots \times (X_M ,\le_m)$  of partially ordered sets is also a partially ordered set.
 
 自反性：取$x = (x_1, x_2) \in X_1 \times X_2$，$x_1 \in X_1$​，$x_1$满足偏序关系有$x_1 \le_1 x_1$，同理，$x_2 \le_2 x_2$，所以得出T满足自反性。
 
@@ -957,8 +956,6 @@ $$
 传递性：取$x = (x_1, x_2), x' = (x_1', x_2'),x'' = (x_1'', x_2'') \in X_1 \times X_2$，由偏序关系知，$x_1 \le_1 x_1', x_1' \le_1 x_1''$，所以$x_1 \le_1 x_1''$，同理$x_2 \le_2 x_2 ''$​，T有传递性。
 
 综上，T满足偏序关系且$(X_1 \times X_2, T)$是偏序集。
-
-
 
 显然我们可以取$x = (x_1, x_2 ,\cdots, x_m)$等采用上述方式证明$(X_1, \le_1) \times (X_2, \le_2) \times \cdots \times (X_M ,\le_m)$也是偏序集。
 
@@ -993,13 +990,11 @@ $$
 
 还有另一种[参考](http://www.jade-cheng.com/uh/coursework/math-475/homework-03.pdf)，我也是大为震惊（因为看不懂）。
 
-
-
 感觉会考，只能选择把答案默写上去了。
 
 ## EX40
 
-> Generalize Exercise 39 to the multiset of all combinations of the multiset X =  $\{n_1\cdot a_1, n_2 \cdot a_2, \cdots, n_m \cdot a_m\}$. (Part of this exercise is to determine the "natural"  partial order of these multisets.) 
+> Generalize Exercise 39 to the multiset of all combinations of the multiset X =  $\{n_1\cdot a_1, n_2 \cdot a_2, \cdots, n_m \cdot a_m\}$. (Part of this exercise is to determine the "natural"  partial order of these multisets.)
 
 对于任意非负整数r，定义由$\{0, 1, \cdots, r\}, 0 \lt 1 \lt \cdots \lt r$构成的偏序集[r]，$\mathcal{P}(X)$是所有多重集合X的子集构成的集合，有$x \in \mathcal{P}(X)$，
 $$
@@ -1025,7 +1020,7 @@ $$
 
 引理：对于不同的$x, y \in X$，下列两个命题等价
 
-1.  $ x \lt y$
+1. $ x \lt y$
 2. 存在整数$r \ge 2$，并且取自X的序列$(x_1, x_2, \cdots, x_r)$满足$x_1 = x, x_r = y$并且$x_i$覆盖$x_{i-1}, 2\le i \le r$。
 
 先由1证2，考虑取自X的序列$(x_1, x_2, \cdots, x_r)$所构成的集合S，要求S中的元素满足$x_1 = x, x_r = y, x_{i-1} \lt x_i$，因为X是有限集，那么S也是有限集，并且S至少包含序列(x, y)，所以S非空。
@@ -1040,8 +1035,6 @@ $$
 
 无语，这题也没太看懂。正文也直说传递性使覆盖决定偏序，但是也没详细展开。
 
-
-
 ## EX42
 
 > Describe the cover relation for the partial order $\sube$ on the collection $\mathcal{P}(X)$ of an  subsets of a set X.
@@ -1050,7 +1043,7 @@ $$
 
 ## EX43
 
-> Let X = {a, b, c, d, e, f} and let the relation R on X be defined by aRb, bRc,  cRd, aRe, eRf, fRd. Verify that R is the cover relation of a partially ordered  set, and determine all the linear extensions of this partial order. 
+> Let X = {a, b, c, d, e, f} and let the relation R on X be defined by aRb, bRc,  cRd, aRe, eRf, fRd. Verify that R is the cover relation of a partially ordered  set, and determine all the linear extensions of this partial order.
 
 ```mermaid
 graph BT;
@@ -1064,7 +1057,7 @@ abecfd, abefcd, aebcfd, aebfcd, abcefd, aefbcd.
 
 ## EX44
 
-> Let $A_1, A_2, \cdots, A_s$ be a partition of a set X. Define a relation R on X by xRy  if and only if x and y belong to the same part of the partition. Prove that R is  an equivalence relation. 
+> Let $A_1, A_2, \cdots, A_s$ be a partition of a set X. Define a relation R on X by xRy  if and only if x and y belong to the same part of the partition. Prove that R is  an equivalence relation.
 
 自反性：对于任意$x \in X$，x和x属于划分的同一个部分。
 
@@ -1080,7 +1073,7 @@ abecfd, abefcd, aebcfd, aebfcd, abcefd, aefbcd.
 
 ## EX45
 
-> Define a relation R on the set Z of all integers by aRb if and only if a = ±b. Is  R an equivalence relation on Z? If so, what are the equivalence classes? 
+> Define a relation R on the set Z of all integers by aRb if and only if a = ±b. Is  R an equivalence relation on Z? If so, what are the equivalence classes?
 
 R是等价关系，证明如下。
 
@@ -1094,7 +1087,7 @@ R是等价关系，证明如下。
 
 ## EX46
 
-> Let m be a positive integer and define a relation R on the set X of all nonnegative  integers by aRb if and only if a and b have the same remainder when divided by  m. Prove that R is an equivalence relation on X. How many different equivalence  classes does this equivalence relation have? 
+> Let m be a positive integer and define a relation R on the set X of all nonnegative  integers by aRb if and only if a and b have the same remainder when divided by  m. Prove that R is an equivalence relation on X. How many different equivalence  classes does this equivalence relation have?
 
 自反性：对于任意的$x \in X$, x和x显然除以m余数相同。
 对称性：对于$x, y \in X$, 如果x和y除以m余数相同，那么y和x除以m余数相同。
@@ -1109,11 +1102,11 @@ $$
 
 > Let $\Pi_n$ denote the set of all partitions of the set {1, 2, ... ,n} into nonempty sets.  Given two partitions $\pi$ and $\sigma$ in $\Pi_n$, define $\pi \le \sigma$, provided that each part of $\pi$ is  contained in a part of $\sigma$. Thus, the partition $\pi$ can be obtained by partitioning  the parts of $\sigma$. This relation is usually expressed by saying that $\pi$  is a *refinement*  of $\sigma$.
 >
-> (a) Prove that the relation of refinement is a partial order on $\Pi_m$. 
+> (a) Prove that the relation of refinement is a partial order on $\Pi_m$.
 >
 > (b) By Theorem 4.5.3, we know that there is a one-to-one correspondence between $\Pi_m$ and the set $\Lambda_n$ of all equivalence relations on {1, 2, ... ,n}. What  is the partial order on $\Lambda_n$ that corresponds to this partial order on $\Pi_m$?  
 >
-> (c) Construct the diagram of $(\Pi_m, \le)$ for n = 1,2,3, and 4. 
+> (c) Construct the diagram of $(\Pi_m, \le)$ for n = 1,2,3, and 4.
 
 ### Q(a)
 
@@ -1170,8 +1163,6 @@ B6---C5;
 
 ```
 
-
-
 ## EX48
 
 > Consider the partial order $\le$ on the set X of positive integers given by "is a  divisor of." Let a and b be two integers. Let c be the largest integer such that  c $\le$ a and c $\le$ b, and let d be the smallest integer such that a $\le$ d and b $\le$ d.  What are c and d?
@@ -1184,7 +1175,7 @@ $$
 
 ## EX49
 
-> Prove that the intersection $R\cap S$ of two equivalence relations Rand S on a set  X is also an equivalence relation on X. Is the union of two equivalence relations  on X always an equivalence relation? 
+> Prove that the intersection $R\cap S$ of two equivalence relations Rand S on a set  X is also an equivalence relation on X. Is the union of two equivalence relations  on X always an equivalence relation?
 
 自反性：取$x \in X$，在关系R和关系S上均有自反性，即$xRx, xSx$，所以有$xRx \cap xSx, x(R \cap S)x$，满足自反性；
 
@@ -1208,7 +1199,7 @@ $$
 
 ## EX50
 
-> Consider the partially ordered set (X,$\sube$) of subsets of the set X = {a, b, c} of  three elements. How many linear extensions are there? 
+> Consider the partially ordered set (X,$\sube$) of subsets of the set X = {a, b, c} of  three elements. How many linear extensions are there?
 
 ```mermaid
 graph BT
@@ -1240,7 +1231,7 @@ c---b,c;
 
 ## EX51
 
-> Let n be a positive integer, and let $X_n$ be the set of n! permutations of {1, 2, ... ,n}  Let $\pi$ and $\sigma$ be two permutations in $X_n$, and define $\pi \le \sigma$ a provided that the set  of inversions of $\pi$ is a subset of the set of inversions of $\sigma$. Verify that this defines  a partial order on $X_n$ , called the *inversion poset*. **Describe the cover relation for  this partial order** and then draw the diagram for the inversion poset $(H_4, \le)$. 
+> Let n be a positive integer, and let $X_n$ be the set of n! permutations of {1, 2, ... ,n}  Let $\pi$ and $\sigma$ be two permutations in $X_n$, and define $\pi \le \sigma$ a provided that the set  of inversions of $\pi$ is a subset of the set of inversions of $\sigma$. Verify that this defines  a partial order on $X_n$ , called the *inversion poset*. **Describe the cover relation for  this partial order** and then draw the diagram for the inversion poset $(H_4, \le)$.
 
 描述覆盖关系：$\pi$逆序列的集合真含于$\sigma$逆序列的集合，则称$\sigma$覆盖$\pi$。
 
@@ -1284,11 +1275,11 @@ A---D[2,1,3,4]
 
 ## EX52
 
-> Verify that a binary n-tuple $a_{n-1}\cdots a_1 a_0$ is in place k in the Gray code order  list where k is determined as follows: For i = 0,1, ... ,n-1, let 
+> Verify that a binary n-tuple $a_{n-1}\cdots a_1 a_0$ is in place k in the Gray code order  list where k is determined as follows: For i = 0,1, ... ,n-1, let
 > $$
-> b_i = 
+> b_i =
 > \begin{cases}
-> 0, \text{ if } a_{n-1} + \cdots + a_i \text{ is even, and } \\ 
+> 0, \text{ if } a_{n-1} + \cdots + a_i \text{ is even, and } \\
 > 1, \text{ if } a_{n-1} + \cdots + a_i \text{ is odd }
 > \end{cases}
 > $$
@@ -1296,7 +1287,7 @@ A---D[2,1,3,4]
 > $$
 > k = b_{n-1} \times 2^{n-1} + \cdots b_1 \times 2 + b_0 \times 2^0
 > $$
-> Thus, $a_{n-1}\cdots a_1 a_0$ is in the same place in the Gray code order list of binary  n-tuples as $b_{n-1}\cdots b_1 b_0 $ is in the lexicographic order list of binary n-tuples. 
+> Thus, $a_{n-1}\cdots a_1 a_0$ is in the same place in the Gray code order list of binary  n-tuples as $b_{n-1}\cdots b_1 b_0 $ is in the lexicographic order list of binary n-tuples.
 
 由题意，$b_{n-1}\cdots b_1 b_0$就是k的二进制串，下面采用数学归纳法证明$a_{n-1}\cdots a_1 a_0$位于Gray表中的第k个位置（从0开始），其中k为$b_{n-1}\cdots b_1 b_0$所对应的数。
 
@@ -1312,9 +1303,9 @@ Problem B介绍了二进制的加法（自增+1）和减法（自减-1）求法�
 
 > Continuing with Exercise 52, show that $a_{n-1}\cdots a_1 a_0$ can be recovered from  $b_{n-1}\cdots b_1 b_0 $, by $a_{n-1} = b_{n-1}$ and for i = 0,1, ... , n-1,
 > $$
-> a_i = 
+> a_i =
 > \begin{cases}
-> 0, \text{ if } b_i + b_{i+1} \text{ is even, and } \\ 
+> 0, \text{ if } b_i + b_{i+1} \text{ is even, and } \\
 > 1, \text{ if } b_i + b_{i+1} \text{ is odd }
 > \end{cases}
 > $$
@@ -1339,7 +1330,7 @@ UNFINISHED
 
 ## EX54
 
-> Let $(X, \le)$ be a finite partially ordered set. By Theorem 4.5.2 we know that  $(X, \le)$ has a linear extension. Let a and b be incomparable elements of X.  Modify the proof of Theorem 4.5.2 to obtain a linear extension of  $(X, \le)$  such  that a < b. (Hint: First find a partial order $\le '$ on X such that whenever x $\le $  y,  then x $\le '$  y and, in addition, a $\le '$  b.) 
+> Let $(X, \le)$ be a finite partially ordered set. By Theorem 4.5.2 we know that  $(X, \le)$ has a linear extension. Let a and b be incomparable elements of X.  Modify the proof of Theorem 4.5.2 to obtain a linear extension of  $(X, \le)$  such  that a < b. (Hint: First find a partial order $\le '$ on X such that whenever x $\le $  y,  then x $\le '$  y and, in addition, a $\le '$  b.)
 
 对于不可比元素a和b，我们可以通过定义b覆盖a（比如线性顺序列出），来找到X上的偏序关系$\le '$使得$a \le ' b$，并且由定理4.5.2可知，这样的偏序关系对有限集一定存在。因此，我们可以得到偏序集$(X, \le ')$。
 
@@ -1383,9 +1374,7 @@ $(X, \le ')$由$(X, \le )$添加关系得到，该线性扩展也保留了原来
 
 ## EX57
 
-> Consider the set of all permutations $i_1, i_2, \cdots, i_n$ of 1,2, ... ,n such that $i_k \neq k$ for  k = 1,2, ... ,n. (Such permutations are called *derangements* and are discussed in  Chapter 6.) Describe an algorithm for generating a random derangement (modify  the algorithm given in Section 4.1 for generating a random permutation). 
-
-
+> Consider the set of all permutations $i_1, i_2, \cdots, i_n$ of 1,2, ... ,n such that $i_k \neq k$ for  k = 1,2, ... ,n. (Such permutations are called *derangements* and are discussed in  Chapter 6.) Describe an algorithm for generating a random derangement (modify  the algorithm given in Section 4.1 for generating a random permutation).
 
 ### PS
 
@@ -1399,7 +1388,7 @@ $(X, \le ')$由$(X, \le )$添加关系得到，该线性扩展也保留了原来
 
 ## EX58
 
-> Consider the complete graph $K_n$ defined in Chapter 2, in which each edge is  colored either red or blue. Define a relation on the n points of $K_n$ by saying  that one point is related to another point provided that the edge joining them is  colored red. Determine when this relation is an equivalence relation, and, when  it is, determine the equivalence classes. 
+> Consider the complete graph $K_n$ defined in Chapter 2, in which each edge is  colored either red or blue. Define a relation on the n points of $K_n$ by saying  that one point is related to another point provided that the edge joining them is  colored red. Determine when this relation is an equivalence relation, and, when  it is, determine the equivalence classes.
 
 R被定义在完全图的点集$V(K_n) = \{1,2,\cdots, n\}$上，$E(K_n)$则是完全图的边集。
 
@@ -1419,11 +1408,11 @@ PS买的答案也没看懂传递性。
 
 ## EX59
 
-> Let $n \ge 2$ be an integer. Prove that the total number of inversions of *all* n!  permutations of 1,2, ... ,n equals 
+> Let $n \ge 2$ be an integer. Prove that the total number of inversions of *all* n!  permutations of 1,2, ... ,n equals
 > $$
 > \frac{1}{2}n!\binom{n}{2} = n!\frac{n(n-1)}{4}
 > $$
-> (Hint: Pair up the permutations so that the number of inversions in each pair is  n(n - 1)/2.) 
+> (Hint: Pair up the permutations so that the number of inversions in each pair is  n(n - 1)/2.)
 
 第一步，计算逆序可能出现的组合数量：因为逆序是两两配对，逆序组合不超过$\dbinom{n}{2} = \dfrac{n(n-1)}{2}$个；(这一点可以参考EX8)
 第二步，给选出的逆序安排位置，$\dbinom{n}{2}$种方式；

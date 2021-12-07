@@ -1,12 +1,12 @@
+# 什么是组合数学EX
+
 ## EX1
 
-> Show that an m-by-n chessboard has a perfect cover by dominoes **if and only if**  at least one of m and n is even. 
+> Show that an m-by-n chessboard has a perfect cover by dominoes **if and only if**  at least one of m and n is even.
 
 充分性：不妨令m是偶数，那么至少存在一种方式（所有的多米诺骨牌竖放），可以实现完美覆盖。
 
 必要性：不妨假设实现完美覆盖时使用了x块多米诺骨牌，那么棋盘总共有2x个方格，并且得到等式2x=mn，mn可以整除2，故两者至少有一个为偶数。
-
-
 
 *注意，多米诺骨牌特指2格牌。*
 
@@ -14,14 +14,14 @@
 
 ## EX2
 
-> Consider an m-by-n chessboard with m and n both odd. To fix the notation,  suppose that the square in the upper left-hand corner is colored white. Show  that if a white square is cut out anywhere on the board, the resulting pruned  board has a perfect cover by dominoes. 
+> Consider an m-by-n chessboard with m and n both odd. To fix the notation,  suppose that the square in the upper left-hand corner is colored white. Show  that if a white square is cut out anywhere on the board, the resulting pruned  board has a perfect cover by dominoes.
 
 ![image-20211012091704500](https://i.loli.net/2021/10/12/PmXsSEnOrD8TLHa.png)
 
 因为左上角的颜色定为白色，可以大致确认棋盘形状如下，并可以得到等式
 $$
 \begin{cases}
-a + b + 1 = m \\ 
+a + b + 1 = m \\
 x + y + 1 = n  
 \end{cases}
 $$
@@ -33,25 +33,23 @@ $$
 $$
 \begin{cases}
 a\times (x+1), \\
-(a+1) \times y,\\ 
+(a+1) \times y,\\
 b\times (y+1), \\
 (b+1) \times x
 \end{cases}
 $$
 因此，只需要讨论a和x(或者y)的奇偶性即可。显然，我们可以列表计算
 
-|  a   |  x   | (a+1) | (x+1) | 图中四个分块 |
-| :--: | :--: | :---: | :---: | :----------: |
-|  偶  |  偶  |  奇   |  奇   |  均完美覆盖  |
-|  奇  |  奇  |  偶   |  偶   |  均完美覆盖  |
-
-
+|   a   |   x   | (a+1) | (x+1) | 图中四个分块 |
+| :---: | :---: | :---: | :---: | :----------: |
+|  偶   |  偶   |  奇   |  奇   |  均完美覆盖  |
+|  奇   |  奇   |  偶   |  偶   |  均完美覆盖  |
 
 从剪掉的块是白色方块观察出a与x的奇偶性相同不太直观。
 
 ## EX3
 
-> Imagine a prison consisting of 64 cells arranged like the squares of an 8-by-8  chessboard. There are doors between all adjoining cells. A prisoner in one of  the corner cells is told that he will be released, provided he can get into the  diagonally opposite corner cell after passing through every other cell exactly  once. Can the prisoner obtain his freedom? 
+> Imagine a prison consisting of 64 cells arranged like the squares of an 8-by-8  chessboard. There are doors between all adjoining cells. A prisoner in one of  the corner cells is told that he will be released, provided he can get into the  diagonally opposite corner cell after passing through every other cell exactly  once. Can the prisoner obtain his freedom?
 
 观察起点和终点的颜色相同，都为白色。每次移动时，方块的颜色会发生变化。一共移动了63次，颜色会发生63次变化，最后停留位置的颜色应为黑色。故该囚犯不能获得自由。
 
@@ -63,7 +61,7 @@ $$
 
 > (a) Let f(n) count the number of different perfect covers of a 2-by-n chessboard  by dominoes. Evaluate f(1), f(2), f(3), f(4), and f(5). Try to find (and verify)  a simple relation that the counting function f satisfies. Use this relation to  compute f(12).  
 >
-> (b) * Let g(n) be the number of different perfect covers of a 3-by-n chessboard  by dominoes. Evaluate g(1), g(2), ... , g(6). 
+> (b) * Let g(n) be the number of different perfect covers of a 3-by-n chessboard  by dominoes. Evaluate g(1), g(2), ... , g(6).
 
 ### Q(a)
 
@@ -74,11 +72,9 @@ f(n) = f(n-1) + f(n-2), f(1) = 1, f(2) = 2 \\
 $$
 [这里](http://www.jade-cheng.com/uh/coursework/math-475/homework-01.pdf)有一个详细的证明过程，使f(n)的公式来的更加合理。
 
-
-
 参考下面提供的其他解法，也可以考虑最后一列是如何填充的，显然$f(n)$只有唯一方案转化成$f(n-1)$和$f(n-2)$。
 
-### Q(b) 
+### Q(b)
 
 ![image-20211012092139675](https://i.loli.net/2021/10/12/bVqgLd1ZM7fHrBQ.png)
 
@@ -129,7 +125,7 @@ $$
 
 ## EX5
 
-> Find the number of different perfect covers of a 3-by-4 chessboard by dominoes. 
+> Find the number of different perfect covers of a 3-by-4 chessboard by dominoes.
 
 答案是11，可以使用上面的公式验证。
 
@@ -145,7 +141,7 @@ $$
 
 ## EX6
 
-> Consider the following three-dimensional version of the chessboard problem: A  three-dimensional domino is defined to be the geometric figure that results when  two cubes, one unit on an edge, are joined along a face. Show that it is possible  to construct a cube n units on an edge from dominoes if and only if n is even. If  n is odd, is it possible to construct a cube n units on an edge with a 1-by-1 hole  in the middle? (Hint: Think of a cube n units on an edge as being composed of  $n^3$ cubes, one unit on an edge. Color the cubes alternately black and white.) 
+> Consider the following three-dimensional version of the chessboard problem: A  three-dimensional domino is defined to be the geometric figure that results when  two cubes, one unit on an edge, are joined along a face. Show that it is possible  to construct a cube n units on an edge from dominoes if and only if n is even. If  n is odd, is it possible to construct a cube n units on an edge with a 1-by-1 hole  in the middle? (Hint: Think of a cube n units on an edge as being composed of  $n^3$ cubes, one unit on an edge. Color the cubes alternately black and white.)
 
 ### Q1
 
@@ -167,7 +163,7 @@ $$
 
 ## EX7
 
-> Let a and b be positive integers with a a factor of b. Show that an m-by-n board  has a perfect cover by a-by-b pieces if and only if a is a factor of both m and  nand b is a factor of either m or n. (Hint: Partition the a-by-b pieces into a  1-by-b pieces.) 
+> Let a and b be positive integers with a a factor of b. Show that an m-by-n board  has a perfect cover by a-by-b pieces if and only if a is a factor of both m and  nand b is a factor of either m or n. (Hint: Partition the a-by-b pieces into a  1-by-b pieces.)
 >
 
 充分性：当a既是m又是n的因子且b是m或者是n的因子时，显然存在平凡解使棋盘能完美覆盖。
@@ -248,8 +244,6 @@ int main()
 }
 ```
 
-
-
 ## EX12
 
 > Use de la Loubere's method to construct a magic square of order 9.
@@ -270,7 +264,7 @@ int main()
 
 ## EX14
 
-> Show that a magic square of order 3 must have a 5 in the middle position.  Deduce that there are exactly 8 magic squares of order 3. 
+> Show that a magic square of order 3 must have a 5 in the middle position.  Deduce that there are exactly 8 magic squares of order 3.
 
 $$
 \left[
@@ -311,13 +305,13 @@ $$
 > \left[
 > \begin{matrix}
 > 2 & 3 &  & \\
-> 4 &\\ 
->   &\\
->   &\\
+> 4 &\\
+> &\\
+> &\\
 > \end{matrix}
 > \right]
 > $$
-> 
+>
 
 四阶幻方的幻和s为34。
 
@@ -325,7 +319,7 @@ $$
 \left[
 \begin{matrix}
 2 & 3 &  a& b\\
-4 &c & d & e\\ 
+4 &c & d & e\\
 f& g & h & i\\
 j& k & l &m\\
 \end{matrix}
@@ -337,7 +331,7 @@ $$
 2 + 3 + a + b = 34\\
 2 + 4 + f + j = 34
 \end{cases}
-\Rightarrow 
+\Rightarrow
 \begin{cases}
 a + b = 29\\
 f + j = 28
@@ -360,7 +354,7 @@ $$
 
 ## EX16
 
-> Show that the result of replacing every integer a in a magic square of order n  with $n^2 +1 -a$ is a magic square of order n. 
+> Show that the result of replacing every integer a in a magic square of order n  with $n^2 +1 -a$ is a magic square of order n.
 
 使用$n^2+1-a$来替换$a$后的幻方恰好是幻方旋转180°后的结果，故仍为幻方。
 
@@ -380,13 +374,13 @@ $$
 
 ## EX18
 
-> Show that there is no magic cube of order 2. 
+> Show that there is no magic cube of order 2.
 
 和EX10中的二维幻方一样采用反证法证明，与1相匹配的方块不能重复。
 
 ## EX19
 
-> *Show that there is no magic cube of , order 4. 
+> *Show that there is no magic cube of , order 4.
 
 这里参考[What's known about magic cubes of order 4?](https://math.stackexchange.com/questions/951930/whats-known-about-magic-cubes-of-order-4)中提到的证明过程，先证明两条引理，最终也是像二阶幻方和二阶幻方体一样反证不存在。
 
@@ -424,9 +418,9 @@ $$
 
 ## EX21
 
->  (a) Does there exist a magic hexagon of order 2? That is, is it possible to arrange  the numbers 1,2, ... ,7 in the following hexagonal array so that all of the nine  "line" sums (the sum of the numbers in the hexagonal boxes penetrated by a  line through midpoints of opposite sides) are the same? 
+> (a) Does there exist a magic hexagon of order 2? That is, is it possible to arrange  the numbers 1,2, ... ,7 in the following hexagonal array so that all of the nine  "line" sums (the sum of the numbers in the hexagonal boxes penetrated by a  line through midpoints of opposite sides) are the same?
 >
-> (b) * Construct a magic hexagon of order 3; that is, arrange the integers  1,2, ... ,19 in a hexagonal array (three integers on a side) in such a way that all  of the fifteen "line" sums are the same (namely, 38). 
+> (b) * Construct a magic hexagon of order 3; that is, arrange the integers  1,2, ... ,19 in a hexagonal array (three integers on a side) in such a way that all  of the fifteen "line" sums are the same (namely, 38).
 
 ### Q(a)
 
@@ -514,7 +508,7 @@ $$
 
 ## EX24
 
-> Find a general method for constructing a Latin square of order n. 
+> Find a general method for constructing a Latin square of order n.
 
 第一行从1到n，之后每一行都把上一行的最后一个放到最前面。
 
@@ -540,7 +534,7 @@ int main()
 
 ## EX25
 
-> A 6-by-6 chessboard is perfectly covered with 18 dominoes. Prove that it is possible to cut it either horizontally or vertically into two nonempty pieces without  cutting through a domino; that is, prove that there must be a fault line. 
+> A 6-by-6 chessboard is perfectly covered with 18 dominoes. Prove that it is possible to cut it either horizontally or vertically into two nonempty pieces without  cutting through a domino; that is, prove that there must be a fault line.
 
 如果没有断层线，那么图中每一条断层线都要切割多米诺骨牌，考虑填充第一列，至少需要两块横放的多米诺骨牌，因此$x_1 \ge 2$，同理其他线也至少穿过两块多米诺骨牌，因此10条线一共至少穿过20块多米诺骨牌，而最多只有18块多米诺骨牌，因此假设不成立。
 
@@ -556,7 +550,7 @@ int main()
 
 ## EX27
 
-> Determine all shortest routes from A to B in the system of intersections and  streets (graph) in the following diagram. The numbers on the streets represent  the lengths of the streets measured in terms of some unit. 
+> Determine all shortest routes from A to B in the system of intersections and  streets (graph) in the following diagram. The numbers on the streets represent  the lengths of the streets measured in terms of some unit.
 >
 > ![image-20211012110530324](https://i.loli.net/2021/10/12/O6UXSgQr3kPNhdJ.png)
 
@@ -572,7 +566,7 @@ A--2-->D
 
 ## EX28
 
-> Consider 3-heap Nim with heaps of sizes 1, 2, and 4. Show that this game is  unbalanced and determine a first move for player 1. 
+> Consider 3-heap Nim with heaps of sizes 1, 2, and 4. Show that this game is  unbalanced and determine a first move for player 1.
 
 |          | $2^2$ | $2^1$ | $2^0$ |
 | :------: | :---: | :---: | :---: |
@@ -585,7 +579,7 @@ A--2-->D
 
 ## EX29
 
-> Is 4-heap Nim with heaps of sizes 22, 19, 14, and 11 balanced or unbalanced?  Player I's first move is to remove 6 coins from the heap of size 19. What should  player II's first move be? 
+> Is 4-heap Nim with heaps of sizes 22, 19, 14, and 11 balanced or unbalanced?  Player I's first move is to remove 6 coins from the heap of size 19. What should  player II's first move be?
 
 |               | $2^4$ | $2^3$ | $2^2$ | $2^1$ | $2^0$ |
 | :-----------: | ----- | ----- | :---: | :---: | :---: |
@@ -603,27 +597,27 @@ A--2-->D
 
 ## EX30
 
-> Consider 5-heap Nim with heaps of sizes 10, 20, 30, 40, and 50. Is this game  balanced? Determine a first move for player I. 
+> Consider 5-heap Nim with heaps of sizes 10, 20, 30, 40, and 50. Is this game  balanced? Determine a first move for player I.
 
-|      | $2^5$ | $2^4$ | $2^3$ | $2^2$ | $2^1$ | $2^0$ |
-| ---- | :---: | ----- | ----- | :---: | :---: | :---: |
-| 10   |   0   | 0     | 1     |   0   |   1   |   0   |
-| 20   |   0   | 1     | 0     |   1   |   0   |   0   |
-| 30   |   0   | 1     | 1     |   1   |   1   |   0   |
-| 40   |   1   | 0     | 1     |   0   |   0   |   0   |
-| 50   |   1   | 1     | 0     |   0   |   1   |   0   |
+|     | $2^5$ | $2^4$ | $2^3$ | $2^2$ | $2^1$ | $2^0$ |
+| --- | :---: | ----- | ----- | :---: | :---: | :---: |
+| 10  |   0   | 0     | 1     |   0   |   1   |   0   |
+| 20  |   0   | 1     | 0     |   1   |   0   |   0   |
+| 30  |   0   | 1     | 1     |   1   |   1   |   0   |
+| 40  |   1   | 0     | 1     |   0   |   0   |   0   |
+| 50  |   1   | 1     | 0     |   0   |   1   |   0   |
 
 游戏初始是不平衡的，玩家1可以从大小为30的堆中取出26枚硬币。
 
 ## EX31
 
-> Show that player I can always win a Nim game in which the number of heaps  with an odd number of coins is odd. 
+> Show that player I can always win a Nim game in which the number of heaps  with an odd number of coins is odd.
 
 在二进制中，奇数的末位一定为1，偶数的末位一定为0，而奇数堆的数量为奇数，总体来看，末位一定有奇数个1且最后一列一定不平衡。因此，游戏初始时一定是不平衡的，玩家1可以通过调整为平衡来取得胜利。
 
 ## EX32
 
-> Show that in an unbalanced game of Nim in which the largest unbalanced bit is  the jth bit, player I can always balance the game by removing coins from any  heap the base 2 numeral of whose number has a 1 in the jth bit. 
+> Show that in an unbalanced game of Nim in which the largest unbalanced bit is  the jth bit, player I can always balance the game by removing coins from any  heap the base 2 numeral of whose number has a 1 in the jth bit.
 
 最大不平衡位是j位，j位需要变为0；后面的位，如果已经平衡则不变，不平衡则反转该位。通过此方法，玩家1一定能把游戏变为平衡。
 
@@ -633,13 +627,13 @@ A--2-->D
 
 ## EX33
 
-> Suppose we change the object of Nim so that the player who takes the last coin  loses (the misere version). Show that the following is a winning strategy: Play  as in ordinary Nim until all but exactly one heap contains a single coin. Then  remove either all or all but one of the coins of the exceptional heap so as to leave  an odd number of heaps of size 1. 
+> Suppose we change the object of Nim so that the player who takes the last coin  loses (the misere version). Show that the following is a winning strategy: Play  as in ordinary Nim until all but exactly one heap contains a single coin. Then  remove either all or all but one of the coins of the exceptional heap so as to leave  an odd number of heaps of size 1.
 
 玩家1把堆（大小为1）的数量调整为奇数，玩家2只能把它（大小为1的堆的数量）调整为偶数，最后玩家2会取走最后一枚棋子。
 
 ## EX34
 
-> A game is played between two players, alternating turns as follows: The game  starts with an empty pile. When it is his turn, a player may add either 1, 2,  3, or 4 coins to the pile. The person who adds the 100th coin to the pile is the  winner. Determine whether it is the first or second player who can guarantee a  win in this game. What is the winning strategy? 
+> A game is played between two players, alternating turns as follows: The game  starts with an empty pile. When it is his turn, a player may add either 1, 2,  3, or 4 coins to the pile. The person who adds the 100th coin to the pile is the  winner. Determine whether it is the first or second player who can guarantee a  win in this game. What is the winning strategy?
 
 逆向分析，当还有5枚硬币需要放置时，后手的人有必胜策略。
 
@@ -701,10 +695,9 @@ $$
 \frac{8!}{4! \times (2!)^4} = 105
 $$
 
-
 ## EX37
 
-> A Latin square of order n is **idempotent**(幂等的) provided the integers {1, 2, ... ,n} occur  in the diagonal positions (1,1), (2, 2), ... , (n, n) in the order 1,2, ... , n, and is  symmetric provided the integer in position (i, j) equals the integer in position  (j, i) whenever i $\ne $ j. There is no symmetric, idempotent Latin square of order  2. Construct a symmetric, idempotent Latin square of order 3. Show that there  is no symmetric, idempotent Latin square of order 4. What about order n in  general, where n is even? 
+> A Latin square of order n is **idempotent**(幂等的) provided the integers {1, 2, ... ,n} occur  in the diagonal positions (1,1), (2, 2), ... , (n, n) in the order 1,2, ... , n, and is  symmetric provided the integer in position (i, j) equals the integer in position  (j, i) whenever i $\ne $ j. There is no symmetric, idempotent Latin square of order  2. Construct a symmetric, idempotent Latin square of order 3. Show that there  is no symmetric, idempotent Latin square of order 4. What about order n in  general, where n is even?
 
 $$
 \left[
@@ -730,7 +723,7 @@ $$
 
 ## EX39
 
-> Consider an n-by-n board and L-tetrominoes (4 squares joined in the shape of an  L). Show that if there is a perfect cover of the n-by-n board with L-tetrominoes,  then n is divisible by 4. What about m-by-n-boards? 
+> Consider an n-by-n board and L-tetrominoes (4 squares joined in the shape of an  L). Show that if there is a perfect cover of the n-by-n board with L-tetrominoes,  then n is divisible by 4. What about m-by-n-boards?
 
 <img src="https://i.loli.net/2021/09/30/YlU8ZuwQskHP9Ce.png" alt="c1ex39" style="zoom:80%;" />
 
@@ -760,17 +753,17 @@ $$
 
 ## EX42
 
-> Let $S_n$ denote the staircase board with 1 + 2 + ... + n = n( n + 1) /2 squares. For  example, $S_4$ is 
+> Let $S_n$ denote the staircase board with 1 + 2 + ... + n = n( n + 1) /2 squares. For  example, $S_4$ is
 >
 > ![image-20211012112409014](https://i.loli.net/2021/10/12/cKWpkt4x5r9FmZS.png)
 >
-> Prove that $S_n$ does not have a perfect cover with dominoes for any $n \ge 1$. 
+> Prove that $S_n$ does not have a perfect cover with dominoes for any $n \ge 1$.
 
 如果能实现完美覆盖，左上角的阶梯一定是竖的多米诺骨牌，第二行的阶梯处也只剩下一个空格，那也只能是竖的多米诺骨牌。同理，之后阶梯处只能是竖的多米诺骨牌，而最后一行不可能是竖的多米诺骨牌。因此，$S_n$不存在完美覆盖。
 
 ## EX43
 
-> Consider a block of wood in the shape of a cube, 3 feet on an edge. It is desired  to cut the cube into 27 smaller cubes, 1 foot on an edge. One way to do this is  to make 6 cuts, 2 in each direction, while keeping the cube in one block. Is it  possible to use fewer cuts if the pieces can be rearranged between cuts? 
+> Consider a block of wood in the shape of a cube, 3 feet on an edge. It is desired  to cut the cube into 27 smaller cubes, 1 foot on an edge. One way to do this is  to make 6 cuts, 2 in each direction, while keeping the cube in one block. Is it  possible to use fewer cuts if the pieces can be rearranged between cuts?
 
 对于最中间的立方体，一次切割只能切出一个面。因此，它不可能不可能以少于六次的切割来完成这项工作。
 
