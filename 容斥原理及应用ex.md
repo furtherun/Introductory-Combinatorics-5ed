@@ -388,6 +388,93 @@ $$
 > $$
 > (Here,$D_0$ is defined to be 1.)
 
+记$S$为$\{1,2, \cdots , n\}$的全排列集合，$S_i$表示恰有i个元素在自然位置的排序，显然$\{S_i\}$划分了$S$，因此$|S| = \sum_{i=0}^{n}|S_i|$。
+
+全排列$|S| = n!$，恰有i个自然位置的错位排序（参考EX14），有$\binom{n}{i}D_{n-i}$个，因此等式成立。
+
 ## EX17
 
 > Determine the number of permutations of the multiset
+> $$
+> S = \{3\cdot a, 4 \cdot b, 2 \cdot c\}
+> $$
+> where, for each type of letter, the letters of the same type do not appear consecutively. (Thus *abbbbcaca* is not allowed, but *abbbacacb* is.)
+
+设$A_i, i = 1, 2, 3$分别表示出现了*aaa*、*bbbb*和*cc*，$A_1$可以当作${aaa, b, b, b, b, c, c}$的排列，即$\binom{7}{1 \; 4\; 2} = 105$。
+
+|           set           |              size              |
+| :---------------------: | :----------------------------: |
+|          $A_1$          |              105               |
+|          $A_2$          | $\binom{6}{3 \; 1 \; 2} = 60$  |
+|          $A_3$          | $\binom{8}{3 \; 4 \; 1} = 280$ |
+|     $A_1 \cap A_2$      |  $\binom{4}{1 \;1\; 2} = 12$   |
+|     $A_1 \cap A_3$      |   $\binom{6}{1 \;4\;1} = 30$   |
+|     $A_2 \cap A_3$      |   $\binom{5}{3\;1\;1} = 20$    |
+| $A_1 \cap A_2 \cap A_3$ |    $\binom{3}{1\;1\;1} = 3$    |
+
+$$
+\begin{aligned}
+    |\overline{A_1} \cap \overline{A_2} \cap \overline{A_3}| =& |S| - \sum |A_i| + \sum |A_iA_j| - \sum|A_iA_jA_k| \\
+    =& 1260 - (105+60+280) +(12+30+20) - 3 \\
+    =& 874
+\end{aligned}
+$$
+
+### EX17注
+
+本题是求的**多重集合排序**问题和上面的多重集合组合问题进行区分。
+
+## EX18
+
+> Verify the factorial formula
+> $$
+> n! = (n-1)((n-2)! + (n-1)!), \qquad (n=2,3,4, ...).
+> $$
+
+没太看懂这题想干什么。
+
+## EX19
+
+> Using the evaluation of the derangement numbers as given in Theorem 6.3.1, provide a proof of the relation
+> $$
+> D_n = (n-1)(D_{n-2} + D_{n-1}), \quad (n=3,4,5, ...).
+> $$
+
+展开合并同类项即可，
+
+$$
+D_{n-2} = (n-2)! \sum_{i=0}^{n-2} \frac{(-1)^{i}}{i!}
+$$
+
+将$D_{n-1}$拆分为能与$D_{n-2}$同类相加的两项，
+
+$$
+\begin{aligned}
+    D_{n-1} = & (n-1)! \sum_{i=0}^{n-1} \frac{(-1)^i}{i!} \\
+    =& (n-1)\cdot (n-2)! (\sum_{i=0}^{n-2} \frac{(-1)^i}{i!} + \frac{(-1)^{n-1}}{(n-1)!}) \\
+    =&(n-1) \cdot (n-2)! \sum_{i=0}^{n-2} \frac{(-1)^i}{i!} + (-1)^{n-1}
+\end{aligned}
+$$
+将$D_{n-1}$与$D_{n-2}$求和，
+$$
+    D_{n-1} + D_{n-2} = n \cdot (n-2)! \sum_{i=0}^{n-2} \frac{(-1)^i}{i!} + (-1)^{n-1}
+$$
+
+$$
+(n-1) (D_{n-1} + D_{n-2}) = n! \sum_{i=0}^{n-2} \frac{(-1)^i}{i!} + (-1)^{n-1}(n-1)
+$$
+将$D_n$拆分为上述形式，
+$$
+\begin{aligned}
+    D_n =& n!  \sum_{i=0}^{n} \frac{(-1)^i}{i!} \\
+    =&  n! \sum_{i=0}^{n-2} \frac{(-1)^i}{i!} + n! (\frac{(-1)^{n-1}}{(n-1)!} + \frac{(-1)^n}{n!}) \\
+    =&  n! \sum_{i=0}^{n-2} \frac{(-1)^i}{i!} + (-1)^{n-1}n + (-1)^n \\
+    =& (n-1) ((D_{n-1} + D_{n-2}))
+\end{aligned}
+$$
+
+综上，等式成立。
+
+## EX20
+
+> Starting from the formula Dn = nDn- 1 + (_l)n, (n = 2,3,4, ... ), give a proof of Theorem 6.3.1.
