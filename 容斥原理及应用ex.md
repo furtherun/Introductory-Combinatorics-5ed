@@ -578,4 +578,5 @@ $$
 
 ## EX24
 
-> 
+> What is the number of ways to place six nonattacking rooks on the 6-by-6 boards with forbidden positions as shown?
+> ![EX24](https://raw.githubusercontent.com/furtherun/imgs/main/img/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8ex24.png)
