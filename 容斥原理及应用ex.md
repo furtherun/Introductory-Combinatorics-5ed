@@ -580,3 +580,15 @@ $$
 
 > What is the number of ways to place six nonattacking rooks on the 6-by-6 boards with forbidden positions as shown?
 > ![EX24](https://raw.githubusercontent.com/furtherun/imgs/main/img/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8ex24.png)
+
+StatusCodeError: 422 - {"message":"Invalid request.\n\n\"sha\" wasn't supplied.","documentation_url":"https://docs.github.com/rest/reference/repos#create-or-update-file-contents"}
+    at new StatusCodeError (C:\Program Files\PicGo\resources\app.asar\node_modules\request-promise-core\lib\errors.js:32:15)
+    at Request.plumbing.callback (C:\Program Files\PicGo\resources\app.asar\node_modules\request-promise-core\lib\plumbing.js:104:33)
+    at Request.RP$callback [as _callback] (C:\Program Files\PicGo\resources\app.asar\node_modules\request-promise-core\lib\plumbing.js:46:31)
+    at Request.self.callback (C:\Program Files\PicGo\resources\app.asar\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:200:13)
+    at Request.<anonymous> (C:\Program Files\PicGo\resources\app.asar\node_modules\request\request.js:1154:10)
+    at Request.emit (events.js:200:13)
+    at IncomingMessage.<anonymous> (C:\Program Files\PicGo\resources\app.asar\node_modules\request\request.js:1076:12)
+    at Object.onceWrapper (events.js:288:20)
+    at IncomingMessage.emit (events.js:205:15)
