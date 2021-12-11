@@ -579,16 +579,119 @@ $$
 ## EX24
 
 > What is the number of ways to place six nonattacking rooks on the 6-by-6 boards with forbidden positions as shown?
-> ![EX24](https://raw.githubusercontent.com/furtherun/imgs/main/img/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8ex24.png)
+> ![EX24](https://raw.githubusercontent.com/furtherun/imgs/main/img/C6EX24.png)
 
-StatusCodeError: 422 - {"message":"Invalid request.\n\n\"sha\" wasn't supplied.","documentation_url":"https://docs.github.com/rest/reference/repos#create-or-update-file-contents"}
-    at new StatusCodeError (C:\Program Files\PicGo\resources\app.asar\node_modules\request-promise-core\lib\errors.js:32:15)
-    at Request.plumbing.callback (C:\Program Files\PicGo\resources\app.asar\node_modules\request-promise-core\lib\plumbing.js:104:33)
-    at Request.RP$callback [as _callback] (C:\Program Files\PicGo\resources\app.asar\node_modules\request-promise-core\lib\plumbing.js:46:31)
-    at Request.self.callback (C:\Program Files\PicGo\resources\app.asar\node_modules\request\request.js:185:22)
-    at Request.emit (events.js:200:13)
-    at Request.<anonymous> (C:\Program Files\PicGo\resources\app.asar\node_modules\request\request.js:1154:10)
-    at Request.emit (events.js:200:13)
-    at IncomingMessage.<anonymous> (C:\Program Files\PicGo\resources\app.asar\node_modules\request\request.js:1076:12)
-    at Object.onceWrapper (events.js:288:20)
-    at IncomingMessage.emit (events.js:205:15)
+设$r_k$为在k个禁止位上摆放棋子的方法数，
+
+### EX24 Q(a)
+
+显然，$r_0 =1, r_1 = 6$，禁止位置的集合可以划分为3个独立的部分，每一部分最多只能放置一辆车。
+
+因此，$r_2 = \dbinom{3}{2} \times 2^2 = 12, r_3 = \dbinom{3}{3} 2^3 = 8$。
+
+禁止位置上无法摆放四辆及以上的车，因此，$r_i = 0, i \ge 4$。
+
+综上，可以列表，
+
+|  $k$  |   0   |   1   |   2   |   3   |   4   |   5   |   6   |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| $r_k$ |   1   |   6   |  12   |   8   |   0   |   0   |   0   |
+
+并且计算摆放的方法数。
+
+$$
+\sum_{k=0}^{n} r_k (-1)^k (n-k)! = 1 \times 6! - 6 \times 5! + 12 \times 4! - 8 \times 3! = 240
+$$
+
+### EX24 Q(b)
+
+$$
+r_2 = 3\times 2 + \binom{3}{2} \times 4^2 = 54 \\
+r_3 = \binom{3}{1} \times 2 \times \binom{2}{1} \times 4 + 4^3 = 112 \\
+r_4 = \binom{3}{2} \times 2^2 + \binom{3}{1} \times 2 \times 4^2 = 108 \\
+r_5 = \binom{3}{2} \times 2^2 \times 4 = 48 \\
+r+6 = 2^3 = 8
+$$
+
+|  $k$  |   0   |   1   |   2   |   3   |   4   |   5   |   6   |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| $r_k$ |   1   |  12   |  54   |  112  |  108  |  48   |   8   |
+
+$$
+\sum_{k=0}^{n} r_k (-1)^k (n-k)! = 1 \times 6! - 12 \times 5! + 54 \times 4! - 112 \times 3! + 108 \times 2! - 48 \times 1! + 8 \times 0!= 80
+$$
+
+### EX24 Q(c)
+
+$$
+r_2 = (3+2+1) +1 + 5 \times 3 = 22 \\
+r_3 = 6\times 3 + 5 \times 1 + 1 = 24 \\
+r_4 =  6 \tiems 1 + 1 \times 3  = 9 \\
+r_5 = 1 \times 1 =  1\\
+r+6 = 0
+$$
+
+|  $k$  |   0   |   1   |   2   |   3   |   4   |   5   |   6   |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| $r_k$ |   1   |   8   |  22   |  24   |   9   |   1   |   0   |
+
+$$
+\sum_{k=0}^{n} r_k (-1)^k (n-k)! = 1 \times 6! - 8 \times 5! + 22 \times 4! - 24 \times 3! + 9 \times 2! - 1 \times 1! + 0 \times 0!= 161
+$$
+
+## EX25
+
+> Count the permutations $i_1i_2i_3i_4i_5i_6$ of {1, 2, 3, 4, 5, 6}, where $i_1 \neq 1,5, i_3 \neq 2,3,5; i_4 \neq 4;$ and $i_6\neq 5,6$.
+
+该问题等价于棋盘问题，可以把不等式转化为每一行（列）限制的序号，本题画出图像后可以发现，有4个大小为1的禁止块，2个大小为2的禁止块。
+
+从行的角度来思考，最多放置4个车，因为只有4行有禁止位，所以$r_5 = r_6 = 0$。
+
+对于$r_2$的计算方法是：先固定一个，寻找另一个可能的位置，因此$r_2 = 6 + 4 + 3 + 3 + 2 + 2 = 20$。
+
+$$
+r_3 = (3 + 3 + 2 + 2) +(2 + 2 + 1) + (2) + (2) + (1)  = 20  \\
+r+4 = 2 + 2 + 2  + 1 = 7
+$$
+
+|  $k$  |   0   |   1   |   2   |   3   |   4   |   5   |   6   |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| $r_k$ |   1   |   8   |  20   |  20   |   7   |   0   |   0   |
+
+$$
+\sum_{k=0}^{n} r_k (-1)^k (n-k)! = 1 \times 6! - 8 \times 5! + 20 \times 4! - 20 \times 3! + 7 \times 2! - 0 \times 1! + 0 \times 0!= 134
+$$
+
+![EX25 & EX26](https://raw.githubusercontent.com/furtherun/imgs/main/img/C6EX25-26.png)
+
+## EX26
+
+> Count the permutations $i_1i_2i_3i_4i_5i_6$ of {1, 2, 3, 4,5, 6}, where $i_1 \neq 1,2,3; i_2 \neq 1; i_3 \neq 1; i_5 \neq 5,6$ and $i_6 \neq 5,6$.
+
+题目转化过程同EX25，不过这次计算类似EX24。将棋盘禁止位置划分为$F_1 , F_2$。
+
+对于每一部分，先计算摆放车可能的种类数，
+
+|   $k$    |   0   |   1   |   2   |   3   |
+| :------: | :---: | :---: | :---: | :---: |
+| $F_1(k)$ |   1   |   5   |   4   |   0   |
+
+|   $k$    |   0   |   1   |   2   |   3   |
+| :------: | :---: | :---: | :---: | :---: |
+| $F_2(k)$ |   1   |   4   |   2   |   0   |
+
+$$
+r_k = {\sum_{i=0}^{n} F_1(i)} \times F(k-i)
+$$
+
+|  $k$  |   0   |   1   |   2   |   3   |   4   |   5   |   6   |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| $r_k$ |   1   |   9   |  26   |  26   |   0   |   0   |   0   |
+
+$$
+\sum_{k=0}^{n} r_k (-1)^k (n-k)! = 1 \times 6! - 9 \times 5! + 26 \times 4! - 26 \times 3! = 108
+$$
+
+## EX27
+
+> A carousel has eight seats, each representing a different animal. Eight girls are seated on the carousel facing forward (each girl ooks at another girl's back). In how many ways can the girls change seats so that each has a different girl in front of her? How does the problem change if all the seats are identical?
