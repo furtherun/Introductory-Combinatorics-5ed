@@ -626,7 +626,7 @@ $$
 $$
 r_2 = (3+2+1) +1 + 5 \times 3 = 22 \\
 r_3 = 6\times 3 + 5 \times 1 + 1 = 24 \\
-r_4 =  6 \tiems 1 + 1 \times 3  = 9 \\
+r_4 =  6 \times 1 + 1 \times 3  = 9 \\
 r_5 = 1 \times 1 =  1\\
 r+6 = 0
 $$
@@ -695,3 +695,142 @@ $$
 ## EX27
 
 > A carousel has eight seats, each representing a different animal. Eight girls are seated on the carousel facing forward (each girl ooks at another girl's back). In how many ways can the girls change seats so that each has a different girl in front of her? How does the problem change if all the seats are identical?
+
+设8个位置的座位编号分别为$1,2, ..., 8$，并且i号座位面向i+1号座位（$1 \le i \le 7$），8号座位面向1号座位。
+
+第i个女孩分别坐在i号座位上，重排后坐到$s_i$号座位上，并且要求$s_i$不能面向$s_{i+1}$，（s_8不能面向$s_1$）。
+
+记$A_i$表示排列$s_1s_2 \cdots s_8$中$s_i$面向$s_{i+1}$（$1 \le i \le 7$），$A_8$表示表示排列$s_1s_2 \cdots s_8$中$s_8$面向$s_1$。
+
+对于$|A_1|$，有8种方式决定$s_1$，$s_2$只能在前面，有1种方式，其余可以随意排列。因此$|A_1| = 8 \times 1 \times 6!$。$|A_i|$同理。
+
+对于$|A_1 \cap A_2|$，有8种方式决定$s_1s_2s_3$；其余可以随意排列。因此$|A_1 \cap A_2| = 8 \times 5!$，其余$|A_i \cap A_j|$同理。
+
+$$
+\begin{aligned}
+    |\overline{A_1} \cap \overline{A_2} \cap \cdots \cap \overline{A_4}| = & |S| - \sum|A_i| + \sum |A_i A_j| - \cdots +  \sum|A_1 A_2 \cdots A_7 A_8| \\
+    =& 8! - \binom{8}{1} \times 8 \times 6! + \binom{8}{2} \times 8 \times 5! - \cdots + 8\\
+    =& 13000
+\end{aligned}
+$$
+
+当所有座位都相同时，第一个选择座位的女孩只有1种选法，破环之后，其余人选法不变，因此排列总数为$13000/8 = 1625$。
+
+### EX27注
+
+参考答案给的符号有些歧义，$A_i$和$A_s$表示的含义不一样，但符号相同，如$|A_1|$对前者（$|A_{i=1}|$）来说，是$s_1$面向$s_2$的情况；对于后者（$|A_{s=1}|$）来说则是所有1个交集的情况$\sum |A_i|$。
+
+## EX28
+
+> A carousel has eight seats, each representing a different animal. Eight boys are seated on the carousel but facing inward, so that each boy faces another (each boy looks at another boy's front). In how many ways can the boys change seats so that each faces a different boy? How does the problem change if all the seats are dentical?
+
+第i个男孩坐在i号座位上，重排后坐到$s_i$号座位上。设$A_i$表示$s_i$与$s_{i+4}$面对面（$1\le i \le 4$），因此需要求所有i与i+4没有面对面的情况，即$|\overline{A_1} \cap \overline{A_2} \cap \overline{A_3} \cap \overline{A_4}|$。
+
+对于$|A_1|$，有8种方式决定$s_1$，$s_5$只能在对面，有1种方式，其余可以随意排列。因此$|A_1| = 8 \times 1 \times 6!$。$|A_2|, |A_3| , |A_4|$同理。
+
+对于$|A_1 \cap A_2|$，有8种方式决定$s_1$，$s_5$随之确定；有6种方式确定$s_2$，$s_6$也随之确定，其余可以随意排列。因此$|A_1 \cap A_2| = 8\times 6 \times 4!$，其余$|A_i \cap A_j|$同理。
+
+$$
+\begin{aligned}
+    |\overline{A_1} \cap \overline{A_2} \cap \overline{A_3} \cap \overline{A_4}| = & |S| - \sum|A_i| + \sum |A_i A_j| - \sum|A_i A_j A_k| + \sum|A_i A_j A_k A_u| \\
+    =& 8! - \binom{4}{1} \times (8 \times 6!) + \binom{4}{2} \times (8 \times 6 \times 4!) - \binom{4}{3} \times (8 \times 6 \times 4 \times 2!) + \binom{4}{4} \times (8 \times 6 \times 4 \times 2) \\
+    =& 23040
+\end{aligned}
+$$
+
+当所有座位都相同时，则变成了换排列，因此排列总数为$23040/8 = 2880$。
+
+## EX29
+
+> A subway has six stops on its route from its base location. There are 10 people on the subway as it departs its base location. Each person exits the subway at one of its six stops, and at each stop at least one person exits. In how many ways can this happen?
+
+如果没有任何限制，10个人一共有$6^{10}$种下车方案。设$A_i$表示没人在i车站下车，所以有$|A_i| = 5^10$；对于$|A_i \cap A_j| = 4^{10}$。同理，可以计算多个子集车站没人下车的情况。
+
+$$
+\begin{aligned}
+    |\overline{A_1} \cap \overline{A_2} \cap \cdots \cap \overline{A_6}| = & |S| - \sum|A_i| + \sum |A_i A_j| - \cdots + \sum|A_1 A_2 \cdots A_6| \\
+    =& 6^{10} + (-1)^k \binom{6}{k} (6-k)^10 \\
+    =& 6^{10} - 6 \times 5^{10} + 15 \times 4^{10} - 20 \times 3^{10} + 15 \times 2^{10} - 6 \times 1^{10} + 1 \times 0^{10} \\
+    =& 1165626
+\end{aligned}
+$$
+
+## EX30
+
+> How many circular permutations are there of the multiset
+> $$
+> {3 \cdot a,4\cdot b, 2 \cdot c, 1 \cdot d},
+> $$
+> where, for each type of letter, all letters of that type do not appear consecutively?
+
+设$A_i, i = 1, 2, 3$分别表示出现了*aaa*、*bbbb*和*cc*，$A_1$可以当作${aaa, b, b, b, b, c, c, d}$的**循环排列**，即$\frac{1}{8} \times \binom{8}{1 \; 4\; 2} = 105$。
+
+|           set           | size  |
+| :---------------------: | :---: |
+|          $A_1$          |  105  |
+|          $A_2$          |  60   |
+|          $A_3$          |  280  |
+|     $A_1 \cap A_2$      |  12   |
+|     $A_1 \cap A_3$      |  30   |
+|     $A_2 \cap A_3$      |  20   |
+| $A_1 \cap A_2 \cap A_3$ |   3   |
+
+$$
+\begin{aligned}
+    |\overline{A_1} \cap \overline{A_2} \cap \overline{A_3}| =& |S| - \sum |A_i| + \sum |A_iA_j| - \sum|A_iA_jA_k| \\
+    =& \frac{1}{10} \times \frac{10!}{3! \cdot 4! \cdot 2! \cdot 1!} - (105+60+280) +(12+30+20) - 3 \\
+    =& 1260 - (105+60+280) +(12+30+20) - 3 \\
+    =& 874
+\end{aligned}
+$$
+
+### EX30顺便一提
+
+参考答案认为一个d本身就是所有的d连续出现。
+
+*Since d appears in the multiset with multiplicity one, it is vacuously true that for any circular permutation of the multiset, all occurrences of d will appear consecutively.*
+
+当然，最后解题时还是认为连续最起码要有一前一后的两项才算连续，所谓「连续」，参考EX17，甚至本题数据和结果都与这题一致。
+
+## EX31
+
+> How many circular permutations are there of the multiset
+> $$
+> {2 \cdot a,3 \cdot b, 4 \cdot c, 5 \cdot d},
+> $$
+> where, for each type of letter, all letters of that type do not appear consecutively?
+
+设$A_i, i = 1, 2, 3, 4$分别表示出现了*aa*、*bbb*、*ccccc*和*ddddd*，$A_1$可以当作${aa, b, b, b, c, c, c, c, d,d,d,d,d}$的**循环排列**，即$\frac{1}{13} \times \binom{13}{1 \; 3\; 4 \; 5} = 27720$。
+
+|               set                | size  |
+| :------------------------------: | :---: |
+|              $A_1$               | 27720 |
+|              $A_2$               | 6930  |
+|              $A_3$               | 2520  |
+|              $A_4$               | 1260  |
+|          $A_1 \cap A_2$          | 1260  |
+|          $A_1 \cap A_3$          |  504  |
+|          $A_1 \cap A_4$          |  280  |
+|          $A_2 \cap A_3$          |  168  |
+|          $A_2 \cap A_4$          |  105  |
+|          $A_3 \cap A_4$          |  60   |
+|     $A_1 \cap A_2 \cap A_3$      |  42   |
+|     $A_1 \cap A_2 \cap A_4$      |  30   |
+|     $A_1 \cap A_3 \cap A_4$      |  20   |
+|     $ A_2 \cap A_3 \cap A_4$     |  12   |
+| $A_1 \cap A_2 \cap A_3 \cap A_4$ |   6   |
+
+$$
+\begin{aligned}
+    |\overline{A_1} \cap \overline{A_2} \cap \overline{A_3} \cap \overline{A_4}| =& |S| - \sum |A_i| + \sum |A_iA_j| - \sum|A_iA_jA_k| + \sum|A_i A_j A_k A_u| \\
+    =& \frac{1}{14} \times \frac{14!}{2! \cdot 3! \cdot 4! \cdot 5!} - (27720+6930+2520+1260) + (1260+504+280+168+105+60) - (42+30+20+12) + 6\\
+    =& 180180 - (27720+6930+2520+1260) + (1260+504+280+168+105+60) - (42+30+20+12) + 6 \\
+    =& 144029
+\end{aligned}
+$$
+
+## EX32-40说明
+
+后面的题目似乎都是6.5小结莫比乌斯反演的练习题，~~因为不考，所以不写也不列给题目~~。
+
+其中EX33是加星题目（\*）；EX36是带有禁止位置的放车问题，虽然指明了用6.5中的解题方法。但用EX24中的方法也能很快做出答案（6种）。
