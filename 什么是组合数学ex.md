@@ -61,9 +61,9 @@ $$
 
 > (a) Let f(n) count the number of different perfect covers of a 2-by-n chessboard  by dominoes. Evaluate f(1), f(2), f(3), f(4), and f(5). Try to find (and verify)  a simple relation that the counting function f satisfies. Use this relation to  compute f(12).  
 >
-> (b) * Let g(n) be the number of different perfect covers of a 3-by-n chessboard  by dominoes. Evaluate g(1), g(2), ... , g(6).
+> (b) \* Let g(n) be the number of different perfect covers of a 3-by-n chessboard  by dominoes. Evaluate g(1), g(2), ... , g(6).
 
-### Q(a)
+### EX4Q(a)
 
 画图归纳，可以发现f(n)符合斐波那契数列。
 $$
@@ -74,7 +74,7 @@ $$
 
 参考下面提供的其他解法，也可以考虑最后一列是如何填充的，显然$f(n)$只有唯一方案转化成$f(n-1)$和$f(n-2)$。
 
-### Q(b)
+### EX4Q(b)
 
 ![image-20211012092139675](https://i.loli.net/2021/10/12/bVqgLd1ZM7fHrBQ.png)
 
@@ -135,21 +135,21 @@ $$
 
 综上，一共有9+2=11种排版情况。
 
-### PS
+### EX5考后谈
 
-21年考试题目
+21年考试题目，我当然是要秀一把上面的EX4Q(b)，不然白学了。
 
 ## EX6
 
 > Consider the following three-dimensional version of the chessboard problem: A  three-dimensional domino is defined to be the geometric figure that results when  two cubes, one unit on an edge, are joined along a face. Show that it is possible  to construct a cube n units on an edge from dominoes if and only if n is even. If  n is odd, is it possible to construct a cube n units on an edge with a 1-by-1 hole  in the middle? (Hint: Think of a cube n units on an edge as being composed of  $n^3$ cubes, one unit on an edge. Color the cubes alternately black and white.)
 
-### Q1
+### EX6Q1
 
 充分性：当n为偶数时，立方体每一层都是n-by-n的棋盘，可以满足二维完美覆盖，相互叠加可以满足三维完美覆盖。
 
 必要性：立方体的一共有$n^3$个块，而一块多米诺骨牌有2块，实现完美覆盖时，应当满足2是$n^3$的因子，故n必须是偶数。
 
-### Q2
+### EX6Q2
 
 当n为奇数时，不妨设n=2k+1，设立方体的棱角块$\alpha$为白色。此时最顶层中间块$\beta$与棱角块$\alpha$的距离是2k（联想EX3），故一定为白色块。
 
@@ -178,7 +178,7 @@ $$
 
 必要性：当棋盘存在完美覆盖时，一定有a既是m又是n的因子且b是m或者是n的因子。不妨假设b是m的因子，将棋盘分为m/b个$b\times n$的棋盘，而a是n的因子，所以可以将所有棋盘划分为$b \times a$的棋盘。此时可以判断存在平凡的完美覆盖。
 
-### PS
+### EX8PS
 
 当存在完美覆盖时，很容易画出平凡的完美覆盖。
 
@@ -188,7 +188,7 @@ $$
 
 举反例证明，取m=5, n=6, a=2, b=3，如图所示（两横三竖），该棋盘**只有不平凡的完美覆盖**。
 
-<img src="https://i.loli.net/2021/10/12/x3vVsAmol61Ngri.png" alt="c1ex9" style="zoom:50%;" />
+![EX9](https://i.loli.net/2021/10/12/x3vVsAmol61Ngri.png)
 
 ## EX10
 
@@ -200,7 +200,7 @@ $$
 
 > Use de la Loubere's method to construct a magic square of order 7
 
-<img src="https://i.loli.net/2021/10/12/xHQc4WioVS93M5Y.png" alt="c1ex11" style="zoom:67%;" />
+![EX11](https://i.loli.net/2021/10/12/xHQc4WioVS93M5Y.png)
 
 ```cpp
 /* 
@@ -402,9 +402,9 @@ $$
 
 根据引理2，四阶幻方中的某个顶点的值为x，那三个相邻的顶点值都应该为K/2-x，而幻方体中不存在重复的值，与假设矛盾。
 
-### PS
+### EX19PS
 
-*此题不考。*
+*此题不考。*，着实可惜。
 
 ## EX20
 
@@ -422,11 +422,11 @@ $$
 >
 > (b) * Construct a magic hexagon of order 3; that is, arrange the integers  1,2, ... ,19 in a hexagonal array (three integers on a side) in such a way that all  of the fifteen "line" sums are the same (namely, 38).
 
-### Q(a)
+### EX21Q(a)
 
 采用反证法，假设存在2阶幻六边形，那么应该满足a+b=s且a+f=s，即b=f。显然，这与幻六边形中的数唯一矛盾，假设不成立。（与证明2阶幻方不在在方法相同）。
 
-### 其他解法
+### 另一种思路
 
 还可以通过[幻六边形](https://en.wikipedia.org/wiki/Magic_hexagon)的“线”进行证明。如果存在2阶幻六边形。那么有，
 $$
@@ -441,7 +441,7 @@ $$
 
 ![image-20211012105305492](https://i.loli.net/2021/10/12/X5meHR3ZrIgJd2U.png)
 
-### Q(b)
+### EX21Q(b)
 
 参考[Magic Hexagon of order 3](https://www.metalevel.at/magon/)，*This task looks very simple, yet is almost impossibly hard to solve manually.*此问题不太可能手工计算出结果，需要计算机辅助。
 
@@ -471,11 +471,15 @@ L2=
 $$
 尽管视频[Orthogonal latin squares](https://www.youtube.com/watch?v=q4Wz84fj95g)中有很多错误，但似乎介绍了正交拉丁方的计算方式。考虑到书中并没有详细讨论求解正交拉丁方的原理，这里就不再展开。
 
-### PS
+### EX22PS
 
 拉丁方问题在10.4节中有详细讨论。~~因为不考，所以我就不看了。~~
 
 同时，还要感谢b站网友的帮助。
+
+### EX22考后谈
+
+似乎并不允许采用「简单的」说明，需要更**复杂**求解。
 
 **21年考试题目。**
 
@@ -621,7 +625,7 @@ A--2-->D
 
 最大不平衡位是j位，j位需要变为0；后面的位，如果已经平衡则不变，不平衡则反转该位。通过此方法，玩家1一定能把游戏变为平衡。
 
-### PS
+### EX32PS
 
 这是一种Nim游戏求平衡的通用方法。
 
@@ -688,7 +692,7 @@ h_n = (2n-1)h_{n-1}
 $$
 其中n是形成的n对组合。当2n-2人已经形成好$h_{n-1}$种配对方式后，再来2个人，其中一人可以从已经选好的n-1组中拆出一组或者和刚加入的另一人组成新组，共有2n-1种方式。
 
-### PS
+### EX36PS
 
 学习过第二章后，可以考虑把问题转化为「把n个球放入k个无标签的盒子」，因此可以计算，
 $$
@@ -720,6 +724,10 @@ $$
 参考[链接](https://math.stackexchange.com/questions/1571254/given-2n-points-in-the-plane-prove-we-can-connect-them-with-n-nonintersecti)的回答，可以从平面中依次分离出两个点，将2n个点划分为n个空间，并且在每一部分中连线，这样线段不会相交。
 
 这样划分是可以实现的，给每个点坐标$(x_i, y_i)$，可以按照y的大小进行划分，最多存在两个相同的y，否则将会三点共线。
+
+### EX38 考后谈
+
+不知道是不是我对题目的理解有问题，这样的回答似乎并不能让老师满意。
 
 ## EX39
 

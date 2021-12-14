@@ -41,7 +41,9 @@ int main()
 
 设$A_i, i=1,2,3$分别为1到10，000之间能被4、5和6整除的个数。
 
-计算集合大小时采用**向下取整**，例如$\lfloor \dfrac{10000}{6} = 1666 \rfloor$，表明还取不到下一个6的倍数。
+计算集合大小时采用**向下取整**，例如$\lfloor \dfrac{10000}{6}  \rfloor = 1666$，表明还取不到下一个6的倍数。
+
+$A_1 \cap A_3$表示既是4的倍数，也是6的倍数，4和6的最小公倍数是12，即能被12整除的数。
 
 |           set           | size  |
 | :---------------------: | :---: |
@@ -100,7 +102,7 @@ int main()
 
 > Find the number of integers between 1 and 10,000 that are neither perfect squares nor perfect cubes.
 
-既是完全平方数也是完全立方数的数一定能拆分成6个相同数的乘积。
+**既是完全平方数也是完全立方数的数一定能拆分成6个相同数的乘积。**
 
 计算满足$x^2 \le 10000, \quad y^3 \le 10000, \quad z^6 \le 10000$的最大整数解，得$x=100, y = 21, z = 4$。
 
@@ -125,7 +127,7 @@ $$
 > S = \{4 \cdot a, 3 \cdot b, 4 \cdot c, 5 \cdot d\}
 > $$
 
-多重集合的组合与方程的非负整数解个数等价，因此，满足
+多重集合的组合与方程的非负整数解个数等价，因此满足
 
 $$
 0 \le x_1 \le 4, 0 \le x_2 \le 3, 0 \le x_3 \le 4, 0 \le x_4 \le 5
@@ -259,9 +261,9 @@ $$
 
 ## EX8
 
-> Determine the number of solutions of the equation $x_1 + x_2 + x_3 + x_4 + X_5 = 14$ in nonnegative integers $x_1, x_2, x_3, x_4$, and $x_5$ not exceeding 5.
+> Determine the number of solutions of the equation $x_1 + x_2 + x_3 + x_4 + x_5 = 14$ in positive integers $x_1, x_2, x_3, x_4$, and $x_5$ not exceeding 5.
 
-类似上一题，不过本题强调**非负**（**nonegative**）整数，取值范围因此是$1 \le x_i \le 5$，先平移变成$0 \le y_i \le 4$，求解方程$\sum y_i = 9$。
+类似上一题，不过本题强调**正**（**positive**）整数，取值范围因此是$1 \le x_i \le 5$，先平移变成$0 \le y_i \le 4$，求解方程$\sum y_i = 9$。
 $$
 \begin{aligned}
     |\overline{A_1} \cap \overline{A_2} \cap \overline{A_3} \cap \overline{A_4}  \cap \overline{A_5}| =& \binom{13}{4} - 5\binom{8}{4} + \binom{5}{2} \binom{3}{4}\\
@@ -292,6 +294,10 @@ $$
 假设存在一组解，因此有$r \le \displaystyle \sum_{i=0}^k n_i$，记$A_i$为满足$x_i \gt n_i$的集合。
 
 当$A_1 \cap A_2 \cap ... \cap A_k \neq \emptyset$，即存在$r = \displaystyle \sum_{i=0}^{k} x_i \gt \displaystyle \sum_{i=0}^{k} n_i  \ge r$，产生矛盾，所以$A_1 \cap A_2 \cap ... \cap A_k = \emptyset$。
+
+### EX10吐槽
+
+本题的奇怪之处就在于题目没告诉这些$A_1$、$A_2$等究竟是什么。
 
 ## EX11
 
@@ -346,10 +352,14 @@ $$
 $$
 \begin{aligned}
     |A_1 \cup A_3 \cup A_5 \cup A_7 \cup A_9| =& S-|\overline{A_1} \cap \overline{A_3} \cap \overline{A_5} \cap \overline{A_7} \cap \overline{A_9} |\\
-    =& 9! - 5\times 8! - \binom{5}{2} \times 7! + \binom{5}{3} \times 6! - 5 \times 5! + 4! \\
+    =& 5\times 8! - \binom{5}{2} \times 7! + \binom{5}{3} \times 6! - 5 \times 5! + 4! \\
     =& 157824
 \end{aligned}
 $$
+
+### EX13注
+
+本题考查定理6.1.2（正文p102）「至少具有性质」的计数。大多数题目还是考察定理6.1.1「不具有性质」的容斥原理。
 
 ## EX14
 
@@ -374,11 +384,11 @@ $$
 
 ### EX15Q(b)
 
-全排序减去错位排序，即至少有一个在自然位置。$7! - D_7 = 3186$。
+全排序减去错位排序（没有人在自然位置），即至少有一个在自然位置。$7! - D_7 = 3186$。
 
 ### EX15Q(c)
 
-从上一问的结果中减去恰有一人在自然位置的情况，$3186 - 7 D_6 = 3186-7\times 265 = 1331$。
+从上一问的结果（至少有一人在自然位置）中减去恰有一人在自然位置的情况，即至少有两人在自然位置，$3186 - 7 D_6 = 3186-7\times 265 = 1331$。
 
 ## EX16
 
@@ -391,6 +401,10 @@ $$
 记$S$为$\{1,2, \cdots , n\}$的全排列集合，$S_i$表示恰有i个元素在自然位置的排序，显然$\{S_i\}$划分了$S$，因此$|S| = \sum_{i=0}^{n}|S_i|$。
 
 全排列$|S| = n!$，恰有i个自然位置的错位排序（参考EX14），有$\binom{n}{i}D_{n-i}$个，因此等式成立。
+
+### EX16评注
+
+本题定义了$D_0=1$，而本身的错位排序$D_1=0$。
 
 ## EX17
 
@@ -469,7 +483,7 @@ $$
     D_n =& n!  \sum_{i=0}^{n} \frac{(-1)^i}{i!} \\
     =&  n! \sum_{i=0}^{n-2} \frac{(-1)^i}{i!} + n! (\frac{(-1)^{n-1}}{(n-1)!} + \frac{(-1)^n}{n!}) \\
     =&  n! \sum_{i=0}^{n-2} \frac{(-1)^i}{i!} + (-1)^{n-1}n + (-1)^n \\
-    =& (n-1) ((D_{n-1} + D_{n-2}))
+    =& (n-1) (D_{n-1} + D_{n-2})
 \end{aligned}
 $$
 
@@ -479,7 +493,8 @@ $$
 
 > Starting from the formula Dn = nDn- 1 + (_l)n, (n = 2,3,4, ... ), give a proof of Theorem 6.3.1.
 
-使用数学归纳法证明，当$n \ge 1 $时，总有
+使用数学归纳法证明，当$n \ge 1$时，总有
+
 $$
 D_{n} =  n! \sum_{i=0}^{n} \frac{(-1)^i}{i!}
 $$
@@ -490,7 +505,7 @@ $$
 
 $$
 \begin{aligned}
-    D_{n+1} = & (n+1) D_{n} + (-1)^(n+1) \\
+    D_{n+1} = & (n+1) D_{n} + (-1)^{n+1} \\
     =& (n+1) \times n! \sum_{i=0}^{n} \frac{(-1)^i}{i!} + (-1)^{n+1} \\
     =& (n+1)! \sum_{i=0}^{n} \frac{(-1)^i}{i!} + (n+1)! \times \frac{(-1)^{n+1}}{(n+1)!} \\
     =& (n+1)! \sum_{i=0}^{n+1} \frac{(-1)^i}{i!}
@@ -526,7 +541,7 @@ $$
 
 ## EX22
 
-> Show that the numbers $$Q_n$$ of Section 6.5 can be rewritten in the form
+> Show that the numbers $Q_n$ of Section 6.5 can be rewritten in the form
 > $$
 > Q_n = (n-1)! (n- \frac{n-1}{1!} + \frac{n-2}{2}  - \frac{n-3}{3!} + \cdots + \frac{(-1)^{n-1}}{(n-1)!})
 > $$
@@ -663,6 +678,10 @@ $$
 $$
 
 ![EX25 & EX26](https://raw.githubusercontent.com/furtherun/imgs/main/img/C6EX25-26.png)
+
+### EX25注
+
+本题与其他禁止位放车问题的区别是：本题不太容易拆分成几个独立的部分。
 
 ## EX26
 

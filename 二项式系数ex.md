@@ -179,6 +179,14 @@ $$
 k\binom{n}k = n \binom{n-1}{k-1}
 $$
 
+### EX10注
+
+为了方便考试记忆，组合推理的题目建议还是使用「具体」案例进行推导，对于本题采用如下方式进行描述：
+
+方法一：从n位同学中先选出k位班委，再从k位班委中选出1位班长；
+
+方法二：先从n位同学中选出1位班长，再从剩余n-1位同学中选出剩余k-1位班委。
+
 ## EX11
 
 > Use *combinatorial* reasoning to prove the identity (in the form given)
@@ -199,6 +207,10 @@ $$
 
 1. 所有的k子集数减去不包含1，2，3的k子集数；
 2. 包含1，包含2但不包含1，包含3但不包含1，2三种k子集数之和。
+
+我们给出直观的图来判断集合之间的关系：
+
+![EX11](https://raw.githubusercontent.com/furtherun/imgs/main/img/C5EX25.png)
 
 两种解法等价，因此有，
 
@@ -249,11 +261,13 @@ $$
 > \binom{n}{k} + 3\binom{n}{k-1} + 3 \binom{n}{k-2} + \binom{n}{k-3}
 > $$
 
+连续使用帕斯卡公式进行合并。
+
 $$
 \begin{aligned}
 \text{原式}=&(\binom{n}{k} + \binom{n}{k-1}) + 2  (\binom{n}{k-1} +  \binom{n}{k-2}) +  (\binom{n}{k-2}+ \binom{n}{k-3}) \\  =& \binom{n+1}{k} + 2\binom{n+1}{k-1} +  \binom{n+1}{k-2} \\
 =&\binom{n+2}{k} + \binom{n+2}{k-1} \\
-=& \binom{m+3}{k}
+=& \binom{n+3}{k}
 \end{aligned}
 $$
 
@@ -273,7 +287,7 @@ $$
 \binom{r}{k} = \begin{cases} \dfrac{r(r-1) \cdots (r-k+1)}{k!}  & k \ge 1 \\ 1 & k=0 \\ 0 & k \le -1 \end{cases}
 $$
 
-因此，当$k=0$或$ k \le -1$时，等式显然成立，当$k \ge 1$时，
+因此，当$k=0$或$k \le -1$时，等式显然成立，当$k \ge 1$时，
 
 $$
 \frac{r}{r-k} \binom{r-1}{k} = \frac{r}{r-k} \times \frac{(r-1)(r-2) \cdots (r-k)}{k!} = \frac{r(r-1) \cdots (r-k+1)}{k!} = \binom{r}{k}
@@ -342,7 +356,7 @@ $$
 因此，提出公共部分，由式(5.3)可得，
 
 $$
-\sum_{k=0}^n\frac{1}{k+1}\binom{n}{k} = \frac{1}{n+1} \sum_{k=0}^n \binom{n+1}{k+1} = \frac{2^n-1}{n+1}
+\sum_{k=0}^n\frac{1}{k+1}\binom{n}{k} = \frac{1}{n+1} \sum_{k=0}^n \binom{n+1}{k+1} = \frac{2^{n+1}-1}{n+1}
 $$
 
 ## EX18
@@ -379,6 +393,10 @@ $$
 $$
 \begin{aligned}\sum_{k=1}^n k^2 =& \sum_{k=1}^n (2\binom{k}{2} + \binom{k}{1}) \\=& 2\sum_{k=0}^n \binom{k}{2} + \sum_{k=0}^n \binom{k}{1} \\=& 2\binom{n+1}{3} + \binom{n+1}{2} \\=& \frac{n(n+1)(2n+1)}{6}\end{aligned}
 $$
+
+### EX19注
+
+使用到帕斯卡的迭代形式，具体参考正文p85，公式(5.19)。
 
 ## EX20
 
@@ -432,11 +450,10 @@ $$
 > \binom{r}{m} \binom{m}{k} = \binom{r}{k} \binom{r-k}{m-k}
 > $$
 
-当$m \lt 0$或者$k \lt 0$时，二项式为0，当$ 0 \le k \le m$时，
+当$m \lt 0$或者$k \lt 0$时，二项式为0，当$0 \le k \le m$时，
 
 $$
 \begin{aligned}\binom{r}{m} \binom{m}{k} =& \frac{r(r-1) \cdots (r-m+1)}{m!} \times \frac{m!}{k!(m-k)!}  \\=& \frac{r(r-1) \cdots (r-k+1)}{k!} \frac{(r-k)(r-k-1) \cdots (r-m+1)}{(m-k)!} \\ =& \binom{r}{k} \binom{r-k}{m-k}\end{aligned}
-
 $$
 
 ## EX23
@@ -451,21 +468,21 @@ $$
 >
 > (d) Stopping at a park to rest and play, the two students often get to school  late. To avoid the temptation of the park, our two students decide never  to pass the intersection where the park is. Now how many different walks  are there?
 
-### Q(a)
+### EX25 Q(a)
 
 移动24次，一共往东10次，$\dbinom{24}{10} = 1961256$。
 
-### Q(b)
+### EX25 Q(b)
 
 拆成两部分，先到朋友家，再到学校，$\dbinom{9}{4} \dbinom{24-9}{10-4} = 630630$。
 
-### Q(c)
+### EX25 Q(c)
 
 拆成三部分，$\dbinom{9}{4}\dbinom{9}{3}\dbinom{6}{3} = 211680$。
 
-### Q(d)
+### EX25 Q(d)
 
-总路径数，减去经过公园的路径数，$\dbinom{9}{4} \dbinom{15}{6} - \dbinom{9}{4}\dbinom{9}{3}\dbinom{6}{3} = 630630- 211680 =418950 $。
+总路径数，减去经过公园的路径数，$\dbinom{9}{4} \dbinom{15}{6} - \dbinom{9}{4}\dbinom{9}{3}\dbinom{6}{3} = 630630- 211680 =418950$。
 
 ### PS
 
@@ -489,10 +506,10 @@ $$
 >
 > Deduce the identity (5.16) as a special case.
 
-考虑从$m_1$名男同学，$m_2$位女同学中选出n位同学的问题，由两种解法。
+考虑从$m_1$名男同学，$m_2$位女同学中选出n位班委的问题，由两种解法。
 
-1. 先考虑从男同学中选出k名同学，再从女同学中选出剩余n-k名同学，而对于每一个k的选法，符合加法法则；
-2. 不考虑性别，直接考虑从$m_1 + m_2$名同学选出n名同学。
+1. 先考虑从男同学中选出k名同学担任班委，则还需要从女同学中选出剩余n-k名班委，而对于每一个k的选法，符合加法法则；
+2. 不考虑性别，直接考虑从$m_1 + m_2$名同学选出n名同学担任班委。
 
 显然，方法1和方法2是等价的，因此得证。
 
@@ -524,9 +541,11 @@ $$
 
 结合帕斯卡公式，这是很容易验证的。
 
-### PS
+### EX26注
 
-本题凑二项式系数的范德蒙德卷积公式时，补充的两项都是$\dbinom{r}{k}$的扩展定义，由定义这两项都是0。
+本题凑二项式系数的范德蒙德卷积公式时，补充的两项都是$\dbinom{r}{k}$的扩展定义，当$k \le -1$或者$k \gt n$时，由定义这两项都是0。
+
+再者，就是范德蒙德卷积公式的k并非只能从0取到n，补充定义也是可以的。
 
 ## EX27
 
@@ -536,11 +555,11 @@ $$
 > n(n+1) 2^{n-2} = \sum_{k=1}^n k^2 \binom{n}{k}
 > $$
 
-模仿某个生动的例子，从n名同学中，先预选k名候选人，再在k名候选人中选出班长与学习委员（可以为同一人）。
+还是使用学生的例子从n名同学中，先预选k名班委，再在k名班委中选出班长与学习委员（可以为同一人）。
 
-由上面的例子，可以确定，选出k名候选人有$\dbinom{n}{k}$种方案；从候选人中选出班长和学习委员各有k种方案；由乘法法则，一共有$k^2 \dbinom{n}{k}$种方案。对于k可能的取值为1，2，…，n，每一个k之间符合加法法则，因此共有$\displaystyle \sum_{k=1}^n k^2 \binom{n}{k}$种方案。
+由上面的例子，可以确定选出k名班委有$\dbinom{n}{k}$种方案；从班委中选出班长和学习委员各有k种方案；由乘法法则，一共有$k^2 \dbinom{n}{k}$种方案。对于k可能的取值为1，2，…，n，每一个k之间符合加法法则，因此共有$\displaystyle \sum_{k=1}^n k^2 \binom{n}{k}$种方案。
 
-下面进行逆向思考，先委任班长与学习委员。如果班长与学习委员为同一人，其余人要么是候选人，要么不是候选人，一共有$n  2^{n-1}$种方案；如果班长与学习委员不是同一人，其余人要么是候选人，要么不是候选人，则有$n(n-1)2^{n-2}$种方案。合计共$n(n+1)2^{n-2}$种方案。
+下面进行逆向思考，先委任班长与学习委员。如果班长与学习委员为同一人，其余人要么是班委，要么不是班委，一共有$n  2^{n-1}$种方案；如果班长与学习委员不是同一人，则有$n(n-1)2^{n-2}$种方案。合计共$n(n+1)2^{n-2}$种方案。
 
 两种解法求解的是同一问题，因此结果等价，题目得证。
 
@@ -552,11 +571,11 @@ $$
 > \sum_{k=1}^n k \binom{n}{k}^2 = n \binom{2n-1}{n-1}
 > $$
 
-从n名男同学和n名女同学中选出n名班干部，其中有一位女同学担任班长。
+从n名男同学和n名女同学中选出n名班委，其中必须有一位女同学担任班长。
 
-从女同学中选出k名班干部，再从男同学中选出n-k名班干部，k名女同学中选出一人为班长，有$k \dbinom{n}{k} \dbinom{n}{n-k}$种方法，对于每一个k，符合加法法则，共有$\displaystyle \sum_{k=1}^n k \binom{n}{k}^2$种方法。
+从女同学中选出k名班委，再从男同学中选出n-k名班委，k名女同学中选出一人为班长，有$k \dbinom{n}{k} \dbinom{n}{n-k}$种方法，对于每一个k，符合加法法则，共有$\displaystyle \sum_{k=1}^n k \binom{n}{k}^2$种方法。
 
-或者，先从n名女同学中选出班长，再从剩余2n-1名同学中选择n-1名班干部，即$n \dbinom{2n-1}{n-1}$种选法，两种解法等价，题目得证。
+或者，先从n名女同学中选出班长，再从剩余2n-1名同学中选择n-1名班委，即$n \dbinom{2n-1}{n-1}$种选法，两种解法等价，题目得证。
 
 ## EX29
 
@@ -578,7 +597,7 @@ $$
 \sum_{\substack{r,s, t \ge 0 \\  r+s+t = n}} \binom{m_1}{r} \binom{m_2}{s} \binom{m_3}{t} = \binom{m_1+m_2+m_3}{n}
 $$
 
-### PS
+### EX29注
 
 有些类似EX12的思路。
 
@@ -597,28 +616,34 @@ $$
 设$\alpha_k$是反链$\mathcal{A}$中大小为k的子集个数，因此有，
 
 $$
-|\mathcal{A}| = \sum_{k=0}^{n} \alpha_k
+|\mathcal{A}| = \sum_{k=0}^{n} \alpha_k = \binom{n}{\lfloor n/2 \rfloor}
 $$
 
-由二项式系数的单峰性，可知，$\dbinom{n}{\lfloor n/2 \rfloor} \ge \dbinom{n}{k}$，所以，
+也即
 
 $$
-|\mathcal{A}| = \sum_{k=0}^{n} \alpha_k \ge \sum_{k=0}^{n} \alpha_k  \frac{ \dbinom{n}{\lfloor n/2 \rfloor}}{{\dbinom{n}{k}}} \ge 0
+\sum_{k=0}^{n} \frac{\alpha_k}{\dbinom{n}{\lfloor n/2 \rfloor}} = 1
 $$
 
-进而，移项可得，
+由二项式系数的单峰性，可知，$\dbinom{n}{\lfloor n/2 \rfloor} \ge \dbinom{n}{k}$，结合定理5.3.3知，
 
 $$
-\sum_{k=0}^{n} \alpha_k  \frac{ \dbinom{n}{\lfloor n/2 \rfloor}}{{\dbinom{n}{k}}} - \sum_{k=0}^{n} \alpha_k  =  \sum_{k=0}^{n} \alpha_k  \frac{ \dbinom{n}{\lfloor n/2 \rfloor}-\dbinom{n}{k}}{{\dbinom{n}{k}}} \le 0
+\sum_{k=0}^{n} \frac{\alpha_k}{\dbinom{n}{k}} \le 1
+$$
+
+做差整理可得，
+
+$$
+\sum_{k=0}^{n} \alpha_k  \frac{\dbinom{n}{\lfloor n/2 \rfloor} -\dbinom{n}{k}}{\dbinom{n}{\lfloor n/2 \rfloor} \dbinom{n}{k}} \le 0
 $$
 
 但是，$\alpha_k$和$\dbinom{n}{\lfloor n/2 \rfloor}-\dbinom{n}{k}$均为非负数，因此上式恒为0。
-即要么$\alpha_k$为0，要么$\alpha$的系数为0，显然，除$k = \lfloor n/2 \rfloor$和$k = \lceil n/2 \rceil$外，$\alpha_k = 0$。
+要么$\alpha_k$为0，要么$\alpha_k$的系数为0，显然，除$k = \lfloor n/2 \rfloor$和$k = \lceil n/2 \rceil$外，一定有$\alpha_k = 0$。
 
 并且当n=4时，$k = \lceil n/2 \rceil = \lfloor n/2 \rfloor  = 2$，所以最大反链唯一，最大反链长为$\dbinom{4}{2} = 6$。
 并且只有2子集的反链数$\alpha_2 \gt 0$，因此S大小为6的反链就是S的所有2子集的反链。
 
-### PS
+### EX30PS
 
 题目大体思路：先说明大小为6的反链就是最大反链，再论证最大反链唯一，最后说明为最大反链是2子集的反链。
 
@@ -661,11 +686,15 @@ $$
 \end{aligned}
 $$
 
-### PS
+### EX33PS
 
 对于特殊的行24，它没有除最后一个子集外的所有子集，所以不执行第二项操作。
 
 ## EX34
+
+> In a partition of the subsets of {1,2, ... ,n} into symmetric chains, how many chains have only one subset in them? two subsets? k subsets?
+
+## EX35
 
 > A talk show host has just bought 10 new jokes. Each night he tells some of the jokes. What is the largest number of nights on which you can tune in so that you never hear on one night at least all the jokes you heard on one of the other nights? (Thus, for instance, it is acceptable that you hear jokes 1, 2, and 3 on one night, jokes 3 and 4 on another, and jokes 1, 2, and 4 on a third. It is not acceptable that you hear jokes 1 and 2 on one night and joke 2 on another night.)
 
@@ -675,7 +704,7 @@ $$
 
 这么短的题目不会考的。
 
-### EX36
+## EX36
 
 >Prove the identity of Exercise 25 using the binomial theorem and the relation $(1+x)^{m_l}(1+x)^{m_2} = (1+x)^{m_1+m_2}$.
 
@@ -690,7 +719,7 @@ $$
 > $$
 > t^n = \sum\binom{n}{n_1 n_2 \cdots n_t},
 > $$
-> where the summation extends over all nonnegative integral solutions $n_l, n_2, ... , n_t$ of $n_l + n_2 + ... + n_t = n$.
+> where the summation extends over all nonnegative integral solutions $n_1, n_2, ... , n_t$ of $n_1 + n_2 + ... + n_t = n$.
 
 由多项式定理，直接带入，
 
@@ -730,7 +759,7 @@ $$
 > $$
 
 $$
-\binom{9}{3 \; 3 \; 1 \; 2} (x_1)^3 (-x_2)^3 (2x_3) (-2x_4)^2 = \frac{9!}{3! \times 3! \times 1! \times 2!} \times (-1)^3 \times 2 \times (-2)^2 = -40320
+\binom{9}{3 \; 3 \; 1 \; 2} (x_1)^3 (-x_2)^3 (2x_3) (-2x_4)^2 = \frac{9!}{3! \times 3! \times 1! \times 2!} \times (-1)^3 \times 2 \times (-2)^2 x_1^3 x_2^3 x_3 x_4^2= -40320x_1^3 x_2^3 x_3 x_4^2
 $$
 
 ## EX41
@@ -755,7 +784,7 @@ $$
 $$
 \begin{aligned}
     (x_1 + x_2 + x_3)^n =& \sum_{n_1 + n_2} ^ {n_1 + n_2 + n_3} \sum_{n_1} ^{n_1 + n_2} \frac{n!}{n_1 ! \times n_2! \times n_3!} x_1^{n_1} x_2^{n_2} x_3^{n_3} \\
-    =&  \underset{n_1 + n_2 + n_3 = n}{\sum} \binom{n}{n_1 n_2 n_3} x_1^{n_1} x_2^{n_2} x_3^{n_3}
+    =&  \underset{n_1 + n_2 + n_3 = n}{\sum} \binom{n}{n_1 \; n_2 \; n_3} x_1^{n_1} x_2^{n_2} x_3^{n_3}
 \end{aligned}
 $$
 
@@ -765,7 +794,7 @@ $$
 
 多重集合$\{n_1 \cdot x_1, n_2 \cdot x_2, \cdots, n_t \cdot x_t\}$的n排列，其中$n_1 + n_2 + \cdots + n_t = n$，多重集合n排列满足结论$\dfrac{n!}{n_1 ! n_2 ! \cdots n_t!}$，得到左式。
 
-之后采用另一种算法，优先决定第一个位置放哪种元素，有t种情况，之后对剩余的n-1个元素进行n-1排列，假如第一个位置选择$x_2$，那么对应的n-1排列则为$\dfrac{(n-1)!}{n_1! (n_2-1)! \cdots n_t!}$，即等于$\dbinom{n-1}{n_1(n_2-1) \cdots n_t}$，对t种情况进行求和，得到右式。
+之后采用另一种算法，优先决定第一个位置放哪种元素，有t种情况，之后对剩余的n-1个元素进行n-1排列，假如第一个位置选择$x_2$，那么对应的n-1排列则为$\dfrac{(n-1)!}{n_1! (n_2-1)! \cdots n_t!}$，即等于$\dbinom{n-1}{n_1\;(n_2-1)\;\cdots \; n_t}$，对t种情况进行求和，得到右式。
 综上，证毕。
 
 ## EX43
@@ -792,7 +821,7 @@ $$
 $$
 综上，证毕。
 
-### PS
+### EX43PS
 
 看到$\dfrac{1}{1-z}$DNA都动了，这不能不求导？
 
@@ -823,7 +852,7 @@ $$
 \end{aligned}
 $$
 
-### PS
+### EX44PS
 
 本题英文原版书中要证明该式等于1，应该是印刷错误。
 
@@ -845,7 +874,7 @@ $$
 \end{aligned}
 $$
 
-### PS
+### EX45PS
 
 本题英文原版书中有印刷错误。
 
@@ -861,7 +890,7 @@ $$
 \end{aligned}
 $$
 
-### PS
+### EX46PS
 
 事实上，上面的系数就是泰勒展开的系数。
 
@@ -889,7 +918,7 @@ $$
 \end{aligned}
 $$
 
-结果应该是一致的的。
+结果应该是一致的。
 
 ## EX48
 
@@ -897,7 +926,7 @@ $$
 
 采用反证法，假设命题不成立，即mn+1个元素的偏序集，链长度最大为m，反链长度最大为n。
 
-设r为最大链长，显然有$r \le m$，并且由定理5.6.1知，偏序集可以被划分为r条反链$\{A_i\}_{i=1}^r$, |A_i| \le n。因此，
+设r为最大链长，显然有$r \le m$，并且由定理5.6.1知，偏序集可以被划分为r条反链$\{A_i\}_{i=1}^r, |A_i| \le n$。因此，
 
 $$
 mn+1 = \sum_{i=1}^r |A_i| \le rn \le mn
@@ -911,12 +940,12 @@ $$
 
 > Use the result of the previous exercise to show that a sequence of mn + 1 real numbers either contains an increasing subsequence of m + 1 numbers or a decreasing subsequence of n + 1 numbers (see Application 9 of Section 2.2).
 
-取mn+1个实数${a_i}_{i=0}^{mn}$，用X表示有序对集合$\{(i,a_i)| 0 \le i \le mn\}$，并定义X上的偏序关系：对于X上不同的元素$x=(i, a_i), y = (j, a_j)$，如果有$i \lt j, a_i \le a_j$则$x \lt y$。
+取mn+1个实数$\{a_i\}_{i=0}^{mn}$，用X表示有序对集合$\{(i,a_i)| 0 \le i \le mn\}$，并定义X上的偏序关系：对于X上不同的元素$x=(i, a_i), y = (j, a_j)$，如果有$i \lt j, a_i \le a_j$则$x \lt y$。
 
 可以发现：链对应递增子序列$\{a_i\}_{i=0}^{mn}$，反链对应递减子序列$\{a_i\}_{i=0}^{mn}$。
 由上题可知，一定能找到长度为m+1的链或n+1的反链，相应地，也一定有长度为m+1的递增子序列或长度为n+1的递减子序列。
 
-### PS
+### EX49PS
 
 结论在3.2节，稍作调整即有结论：由mn+1个实数构成的序列，要么含有长度为m+1的递增（非递减）子序列，要么含有长度为n+1的递减子序列。
 
