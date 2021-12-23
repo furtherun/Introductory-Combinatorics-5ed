@@ -694,13 +694,27 @@ $$
 
 > In a partition of the subsets of {1,2, ... ,n} into symmetric chains, how many chains have only one subset in them? two subsets? k subsets?
 
+### EX34参考链接
+
+[一个没看懂的解法](https://www.math.hkust.edu.hk/~mabfchen/Math391I/Homework3.pdf)
+
+后来和舍友讨论一下，感觉清楚很多，大意就是求出$\ge k$的子集个数的通项公式，然后用$\ge k-1$的部分减去$\ge k$的部分，就是$=k$的部分。
+
+~~不过，鉴于本题没考，就不再多说了。（虽然第六章漏掉的EX32考了，但我也不整理了）。~~
+
+### EX34注
+
+我感觉这个问题涉及的「对称链划分」课上没讲过；但考虑到第一章竟然考了构造拉丁方，这题还是很有必要背一下的。
+
+莫名其妙，我做作业的时候漏掉了这题。
+
 ## EX35
 
 > A talk show host has just bought 10 new jokes. Each night he tells some of the jokes. What is the largest number of nights on which you can tune in so that you never hear on one night at least all the jokes you heard on one of the other nights? (Thus, for instance, it is acceptable that you hear jokes 1, 2, and 3 on one night, jokes 3 and 4 on another, and jokes 1, 2, and 4 on a third. It is not acceptable that you hear jokes 1 and 2 on one night and joke 2 on another night.)
 
 本题等价于求10个元素的集合最大反链长度，由公式$\dbinom{10}{10/2} = 252$。
 
-### 吐槽
+### EX35吐槽
 
 这么短的题目不会考的。
 

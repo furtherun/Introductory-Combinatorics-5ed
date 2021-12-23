@@ -1336,7 +1336,7 @@ UNFINISHED
 
 $(X, \le ')$由$(X, \le )$添加关系得到，该线性扩展也保留了原来所有的可比关系，也一定是原偏序集的一个线性扩展。同时，因为$a \le ' b$，所以$a \lt b$。综上，我们可以找到一种线性扩展，使偏序集$(X, \le)$中不可比的元素a和b，有$a \lt b$。
 
-### 参考链接
+### EX54参考链接
 
 [Student (jade-cheng.com)](http://www.jade-cheng.com/uh/coursework/math-475/homework-03.pdf)
 
@@ -1348,7 +1348,7 @@ $(X, \le ')$由$(X, \le )$添加关系得到，该线性扩展也保留了原来
 
 因为$(a, b) \notin R, (b, a) \notin S$，所以$(a,b), (b, a) \notin R \cap S$，所以(a, b)和(b, a)都不在这两个线性扩展的交集之中。同理，所有不可比关系都会排除在线性扩展交集之外，因此所有线性扩展的交集只有原来包含的关系，即交集是$(X, \le)$。
 
-### 参考链接
+### EX55参考链接
 
 [Student (jade-cheng.com)](http://www.jade-cheng.com/uh/coursework/math-475/homework-03.pdf)
 
