@@ -1,4 +1,4 @@
-# 容斥原理及应用EX
+# 第6章 容斥原理及应用
 
 ## 错位排序的一些结论
 
@@ -123,7 +123,7 @@ $$
 ## EX4
 
 > Determine the number of 12-combinations of the multiset
-> 
+>
 > $$
 > S = \{4 \cdot a, 3 \cdot b, 4 \cdot c, 5 \cdot d\}
 > $$
@@ -566,11 +566,11 @@ $$
 ## EX23
 
 > (Continuation of Exercise 22.) Use the identity
-> 
+>
 > $$
 > (-1)^k \frac{n-k}{k!} = (-1)^k \frac{n}{k!} + (-1)^{k-1} \frac{1}{(k-1)!}
 > $$
-> 
+>
 > to prove that $Q_n = D_n + D_{n-1}, (n=2,3, ...)$.
 
 $$
@@ -822,11 +822,11 @@ $$
 ## EX31
 
 > How many circular permutations are there of the multiset
-> 
+>
 > $$
 > \{2 \cdot a,3 \cdot b, 4 \cdot c, 5 \cdot d\},
 > $$
-> 
+>
 > where, for each type of letter, all letters of that type do not appear consecutively?
 
 设$A_i, i = 1, 2, 3, 4$分别表示出现了*aa*、*bbb*、*ccccc*和*ddddd*，$A_1$可以当作${aa, b, b, b, c, c, c, c, d,d,d,d,d}$的**循环排列**，即$\frac{1}{13} \times \binom{13}{1 \; 3\; 4 \; 5} = 27720$。

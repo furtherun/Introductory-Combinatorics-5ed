@@ -1,4 +1,4 @@
-# 什么是组合数学EX
+# 第1章 什么是组合数学EX
 
 ## EX1
 
@@ -248,7 +248,7 @@ int main()
 
 > Use de la Loubere's method to construct a magic square of order 9.
 
-<img src="https://i.loli.net/2021/10/12/hqojDtwdPxB7IuF.png" alt="c1ex12" style="zoom:67%;" />
+![EX12](https://i.loli.net/2021/10/12/hqojDtwdPxB7IuF.png)
 
 ## EX13
 

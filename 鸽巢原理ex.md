@@ -1,3 +1,5 @@
+# 第3章 鸽巢原理
+
 ## EX1
 
 > Concerning Application 4, show that there is a succession of days during which  the chess master will have played exactly k games, for each k = 1,2, ... ,21.  (The case k = 21 is the case treated in Application 4.) Is it possible to conclude  that there is a succession of days during which the chess master will have played  exactly 22 games?
@@ -44,11 +46,9 @@ $$
 
 ## EX2
 
-> \* Concerning Application 5, show that if 100 integers are chosen from 1,2, ... ,200,  and one of the integers chosen is less than 16, then there are two chosen numbers  such that one of them is divisible by the other. 
+> \* Concerning Application 5, show that if 100 integers are chosen from 1,2, ... ,200,  and one of the integers chosen is less than 16, then there are two chosen numbers  such that one of them is divisible by the other.
 
-
-
-### PS
+### EX2PS
 
 加*不考则不再准备。
 
@@ -78,8 +78,6 @@ $$
 $$
 与上述中的范围矛盾，因此假设不成立。
 
-
-
 采用鸽巢原理进行集合划分，把集合划分成$S_i = \{2i-1, 2i\}, 1 \le i \le n$，显然集合均不相交，且一共有n个集合，那么n+1个数一定满足至少有两个数落在同一集合。
 
 ## EX5
@@ -93,7 +91,7 @@ $$
 
 ## EX6
 
-> Generalize  Exercises 4  and 5. 
+> Generalize  Exercises 4  and 5.
 
 Show  that if n + 1 integers are chosen  from  the set  {1, 2, ... , kn},  then there are  always  two  which  differ  by  at most k-1(in other words, kess than k).
 
@@ -105,8 +103,6 @@ $$
 ## EX7
 
 > \* Show  that for  any given  52  integers there exist two of them whose sum, or else  whose  difference,  is  divisible  by 100.
-
-
 
 ### PS
 
@@ -126,7 +122,7 @@ $$
 那么分数$10^i m /n$就可以展开为等比级数的和，
 $$
 \begin{aligned}
-\frac{10^i m}{n} 
+\frac{10^i m}{n}
 =& \frac{q}{10^s-1}\\
 =& b + \frac{r}{10^s-1} \\
 =&b + \frac{r}{10^s} + \frac{r}{10^{2s}} + \frac{r}{10^{3s}} + \cdots \frac{r}{10^{ns}} + \cdots
@@ -134,13 +130,11 @@ $$
 $$
 所以，$10^i m/n$可以表示为循环小数的形式，循环部分的长度是j-i，那么m/n是$10^im/n$小数点左移i位，不改变循环部分，因此最终也是循环的。
 
-### PS
+### EX8PS
 
 p44鸽巢原理的推论证明。
 
 我觉得要考，不太容易。
-
-
 
 ## EX9
 
@@ -150,7 +144,7 @@ p44鸽巢原理的推论证明。
 
 ## EX10
 
-> A child watches TV at least one hour each day for seven weeks but, because of  parental rules, never more than 11 hours in anyone week. Prove that there is  some period of consecutive days in which the child watches exactly 20 hours of  TV. (It is assumed that the child watches TV for a whole number of hours each  day.) 
+> A child watches TV at least one hour each day for seven weeks but, because of  parental rules, never more than 11 hours in anyone week. Prove that there is  some period of consecutive days in which the child watches exactly 20 hours of  TV. (It is assumed that the child watches TV for a whole number of hours each  day.)
 
 本质还是大师下棋问题，我们设$a_i$是从第一天到第i天一共看电视$a_i$小时，那么有
 $$
@@ -162,13 +156,13 @@ $$
 $$
 两组序列一共有154个数，每个序列严格递增，并且都在区间[1, 97]中，由鸽巢原理一定存在i和j满足$a_j = a_i + 20$，也即从第i+1天到第j天恰好看20个小时电视。
 
-### PS
+### EX10PS
 
 本题条件比EX1「宽松」很多。
 
 ## EX11
 
-> A student has 37 days to prepare for an examination. From past experience she  knows that she will require no more than 60 hours of study. She also wishes to  study at least 1 hour per day. Show that no matter how she schedules her study  time (a whole number of hours per d!1y, however), there is a succession of days  during which she will have studied exactly 13 hours. 
+> A student has 37 days to prepare for an examination. From past experience she  knows that she will require no more than 60 hours of study. She also wishes to  study at least 1 hour per day. Show that no matter how she schedules her study  time (a whole number of hours per d!1y, however), there is a succession of days  during which she will have studied exactly 13 hours.
 
 仍旧是大师下棋问题，这次我们练习另一种解法。
 
@@ -189,7 +183,7 @@ $$
 
 ## EX12
 
-> Show by example that the conclusion of the Chinese remainder theorem (Application 6) need not hold when m and n are not relatively prime. 
+> Show by example that the conclusion of the Chinese remainder theorem (Application 6) need not hold when m and n are not relatively prime.
 
 采用反证法证明该结论不成立，举例取m=4, n = 6, 因此$a \in \{0, 1, 2, 3\}, b \in \{0, 1, 2,3,4,5\}$，我们分别从集合中去取a和b，使a+b为奇数。并且假设存在这样的x同时满足x = 4p + a和x = 6q + b，两式相加并整理可以得到2x - 4p - 6q = a + b，等式左边为偶数，右边为奇数显然不合理，因此假设不成立。
 
@@ -199,13 +193,11 @@ $$
 
 ## EX13
 
->  \* Let S be a set of six points in the plane, with no three of the points collinear.  Color either red or blue each of the 15 line segments determined by the points of  S. Show that there are at least two triangles determined by points of S which  are either red triangles or blue triangles. (Both may be red, or both may be  blue, or one may be red and the other blue.) 
-
-
+> \* Let S be a set of six points in the plane, with no three of the points collinear.  Color either red or blue each of the 15 line segments determined by the points of  S. Show that there are at least two triangles determined by points of S which  are either red triangles or blue triangles. (Both may be red, or both may be  blue, or one may be red and the other blue.)
 
 ## EX14
 
-> A bag contains 100 apples, 100 bananas, 100 oranges, and 100 pears. If I pick  one piece of fruit out of the bag every minute, how long will it be before I am  assured of having picked at least a dozen pieces of fruit of the same kind? 
+> A bag contains 100 apples, 100 bananas, 100 oranges, and 100 pears. If I pick  one piece of fruit out of the bag every minute, how long will it be before I am  assured of having picked at least a dozen pieces of fruit of the same kind?
 
 由极端原理，考虑最差的情况所有水果都只取出了11个，此时花费44分钟。那么下一次一定会出现一打相同种类的水果，即至少45分钟会拿出一打相同水果。
 
@@ -233,7 +225,7 @@ $$
 
 ## EX17
 
-> There are 100 people at a party. Each person has an even number (possibly  zero) of acquaintances. Prove that there are three people at the party with the  same number of acquaintances. 
+> There are 100 people at a party. Each person has an even number (possibly  zero) of acquaintances. Prove that there are three people at the party with the  same number of acquaintances.
 
 考虑按照认识的人数划分集合，记$f(idx) = 2k$表示第idx人认识的人数是2k，一共有50个集合。
 $$
@@ -257,7 +249,7 @@ $$
 >
 > (b) Prove that of any 10 points chosen within an equilateral triangle of side  length 1, there are two whose distance apart is at most $\dfrac{1}{3}$.  
 >
-> (c) Determine an integer mn such that if mn points are chosen within an equilateral triangle of side length 1, there are two whose distance apart is at  most 1/n. 
+> (c) Determine an integer mn such that if mn points are chosen within an equilateral triangle of side length 1, there are two whose distance apart is at  most 1/n.
 
 ### Q(a)&Q(b)
 
@@ -275,7 +267,7 @@ $$
 
 ## EX20
 
-> Prove that $r(3,3,3) \le 17$. 
+> Prove that $r(3,3,3) \le 17$.
 
 考虑$K_{17} \rightarrow K_3, K_3, K_3$，并且使用红色、蓝色和绿色进行染色。
 
@@ -293,7 +285,7 @@ $$
 
 ## EX21
 
-> \* Prove that r(3, 3, 3) 2: 17 by exhibiting a coloring, with colors red, blue, and  green, of the line segments joining 16 points with the property that there do not  exist three points such that the three line segments joining them are all colored  the same. 
+> \* Prove that r(3, 3, 3) 2: 17 by exhibiting a coloring, with colors red, blue, and  green, of the line segments joining 16 points with the property that there do not  exist three points such that the three line segments joining them are all colored  the same.
 
 ### PS
 
@@ -304,12 +296,12 @@ $$
 > Prove that
 > $$
 > \begin{equation}
-> 
->   r\underbrace{(3,3,\cdots, 3)}_{\text{k+1}} \le (k+1) (r\underbrace{(3,3,\cdots, 3)}_{\text{k}} - 1) + 2
-> 
+>
+> r\underbrace{(3,3,\cdots, 3)}_{\text{k+1}} \le (k+1) (r\underbrace{(3,3,\cdots, 3)}_{\text{k}} - 1) + 2
+>
 > \end{equation}
 > $$
-> Use this result to obtain an upper bound for 
+> Use this result to obtain an upper bound for
 > $$
 > r\underbrace{(3,3,\cdots, 3)}_{\text{n}}
 > $$
@@ -361,15 +353,13 @@ $$
 
 ## EX23
 
-> The line segments joining 10 points are arbitrarily colored red or blue. Prove  that there must exist three points such that the three line segments joining them  are all red, or four points such that the six line segments joining them are all  blue (that is, $r(3, 4) \le 10$). 
+> The line segments joining 10 points are arbitrarily colored red or blue. Prove  that there must exist three points such that the three line segments joining them  are all red, or four points such that the six line segments joining them are all  blue (that is, $r(3, 4) \le 10$).
 
 带入公式，显然有上述结论。
 $$
 r(m, n) \le \binom{m+n-2}{n-1} = \binom{m+n-2}{n-1}
 $$
 但是证明这个不等式本身也很复杂（试卷上写不开），所以还是考虑使用定义证明。
-
-
 
 还是任取一点x，记与x相连的9条线中红色的线有m条，蓝色的线有n条，并且m+n=9进行分类讨论。
 
@@ -389,7 +379,7 @@ A：我想说，要是不看前人的解答，我也想不出来。因为直观�
 
 ## EX24
 
-> Let $q_3$ and t be positive integers with $q_3 \ge t$. Determine the Ramsey number $r_t(t, t, q_3)$. 
+> Let $q_3$ and t be positive integers with $q_3 \ge t$. Determine the Ramsey number $r_t(t, t, q_3)$.
 
 先说结论$r_t(t, t, q_3) = q_3$，采用红色、蓝色和绿色染色，之后分别求下界和上界。
 
@@ -409,7 +399,7 @@ A：我想说，要是不看前人的解答，我也想不出来。因为直观�
 > $$
 > r_t(m, m, \cdots , m) \ge r_t(q_1, q_2, \cdots, q_k)
 > $$
->  Conclude that, to prove Ramsey's theorem, it is enough to prove it in the case  that $q_1 = q_2 = \cdots = q_k$.
+> Conclude that, to prove Ramsey's theorem, it is enough to prove it in the case  that $q_1 = q_2 = \cdots = q_k$.
 
 设$N = r_t(m, m, \cdots , m)$，对于$K_N$考虑所有的t元素子集着色，一定存在$C_i, 1 \le i \le k$色的$K_m^t$。
 $$
@@ -423,7 +413,7 @@ $$
 
 ## EX26
 
-> Suppose that the mn people of a marching band are standing in a rectangular  formation of m rows and n columns in such a way that in each row each person  is taller than the one to his or her left. Suppose that the leader rearranges the  people in each column in increasing order of height from front to back. Show  that the rows are still arranged in increasing order of height from left to right. 
+> Suppose that the mn people of a marching band are standing in a rectangular  formation of m rows and n columns in such a way that in each row each person  is taller than the one to his or her left. Suppose that the leader rearranges the  people in each column in increasing order of height from front to back. Show  that the rows are still arranged in increasing order of height from left to right.
 
 从队列中取第j列和第j+1列进行分析，$j = 1, 2, \cdots , n-1$，记每个位置的身高为$d_{i, j}$，初始时总有$d_{i,j} \lt d_{i, j+1}$。
 
@@ -443,7 +433,7 @@ $$
 
 ## EX27
 
-> A collection of subsets of {1, 2, ... ,n} has the property that each pair of subsets  has at least one element in common. Prove that there are at most $2^{n-1}$ subsets in the collection. 
+> A collection of subsets of {1, 2, ... ,n} has the property that each pair of subsets  has at least one element in common. Prove that there are at most $2^{n-1}$ subsets in the collection.
 
 设有k个不同子集$s_1, s_2, \cdots, s_k$满足题目要求，两两集合总能找到共同元素。那么这k个子集的补集$\bar{s_1}, \bar{s_2}, \cdots, \bar{s_k}$也各不相同，也不会有$s_1, s_2, \cdots s_k$中的共同元素，那么此时一共有2k个不同集合，集合的数量不会超过原集合的子集总数$2^n$，所以有$2k \le 2^n \Rightarrow k \le 2^{n-1}$，QED。
 
@@ -455,7 +445,7 @@ $$
 
 ## EX28
 
-> At a dance party there are 100 men and 20 women. For each i from 1, 2, ... , 100,  the ith man selects a group of $a_i$ women as potential dance partners (his "dance  list," if you will), but in such a way that given any group of 20 men, it is always  possible to pair the 20 men with the 20 women, with each man paired with a  woman on his dance list. What is the smallest sum $a_1 + a_2 + \cdots + a_{100}$ for which  there is a selection of dance lists that will guarantee this? 
+> At a dance party there are 100 men and 20 women. For each i from 1, 2, ... , 100,  the ith man selects a group of $a_i$ women as potential dance partners (his "dance  list," if you will), but in such a way that given any group of 20 men, it is always  possible to pair the 20 men with the 20 women, with each man paired with a  woman on his dance list. What is the smallest sum $a_1 + a_2 + \cdots + a_{100}$ for which  there is a selection of dance lists that will guarantee this?
 
 对于第j位女士，设$b_j$表示她出现在100位男士的舞伴列表中的总次数，显然有$\displaystyle \sum_{i=1}^{100}a_i = \sum_{j=1}^{20}b_j$。
 
@@ -471,7 +461,7 @@ $$
 
 ## EX29
 
-> A number of different objects have been distributed into n boxes $B_1, B_2, \cdots, B_n$. All the objects from these boxes are removed and redistributed into n + 1 new  boxes $B_1^{*}, B_2^{*}, \cdots, B_{n+1}^{*}$, with no new box empty (so the total number of objects  must be at least n + 1). Prove that there are two objects each of which has the  property that it is in a new box that contains fewer objects than the old box  that contained it. 
+> A number of different objects have been distributed into n boxes $B_1, B_2, \cdots, B_n$. All the objects from these boxes are removed and redistributed into n + 1 new  boxes $B_1^{*}, B_2^{*}, \cdots, B_{n+1}^{*}$, with no new box empty (so the total number of objects  must be at least n + 1). Prove that there are two objects each of which has the  property that it is in a new box that contains fewer objects than the old box  that contained it.
 
 把新盒子与旧盒子均按递增排列，并且由题意知新盒子非空，旧盒子可能为空，确定下界。
 $$
