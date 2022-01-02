@@ -724,3 +724,111 @@ $a_n + b_n + h_n$为总方案数$3^n$，可以递推做差得$h_n - h_{n-1} = 3^
 ## EX31
 
 >Solve the recurrence relation $h_n = 4h_{n-2}, (n \ge 2)$ with initial values $h_0 = 0$ and $h_1 = 1$.
+
+$$
+h_n = c_1 2^n + c_2 (-2)^n
+$$
+
+带入初始值解得，$h_n = \displaystyle \frac{2^n - (-2)^n}{4}, ( n \ge 0)$。
+
+## EX32
+
+>Solve the recurrence relation $h_n = (n+2)h_{n-1}, (n \ge 1)$ with initial value $h_0 = 2$.
+
+$$
+\begin{aligned}
+    h_n =& \frac{h_n}{h_{n-1}} \frac{h_{n-1}}{h_{n-2}} \cdots \frac{h_1}{h_0} h_0 \\
+    =& (n+2)\times (n+1) \times \cdots \times (1+2) \times 2 \\
+    =& (n+2)! \quad n \ge 0
+\end{aligned}
+$$
+
+## EX33
+
+>Solve the recurrence relation $h_n = h_{n-1} + 9h_{n-2} - 9h_{n-3}, (n \ge 3)$ with initial values $h_0 = 0, h_1 = 1$, and $h_2 = 2$.
+
+方程$x^3 = x^2 + 9x - 9 = 0$的解为$x_1 = 3, x_3 = -3, x_3 = 1$。
+
+$h_n = c_1 3^n + c_2 (-3)^n + c_3$，带入初始值有$\displaystyle h_n = 3^{n-1} +\frac{(-3)^{n-1}}{4} - \frac{1}{4}, (n \ge 0)$。
+
+## EX34
+
+>Solve the recurrence relation $h_n = 8h_{n-1} - 16h_{n-2}, (n \ge 2)$ with initial values $h_0 = -1$ and $h_1 = 0$.
+
+$h_n = c_1 4^n + c_2n \cdot 4^n$，带入初始值有$\displaystyle h_n = (n-1)4^n, (n \ge 0)$。
+
+## EX35
+
+>Solve the recurrence relation $h_n = 3h_{n-2} - 2h_{n-3}, (n \ge 3)$ with initial values $h_0 = 1, h_1 = 0$, and $h_2 = 0$.
+
+$h_n = (c_1+c_2 n) + c_3 (-2)^n$，带入初始值有$\displaystyle h_n = (\frac{8}{9}-\frac{2n}{3}) +  \frac{(-2)^n}{9}, (n \ge 0)$。
+
+## EX36
+
+>Solve the recurrence relation $h_n = 5h_{n-1} -6h_{n-2} - 4h_{n-3}+8h_{n-4}, (n \ge 4)$ with initial values $h_0 =0, h_1= 1, h_2 = 1$, and $h_3 = 2$.
+
+方程$x^4 = 5x^3 -6x^2 -4x +8$的解为$x_1 = x_2 = x_3 = 2, x_4 = -1$。
+
+$h_n = (c_1 n^2+c_2 n + c_3)2^n + c_4 (-1)^n$，带入初始值有$\displaystyle h_n = (-\frac{n^2}{24} + \frac{7n}{72} + \frac{8}{27})2^n -\frac{8\cdot (-1)^n}{27}, (n \ge 0)$。
+
+### EX36注
+
+分解方程和求解四元一次方程组的计算量很大。
+
+## EX37
+
+>Determine a recurrence relation for the number an of ternary strings (made up of Os, Is, and 2s) of length n that do not contain two consecutive O's or two consecutive Is. Then find a formula for $a_n$.
+
+对长度为n且符合题目要求的字符串$T_n$进行切片，按照前两个字符是否相同进行分类；如果前两个字符相同，那么只能切出22和$T_{n-2}$，如果前两个字符不同，每一个字符（0、1或2）都有两种符合题意的$T_{n-1}$。
+
+因此得到递推公式：$a_n = a_{n-2} + 2a_{n-1}, (n \ge 2)$，容易知道初始值$a_0 = 1, a_1 = 3$。
+
+因此求出$a_n = \displaystyle \frac{(1+\sqrt{2})^{n+1}}{2} + \frac{(1-\sqrt{2})^{n+1}}{2}, (n \ge 0)$。
+
+## EX38
+
+>Solve the following recurrence relations by examining the first few values for a formula and then proving your conjectured formula by induction. 
+>
+>(a) $h_n = 3h_{n-1}, \quad (n \ge 1); h_0 = 1$
+>
+>(b) $h_n = h_{n-1}-n+3, \quad (n \ge 1); h_0 = 2$
+>
+>(c) $h_n = -h_{n-1}+1, \quad (n \ge 1); h_0 = 0$
+>
+>(d) $h_n = -h_{n-1}+2, \quad (n \ge 1); h_0 = 1$
+>
+>(e) $h_n = 2h_{n-1}+1, \quad (n \ge 1); h_0 = 1$
+
+以EX38(b)为例，先求出通项，再用数学归纳法验证，其余同理。
+
+### EX38(b)
+
+先求其次递推关系的解，$H_n = c_1 (1)^n$，后面的非齐次部分是一次多项式，同时隐含也是以1为底的指数。因此设$H_n^{*} = (An+B)n$。
+
+带入递推关系求出$A=-\frac{1}{2}, B = \frac{5}{2}$，带入初始量得$h_n = \frac{4+5n-n^2}{2}$。
+
+数学归纳法证明过程略。
+
+## EX39
+
+>Let hn denote the number of ways to perfectly cover a 1-by-n board with monominoes and dominoes in such a way that no two dominoes are consecutive. Find, but do not solve, a recurrence relation and initial conditions satisfied by $h_n$.
+
+容易验证初始值$h_0 = h_1 = 1, h_2 = 2$，当$n \ge 3$时，如果第一块为单牌，问题变为$h_{n-1}$，如果第一块为多米诺骨牌（$1\times 2$），那么临界的块只能是单牌，问题转化为$h_{n-3}$。
+
+综上有，
+
+$$
+h_n = h_{n-1} + h_{n-3}
+$$
+
+### EX39吐槽
+
+头一次看到专门强调只推出关系不求解的题目。
+
+## EX40
+
+>Let $a_n$ equal the number of ternary strings of length n made up of Os, ls, and 2s, such that the substrings 00, 01, 10, and 11 never occur. Prove that 
+>$$
+> a_n = a_{n-1} + 2a_{n-2}, \quad (n \ge 2),
+>$$
+>with $a_0 = 1$ and $a_1 = 3$. Then find a formula for $a_n$.
