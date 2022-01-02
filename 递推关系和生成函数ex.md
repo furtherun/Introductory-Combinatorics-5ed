@@ -787,7 +787,7 @@ $h_n = (c_1 n^2+c_2 n + c_3)2^n + c_4 (-1)^n$，带入初始值有$\displaystyle
 
 ## EX38
 
->Solve the following recurrence relations by examining the first few values for a formula and then proving your conjectured formula by induction. 
+>Solve the following recurrence relations by examining the first few values for a formula and then proving your conjectured formula by induction.
 >
 >(a) $h_n = 3h_{n-1}, \quad (n \ge 1); h_0 = 1$
 >
@@ -827,8 +827,283 @@ $$
 
 ## EX40
 
->Let $a_n$ equal the number of ternary strings of length n made up of Os, ls, and 2s, such that the substrings 00, 01, 10, and 11 never occur. Prove that 
+>Let $a_n$ equal the number of ternary strings of length n made up of Os, ls, and 2s, such that the substrings 00, 01, 10, and 11 never occur. Prove that
 >$$
 > a_n = a_{n-1} + 2a_{n-2}, \quad (n \ge 2),
 >$$
 >with $a_0 = 1$ and $a_1 = 3$. Then find a formula for $a_n$.
+
+按照第一字符是否为2进行划分，由题意，长度为n的串第一个字符是2，问题变为$a_{n-1}$；如果第一个字符不是2，那么只能是0或1，如果为0，则第二个字符只能是2（因为不存在00和01），同理第一格字符如果为1，则第二个字符只能为2，因此问题转化为$2a_{n-2}$。综上有，
+
+$$
+a_n = a_{n-1} + 2a_{n-2}
+$$
+
+长度为0的串，长度为1的串显然都不含有00、01、10和11，$a_0 = 1, a_1 = 3$。
+
+## EX41
+
+> \* Let 2n equally spaced points be chosen on a circle. Let $h_n$ denote the number of ways to join these points in pairs so that the resulting line segments do not intersect. Establish a recurrence relation for $h_n$.
+
+加星题，略。
+
+## EX42
+
+>Solve the monhomogeneous recurrence realtion
+>$$
+>\begin{aligned}
+>& h_n = 4h_{n-1} + 4^n, \quad (n \ge 1) \\
+>& h_0 = 3
+>\end{aligned}
+>$$
+
+其次递推关系的解为$H_n = c_1 4^n$，因此设特解为$H_n^{*} = An4^n$，求出$A=1$，带入初始项求出，
+$$
+h_n = (n+3)4^n, \quad n \ge 0
+$$
+
+### EX42注
+
+虽然参考答案秀了技巧，把非齐次方程转化为$h_n - 8 h_{n-1} + 16 h_{n-2} = 0$。但着实没有必要，按照非齐次的模板解题速度一样很快。
+
+## EX43
+
+>Solve the monhomogeneous recurrence realtion
+>$$
+>\begin{aligned}
+>& h_n = 4h_{n-1} +3\times 2^n, \quad (n \ge 1) \\
+>& h_0 = 1
+>\end{aligned}
+>$$
+
+略。
+
+## EX44
+
+>Solve the monhomogeneous recurrence realtion
+>$$
+>\begin{aligned}
+>& h_n = 3h_{n-1} -2, \quad (n \ge 1) \\
+>& h_0 = 1
+>\end{aligned}
+>$$
+
+略
+
+## EX45
+
+>Solve the monhomogeneous recurrence realtion
+>$$
+>\begin{aligned}
+>& h_n = 2h_{n-1} +n, \quad (n \ge 1) \\
+>& h_0 = 1
+>\end{aligned}
+>$$
+
+略
+
+## EX46
+
+>Solve the monhomogeneous recurrence realtion
+>$$
+>\begin{aligned}
+>& h_n = 6h_{n-1} -9h_{n-2}+2n, \quad (n \ge 2) \\
+>& h_0 = 1 \\
+>& h_1 = 0
+>\end{aligned}
+>$$
+
+略
+
+## EX47
+
+>Solve the monhomogeneous recurrence realtion
+>$$
+>\begin{aligned}
+>& h_n = 4h_{n-1} -4h_{n-2}+3n+1, \quad (n \ge 2) \\
+>& h_0 = 1 \\
+>& h_1 = 2
+>\end{aligned}
+>$$
+
+## EX48
+
+> Solve the following recurrence relations by using the method of generating functions as described in Section 7.4:
+>
+> (a) $h_n = 4h_{n-2}, (n \ge 2); h_0=0, h_1 = 1$
+>
+> (b) $h_n = h_{n-1} + h_{n-2}, (n \ge 2); h_0 = 1, h_1 = 3$
+>
+> (c) $h_n = h_{n-1} + 9h_{n-2}-9h_{n-3}, (n \ge 3); h_0 = 0, h_1 = 1, h_2 = 2$
+>
+> (d) $h_n = 8h_{n-1} - 16 h_{n-2}, ( n \ge 2); h_0 = -1, h_1 = 0$
+>
+> (e) $h_n = 3h_{n-2} - 2h_{n-3}, (n \ge 3); h_0= 1, h_1 = 0, h_2 = 0$
+>
+> (f) $h_n = 5h_{n-1}-6h_{n-2}-4h_{n-3}+8h_{n-4}, (n \ge 4); h_0 = 0, h_1 = 1, h_2 = 1, h_3 = 2$
+
+以EX48(b)和EX48(f)为例，其余题目略。
+
+### EX48(b)
+
+设生成函数为$g(x) = h_0 + h_1 x + h_2 x^2 + \cdots$，分别用$-x$和$-x^2$乘以g(x)得到，
+
+$$
+\begin{aligned}
+& -xg(x) = -h_0x - h_1 x^2 - h_2 x^3 - \cdots \\
+& -x^2 g(x) = - h_0 x^2 - h_1 x^3 - h_2 x^4 - \cdots \\
+\end{aligned}
+$$
+
+两边求和化简得，
+$$
+(1-x-x^2) g(x) = h_0 + (h_0 - h_1)x + (h_2 - h_1 - h_0) x^2 + \cdots + (h_n - h_{n-1}-h_{n-2})x^{n} + \cdots
+$$
+再由$h_n - h_{n-1} - h_{n-2} = 0, (n \ge 2)$知，
+
+$$
+\begin{aligned}
+g(x) =& \frac{1 + 2x}{1-x-x^2} \\
+=& \frac{r}{1-rx} + \frac{s}{1-sx} \\
+=& \frac{(r+s) -2rs x}{1-(r+s)x + rs x^2}
+=& \sum_{n=0}^{\infty} (r^{n+1} + s^{n+1}) x^n
+\end{aligned}
+$$
+
+其中，$\displaystyle r = \frac{1+\sqrt{5}}{2}, s = \frac{1- \sqrt{5}}{2}, r + s = 1, rs = -1$。
+
+因此，$h_n = r^{n+1} + s^{n+1}, ( n \ge 0)$
+
+### EX48(f)
+
+设生成函数为$g(x) = h_0 + h_1 x + h_2 x^2 + \cdots$，分别用$-5x$、$6x^2$、$4x^3$和$-8x^4$乘以g(x)化简得到，
+
+$$
+\begin{aligned}
+g(x) =& \frac{x-4x^2+3x^3}{1-5x+6x^2+4x^3-8x^4} \\
+=& \frac{x-4x^2+3x^3}{(1-2x)^3(1+x)} \\
+=& \frac{ax^2 + bx + c}{(1-2x)^3} + \frac{d}{1+x} \\
+=& \frac{(a-8d)x^3 + (a+b+12d)x^2 + (b+c-6d)x + (c+d)}{(1-2x)^3(1+x)} \\
+\end{aligned}
+$$
+
+因此可以得到方程组，
+
+$$
+\begin{cases}
+    a-8d = 3 \\
+    a+b+12d = -4 \\
+    b+c-6d = 1 \\
+    c+d = 0
+\end{cases}
+$$
+
+解得，$a = \frac{17}{27}, b = -\frac{29}{27}, c = -\frac{8}{27}, d = \frac{8}{27}$。
+
+$$
+g(x) = \frac{1}{27} \frac{17x^2 - 29 x - 8}{(1-2x)^3} + \frac{8}{(1+x)}
+$$
+
+#### EX48(f)注
+
+从上面的过程可以看出使用生成函数求解的计算量极大，因此考试如果不是强调使用该方法，不要考虑使用它。
+
+### EX48说明
+
+上课的时候听老师说不推荐使用该方法，不清楚到底考不考这个方法。并且也在(f)题中看到结果很难算出来（我也只是算了一半），不过流程还是要掌握一下。
+
+## EX49
+
+> (q-binomial theorem) Prove that
+> $$
+> (x+y)(x+qy)(x+q^2y)\cdots (x+q^{n-1}y) = \sum_{k=0}^{n} \binom{n}{k}_q x^{n-k} y^k,
+> $$
+> where
+> $$
+> n!_q = \frac{\Pi_{j=1}^n(1-q^j)}{(1-q)^n}
+> $$
+> is the q-factorial (cf. Theorem 7.2.1 replacing q in (7.14) with x) and
+> $$
+> \binom{n}{k}_q = \frac{n!_q}{k!_q (n-k)!_q}
+> $$
+> is the *q-binomial coefficient*.
+
+## EX50
+
+> Call a subset S of the integers {1, 2, ... ,n} extmordinary provided its smallest integer equals its size:
+> $$
+> \min \{x: x \in S\} = |S|
+> $$
+> For example, S = {3,7,8}, is extraordinary. Let $g_n$ be the number of extraordinary subsets of {1, 2, ..., n}. Prove that
+> $$
+> g_n = g_{n-1} + g_{n-2} \quad (n \ge 3),
+> $$
+> with $g_1 = 1$ and $g_2 = 1$.
+
+如果子集S是非凡的k子集，那么S中的最小元素是k，其余k-1个元素均比k大，因此非凡k子集的个数为$\dbinom{n-k}{k-1}$个，那么集合{1, 2, 3, ..., n}的所有非凡集为，
+
+$$
+\begin{aligned}
+ g_n =& \sum_{k=1}^{n} \binom{n-k}{k-1} \\
+ =& \sum_{k=1}^{n} \binom{n-k-1}{k-1} + \sum_{k=1}^{n} \binom{n-k-1}{k-2} \\
+ =& \sum_{k=1}^{n} \binom{(n-1)-k}{k-1} + \sum_{k=1}^{n} \binom{(n-2)-{k-1}}{(k-1)-1} \\
+ =& \sum_{k=1}^{n} \binom{(n-1)-k}{k-1} + \sum_{h=1}^{n} \binom{(n-2)-h}{h-1} \\
+ =& \sum_{k=1}^{n-1} \binom{(n-1)-k}{k-1} + \sum_{h=1}^{n-2} \binom{(n-2)-h}{h-1} \\
+ =& g_{n-1} + g_{n-2}
+\end{aligned}
+$$
+
+由题意容易求出{1}的非凡集为{1}，{1, 2}的非凡集为{1}，因此$g_1 = g_2 = 1$。
+
+## EX51
+
+> Solve the recurrence relation
+> $$
+> \begin{aligned}
+> &h_n = 3h_{n-1} - 4n, (n \ge 1)
+> &h_0 = 2
+> \end{aligned}
+> $$
+> from Section 7.6 using generating functions.
+
+要求使用生成函数求解非齐次递推关系。生成函数为$g(x) = h_0 + h_1 x + h_2 x^2 + \cdots + h_n x^n + \cdots$,计算
+
+$$
+\begin{aligned}
+g(x) -3xg(x) =& h_0 + (h_1 - 3h_0) x + \cdots + (h_n-h_{n-1})x^n + \cdots \\
+=& 2 + (-4)x + (-8)x^2 + \cdots + (-4n)x^n + \cdots \\    
+=& 2-4(x+2x^2 + \cdots + nx^n + \cdots) \\
+=& 2-4x\sum_{n=0}^{\infty} (n+1) x^{n} \\
+=& 2-4\frac{x}{(1-x)^2}
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+ g(x) =& \frac{2}{1-3x} - \frac{4x}{(1-3x)(1-x)^2} \\
+ =& \frac{2}{1-3x} - \big( \frac{A}{1-3x} + \frac{Bx+C}{(1-x)^2} \big) \\
+ =& \frac{2}{1-3x} - \big( \frac{3}{1-3x} + \frac{x-3}{(1-x)^2} \big) \\ 
+ =& \frac{-1}{1-3x} + \frac{3-x}{(1-x)^2} \\
+ =& - \sum_{n=0}^{\infty} (3x)^n + 3\sum_{n=0}^{\infty} (n+1) x^n - \sum_{n=0}^{\infty} x^n \\
+ =& \sum_{n=0}^{\infty} (2n+3-3^n)x^n
+\end{aligned}
+$$
+
+所以$h_n = 2n+3-3^n, (n \ge 0)$。
+
+## EX52
+
+> Solve the following two recurrence relations:
+>
+> (a) $h_n = 2h_{n-1} + 5^n, (n \ge 1)$ with $h_0 =3$
+> 
+> (a) $h_n = 5h_{n-1} + 5^n, (n \ge 1)$ with $h_0 =3$
+
+非齐次递推关系求解，略。
+
+## EX53
+
+>Suppose you deposit \$500 in a bank account -that pays 6% interest at the end of each year (compounded annually).
+Thereafter, at the beginning of each year you deposit \$100.
+Let hn be the amount in your account after n years (so h_0 = \$500).
+Determine the generating function $g(x) = h_0 + h_1x + ... + h_nx^n + ...$ and then a formula for $h_n$.
