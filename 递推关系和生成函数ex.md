@@ -845,7 +845,23 @@ $$
 
 > \* Let 2n equally spaced points be chosen on a circle. Let $h_n$ denote the number of ways to join these points in pairs so that the resulting line segments do not intersect. Establish a recurrence relation for $h_n$.
 
-加星题，略。
+![EX41](https://raw.githubusercontent.com/furtherun/imgs/main/img/C8EX1.png)
+
+选择一端固定在1上的线段为基线，另一端指向2k，圆上的2n个点被分为两组，一组有2k-2个，另一组有2n-2k个，同时问题$h_n$被划分为$h_{k-1}$和$h_{n-k}$。所以有，
+
+$$
+h_n = \sum_{k=1}h_{k-1}h_{n-k}, \quad n \ge 1, h_0 = h_1 = 1
+$$
+
+显然$h_n$与卡特兰数$C_n$有相同的递推关系和初始项，因此，
+
+$$
+h_n = \frac{1}{n+1} \binom{2n}{n}
+$$
+
+### EX41吐槽
+
+为什么这个加星题抄题了呢？做到第8章的题目就知道了。
 
 ## EX42
 
@@ -1071,7 +1087,7 @@ $$
 $$
 \begin{aligned}
 g(x) -3xg(x) =& h_0 + (h_1 - 3h_0) x + \cdots + (h_n-h_{n-1})x^n + \cdots \\
-=& 2 + (-4)x + (-8)x^2 + \cdots + (-4n)x^n + \cdots \\    
+=& 2 + (-4)x + (-8)x^2 + \cdots + (-4n)x^n + \cdots \\
 =& 2-4(x+2x^2 + \cdots + nx^n + \cdots) \\
 =& 2-4x\sum_{n=0}^{\infty} (n+1) x^{n} \\
 =& 2-4\frac{x}{(1-x)^2}
@@ -1082,7 +1098,7 @@ $$
 \begin{aligned}
  g(x) =& \frac{2}{1-3x} - \frac{4x}{(1-3x)(1-x)^2} \\
  =& \frac{2}{1-3x} - \big( \frac{A}{1-3x} + \frac{Bx+C}{(1-x)^2} \big) \\
- =& \frac{2}{1-3x} - \big( \frac{3}{1-3x} + \frac{x-3}{(1-x)^2} \big) \\ 
+ =& \frac{2}{1-3x} - \big( \frac{3}{1-3x} + \frac{x-3}{(1-x)^2} \big) \\
  =& \frac{-1}{1-3x} + \frac{3-x}{(1-x)^2} \\
  =& - \sum_{n=0}^{\infty} (3x)^n + 3\sum_{n=0}^{\infty} (n+1) x^n - \sum_{n=0}^{\infty} x^n \\
  =& \sum_{n=0}^{\infty} (2n+3-3^n)x^n
@@ -1096,7 +1112,7 @@ $$
 > Solve the following two recurrence relations:
 >
 > (a) $h_n = 2h_{n-1} + 5^n, (n \ge 1)$ with $h_0 =3$
-> 
+>
 > (a) $h_n = 5h_{n-1} + 5^n, (n \ge 1)$ with $h_0 =3$
 
 非齐次递推关系求解，略。
@@ -1107,3 +1123,48 @@ $$
 Thereafter, at the beginning of each year you deposit \$100.
 Let hn be the amount in your account after n years (so h_0 = \$500).
 Determine the generating function $g(x) = h_0 + h_1x + ... + h_nx^n + ...$ and then a formula for $h_n$.
+
+$$
+h_n = 1.06h_{n-1} + 100, n \ge 1, h_0 = 500
+$$
+
+$$
+g(x) = h_0 + h_1 x + h_2 x^2 + \cdots
+$$
+
+$$
+\begin{aligned}
+(1-1.06x) g(x) =& h_0 + (h_1 - 1.06h_0)x + \cdots + (h_n - h_{n-1}) x^n + \cdots \\
+=& 500 + 100x + 100x^2 + \cdots + 100x^n + \cdots \\
+=&500 + 100(x + x^2 + \cdots ) \quad (*)\\
+=&500 + \frac{100x}{1-x}
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+   g(x) = & \frac{500}{1-1.06x} + \frac{100x}{(1-x)(1-1.06x)} \\
+   =& \frac{500}{1-1.06x} +\frac{100}{0.06}(\frac{1}{1-1.06x}-\frac{1}{1-x}) \\
+   =& (500+\frac{100}{0.06})\frac{1}{1-1.06x} - \frac{100}{0.06} \frac{1}{1-x} \\
+   =& (500+\frac{100}{0.06})\sum_{n=0}^{\infty} (1.06x)^n - \frac{100}{.0.6} x^n \\
+   =& [(500+\frac{100}{0.06})(1.06)^n - \frac{100}{0.06} ] x^n \\
+\end{aligned}
+$$
+
+因此，
+$$
+h_n = 500(1.06)^n + \frac{100}{0.06}\big((1.06)^n - 1 \big)
+$$
+
+### EX53说明
+
+(\*)式不留常数凑成$\frac{x}{1-x}$的形式方便下面的分解。
+
+### EX53另解
+
+$$
+\begin{aligned}
+h_n =& 500(1.06)^n + \sum_{k=0}^{n-1}100(1.06)^k \\
+=& 500(1.06)^n + 100\frac{(1.06)^n-1}{0.06}
+\end{aligned}
+$$
