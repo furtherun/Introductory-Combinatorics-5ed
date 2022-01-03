@@ -48,13 +48,21 @@ int main()
 }
 ```
 
-可以发现：$f_1 + f_3 + \cdots + f_{2n-1} = f_{2n}$，$f_0 + f_2 + \cdots + f_{2n} = f_{2n-1}-1$，$f_0 - f_1 + f_2 - \cdots + (-1)^n f_n = -1 + (-1)^n f_{n-1}$，$f_0^2 + f_1^2 + \cdots + f_n^2 = f_n f_{n+1}$。
+可以发现：$f_1 + f_3 + \cdots + f_{2n-1} = f_{2n}$，$f_0 + f_2 + \cdots + f_{2n} = f_{2n+1}-1$，$f_0 - f_1 + f_2 - \cdots + (-1)^n f_n = -1 + (-1)^n f_{n-1}$，$f_0^2 + f_1^2 + \cdots + f_n^2 = f_n f_{n+1}$。
 
 数学归纳证明过程略。
 
+### EX1(C)
+
+$$
+f_0 - f_1 + f_2 - \cdots + (-1)^n f_n = -1 + (-1)^n f_{n-1}, \quad (n \ge 1)
+$$
+
+对于特殊的$f_0$有$f_0 = 0$。
+
 ### EX1(d)
 
-这个强调一下特殊的构造方法，辅助猜测递推公式。
+这个强调一下特殊的构造方法，辅助猜测递推公式，后面也会用到这个构造法。
 
 $$
 \begin{aligned}
@@ -152,9 +160,9 @@ $$
 
 ## EX8
 
-> Consider a 1-by-n chessboard. Suppose we color each square of the chessboard with one of the two colors red and blue. Let hn be the number of colorings in which no two squares that are colored red are adjacent. Find and verify a recurrence relation that hn satisfies. Then derive a formula for hn .
+> Consider a 1-by-n chessboard. Suppose we color each square of the chessboard with one of the two colors red and blue. Let $h_n$ be the number of colorings in which no two squares that are colored red are adjacent. Find and verify a recurrence relation that hn satisfies. Then derive a formula for hn .
 
-如果第一个方块着成红色，那么第二个方块只能着成蓝色，问题转化为$1\times (n-2)$棋盘着色问题；如果第一个方块着成蓝色，问题转化为$1\times (n-1)$期盼着色问题；因此，$h_n = h_{n-1} + h_{n-2}$。
+如果第一个方块着成红色，那么第二个方块只能着成蓝色，问题转化为$1\times (n-2)$棋盘着色问题；如果第一个方块着成蓝色，问题转化为$1\times (n-1)$棋盘着色问题；因此，$h_n = h_{n-1} + h_{n-2}$。
 
 并且有初始项$h_0 = 1, h_1 = 2$，显然$h_n = f_{n+2}$。
 
@@ -180,17 +188,17 @@ $$
 
 > Suppose that, in his problem, Fibonacci had placed two pairs of rabbits in the enclosure at the beginning of a year. Find the number of pairs of rabbits in the enclosure after one year. More generally, find the number of pairs of rabbits in the enclosure after n months.
 
-设第n个月时有$g_n$个兔子，满足$g_n = g_{n-1} + g_{n-2}, g_0 = 0, g_1 = 2$，可以求出通解，
+设第t个月时有$g_t$个兔子，满足$g_t = g_{t-1} + g_{t-2}, g_0 = 0, g_1 = 2$，可以求出通解，
 
 $$
-g_n = \frac{2}{\sqrt{5}} \left( \frac{1+\sqrt{5}}{2} \right)^n - \frac{2}{\sqrt{5}} \left( \frac{1-\sqrt{5}}{2} \right)^n = 2f_n
+g_t = \frac{2}{\sqrt{5}} \left( \frac{1+\sqrt{5}}{2} \right)^t - \frac{2}{\sqrt{5}} \left( \frac{1-\sqrt{5}}{2} \right)^t = 2f_t
 $$
 
-第n个月的数量为$g_n$个，第一个月后的n个月是第n+1月，因此有$g_{n+1}$对兔子。
+第一个月再过n个月是第n+1月，因此有$g_{n+1}$对兔子。
 
 ### EX10注
 
-本身有些文字游戏的味道，如果要问「一共有多少**只**兔子？」是不是也能算作一道题目呢。
+本题以n作为一个常量（n个月后），为了区分就需要把未知量设为t。
 
 ## EX11
 
@@ -240,9 +248,10 @@ $$
 ## EX13
 
 > Determine the generating function for each of the following sequences:
-> (a) c^0 =1, c, c^2, ..., c^n, ...
 >
-> (b) $1, -1, 1, -1, ..., (-1)^n$, ...
+> (a) $c^0 =1, c, c^2, ..., c^n, ...$
+>
+> (b) $1, -1, 1, -1, ..., (-1)^n, ...$
 >
 > (c) $\dbinom{\alpha}{0}, -\dbinom{\alpha}{1}, \dbinom{\alpha}{2}, ... , (-1)^n \dbinom{\alpha}{n}, ... ,$ ($\alpha$ is a real number)
 >
@@ -518,7 +527,7 @@ $$
 >
 > (c) $h_n$ equals the number of n-permutations of S in which $e_1$ occurs at least once, $e_2$ occurs at least twice, ... , $e_k$ occurs at least $k$ times.
 >
-> (d) $h_n$ equals the number of n-permutations of S in which $e_1$ occurs at least once, $e_2$ occurs at most twice, ... , $e_k$ occurs at least $k$ times.
+> (d) $h_n$ equals the number of n-permutations of S in which $e_1$ occurs at most once, $e_2$ occurs at most twice, ... , $e_k$ occurs at most $k$ times.
 
 ### EX24(a)
 
@@ -539,7 +548,7 @@ $$
 \end{aligned}
 $$
 
-并且指数生成函数为$g^{(e)}(x) = \big(G^{e}(x)\big)^k$。
+并且指数生成函数为$g^{(e)}(x) = \big(G^{(e)}(x)\big)^k$。
 
 ### EX24(c)
 
@@ -550,7 +559,7 @@ $$
 \end{aligned}
 $$
 
-指数生成函数为$g^{(e)}(x) = G^{e}_1(x)G^{e}_2(x)\cdots G^{e}_k(x)$。
+指数生成函数为$g^{(e)}(x) = G^{(e)}_1(x)G^{(e)}_2(x)\cdots G^{(e)}_k(x)$。
 
 ### EX24(d)
 
@@ -561,7 +570,7 @@ $$
 \end{aligned}
 $$
 
-指数生成函数为$g^{(e)}(x) = G^{e}_1(x)G^{e}_2(x)\cdots G^{e}_k(x)$。
+指数生成函数为$g^{(e)}(x) = G^{(e)}_1(x)G^{(e)}_2(x)\cdots G^{(e)}_k(x)$。
 
 ## EX25
 
@@ -582,7 +591,7 @@ $$
 
 ## EX26
 
->Determine the number of ways to color the squares of a 1-by-n chessboard, using the colors red, blUe, green, and orange if an even number of squares is to be colored red and an even number is to be colored green.
+>Determine the number of ways to color the squares of a 1-by-n chessboard, using the colors red, blue, green, and orange if an even number of squares is to be colored red and an even number is to be colored green.
 
 $$
 \begin{aligned}
@@ -636,7 +645,7 @@ $$
 G^{(e)}_{5}(x) = G^{(e)}_{7}(x) = e^x - 1
 $$
 
-指数生成函数为,
+指数生成函数为，
 $$
 \begin{aligned}
 g^{(e)}(x) =& G^{e}_4(x)G^{e}_5(x)\cdots G^{e}_9(x) \\
@@ -701,7 +710,7 @@ $$
 > $$
 > h_n = \frac{3^n - 2^n + 1}{2}, \quad (n \ge 1)
 > $$
-> with $h_0 = 0$.Obtain an alternative derivation of this formula by finding a recurrence relation satisfied by $h_n$ and then solving the recurrence relation.
+> with $h_0 = 0$. Obtain an alternative derivation of this formula by finding a recurrence relation satisfied by $h_n$ and then solving the recurrence relation.
 
 | 种类  | 红色 | 蓝色    |
 | ----- | ---- | ------- |
@@ -719,7 +728,8 @@ $a_n + b_n + h_n$为总方案数$3^n$，可以递推做差得$h_n - h_{n-1} = 3^
 
 ### EX30注
 
-题目强调要写出$h_n$的递推式，实际上容易先求出$a_n$，然后带入$a_n + b_n + h_n = 3^n$求出$h_n$，但这样不满足题目要求的解法。
+1. 利用好奇偶两种对立状态。
+2. 题目强调要写出$h_n$的递推式，实际上容易先求出$a_n$，然后带入$a_n + b_n + h_n = 3^n$求出$h_n$，但这样不满足题目要求的解法。
 
 ## EX31
 
@@ -777,13 +787,17 @@ $h_n = (c_1 n^2+c_2 n + c_3)2^n + c_4 (-1)^n$，带入初始值有$\displaystyle
 
 ## EX37
 
->Determine a recurrence relation for the number an of ternary strings (made up of Os, Is, and 2s) of length n that do not contain two consecutive O's or two consecutive Is. Then find a formula for $a_n$.
+>Determine a recurrence relation for the number an of ternary strings (made up of 0s, 1s, and 2s) of length n that do not contain two consecutive 0s or two consecutive 1s. Then find a formula for $a_n$.
 
 对长度为n且符合题目要求的字符串$T_n$进行切片，按照前两个字符是否相同进行分类；如果前两个字符相同，那么只能切出22和$T_{n-2}$，如果前两个字符不同，每一个字符（0、1或2）都有两种符合题意的$T_{n-1}$。
 
 因此得到递推公式：$a_n = a_{n-2} + 2a_{n-1}, (n \ge 2)$，容易知道初始值$a_0 = 1, a_1 = 3$。
 
 因此求出$a_n = \displaystyle \frac{(1+\sqrt{2})^{n+1}}{2} + \frac{(1-\sqrt{2})^{n+1}}{2}, (n \ge 0)$。
+
+### EX37注
+
+对比EX37、EX40和EX9
 
 ## EX38
 
@@ -811,9 +825,9 @@ $h_n = (c_1 n^2+c_2 n + c_3)2^n + c_4 (-1)^n$，带入初始值有$\displaystyle
 
 ## EX39
 
->Let hn denote the number of ways to perfectly cover a 1-by-n board with monominoes and dominoes in such a way that no two dominoes are consecutive. Find, but do not solve, a recurrence relation and initial conditions satisfied by $h_n$.
+>Let $h_n$ denote the number of ways to perfectly cover a 1-by-n board with monominoes and dominoes in such a way that no two dominoes are consecutive. Find, but do not solve, a recurrence relation and initial conditions satisfied by $h_n$.
 
-容易验证初始值$h_0 = h_1 = 1, h_2 = 2$，当$n \ge 3$时，如果第一块为单牌，问题变为$h_{n-1}$，如果第一块为多米诺骨牌（$1\times 2$），那么临界的块只能是单牌，问题转化为$h_{n-3}$。
+容易验证初始值$h_0 = h_1 = 1, h_2 = 2$，当$n \ge 3$时，如果第一块为单牌，问题变为$h_{n-1}$，如果第一块为多米诺骨牌（$1\times 2$牌），那么临界的块只能是单牌，问题转化为$h_{n-3}$。
 
 综上有，
 
@@ -941,6 +955,8 @@ $$
 >& h_1 = 2
 >\end{aligned}
 >$$
+
+略
 
 ## EX48
 
