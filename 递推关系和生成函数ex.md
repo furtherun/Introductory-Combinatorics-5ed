@@ -115,17 +115,17 @@ $f_0 = 0,f_1 = f_2 = 1, f_3 = 2, f_4 = 3, \cdots$，$f_0$能被3整除，且n=0�
 
 $$
 \begin{aligned}
-    f_{4m+4} =& f_{4m+3} + f_{4m+2} \\
-    =& 2f_{4m+2} + f(4m+1) \\
-    =& 3f_{4m+1} + f_{4m}
+    f_{n} =& f_{n-1} + f_{n-2} \\
+    =& 2f_{n-2} + f(n-3) \\
+    =& 3f_{n-3} + f_{n-4}
 \end{aligned}
 $$
 
-f_{4m+4}被3整除。
+因此$f_n$与$f_{n-4}$模三同余，即$f_n \equiv f_{n-4} (mod~3)$，并且$f_0=0,f_1 =f_2 = 1, f_3 = 2, f_4 = 3$，因而$f_n$被3整除当且仅当n可被4整除。
 
 ### EX3PS
 
-暂时有些问题，没有准确论证「必要性」。或许可以从「周期性」的角度入手。
+从「周期性」的角度入手，验证了当$n$为4的倍数时$f_n$可被3整除，并且当$n$不是4的倍数时，$f_n$也一定不能被3整除。
 
 ## EX4
 
@@ -1059,6 +1059,34 @@ $$
 > \binom{n}{k}_q = \frac{n!_q}{k!_q (n-k)!_q}
 > $$
 > is the *q-binomial coefficient*.
+
+采用数学归纳法证明，当n=1时，左边等于$(x+y)$，右边等于$\displaystyle \sum_{k=0}^{1} \binom{1}{k}_q x^{1-k} y^k = \binom{1}{0}_q x + \binom{1}{1}_q y = x+y$，左右两边相等，成立。
+
+假设取n时等式成立，那么取n+1时，左右两边同时乘$(x+q^n y)$有，
+
+$$
+\begin{aligned}
+   \sum_{k=0}^{n} \binom{n}{k}_q x^{n-k} y^{k} (x+q^n y) =& \sum_{k=0}^{n} \binom{n}{k}_q x^{n+1-k} y^k + q^n \sum_{k=0}^{n} \binom{n}{k}_q x^{n-k} y^{k+1} \\
+   =&  \sum_{k=0}^{n} \binom{n}{k}_q x^{n+1-k} y^k + q^n \sum_{k=1}^{n+1} \binom{n}{k-1}_q x^{n+1-k} y^{k} \\
+   =& \binom{n}{0}_q x^{n+1} + \sum_{k=1}^{n} (\binom{n}{k}_q+  q^n \binom{n}{k-1}_q) x^{n+1-k} y^{k} + \binom{n}{n}_q y^{n+1} \\
+   =& \binom{n+1}{0}_q x^{n+1} + \sum_{k=1}^{n} (\binom{n}{k}_q+  q^n \binom{n}{k-1}_q) x^{n+1-k} y^{k} + \binom{n+1}{n+1}_q y^{n+1} \\
+   =& \sum_{k=0}^{n+1} \binom{n+1}{k}_q x^{n+1-k} y^k
+\end{aligned}
+$$
+
+即取n+1时等式仍成立，综上，证毕。
+
+### EX49注
+
+下面验证，
+
+$$
+\binom{n+1}{k}_q = \binom{n}{k}_q + q^n \binom{n}{k-1}_q
+$$
+
+### EX49参考
+
+[q-binomial coefficients](https://www.coursera.org/lecture/enumerative-combinatorics/recurrence-relation-for-q-binomial-coefficients-1-YPwMg)
 
 ## EX50
 

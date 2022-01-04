@@ -9,7 +9,7 @@
 记该问题的解为$h_n$，选择一端固定在1上的线段为基线，另一端指向2k，圆上的2n个点被分为两组，一组有2k-2个，另一组有2n-2k个，同时问题$h_n$被划分为$h_{k-1}$和$h_{n-k}$。所以有，
 
 $$
-h_n = \sum_{k=1}h_{k-1}h_{n-k}, \quad n \ge 1, h_0 = h_1 = 1
+h_n = \sum_{k=1}^{n}h_{k-1}h_{n-k}, \quad n \ge 1, h_0 = h_1 = 1
 $$
 
 显然$h_n$与卡特兰数$C_n$有相同的递推关系和初始项，因此，
@@ -104,7 +104,7 @@ $$
 
 $$
 \begin{aligned}
-   \sum_{k=0}^{n} h_k =& 3 \sum_{k=0}^{n} \binom{n}{0} + \sum_{k=0}^{n} \binom{n}{1} + 4 \sum_{k=0}^{n} \binom{n}{2} \\
+   \sum_{k=0}^{n} h_k =& 3 \sum_{k=0}^{n} \binom{k}{0} + \sum_{k=0}^{n} \binom{k}{1} + 4 \sum_{k=0}^{n} \binom{k}{2} \\
    =& 3 \binom{n+1}{1} + \binom{n+1}{2} + 4 \binom{n+1}{3} \quad n \ge 0
 \end{aligned}
 $$
@@ -125,11 +125,11 @@ $$
 \end{array}
 $$
 
-因此$h_n = \binom{n}{0} -2 \binom{n}{1} + 6 \binom{n}{3} -3 \binom{n}{4}$，进而
+因此$h_n = \binom{n}{0} -2 \binom{n}{1} + 6 \binom{n}{2} -3 \binom{n}{3}$，进而
 
 $$
 \begin{aligned}
-    \sum_{k=0}^{n} h_k =&  \sum_{k=0}^{n} \binom{n}{0}  -2 \sum_{k=0}^{n} \binom{n}{1} + 6 \sum_{k=0}^{n} \binom{n}{2} -3 \sum_{k=0}^{n} \binom{n}{4} \\
+    \sum_{k=0}^{n} h_k =&  \sum_{k=0}^{n} \binom{k}{0}  -2 \sum_{k=0}^{n} \binom{k}{1} + 6 \sum_{k=0}^{n} \binom{k}{2} -3 \sum_{k=0}^{n} \binom{k}{3} \\
     =&  \binom{n+1}{1} -2 \binom{n+1}{2} + 6 \binom{n+1}{3} -3 \binom{n+1}{4} \quad n \ge 0k
 \end{aligned}
 $$
@@ -222,12 +222,12 @@ $$
 
 ## EX11
 
->Compute the Stirling numbers of the second kind 8(8, k), (k = 0, 1, ..., 8).
+>Compute the Stirling numbers of the second kind S(8, k), (k = 0, 1, ..., 8).
 
 第二类Stirling数的性质，
 
-1. $S(p, 0) = 0$
-2. $S(p, p) = 1$
+1. $S(p, 0) = 0, p \ge 1$
+2. $S(p, p) = 1, p \ge 0$
 3. $S(p, k) = kS(p-1, k) + S(p-1, k-1)$
 
 进行打表，
@@ -270,9 +270,13 @@ int main() {
 ## EX12
 
 > Prove that the Stirling numbers of the second kind satisfy the following relations:
+>
 > (a) $S(n, 1) = 1, \quad (n \ge 1)$
+>
 > (b) $S(n, 2) = 2^{n-1} -1, \quad (n \ge 2)$
+>
 > (c) $S(n, n-1) = \binom{n}{n}, \quad (n \ge 1)$
+>
 > (d) $S(n, n-2) = \binom{n}{3} + 3 \binom{n}{4} \quad (n \ge 2)$
 
 ### EX12(a)
@@ -457,9 +461,15 @@ int main() {
 }
 ```
 
+### EX17考试说明
+
+第一类Stirling数本次考试不考，当然是在我做完第一类Stirling数的题目后才通知的。~~感觉亏了一个亿~~。
+
+总体来说不是很难，也是通过递推式做计算。
+
 ## EX18
 
-> Write $[n]_k$ as a polynomial in n for k = 5,6, and 7. 
+> Write $[n]_k$ as a polynomial in n for k = 5,6, and 7.
 
 由定义可以求出$[n]_5$，
 
@@ -481,17 +491,17 @@ $$
 
 ## EX19
 
-> Prove that the Stirling numbers of the first kind satisfy the following formulas: 
-> 
-> (a) $a(n, 1) = (n-1) !, \quad (n \ge 1)$
-> 
+> Prove that the Stirling numbers of the first kind satisfy the following formulas:
+>
+> (a) $s(n, 1) = (n-1) !, \quad (n \ge 1)$
+>
 > (b) $s(n, n-1) = \binom{n}{2}, \quad (n \ge 1)$
 
 结合递归式，易证。
 
 ## EX20
 
-> VerifY that $[n]_n$ = n!, and write n! as a polynomial in n using the Stirling numbers of the first kind. Do this explicitly for n = 6. 
+> VerifY that $[n]_n$ = n!, and write n! as a polynomial in n using the Stirling numbers of the first kind. Do this explicitly for n = 6.
 
 $[n]_p$的定义形式$[n]_p = n(n-1)(n-2) \cdots (n-(p-1)), p \ge 1$，当n=0时，$[n]_0 = 1$。
 
@@ -513,18 +523,21 @@ $$
 
 ## EX21
 
-> For each integer n = 1,2,3,4,5, construct the diagram of the set $\mathcal{P}_n$ of partitions of n, partially ordered by majorization. 
+> For each integer n = 1,2,3,4,5, construct the diagram of the set $\mathcal{P}_n$ of partitions of n, partially ordered by majorization.
 
 ~~这里的图（diagram）指的是Ferrers图，这是很容易画出的，以$5=4+1$为例，~~
 
 ![EX21](imgs/C7EX21.drawio.png)
 
+### EX21注
+
+本题应该是优超（majorize）关系的Hasse图。
+
 ## EX22
 
-> (a) Calculate the partition number $p_6$ and construct the diagram of the set $\mathcal{P}_6$, partially ordered by majorization. 
-> 
-> (b) Calculate the partition number $p_7$ and construct the diagram of the set $\mathcal{P}_7$, partially ordered by majorization. 
-
+> (a) Calculate the partition number $p_6$ and construct the diagram of the set $\mathcal{P}_6$, partially ordered by majorization.
+>
+> (b) Calculate the partition number $p_7$ and construct the diagram of the set $\mathcal{P}_7$, partially ordered by majorization.
 
 ### EX22(a)
 
@@ -538,13 +551,13 @@ $$
 
 ## EX23
 
-> A total order on a finite set has a unique maximal element (a largest element) and a unique minimal element (a smallest element). What are the largest partition and smallest partition in the lexicographic order on $\mathcal{P}_n$ (a total order)? 
+> A total order on a finite set has a unique maximal element (a largest element) and a unique minimal element (a smallest element). What are the largest partition and smallest partition in the lexicographic order on $\mathcal{P}_n$ (a total order)?
 
 最大分拆为n，最小分拆为$n=1+1+\cdots+1$。
 
 ## EX24
 
-> A partial order on a finite set may have many maximal elements and minimal elements. In the set $\mathcal{P}_n$ of partitions of n partially ordered by majorization, prove that there is a unique maximal element and a unique minimal element. 
+> A partial order on a finite set may have many maximal elements and minimal elements. In the set $\mathcal{P}_n$ of partitions of n partially ordered by majorization, prove that there is a unique maximal element and a unique minimal element.
 
 ## EX25
 
@@ -562,24 +575,28 @@ $$
    \prod_{k=1}^{m}(1-x^{t_k})^{-1} = & \frac{1}{1-x^{t_1}} \frac{1}{1-x^{t_2}} \cdots \frac{1}{1-x^{t_m}} \\
    =& (\sum_{n_1=0}^{\infty}x^{t_1 n_1}) (\sum_{n_2=0}^{\infty} x^{t_2 n_2}) \cdots (\sum_{n_m=0}^{\infty} x^{t_m n_m}) \\
    =& \sum_{n_1=0}^{\infty} \sum_{n_2=0}^{\infty} \cdots \sum_{n_m = 0}^{\infty} x^{n_1 t_1 + n_2 t_2 \cdots + n_m t_m} \\
-   =& \sum_{n=0}^{\infty} q_n x^n 
+   =& \sum_{n=0}^{\infty} q_n x^n
 \end{aligned}
 $$
 
-$q_n$等于方程$n_1t_1 + n_2t_2 + \cdots + n_m t_m = n$非负整数解$n_1, n_2, \cdots, n_m$的个数。
+由分拆数的性质，$q_n$等于方程$n_1t_1 + n_2t_2 + \cdots + n_m t_m = n$非负整数解$n_1, n_2, \cdots, n_m$的个数，所以$q_0, q_1, \cdots, q_n, \cdots$的生成函数为
+
+$$
+\prod_{k=1}^{m} (1-x^{t_k})^{k}
+$$
 
 ## EX26
 
 > Determine the conjugate of each of the following partitions:
-> 
+>
 > (a) $12 = 5 + 4 + 2 + 1$
-> 
+>
 > (b) $15 = 6 + 4 + 3 + 1 + 1$
 >
 > (c) $20 = 6 + 6 + 4 + 4$
-> 
+>
 > (d) $21 = 6 + 5 + 4 + 3 + 2 + 1$
-> 
+>
 > (e) $29=8+6+6+4+3+2$
 
 ### EX26(a)
@@ -604,11 +621,11 @@ $q_n$等于方程$n_1t_1 + n_2t_2 + \cdots + n_m t_m = n$非负整数解$n_1, n_
 
 ## EX28
 
-> Prove that conjugation reverses the order of majorization; that is, if $\lambda$ and $\mu$ are partitions of n and $\lambda$ is majorized by $mu$, then $\mu^{*}$ is majorized by $\lambda^{*}$. 
+> Prove that conjugation reverses the order of majorization; that is, if $\lambda$ and $\mu$ are partitions of n and $\lambda$ is majorized by $mu$, then $\mu^{*}$ is majorized by $\lambda^{*}$.
 
 ## EX29
 
-> Prove that the number of partitions of the positive integer n into parts each of which is at most 2 equals $\lfloor n/2 \rfloor +1$. (Remark: There is a formula, namely the nearest integer to $\frac{(n+3)^2}{12}, for the number of partitions of n into parts each of which is at most 3 but it is much more difficult to prove. There is also one for partitions with no part more than 4, but it is even more complicated and difficult to prove.) 
+> Prove that the number of partitions of the positive integer n into parts each of which is at most 2 equals $\lfloor n/2 \rfloor +1$. (Remark: There is a formula, namely the nearest integer to $\frac{(n+3)^2}{12}, for the number of partitions of n into parts each of which is at most 3 but it is much more difficult to prove. There is also one for partitions with no part more than 4, but it is even more complicated and difficult to prove.)
 
 当$n=2r$时，每一部分至多是2的分拆为
 
@@ -628,7 +645,122 @@ $$
 
 ## EX30
 
-> Prove that the partition function satisfies 
+> Prove that the partition function satisfies
 > $$
 > p_n \gt p_{n-1} \quad (n \ge 2)
 > $$
+
+## EX31
+
+> Evaluate $h_{k-1}^{(k)}$ the number of regions into which k-dimensional space is partitioned by k - 1 hyperplanes in general position.
+
+$$
+h_{k-1}^{(k)} = \binom{k-1}{0} + \binom{k-1}{1} + \cdots + \binom{k-1}{k-1} + \binom{k-1}{k} = 2^{k-1}
+$$
+
+### EX31注
+
+超平面是8.4节的内容，本次考试不涉及。
+
+## EX32
+
+> Use the recurrence relation (8.31) to compute the small Schroder numbers $s_8$ and $s_9$.
+
+小Schroder数的性质：
+
+1. $s_1 = s_2 = 1$
+2. $(n+2) s_{n+2} -3(2n+1)x_{n+1} + (n-1)s_n = 0, n \ge 1$
+
+由递推关系和初始项，可以计算出$s_3 = 3, s_4 =11, s_5 = 45, s_6 = 197, s_7 = 903$，
+
+$$
+8s_8 - 3\times 13 \times 903 + 5 \times 197 = 0
+$$
+
+求出$s_8 = 4279$，同理可以求出$9s_9 - 3 \times 15 \times 4279 + 6 \times 903 = 0$，得$s_9 = 20793$。
+
+## EX33
+
+> Use the recurrence relation (8.32) to compute the large Schroder numbers $R_7$ and $R_8$. Verify that $R_7 = 2s_8$ and $R_8 = 2s_9$, as stated in Corollary 8.5.8.
+
+大Schroder数的性质：
+
+$$
+R_n = \sum_{r=0}^{n} \frac{1}{n-r+1} \frac{(2n-r)!}{r![(n-r)!]^2}
+$$
+
+带入$n=7$计算，
+
+$$
+\begin{aligned}
+R_7 =& \sum_{r=0}^{7} \frac{1}{8-r} \frac{(14-r)!}{r![(7-r)!]^2} \\
+=& \frac{1}{8} \frac{14!}{0!(7!)^2} + \frac{1}{7} \frac{13!}{1!(6!)^2} + \frac{1}{6} \frac{12!}{2!(5!)^2} + \frac{1}{5} \frac{11!}{3!(4!)^2} + \frac{1}{4} \frac{10!}{4!(3!)^2} + \frac{1}{3} \frac{9!}{5! (2!)^2} + \frac{1}{2} \frac{8!}{6! (1!)^2} + \frac{1}{1} \frac{7!}{7! (0!)^2} \\
+=&  8558 = 2\times 4279 = 2s_8
+\end{aligned}
+$$
+
+### EX33注
+
+题目要求使用**递推关系**计算，大Schroder数的递推关系为，
+
+$$
+R_n = R_{n-1} + \sum_{k=1}^{n} R_{k-1} R_{n-k}
+$$
+
+注意与Catalan数进行区分。
+
+## EX34
+
+> Use the generating function for the large Schroder numbers to compute the first few large Schroder numbers.
+
+大Schroder数序列的生成函数为
+
+$$
+   \sum_{n=0}^{\infty} R_n x^n = \frac{1}{2x} (-(x-1) - \sqrt{x^2 -6x + 1})
+$$
+
+$\sqrt{x^2-6x+1}$在x=0处的泰勒级数为$1-3x-4x^2-12x^3-44x^4+\cdots$，
+
+因此，
+$$
+\begin{aligned}
+\sum_{k=0}^{\infty} R_n x^n =& \frac{1}{2x} (-(x-1) - (1-3x-4x^2-12x^3-44x^4 + \cdots)) \\
+=& \frac{2x+4x^2+ 12x^3 + 44x^4 + \cdots}{2x} \\
+=& 1 + 2x + 6x^2 + 22 x^3 + \cdots
+\end{aligned}
+$$
+
+综上，有$R_0 = 1, R_1 = 2, R_2 = 6, R_3 = 22$。
+
+## EX35
+
+> Use the generating function for the small Schroder numbers to compute the first few small Schroder numbers.
+
+小Schroder数序列的生成函数为
+
+$$
+\sum_{n=1}^{\infty} s_n x^n = \frac{1}{4}(1+x-\sqrt{x^2 - 6x + 1})
+$$
+
+同上，带入$\sqrt{x^2-6x+1}$的泰勒级数，
+
+$$
+\begin{aligned}
+   \sum_{k=1}^{\infty}  s_n x^n =& \frac{4x + 4x^2 + 12x^3 + 44x^4 + \cdots }{4}\\
+   =& x + x^2 + 3x^3 + 11x^4 + \cdots
+\end{aligned}
+$$
+
+综上，有$r_1 = 1, r_2 = 1, r_3 = 3, r_4 = 11$。
+
+## EX36
+
+> Prove that the Catalan number $C_n$ equals the number of lattice paths from (0,0) to (2n, 0) using only upsteps (1, 1) and downsteps (1, -1) that never go above the horizontal axis (so there are as many up steps as there are downsteps). (These are sometimes called *Dyck paths*.)
+
+记上行步(1,1)为-1，下行步(1,-1)为+1，步行序列为$a_1, a_2, \cdots, a_{2n}$。
+
+因为起点y坐标与终点y坐标相同，那么一定有n个上行步（+1）和n个下行步（-1），并且从不经过水平轴上方的格路径，即前k项和$a_1 + a_2 + \cdots + a_k \ge 0, 1 \le k \le 2n$，该问题与第n个Catalan数的组合意义相同，因此等于$C_n$。
+
+## EX37
+
+加星题，略。
