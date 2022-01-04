@@ -559,6 +559,10 @@ $$
 
 > A partial order on a finite set may have many maximal elements and minimal elements. In the set $\mathcal{P}_n$ of partitions of n partially ordered by majorization, prove that there is a unique maximal element and a unique minimal element.
 
+### EX24说明
+
+看了几份答案，似乎都不是严格的证明，只是稍微解释了$n$比其它都大，$\underbrace{1+1+\cdots+1}_{n\text{个}}$比其它都小。
+
 ## EX25
 
 > Let $t_1, t_2, \cdots, t_m$ be distinct positive integers, and let
@@ -621,7 +625,46 @@ $$
 
 ## EX28
 
-> Prove that conjugation reverses the order of majorization; that is, if $\lambda$ and $\mu$ are partitions of n and $\lambda$ is majorized by $mu$, then $\mu^{*}$ is majorized by $\lambda^{*}$.
+> Prove that conjugation reverses the order of majorization; that is, if $\lambda$ and $\mu$ are partitions of n and $\lambda$ is majorized by $\mu$, then $\mu^{*}$ is majorized by $\lambda^{*}$.
+
+由题意，当$\lambda$被$\mu$优超时，有
+
+$$
+\lambda_1 + \lambda_2 + \cdots + \lambda_i \le \mu_1 + \mu_2 + \mu_i, \quad 1 \le i \le k \tag{1}
+$$
+
+假设$\mu^{*} \not \le \lambda^{*}$，即存在k使，
+
+$$
+\mu_1^{*} + \mu_2^{*} + \cdots + \mu_{i}^{*} \le \lambda_1^{*} + \lambda_2^{*} + \cdots + \lambda_i^{*}, \quad 1 \le i \lt k
+$$
+
+$$
+\mu_1^{*} + \mu_2^{*} + \cdots + \mu_{k}^{*} \gt \lambda_1^{*} + \lambda_2^{*} + \cdots + \lambda_k^{*}
+$$
+即有$\mu_k^{*} \gt \lambda_k^{*}$，记$u = \mu_k^{*}, v = \lambda_k^{*}$。又因为$\mu^*$和$\lambda^{*}$都是n的分拆，所以有
+
+$$
+\mu_{k+1}^{*} + \mu_{k+2}^{*} + \cdots   \le \lambda_{k+1}^{*} + \lambda_{k+2}^{*} + \cdots 
+$$
+如图，由互换行列前后的关系可得，
+
+![EX28](IMGS/C8EX28.drawio.png)
+
+$$
+\mu_{k+1}^{*} + \mu_{k+2}^{*}  \cdots = \sum_{1}^{u} (u_i - k), \; \lambda_{k+1}^{*} + \lambda_{k+2}^{*} + \cdots = \sum_{i=1}^{v} (\lambda_i - k)
+$$
+有放缩，
+$$
+\sum_{i=1}^{v} (\mu_i - k) \lt \sum_{i=1}^{u} \le \sum_{i=1}^{v}(\lambda_i - k)
+$$
+
+可得
+
+$$
+\mu_1 + \mu_2 + \cdots + \mu_v \lt \lambda_1 + \lambda_2 + \cdots + \lambda_v \tag{2}
+$$
+其中(1)式与(2)式矛盾，因此假设不成立，综上，证毕。
 
 ## EX29
 
@@ -649,6 +692,8 @@ $$
 > $$
 > p_n \gt p_{n-1} \quad (n \ge 2)
 > $$
+
+考虑n-1的分拆数和n的分拆数，显然所有n-1的分拆数+1都是n的分拆数，此外n还有它自己作为分拆数，因此一定有$p_n \gt p_{n-1}$。
 
 ## EX31
 
