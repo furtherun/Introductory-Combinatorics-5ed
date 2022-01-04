@@ -232,7 +232,7 @@ $$
 
 进行打表，
 | $k$       | 0   | 1   | 2   | 3   | 4    | 5    | 6   | 7   | 8   |
-| ------- | --- | --- | --- | --- | ---- | ---- | --- | --- | --- |
+| --------- | --- | --- | --- | --- | ---- | ---- | --- | --- | --- |
 | $S(8, k)$ | 0   | 1   | 127 | 966 | 1701 | 1050 | 266 | 28  | 1   |
 
 ### EX11 验证程序
@@ -492,3 +492,143 @@ $$
 ## EX20
 
 > VerifY that $[n]_n$ = n!, and write n! as a polynomial in n using the Stirling numbers of the first kind. Do this explicitly for n = 6. 
+
+$[n]_p$的定义形式$[n]_p = n(n-1)(n-2) \cdots (n-(p-1)), p \ge 1$，当n=0时，$[n]_0 = 1$。
+
+带入$p = n$显然有$[n]_n = n!, n \ge 0$。
+
+$[n]_p$与第一类Stirling数的关系，$\displaystyle [n]_p = \sum_{k=0}^{p} (-1)^{k-p} s(p, k) n^k$，
+
+带入$p = n$有，
+
+$$
+n! = [n]_n = \sum_{k=0}^{n} (-1)^{n-k} s(p, k) n^k
+$$
+
+当$n=6$时，结合s(p, k)三角形有，
+
+$$
+6! = 6^6 -15 \times 6^5 + 85 \times 6^4 - 225 \times 6^3 + 274 \times 6^2 -120 \times 6^1 + 0 \times 6^0
+$$
+
+## EX21
+
+> For each integer n = 1,2,3,4,5, construct the diagram of the set $\mathcal{P}_n$ of partitions of n, partially ordered by majorization. 
+
+~~这里的图（diagram）指的是Ferrers图，这是很容易画出的，以$5=4+1$为例，~~
+
+![EX21](imgs/C7EX21.drawio.png)
+
+## EX22
+
+> (a) Calculate the partition number $p_6$ and construct the diagram of the set $\mathcal{P}_6$, partially ordered by majorization. 
+> 
+> (b) Calculate the partition number $p_7$ and construct the diagram of the set $\mathcal{P}_7$, partially ordered by majorization. 
+
+
+### EX22(a)
+
+以(a)为例，6对应的分拆为，
+
+$$
+6, \; 51, \; 42, \;411,\;33,\;321,\;3111,\;222,\;2211,\;21111,\;111111
+$$
+
+因此$p_6 = 11$。
+
+## EX23
+
+> A total order on a finite set has a unique maximal element (a largest element) and a unique minimal element (a smallest element). What are the largest partition and smallest partition in the lexicographic order on $\mathcal{P}_n$ (a total order)? 
+
+最大分拆为n，最小分拆为$n=1+1+\cdots+1$。
+
+## EX24
+
+> A partial order on a finite set may have many maximal elements and minimal elements. In the set $\mathcal{P}_n$ of partitions of n partially ordered by majorization, prove that there is a unique maximal element and a unique minimal element. 
+
+## EX25
+
+> Let $t_1, t_2, \cdots, t_m$ be distinct positive integers, and let
+> $$
+> q_n = q_n(t_1, t_2, \cdots, t_m)
+> $$
+> equal the number of partitions of n in which all parts are taken from $t_1, t_2, \cdots, t_m$. Define $q_0 = 1$. Show that the generating function for $q_0, q_1, \cdots, q_n, \cdots$ is
+> $$
+> \prod_{k=1}^{m}(1-x^{t_k})^{-1}
+> $$
+
+$$
+\begin{aligned}
+   \prod_{k=1}^{m}(1-x^{t_k})^{-1} = & \frac{1}{1-x^{t_1}} \frac{1}{1-x^{t_2}} \cdots \frac{1}{1-x^{t_m}} \\
+   =& (\sum_{n_1=0}^{\infty}x^{t_1 n_1}) (\sum_{n_2=0}^{\infty} x^{t_2 n_2}) \cdots (\sum_{n_m=0}^{\infty} x^{t_m n_m}) \\
+   =& \sum_{n_1=0}^{\infty} \sum_{n_2=0}^{\infty} \cdots \sum_{n_m = 0}^{\infty} x^{n_1 t_1 + n_2 t_2 \cdots + n_m t_m} \\
+   =& \sum_{n=0}^{\infty} q_n x^n 
+\end{aligned}
+$$
+
+$q_n$等于方程$n_1t_1 + n_2t_2 + \cdots + n_m t_m = n$非负整数解$n_1, n_2, \cdots, n_m$的个数。
+
+## EX26
+
+> Determine the conjugate of each of the following partitions:
+> 
+> (a) $12 = 5 + 4 + 2 + 1$
+> 
+> (b) $15 = 6 + 4 + 3 + 1 + 1$
+>
+> (c) $20 = 6 + 6 + 4 + 4$
+> 
+> (d) $21 = 6 + 5 + 4 + 3 + 2 + 1$
+> 
+> (e) $29=8+6+6+4+3+2$
+
+### EX26(a)
+
+以(a)为例，先画出Ferrrers图，再画出共轭分拆的图，
+
+![EX26](imgs/C7EX26.drawio.png)
+
+因此共轭分拆为$12 = 4 + 3 +2 + 2 + 1$。
+
+## EX27
+
+> For each integer n > 2, determine a self-conjugate partition of n that has at least two parts.
+
+设$\lambda$是n的分拆$n_1 + n_2 + \cdots + n_k$，当n为奇数时，取$n_1 = \frac{(n+1)}{2}, n_2 = n_3 = \cdots = n_{k} = 1, k = \frac{n+1}{2}$。
+
+当n为偶数时，取$n_1 = \frac{n}{2}, n_2 = 2, n_3 = n_4 = \cdots = n_k = 1, k = \frac{n}{2}$。
+
+以n=7和n=8分别为奇数和偶数的例子，如图，
+
+![EX27](imgs/C7EX27.drawio.png)
+
+## EX28
+
+> Prove that conjugation reverses the order of majorization; that is, if $\lambda$ and $\mu$ are partitions of n and $\lambda$ is majorized by $mu$, then $\mu^{*}$ is majorized by $\lambda^{*}$. 
+
+## EX29
+
+> Prove that the number of partitions of the positive integer n into parts each of which is at most 2 equals $\lfloor n/2 \rfloor +1$. (Remark: There is a formula, namely the nearest integer to $\frac{(n+3)^2}{12}, for the number of partitions of n into parts each of which is at most 3 but it is much more difficult to prove. There is also one for partitions with no part more than 4, but it is even more complicated and difficult to prove.) 
+
+当$n=2r$时，每一部分至多是2的分拆为
+
+$$
+1^n, \; 2^1 1^{n-2}, \; 2^2 1^{n-4}, \; \cdots, \; 2^r
+$$
+
+当$n=2r+1$时，每一部分最多是2的分拆为
+
+$$
+1^n, \; 2^1 1^{n-2}, \; 2^2 1^{n-4}, \; \cdots, \; 2^r1^1
+$$
+
+不论奇偶，都是分拆为r+1个部分，当r为偶数时，$r+1 = \frac{n}{2} + 1 = \lfloor n/2 \rfloor + 1$，当r为奇数时，$r+1 = \frac{n-1}{2} + 1 = \lfloor (n+1)/2 \rfloor = \lfloor n /2 \rfloor + 1$。
+
+综上，分拆成每一部分至多是2的分拆数等于$\lfloor n/2 \rfloor$。
+
+## EX30
+
+> Prove that the partition function satisfies 
+> $$
+> p_n \gt p_{n-1} \quad (n \ge 2)
+> $$

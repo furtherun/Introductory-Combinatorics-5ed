@@ -210,7 +210,7 @@ $$
 
 我们给出直观的图来判断集合之间的关系：
 
-![EX11](https://raw.githubusercontent.com/furtherun/imgs/main/img/C5EX25.png)
+![EX11](imgs/C5EX11.drawio.png)
 
 两种解法等价，因此有，
 
