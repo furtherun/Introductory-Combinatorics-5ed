@@ -104,7 +104,7 @@ $$
 
 > \* Show  that for  any given  52  integers there exist two of them whose sum, or else  whose  difference,  is  divisible  by 100.
 
-### PS
+### EX7PS
 
 略
 
@@ -187,7 +187,7 @@ $$
 
 采用反证法证明该结论不成立，举例取m=4, n = 6, 因此$a \in \{0, 1, 2, 3\}, b \in \{0, 1, 2,3,4,5\}$，我们分别从集合中去取a和b，使a+b为奇数。并且假设存在这样的x同时满足x = 4p + a和x = 6q + b，两式相加并整理可以得到2x - 4p - 6q = a + b，等式左边为偶数，右边为奇数显然不合理，因此假设不成立。
 
-### PS
+### EX12PS
 
 上课提了一嘴。
 
@@ -219,7 +219,7 @@ $$
 
 假设每个人认识的人数都不同，那么我们会发现存在Alice并不认识任何人而Bob认识所有人的矛盾情况，因此假设不成立。
 
-### PS
+### EX16PS
 
 需要强调的是题目中的「认识」关系是相互的，也就是说我认识你就等于你认识我，不存在我认识你而你不认识我的情况。
 
@@ -251,13 +251,13 @@ $$
 >
 > (c) Determine an integer mn such that if mn points are chosen within an equilateral triangle of side length 1, there are two whose distance apart is at  most 1/n.
 
-### Q(a)&Q(b)
+### EX19Q(a)&Q(b)
 
 根据EX18的做法，题目的关键是如何分割等边三角形，分割方法如下。
 
 ![image-20211023084730069](https://i.loli.net/2021/10/23/oXQHbZVlsRNphkf.png)
 
-### Q(c)
+### EX19Q(c)
 
 只需要把每条边n等分，然后平行于另外两条边做平行线。考虑到等边三角形的面积公式为$\dfrac{\sqrt{3}}{4} a^2$，其中a为边长，分割前后总面积相同。
 $$
@@ -277,17 +277,17 @@ $$
 
 综上，17个点可以构造出$K_3$，不少于17个点也一定能构造出$K_3$，即$r(3,3,3) \le 17$。
 
-### PS
+### EX20PS
 
 首先要知道各个符号的含义，$K_{17} \rightarrow K_3, K_3, K_3$中有3个$K_3$，它们是「或者」的关系，只需要证明**一定存在**某个$K_3$就好，而不是全部颜色同时构造出$K_3$。
 
-第二点就是证明的是**小于等于**而不是**等于**，后者还需要证明16个点**可以不构造（不一定存在）**出$K_3$，参考p49正文部分。
+第二点就是证明的是**小于等于**而不是**等于**，后者还需要证明16个点**不一定存在**$K_3$，参考p49正文部分。
 
 ## EX21
 
 > \* Prove that r(3, 3, 3) 2: 17 by exhibiting a coloring, with colors red, blue, and  green, of the line segments joining 16 points with the property that there do not  exist three points such that the three line segments joining them are all colored  the same.
 
-### PS
+### EX21PS
 
 略
 
@@ -295,11 +295,7 @@ $$
 
 > Prove that
 > $$
-> \begin{equation}
->
 > r\underbrace{(3,3,\cdots, 3)}_{\text{k+1}} \le (k+1) (r\underbrace{(3,3,\cdots, 3)}_{\text{k}} - 1) + 2
->
-> \end{equation}
 > $$
 > Use this result to obtain an upper bound for
 > $$
@@ -345,11 +341,15 @@ r_n  \le & 2 + n + n(n-1) + n(n-1)(n-2) + \cdots + n(n-1)\times \cdots\times4 + 
 \end{aligned}
 $$
 
-### PS
+### EX22PS
 
 这题必考！——因为参考答案不全。
 
 这题必不考！——试卷没这么大空白写。
+
+### 小彩蛋
+
+其实，确实是太长不考。
 
 ## EX23
 
@@ -369,13 +369,15 @@ $$
 
 综上，$r(3, 4) \le 10$。
 
-### PS
+### EX23PS
 
 Q：为什么想到根据$m \ge 4$进行分类讨论？
 
 A：我想说，要是不看前人的解答，我也想不出来。因为直观想法也是根据鸽巢原理加强版计算出可能的边界是$\lceil \dfrac{9}{2} \rceil = 5$，之后进行讨论。或许是考虑到红色的较少（红色的$K_3$，而不是蓝色的$K_3$），讨论了红色较少的分类。
 
 ~~我只能说，我研究懂这答案了，不考太可惜了，（误）。~~
+
+这题考过。
 
 ## EX24
 
@@ -389,7 +391,7 @@ A：我想说，要是不看前人的解答，我也想不出来。因为直观�
 
 综上，有$r_t(t,t,q_3) = q_3$。
 
-### PS
+### EX24PS
 
 参考[链接](https://math.stackexchange.com/questions/332228/the-ramsey-number-rt-t-q-with-q-geq-t)中的回答，突然意识到$r_t(\cdots)$与$r(\cdots)$是不同的，前者的概念参考p50页正文，t子集。
 
@@ -423,7 +425,7 @@ $$
 
 此外，可知第j列且在第i行后面的人一定不矮于第i行，$d_{x, j} \ge d_{i, j} \ge d_{i, j+1}, x= i+1, \cdots, m$，第j+1列且在第i行前的人一定不高于第i行，$d_{y, j+1}\le d_{i, j + 1} \le d_{i, j}， y = 1, 2, \cdots , i$。那么此时可知，第j列的第i行到第m行一定无法与第j+1列第1行到第i行形成匹配状态（匹配要满足**小于**而不是小于等于），则最多只可能是第j列的第1行到第i-1行与第j+1列的第1行到第i行形成匹配状态，但这违反鸽巢原理（第j+1列有两人与第j列同一人形成匹配状态），因此假设不成立。
 
-### PS
+### EX26PS
 
 答案看着比较短小，但总觉得不是很通顺，感觉如果考这题会很考验语言能力。
 
@@ -495,6 +497,6 @@ $$
 $$
 此时，必须满足$1 - |\theta| < 0$，并且$|\theta|$取整数，所以$|\theta| \ge 2$，QED。
 
-### PS
+### EX28PS
 
 我完全没看出来这道题和这章有什么关系。

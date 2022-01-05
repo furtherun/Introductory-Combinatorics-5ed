@@ -33,24 +33,20 @@ $$
 从插入3的规则发现，对于原来的奇数行是从右向左插入，偶数行则是从左向右插入，可以判断4位排序的表中，312所在的子表中4是从右向左插入的，因此可以得到该子表。
 $$
 \begin{matrix}
-
 & 3 & & 1 & & 2 &4\\
 & 3 & & 1 &4& 2 \\
 & 3 &4 & 1 & & 2 \\
 4& 3 & & 1 & & 2 \\
-
 \end{matrix}
 $$
 同理，我们可以确定4124在该表中的第九行（$2 \times 4 + 1 = 9$），因此在5位排序的子表中，5也从右向左插入的，可以画出该子表，
 $$
 \begin{matrix}
-
 & 3 & & 1 & & 2 & &4 &5\\
 & 3 & & 1 & & 2 &5 &4\\
 & 3 & & 1 &5 & 2 & &4\\
 & 3 &5 & 1 & & 2 & &4\\
 5& 3 & & 1 & & 2 & &4\\
-
 \end{matrix}
 $$
 所以题目可以得出结论，在31524后面的是35124，前面的是31254。
@@ -284,7 +280,6 @@ $$
 & 3 &  &  &  & 4 & 1  & 2 \\
  & 3 &  & 5 &  & 4 & 1 & 2 \\
  & 3 & 6 & 5 &  & 4 & 1 & 2 \\
-
 7 & 3 & 6 & 5 &  & 4 & 1 & 2 \\
 7 & 3 & 6 & 5 & 8 & 4 & 1 & 2 \\
 \end{matrix}
@@ -410,9 +405,9 @@ $$
 
 ## EX16
 
-> For each of the subsets (a), (b), (c), and (d) in the preceding exercise, determine the subset that immediately precedes it in the base 2 arithmetic generating  scheme.
+> For each of the subsets (a), (b), (c), and (d) in the preceding exercise, determine the subset that immediately precedes it in the base 2 arithmetic generating  scheme.
 
-### PS
+### EX16PS
 
 这题写前驱子集，同样略。
 
@@ -837,11 +832,13 @@ $$
 \binom{9}{4} - \binom{9-2}{4} - \binom{9-4}{3} - \binom{9-8}{2} - \binom{9-9}{1} = 81
 $$
 
-从所有排列中，依次减去____ 型，2___型，2 4__型和2 4 8_型，确定2489所在位置。
+从所有排列中，依次减去X X X X型，2 X X X型，2 4X X型和2 4 8 X型，确定2489所在位置。
 
-### PS
+### EX33PS
 
 带入公式，杨辉三角之外的数全为0。
+
+后来会知道这些是扩展牛顿二项式。
 
 ## EX34
 
@@ -933,7 +930,7 @@ $$
 
 ### PS
 
-小声BB一句反对称性的问题，应该有逻辑「若p则q，若非q则非p」，那由德摩根律，非q是指「$y\not R' x$或$y\not R'' x$」，只需要有一个就可以证明$y \not R x$。
+小声BB一句反对称性的问题，应该有逻辑「若p则q，若非q则非p」，那由德摩根律，非q是指「$y \not{R^{'}} x$或$y \not{R^{''}} x$」，只需要有一个就可以证明$y \not R x$。
 
 ## EX38
 
