@@ -4,7 +4,7 @@
 
 >Let 2n (equally spaced) points on a circle be chosen. Show that the number of ways to join these points in pairs, so that the resulting n line segments do not intersect, equals the nth Catalan number $C_n$.
 
-![EX1](https://raw.githubusercontent.com/furtherun/imgs/main/img/C8EX1.png)
+![EX1](imgs/c8ex1.png)
 
 记该问题的解为$h_n$，选择一端固定在1上的线段为基线，另一端指向2k，圆上的2n个点被分为两组，一组有2k-2个，另一组有2n-2k个，同时问题$h_n$被划分为$h_{k-1}$和$h_{n-k}$。所以有，
 
@@ -25,14 +25,14 @@ $$
 ## EX2
 
 > Prove that the number of 2-by-n arrays
+>
 > $$
-> \left[
 > \begin{matrix}
 > x_{11} & x_{12} & \cdots & x_{1n} \\
 > x_{21} & x_{22} & \cdots & x_{2n} \\
 > \end{matrix}
-> \right]
 > $$
+>
 > that can be made from the numbers 1,2, ..., 2n such that
 >
 > $$
@@ -63,7 +63,7 @@ $$
 
 考虑固定顺序的乘法，因此一共有$C_{n-1} = C_{3} = \frac{1}{4} \binom{6}{3} = 5$种方案，与之对应的三角形划分如图所示。
 
-![EX3](https://raw.githubusercontent.com/furtherun/imgs/main/img/C8EX3.png)
+![EX3](imgs/c8ex3.png)
 
 ## EX4
 
@@ -77,7 +77,7 @@ $$
 
 以EX4(a)为例，步骤同上一题，
 
-![EX4](https://raw.githubusercontent.com/furtherun/imgs/main/img/C8EX4(a).png)
+![EX4](imgs/c8ex4.png)
 
 ## EX5
 
@@ -85,7 +85,9 @@ $$
 
 ## EX6
 
-> Let the sequence $h_0, h_1, ... , h_n, ...$ be defined by $h_n = 2n^2 - n + 3, (n  \ge 0)$. Determine the difference table, and find a formula for $\sum_{k=0}^{n} h_k$.
+> Let the sequence $h_0, h_1, ... , h_n, \cdots$ be defined
+> by $h_n = 2n^2 - n + 3, (n  \ge 0)$.
+> Determine the difference table, and find a formula for $\displaystyle \sum_{k=0}^{n} h_k$.
 
 $h_n$是2次多项式，因此有$\Delta^3 h_n = 0$，
 
@@ -111,7 +113,10 @@ $$
 
 ## EX7
 
-> The general term $h_n$ of a sequence is a polynomial in n of degree 3. If the first four entries of the Oth row of its difference table are 1, -1, 3, 10, determine $h_n$ and a formula for $\sum_{k=0}^{n} h_k$·
+> The general term $h_n$ of a sequence is a polynomial in n of degree 3.
+> If the first four entries of the Oth row of its difference table are 1, -1, 3, 10,
+> determine $h_n$ and a formula
+> for $\displaystyle \sum_{k=0}^{n} h_k$·
 
 由题意，$h_n$是3次多项式，那么$\Delta^4 h_n=0$，求出差分表第0条对角线，
 
@@ -167,15 +172,18 @@ $$
 
 > Prove that the following formula holds for the kth-order differences of a sequence
 > $h_0, h_1, \cdots, h_n, \cdots$:
+>
 > $$
 > \Delta^k h_n = \sum_{j=0}^{k}(-1)^{k-j} \binom{k}{j} h_{n+j}
 > $$
+>
 
 采用数学归纳法证明，当k=0时，有
 
 $$
 \Delta h_n = (-1)^0 \binom{0}{0} h_{0} = h_0
 $$
+
 成立，假设当$k=m$时结论成立，即有
 
 $$
@@ -186,31 +194,36 @@ $$
 
 $$
 \begin{aligned}
-   \Delta^{m+1} h_n = & \Delta^{m} h_{n+1} - \Delta^{m} h_{n} \\
-   =& \sum_{j=0}^{m} (-1)^{m-j} \binom{m}{j} h_{n+1+j} - \sum_{j=0}^{m} (-1)^{m-j} \binom{m}{j} h_{n+j} \\
-   =& \sum_{j=1}^{m+1} (-1)^{m-j+1} \binom{m}{j-1} h_{n+j} - \sum_{j=0}^{m} (-1)^{m-j} \binom{m}{j} h_{n+j} \\
-   =& (h_{n+(m+1)}- (-1)^{m}h_n) + \sum_{j=1}^{m} ((-1)^{m-j+1} \binom{m}{j-1} - (-1)^{m-j} \binom{m}{j}) h_{n+j} \\
-   =& (-1)^{(m+1)-(m+1)} h_{n+(m+1)} + (-1)^{(m+1) - 0} h_{n + 0} + \sum_{j=1}^{m} ((-1)^{m+1-j} \binom{m}{j-1} + (-1)^{m+1-j} \binom{m}{j}) h_{n+j} \\
-   =& (-1)^{(m+1)-(m+1)} h_{n+(m+1)} + (-1)^{(m+1) - 0} h_{n + 0} + \sum_{j=1}^{m} (-1)^{m+1-j}  \binom{m+1}{j}) h_{n+j} \\
-   =& \sum_{j=0}^{m+1} (-1)^{m+1-j} \binom{m+1}{j} h_{n+j}
+\Delta^{m+1} h_n = & \Delta^{m} h_{n+1} - \Delta^{m} h_{n} \\
+=& \sum_{j=0}^{m} (-1)^{m-j} \binom{m}{j} h_{n+1+j} - \sum_{j=0}^{m} (-1)^{m-j} \binom{m}{j} h_{n+j} \\
+=& \sum_{j=1}^{m+1} (-1)^{m-j+1} \binom{m}{j-1} h_{n+j} - \sum_{j=0}^{m} (-1)^{m-j} \binom{m}{j} h_{n+j} \\
+=& (h_{n+(m+1)}- (-1)^{m}h_n) + \sum_{j=1}^{m} ((-1)^{m-j+1} \binom{m}{j-1} - (-1)^{m-j} \binom{m}{j}) h_{n+j} \\
+=& (-1)^{(m+1)-(m+1)} h_{n+(m+1)} + (-1)^{(m+1) - 0} h_{n + 0} + \sum_{j=1}^{m} ((-1)^{m+1-j} \binom{m}{j-1} + (-1)^{m+1-j} \binom{m}{j}) h_{n+j} \\
+=& (-1)^{(m+1)-(m+1)} h_{n+(m+1)} + (-1)^{(m+1) - 0} h_{n + 0} + \sum_{j=1}^{m} (-1)^{m+1-j}  \binom{m+1}{j}) h_{n+j} \\
+=& \sum_{j=0}^{m+1} (-1)^{m+1-j} \binom{m+1}{j} h_{n+j}
 \end{aligned}
 $$
+
 综上，证毕。
 
 ## EX10
 
 > If $h_n$ is a polynomial in n of degree m, prove that the constants $c_0, c_1, \cdots, c_m$ such that
+>
 > $$
 > h_n = c_0 \binom{n}{0} + c_1 \binom{n}{1} + \cdots + c_m \binom{n}{m}
 > $$
+>
 > are uniquely determined. (Cf. Theorem 8.2.2.)
 
-本题主要证明**唯一性**，假设存在不同的序列，$\{c_i\}_{i=0}^{m}$和$\{d_i\}_{i=0}^{m}$使得存在i满足$c_i \neq d_i, 0 \le i \le m$，
+本题主要证明**唯一性**，假设存在不同的序列$\{c_i\}_{i=0}^{m}$和
+序列$\{d_i\}_{i=0}^{m}$使得存在i满足
+$c_i \neq d_i$，其中$0 \le i \le m$，
 
 $$
 \begin{aligned}
-  h_n =& c_0 \binom{n}{0} + c_1 \binom{n}{1} + \cdots + c_m \binom{n}{m} \\
-  =& d_0 \binom{n}{0} + d_1 \binom{n}{1} + \cdots + d_m \binom{n}{m}
+h_n =& c_0 \binom{n}{0} + c_1 \binom{n}{1} + \cdots + c_m \binom{n}{m} \\
+=& d_0 \binom{n}{0} + d_1 \binom{n}{1} + \cdots + d_m \binom{n}{m}
 \end{aligned}
 $$
 
@@ -330,11 +343,15 @@ $$
 ## EX13
 
 > Let X be a p-element set and let Y be a k-element set. Prove that the number of functions $f : X \rightarrow Y$ which map X onto Y equals
+>
 > $$
-> k! S(p, k) = S^{\#}(p, k)
+> k! S(p, k) = S^{\sharp}(p, k)
 > $$
+>
 
-X映射到Y是满射，映射函数等价于把p个元素放入到k个**可区分**的盒子中，即有$S^{\#}(p, k)$个；同时由可区分盒子与不可区分盒子划分的关系，有$S^{\#}(p, k) = k!S(p, k)$，因此映射函数的个数也等于$k!S(p, k)$。
+X映射到Y是满射，映射函数等价于把p个元素放入到k个**可区分**的盒子中，即有$S^{\sharp}(p, k)$个；
+同时由可区分盒子与不可区分盒子划分的关系，有$S^{\sharp}(p, k) = k!S(p, k)$，
+因此映射函数的个数也等于$k!S(p, k)$。
 
 ### EX13吐槽
 
@@ -347,17 +364,19 @@ X映射到Y是满射，映射函数等价于把p个元素放入到k个**可区�
 ## EX15
 
 > The number of partitions of a set of n elements into k **distinguishable** boxes (some of which may be empty) is $k_n$. By counting in a different way, prove that
+>
 > $$
 > k^n = \binom{k}{1} 1! S(n, 1) + \binom{k}{2} 2! S(n, 2) + \cdots + \binom{k}{n} n! S(n, n)
 > $$
+>
 > If $k \ge n$, define $S(n, k)$ to be 0.
 
 方法一：考虑把n个元素分别放在k个盒子中，每个元素有k种放置放法，因此共$k^n$种方法。
 
-方法二：先区分盒子是否非空，从k个盒子中选出i个非空盒子，问题变为把n个元素放入i个可区分盒子且盒子非空中的方法数，即为$S^{\#}(n, i)$，i可能的取值为$i=1,2, \cdots, k$，
+方法二：先区分盒子是否非空，从k个盒子中选出i个非空盒子，问题变为把n个元素放入i个可区分盒子且盒子非空中的方法数，即为$S^{\sharp}(n, i)$，i可能的取值为$i=1,2, \cdots, k$，
 
 $$
-\sum_{i=1}^{k} \binom{k}{i} S^{\#} (n, i) = \sum_{i=1}^{k} \binom{k}{i} i! S(n, i)
+\sum_{i=1}^{k} \binom{k}{i} S^{\sharp} (n, i) = \sum_{i=1}^{k} \binom{k}{i} i! S(n, i)
 $$
 
 方法一和方法二是同一问题的两种解决方法，因此等价，所以有，
@@ -507,7 +526,8 @@ $[n]_p$的定义形式$[n]_p = n(n-1)(n-2) \cdots (n-(p-1)), p \ge 1$，当n=0�
 
 带入$p = n$显然有$[n]_n = n!, n \ge 0$。
 
-$[n]_p$与第一类Stirling数的关系，$\displaystyle [n]_p = \sum_{k=0}^{p} (-1)^{k-p} s(p, k) n^k$，
+$[n]_p$与第一类Stirling数的关系，
+$[n]_p = \displaystyle \sum_{k=0}^{p} (-1)^{k-p} s(p, k) n^k$，
 
 带入$p = n$有，
 
@@ -527,7 +547,7 @@ $$
 
 ~~这里的图（diagram）指的是Ferrers图，这是很容易画出的，以$5=4+1$为例，~~
 
-![EX21](imgs/C7EX21.drawio.png)
+![EX21](imgs/c8ex21.drawio.png)
 
 ### EX21注
 
@@ -535,9 +555,11 @@ $$
 
 ## EX22
 
-> (a) Calculate the partition number $p_6$ and construct the diagram of the set $\mathcal{P}_6$, partially ordered by majorization.
+> (a) Calculate the partition number $p_6$ and construct the diagram of the
+> set $\mathcal{P}_6$, partially ordered by majorization.
 >
-> (b) Calculate the partition number $p_7$ and construct the diagram of the set $\mathcal{P}_7$, partially ordered by majorization.
+> (b) Calculate the partition number $p_7$ and construct the diagram of the
+> set $\mathcal{P}_7$, partially ordered by majorization.
 
 ### EX22(a)
 
@@ -566,13 +588,17 @@ $$
 ## EX25
 
 > Let $t_1, t_2, \cdots, t_m$ be distinct positive integers, and let
+>
 > $$
 > q_n = q_n(t_1, t_2, \cdots, t_m)
 > $$
+>
 > equal the number of partitions of n in which all parts are taken from $t_1, t_2, \cdots, t_m$. Define $q_0 = 1$. Show that the generating function for $q_0, q_1, \cdots, q_n, \cdots$ is
+>
 > $$
 > \prod_{k=1}^{m}(1-x^{t_k})^{-1}
 > $$
+>
 
 $$
 \begin{aligned}
@@ -583,7 +609,8 @@ $$
 \end{aligned}
 $$
 
-由分拆数的性质，$q_n$等于方程$n_1t_1 + n_2t_2 + \cdots + n_m t_m = n$非负整数解$n_1, n_2, \cdots, n_m$的个数，所以$q_0, q_1, \cdots, q_n, \cdots$的生成函数为
+由分拆数的性质，$q_n$等于方程$n_1t_1 + n_2t_2 + \cdots + n_m t_m = n$非负整数解$n_1, n_2, \cdots, n_m$的个数，
+所以$q_0, q_1, \cdots, q_n, \cdots$的生成函数为
 
 $$
 \prod_{k=1}^{m} (1-x^{t_k})^{k}
@@ -607,7 +634,7 @@ $$
 
 以(a)为例，先画出Ferrrers图，再画出共轭分拆的图，
 
-![EX26](imgs/C7EX26.drawio.png)
+![EX26](imgs/c8ex26.drawio.svg)
 
 因此共轭分拆为$12 = 4 + 3 +2 + 2 + 1$。
 
@@ -621,11 +648,11 @@ $$
 
 以n=7和n=8分别为奇数和偶数的例子，如图，
 
-![EX27](imgs/C7EX27.drawio.png)
+![EX27](imgs/c8ex27.drawio.png)
 
 ## EX28
 
-> Prove that conjugation reverses the order of majorization; that is, if $\lambda$ and $\mu$ are partitions of n and $\lambda$ is majorized by $\mu$, then $\mu^{*}$ is majorized by $\lambda^{*}$.
+> Prove that conjugation reverses the order of majorization; that is, if $\lambda$ and $\mu$ are partitions of n and $\lambda$ is majorized by $\mu$, then $\mu^{\ast}$ is majorized by $\lambda^{\ast}$.
 
 由题意，当$\lambda$被$\mu$优超时，有
 
@@ -633,28 +660,32 @@ $$
 \lambda_1 + \lambda_2 + \cdots + \lambda_i \le \mu_1 + \mu_2 + \mu_i, \quad 1 \le i \le k \tag{1}
 $$
 
-假设$\mu^{*} \not \le \lambda^{*}$，即存在k使，
+假设$\mu^{} \not \le \lambda^{\ast}$，即存在k使，
 
 $$
-\mu_1^{*} + \mu_2^{*} + \cdots + \mu_{i}^{*} \le \lambda_1^{*} + \lambda_2^{*} + \cdots + \lambda_i^{*}, \quad 1 \le i \lt k
+\mu_1^{\ast} + \mu_2^{\ast} + \cdots + \mu_{i}^{\ast} \le \lambda_1^{\ast} + \lambda_2^{\ast} + \cdots + \lambda_i^{\ast}, \quad 1 \le i \lt k
 $$
 
 $$
-\mu_1^{*} + \mu_2^{*} + \cdots + \mu_{k}^{*} \gt \lambda_1^{*} + \lambda_2^{*} + \cdots + \lambda_k^{*}
+\mu_1^{\ast} + \mu_2^{\ast} + \cdots + \mu_{k}^{\ast} \gt \lambda_1^{\ast} + \lambda_2^{\ast} + \cdots + \lambda_k^{\ast}
 $$
-即有$\mu_k^{*} \gt \lambda_k^{*}$，记$u = \mu_k^{*}, v = \lambda_k^{*}$。又因为$\mu^*$和$\lambda^{*}$都是n的分拆，所以有
+
+即有$\mu_k^{\ast} \gt \lambda_k^{\ast}$，记$u = \mu_k^{\ast}, v = \lambda_k^{\ast}$。又因为$\mu^*$和$\lambda^{\ast}$都是n的分拆，所以有
 
 $$
-\mu_{k+1}^{*} + \mu_{k+2}^{*} + \cdots   \le \lambda_{k+1}^{*} + \lambda_{k+2}^{*} + \cdots 
+\mu_{k+1}^{\ast} + \mu_{k+2}^{\ast} + \cdots   \le \lambda_{k+1}^{\ast} + \lambda_{k+2}^{\ast} + \cdots
 $$
+
 如图，由互换行列前后的关系可得，
 
-![EX28](IMGS/C8EX28.drawio.png)
+![EX28](imgs/c8ex28.drawio.png)
 
 $$
-\mu_{k+1}^{*} + \mu_{k+2}^{*}  \cdots = \sum_{1}^{u} (u_i - k), \; \lambda_{k+1}^{*} + \lambda_{k+2}^{*} + \cdots = \sum_{i=1}^{v} (\lambda_i - k)
+\mu_{k+1}^{\ast} + \mu_{k+2}^{\ast}  \cdots = \sum_{1}^{u} (u_i - k), \; \lambda_{k+1}^{\ast} + \lambda_{k+2}^{\ast} + \cdots = \sum_{i=1}^{v} (\lambda_i - k)
 $$
-有放缩，
+
+根据放缩，
+
 $$
 \sum_{i=1}^{v} (\mu_i - k) \lt \sum_{i=1}^{u} \le \sum_{i=1}^{v}(\lambda_i - k)
 $$
@@ -664,11 +695,16 @@ $$
 $$
 \mu_1 + \mu_2 + \cdots + \mu_v \lt \lambda_1 + \lambda_2 + \cdots + \lambda_v \tag{2}
 $$
+
 其中(1)式与(2)式矛盾，因此假设不成立，综上，证毕。
 
 ## EX29
 
-> Prove that the number of partitions of the positive integer n into parts each of which is at most 2 equals $\lfloor n/2 \rfloor +1$. (Remark: There is a formula, namely the nearest integer to $\frac{(n+3)^2}{12}, for the number of partitions of n into parts each of which is at most 3 but it is much more difficult to prove. There is also one for partitions with no part more than 4, but it is even more complicated and difficult to prove.)
+> Prove that the number of partitions of the positive integer n into parts each of which is at most 2
+> equals $\lfloor n/2 \rfloor +1$.
+> (Remark: There is a formula, namely the nearest integer to $\frac{(n+3)^2}{12},
+> for the number of partitions of n into parts each of which is at most 3 but it is much more difficult to prove.
+> There is also one for partitions with no part more than 4, but it is even more complicated and difficult to prove.)
 
 当$n=2r$时，每一部分至多是2的分拆为
 
@@ -689,6 +725,7 @@ $$
 ## EX30
 
 > Prove that the partition function satisfies
+>
 > $$
 > p_n \gt p_{n-1} \quad (n \ge 2)
 > $$
@@ -761,12 +798,13 @@ $$
 大Schroder数序列的生成函数为
 
 $$
-   \sum_{n=0}^{\infty} R_n x^n = \frac{1}{2x} (-(x-1) - \sqrt{x^2 -6x + 1})
+\sum_{n=0}^{\infty} R_n x^n = \frac{1}{2x} (-(x-1) - \sqrt{x^2 -6x + 1})
 $$
 
 $\sqrt{x^2-6x+1}$在x=0处的泰勒级数为$1-3x-4x^2-12x^3-44x^4+\cdots$，
 
 因此，
+
 $$
 \begin{aligned}
 \sum_{k=0}^{\infty} R_n x^n =& \frac{1}{2x} (-(x-1) - (1-3x-4x^2-12x^3-44x^4 + \cdots)) \\

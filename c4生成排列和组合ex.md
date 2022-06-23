@@ -1,11 +1,5 @@
 # 第4章 生成排列和组合
 
-## 序
-
-押的题目就考了EX1，命中率很低QAQ。本章的题目很难，特别后20道题，有的题目甚至不知道参考答案在说什么。
-而考试题目几乎都是从前30题中选的，可惜了后面需要琢磨的题目。
-时间关系，这一章我也有许多疏漏，~~恰好就漏了考试最后一题~~，不过应付考试应该是没问题的，有深度的神仙题目应该就留给后人填坑了。
-
 ## EX1
 
 > Which permutation of {1, 2, 3, 4, 5} follows 31524 in using the algorithm described in Section 4.1? Which permutation comes before 31524?
@@ -13,13 +7,16 @@
 在31524后面的是35124，前面的是31254。
 
 说说具体如何手工定位到31524，首先，容易写出2位排列的表，
+
 $$
 \begin{matrix}
 1  & 2\\
 2  & 1
 \end{matrix}
 $$
+
 插入3之前需要把表的每一行复制成三行，之后可以画出3位排列的表，定位312在第3行（奇数行）。
+
 $$
 \begin{matrix}
 &1  & & 2  & 3\\
@@ -30,7 +27,10 @@ $$
 & 2 &  & 1 & 3
 \end{matrix}
 $$
-从插入3的规则发现，对于原来的奇数行是从右向左插入，偶数行则是从左向右插入，可以判断4位排序的表中，312所在的子表中4是从右向左插入的，因此可以得到该子表。
+
+从插入3的规则发现，对于原来的奇数行是从右向左插入，偶数行则是从左向右插入，
+可以判断4位排序的表中，312所在的子表中4是从右向左插入的，因此可以得到该子表。
+
 $$
 \begin{matrix}
 & 3 & & 1 & & 2 &4\\
@@ -39,7 +39,10 @@ $$
 4& 3 & & 1 & & 2 \\
 \end{matrix}
 $$
-同理，我们可以确定4124在该表中的第九行（$2 \times 4 + 1 = 9$），因此在5位排序的子表中，5也从右向左插入的，可以画出该子表，
+
+同理，我们可以确定4124在该表中的第九行（$2 \times 4 + 1 = 9$），
+因此在5位排序的子表中，5也从右向左插入的，可以画出该子表，
+
 $$
 \begin{matrix}
 & 3 & & 1 & & 2 & &4 &5\\
@@ -49,6 +52,7 @@ $$
 5& 3 & & 1 & & 2 & &4\\
 \end{matrix}
 $$
+
 所以题目可以得出结论，在31524后面的是35124，前面的是31254。
 
 ### 验证程序
@@ -116,6 +120,7 @@ int main()
 ## EX2
 
 > Determine the mobile integers in  
+>
 > $$
 > \overrightarrow{4} \;\overleftarrow{8}\; \overrightarrow{3} \; \overleftarrow{1} \; \overrightarrow{6} \; \overleftarrow{7}\; \overleftarrow{2} \; \overrightarrow{5} \;.
 > $$
@@ -124,7 +129,8 @@ int main()
 
 ## EX3
 
-> Use the algorithm of Section 4.1 to generate the first 50 permutations {I, 2, 3, 4, 5},  starting with $\overleftarrow{1} \;\overleftarrow{2} \;\overleftarrow{3} \;\overleftarrow{4} \;\overleftarrow{5} \;$.
+> Use the algorithm of Section 4.1 to generate the first 50 permutations {I, 2, 3, 4, 5},  
+> starting with $\overleftarrow{1} \;\overleftarrow{2} \;\overleftarrow{3} \;\overleftarrow{4} \;\overleftarrow{5}$.
 
 我们调整一下EX1中的代码，可以获得50个输出。
 
@@ -213,7 +219,10 @@ int main()
 
 ## EX5
 
-> Let $i_1 i_2 \cdots i_n$ in be a permutation of {1, 2, ... , n} with inversion sequence $b_1, b_2, \cdots, b_n$  and let $k = b_1 + b_2+ \cdots + b_n$. Show by induction that we cannot bring $i_1 i_2 \cdots i_n$ by fewer than k successive switches of adjacent terms.
+> Let $i_1 i_2 \cdots i_n$ in be a permutation of {1, 2, ... , n}
+> with inversion sequence $b_1, b_2, \cdots, b_n$  and
+> let $k = b_1 + b_2+ \cdots + b_n$. Show by induction that
+> we cannot bring $i_1 i_2 \cdots i_n$ by fewer than k successive switches of adjacent terms.
 
 对于相邻的两个数$i_x， i_y$，交换它们要么会增多一组逆序，要么会减少一组逆序，因此要消除k组逆序，交换相邻两个数的次数不能少于k次。
 
@@ -256,6 +265,7 @@ int main()
 ### EX7 Q(a)
 
 从大向小插，逆序数就是待插入数据前面的数字个数。
+
 $$
 \begin{aligned}
 &8 \\
@@ -272,6 +282,7 @@ $$
 ### EX7 Q(b)
 
 从小往大插入，逆序数就是待插入数字前面的空位数。
+
 $$
 \begin{matrix}
  &  &  &  &  &  & 1 &  \\
@@ -313,13 +324,18 @@ $$
 
 ## EX9
 
-> Show that the largest number of inversions of a permutation of {1, 2, ... , n}  equals n(n-1) /2. Determine the unique permutation with n(n -1) /2 inversions.  Also determine all those permutations with one fewer inversion.
+> Show that the largest number of inversions of a permutation of {1, 2, ... , n} equals $n(n-1)/2$.
+> Determine the unique permutation with $n(n -1)/2$ inversions.
+> Also determine all those permutations with one fewer inversion.
 
-最大逆序的个数就是任选两个数，$i_j, i_k, j < k$都有$i_j \gt i_k$，因此最多有$\dbinom{n}{2} = \dfrac{n(n-1)}{2}$个逆序，该排列是$n(n-1)\cdots321$；从该排列中任意交换一组逆序，即可得到有$\dfrac{n(n-1)}{2}-1$个逆序的排列。
+最大逆序的个数就是任选两个数，$i_j, i_k, j < k$都有$i_j \gt i_k$，
+因此最多有$\dbinom{n}{2} = \dfrac{n(n-1)}{2}$个逆序，
+该排列是$n(n-1)\cdots321$；从该排列中任意交换一组逆序，
+即可得到有$\dfrac{n(n-1)}{2}-1$个逆序的排列。
 
 ## EX10
 
-> Bring the permutations 256143 and 436251 to 123456 by successive switches of  adjacent numbers.
+> Bring the permutations 256143 and 436251 to 123456 by successive switches of adjacent numbers.
 
 略
 
@@ -476,7 +492,7 @@ int main()
 | 6    | 101  |
 | 7    | 111  |
 
-### PS
+### EX19PS
 
 画立方体直观找答案，参考正文p65。
 
@@ -497,7 +513,7 @@ int main()
 | 6    | 110  |
 | 7    | 010  |
 
-### PS
+### EX20PS
 
 画立方体求解，画立方体直观找答案，区分几个概念。
 
@@ -549,15 +565,15 @@ $\sigma(a_7\cdots a_1a_0) = 9$为奇数，从右向左寻找第一位1，并翻�
 
 > Determine the predecessors of each of the 9-tuples in Exercise 23 in the reflected  Gray code of order 9.
 
-### Q(a)
+### EX24Q(a)
 
 $\sigma(a_7\cdots a_1a_0) = 4$为偶数，它由前驱翻转1个位得到，因此前驱的$\sigma(a_7\cdots a_1a_0) = 3$为奇数，那么该数是由前驱翻转最右边的1左侧的位所得，可以求出前驱为010100010 。
 
-### Q(b)
+### EX24Q(b)
 
 $\sigma(a_7\cdots a_1a_0) = 4$，前驱$\sigma(a_7\cdots a_1a_0) = 3$，翻转最后一个1的左侧位得到前驱110000100。
 
-### Q(c)
+### EX24Q(c)
 
 $\sigma(a_7\cdots a_1a_0) = 9$为奇数，前驱$\sigma(a_7\cdots a_1a_0) = 8$，翻转最后一位得到前驱111111110。
 
@@ -565,7 +581,7 @@ $\sigma(a_7\cdots a_1a_0) = 9$为奇数，前驱$\sigma(a_7\cdots a_1a_0) = 8$�
 
 > \* The reflected Gray code of order n is properly called the reflected binary Gray  code since it is a listing of the n-tuples of Os and Is. It can be generalized  to any base system, in particular the ternary and decimal system. Thus, the  reflected decimal Gray code of order n is a listing of all the decimal numbers of  n digits such that consecutive numbers in the list differ in only one place and the  absolute value of the difference is 1. Determine the reflected decimal Gray codes  of orders 1 and 2. (Note that we have not said precisely what a reflected decimal  Gray code is. Part of the problem is to discover what it is.) Also, determine the  reflected ternary Gray codes of orders 1,2, and 3.
 
-### PS
+### EX25PS
 
 加星题看都不看。
 
@@ -651,7 +667,7 @@ int main()
 
 根据逆序数的取值范围，$0 \le b_i \le n-i$，对于n=4，逆序数各位最大取值为3, 2, 1, 0。我们在求字典序的时候，可以看作是进行「逆序列加法」，不过这个数的每一位进制都不同，最低位是满0进1！这样我们就有了生成字典序逆序列的方法，之后只要按照EX7中根据逆序列来生成排列。
 
-### PS
+### EX30PS
 
 时间关系，这里不再给出验证代码。大体上与r进制加法的代码类似。
 
@@ -812,7 +828,7 @@ int main()
 }
 ```
 
-### PS
+### EX31PS
 
 答案好像只给出了1开头的子集（课本定义的集合顺序）。
 
@@ -848,16 +864,19 @@ $$
 >
 > (b) What are the last (r + 1) r-subsets?
 
-### Q(a)
+### EX34Q(a)
 
 显然第一个子集是$123\cdots r$，由EX26中的算法，考虑只调整最后一位，其余位不变，则最后一个子集是$12\cdots n$，恰好从r到n一共有n-r+1个数，因此前n-r+1个子集分别是，
 $$
 123\cdots r\\ 123\cdots(r+1)\\ \cdots \\123\cdots n
 $$
 
-### Q(b)
+### EX34Q(b)
 
-容易验证最后一个子集是$(n-r+1)(n-r+2) \cdots n$，它的前驱子集为$(n-r)(n-r+2)\cdots n$，再计算一次前驱子集$(n-r)(n-r+1) (n-r+3) \cdots n$，则可以发现规律，那么倒数第r+1个子集为$(n-r)(n-r+1) \cdots (n-1)$，综上，
+容易验证最后一个子集是$(n-r+1)(n-r+2) \cdots n$，它的前驱子集为$(n-r)(n-r+2)\cdots n$，
+再计算一次前驱子集$(n-r)(n-r+1) (n-r+3) \cdots n$则可以发现规律，
+那么倒数第r+1个子集为$(n-r)(n-r+1) \cdots (n-1)$，综上，
+
 $$
 (n-r)(n-r+1) \cdots (n-1)\\
 \cdots \\
@@ -869,20 +888,29 @@ $$
 ## EX35
 
 > The complement $\bar{A}$ of an r-subset A of {1, 2, ... , n} is the (n-r)-subset of  {1, 2, ... , n}, consisting of all those elements that do not belong to A. Let  M = $\dbinom{n}{r}$, the number of r-subsets and, at the same time, the number of (n-r)-subsets of {1, 2, ... , n}. Prove that, if
+>
 > $$
 > A_1, A_2, A_3, \cdots, A_M
 > $$
+>
 > are the r-subsets in lexicographic order, then
+>
 > $$
 > \bar{A_M}, \cdots,\bar{A_3},\bar{A_2},\bar{A_1}
 > $$
+>
 > are the (n-r)-subsets in lexicographic order.
 
-任取两个不同的r子集A和B，由集合字典序的定义（正文p68）知，如果$(A\cup B)\backslash(A\cap B)$中的最小元素如果在A侧，则$A\lt B$，也即$A\cap \bar{B}$中的最小元素比$B\cap\bar{A}$中的最小元素更小，此时对于补集有$\bar{B} \lt \bar{A}$。同理，当补集有$\bar{B} \lt \bar{A}$时，也能推出最小元素在$(A\cup B)\backslash(A\cap B)$中的最小元素在A侧，进而判断$A\lt B$。
+任取两个不同的r子集A和B，由集合字典序的定义（正文p68）知，
+如果$(A\cup B)\backslash(A\cap B)$中的最小元素如果在A侧，
+则$A\lt B$，也即$A\cap \bar{B}$中的最小元素比$B\cap\bar{A}$中的最小元素更小，
+此时对于补集有$\bar{B} \lt \bar{A}$。同理，当补集有$\bar{B} \lt \bar{A}$时，
+也能推出最小元素在$(A\cup B)\backslash(A\cap B)$中的最小元素在A侧，
+进而判断$A\lt B$。
 
 由上可知，如果$A_1 \lt A_2$，一定有补集$\bar{A_2}\lt \bar{A_1}$，其余同理。
 
-### PS
+### EX35PS
 
 感觉此题不容易说清楚，有可能考。
 
@@ -902,7 +930,7 @@ $$
 
 自反且反对称：(a, a)必须都在；(x, y)和(y, x)（其中$x \neq y$）只能有一个出现，或者都不出现，因此一共有$3^{\frac{n(n-1)}{2}}$种关系。
 
-### PS
+### EX36PS
 
 上课没听讲，以前学的离散也忘干净了。组合数学书上讲的比较简略，只能重新翻了离散数学及其应用第七版（第9章）回顾概念。
 
@@ -910,7 +938,7 @@ $$
 
 反对称和非对称是两个概念。
 
-### 参考链接
+### EX36参考链接
 
 [离散数学N元集合关系个数计算 - 百度文库 (baidu.com)](https://wenku.baidu.com/view/b6801422ed630b1c59eeb57f)
 
@@ -928,23 +956,26 @@ $$
 
 传递性：$x, y, z \in X$，xR'y且yR'z，由R‘的传递性有$xR'z$；同理有xR''z，因此有xRz。
 
-### PS
+### EX37PS
 
 小声BB一句反对称性的问题，应该有逻辑「若p则q，若非q则非p」，那由德摩根律，非q是指「$y \not{R^{'}} x$或$y \not{R^{''}} x$」，只需要有一个就可以证明$y \not R x$。
 
 ## EX38
 
 > Let $(X_1, \le_1)$ and $(X_2, \le_2)$ be partially ordered sets. Define a relation T on the  set
+>
 > $$
 > X_1 \times X_2 = \{(x_1, x_2): x_1 \;\text{in } \; X_1, x_2 \;\text{in } \; X_2\}
 > $$
 >  
+> by
 >
-> by  
 > $$
 > (x_1, x_2)T(x_1', x_2') \text{ if and only if } x_1 \le_1 x_1' \text{ and } x_2 \le_2 x_2'
 > $$
-> Prove that $(X_1 \times X_2, T)$ is a partially ordered set. $(X_1 \times X_2, T)$ is called the *direct  product* of $(X_1, \le_1)$ and $(X_2, \le_2)$  and is also denoted by  $(X_1, \le_1) \times (X_2, \le_2)$ .  More generally, prove that the direct product $(X_1, \le_1) \times (X_2, \le_2) \times \cdots \times (X_M ,\le_m)$  of partially ordered sets is also a partially ordered set.
+>
+> Prove that $(X_1 \times X_2, T)$ is a partially ordered set. $(X_1 \times X_2, T)$ is called the *direct  product* of $(X_1, \le_1)$ and $(X_2, \le_2)$  and is also denoted by  $(X_1, \le_1) \times (X_2, \le_2)$.
+> More generally, prove that the direct product $(X_1, \le_1) \times (X_2, \le_2) \times \cdots \times (X_M ,\le_m)$  of partially ordered sets is also a partially ordered set.
 
 自反性：取$x = (x_1, x_2) \in X_1 \times X_2$，$x_1 \in X_1$​，$x_1$满足偏序关系有$x_1 \le_1 x_1$，同理，$x_2 \le_2 x_2$，所以得出T满足自反性。
 
@@ -958,7 +989,8 @@ $$
 
 ## EX39
 
-> Let $(J， \le)$ be the partially ordered set with J = {0, 1} and with 0 < 1. By  identifying the subsets of a set X of n elements with the n-tuples of 0s and  1s, prove that the partially ordered set $(X, \sube)$ can be identified with the n-fold  direct product  
+> Let $(J， \le)$ be the partially ordered set with J = {0, 1} and with 0 < 1. By  identifying the subsets of a set X of n elements with the n-tuples of 0s and  1s, prove that the partially ordered set $(X, \subseteq)$ can be identified with the n-fold  direct product  
+>
 > $$
 > (J, \le) \times (J, \le) \times \cdots \times (J, \le) \text{ (n factors).}
 > $$
@@ -966,12 +998,18 @@ $$
 令$J^n = J \times J\times \cdots \times J$(n项)，所以$J^n$是每一项为0或者1的n元组，设$x = (x_1, x_2 , \cdots, x_n), y = (y_1, y_2, \cdots, y_n) \in J^n$，并且x和y满足偏序关系$x \le y$时，对所有的i都有$ x_i \le y_i$。
 
 定义$X = \{1, 2,\cdots, n\}$上的子集集合$\mathcal{P}(X)$，函数$f: J^n \rightarrow \mathcal{P}(X)$满足，
+
 $$
 f(x) = \{i \in X| x_i = 1\}, \quad x \in J^n
 $$
-即$f(x)$是x元组中所有为1项的**下标**组成的集合，显然$f(x)$既是单射又是满射，即$J^n$与$\mathcal{P}(X)$满足一一映射（双射）关系。
 
-所以满足偏序关系$x \le y$当且仅当$f(x) \sube f(y)$，因此偏序集$(X, \sube)$能用n重直积$J^n$​表示。
+即$f(x)$是x元组中所有为1项的**下标**组成的集合，
+显然$f(x)$既是单射又是满射，
+即$J^n$与$\mathcal{P}(X)$满足一一映射（双射）关系。
+
+所以满足偏序关系$x \le y$当且仅当$f(x) \subseteq f(y)$，
+因此偏序集$(X, \subseteq)$
+可以用n重直积$J^n$​表示。
 
 并且有如下等价命题，
 
@@ -979,9 +1017,9 @@ $$
 2. 项的关系$x_i \le y_i, 1 \le i \le n$
 3. 如果项$x_i = 1$，那么一定有$y_i = 1, 1 \le i \le n$
 4. 如果下标$i \in f(x)$，那么一定有$i \in f(y), 1 \le i \le n$
-5. 集合关系$f(x) \sube f(y)$
+5. 集合关系$f(x) \subseteq f(y)$
 
-### PS
+### EX39PS
 
 其实答案每一句话都能看懂，就是连在一起感觉没有逻辑。
 
@@ -994,18 +1032,20 @@ $$
 > Generalize Exercise 39 to the multiset of all combinations of the multiset X =  $\{n_1\cdot a_1, n_2 \cdot a_2, \cdots, n_m \cdot a_m\}$. (Part of this exercise is to determine the "natural"  partial order of these multisets.)
 
 对于任意非负整数r，定义由$\{0, 1, \cdots, r\}, 0 \lt 1 \lt \cdots \lt r$构成的偏序集[r]，$\mathcal{P}(X)$是所有多重集合X的子集构成的集合，有$x \in \mathcal{P}(X)$，
+
 $$
 x = \{x_1 \cdot a_1, x_2 \cdot a_2, \cdots, x_m \cdot a_m\}, \quad 0 \le x_j \le n_j \quad (1 \le j \le m)
 $$
+
 对于$x, y \in \mathcal{P}(X)$如下命题等价，
 
-1. $x \sube y$
+1. $x \subseteq y$
 2. $x_j \le y_j, 1 \le j \le m$
 3. 在偏序集$[n_1]\times[n_2]\times \cdots \times [n_m]$中$(x_1, x_2 , \cdots, x_m) \le (y_1, y_2, \cdots, y_m)$
 
-所以偏序集$(\mathcal{P}(X), \sube)$能用直积$[n_1]\times[n_2]\times \cdots \times [n_m]$表示。
+所以偏序集$(\mathcal{P}(X), \subseteq)$能用直积$[n_1]\times[n_2]\times \cdots \times [n_m]$表示。
 
-### PS
+### EX40PS
 
 不知所言，感觉用到了EX39的部分，所以不太可能考？
 
@@ -1018,9 +1058,12 @@ $$
 引理：对于不同的$x, y \in X$，下列两个命题等价
 
 1. $ x \lt y$
-2. 存在整数$r \ge 2$，并且取自X的序列$(x_1, x_2, \cdots, x_r)$满足$x_1 = x, x_r = y$并且$x_i$覆盖$x_{i-1}, 2\le i \le r$。
+2. 存在整数$r \ge 2$，并且取自X的序列$(x_1, x_2, \cdots, x_r)$
+3. 满足$x_1 = x, x_r = y$并且$x_i$覆盖$x_{i-1}, 2\le i \le r$。
 
-先由1证2，考虑取自X的序列$(x_1, x_2, \cdots, x_r)$所构成的集合S，要求S中的元素满足$x_1 = x, x_r = y, x_{i-1} \lt x_i$，因为X是有限集，那么S也是有限集，并且S至少包含序列(x, y)，所以S非空。
+先由1证2，考虑取自X的序列$(x_1, x_2, \cdots, x_r)$所构成的集合S，
+要求S中的元素满足$x_1 = x, x_r = y, x_{i-1} \lt x_i$，因为X是有限集，
+那么S也是有限集，并且S至少包含序列(x, y)，所以S非空。
 
 因此，我们可以从S中选择出大小为r的序列，使之满足覆盖条件$x_i$覆盖$x_{i-1}, 2 \le i \le r$​。
 
@@ -1028,13 +1071,13 @@ $$
 
 综上，有限集上的偏序关系由覆盖关系唯一确定。
 
-### PS
+### EX41PS
 
 无语，这题也没太看懂。正文也直说传递性使覆盖决定偏序，但是也没详细展开。
 
 ## EX42
 
-> Describe the cover relation for the partial order $\sube$ on the collection $\mathcal{P}(X)$ of an  subsets of a set X.
+> Describe the cover relation for the partial order $\subseteq$ on the collection $\mathcal{P}(X)$ of an  subsets of a set X.
 
 记n = |X|，所有子集分布在n阶立方体上。
 
@@ -1064,7 +1107,7 @@ abecfd, abefcd, aebcfd, aebfcd, abcefd, aefbcd.
 
 综上，R是等价关系。
 
-### PS
+### EX44PS
 
 区分等价关系（自反、**对称**、传递）和偏序关系（自反、**反对称**、传递）。
 
@@ -1091,13 +1134,16 @@ R是等价关系，证明如下。
 传递性：对于$x, y, z \in X$，如果x和y除以m余数相同，y和z除以m余数相同，那么x和z除以m余数相同。
 
 因此R是等价关系。等价类根据余数划分，一共有m个等价类。
+
 $$
 [0], [1], \cdots, [m-1], [r] = \{r + im| i \in Z\}, 0 \le r \le m-1
 $$
 
 ## EX47
 
-> Let $\Pi_n$ denote the set of all partitions of the set {1, 2, ... ,n} into nonempty sets.  Given two partitions $\pi$ and $\sigma$ in $\Pi_n$, define $\pi \le \sigma$, provided that each part of $\pi$ is  contained in a part of $\sigma$. Thus, the partition $\pi$ can be obtained by partitioning  the parts of $\sigma$. This relation is usually expressed by saying that $\pi$  is a *refinement*  of $\sigma$.
+> Let $\Pi_n$ denote the set of all partitions of the set {1, 2, ... ,n} into nonempty sets.
+> Given two partitions $\pi$ and $\sigma$ in $\Pi_n$, define $\pi \le \sigma$, provided that each part of $\pi$ is contained in a part of $\sigma$. Thus, the partition $\pi$ can be obtained by partitioning the parts of $\sigma$.
+> This relation is usually expressed by saying that $\pi$  is a *refinement*  of $\sigma$.
 >
 > (a) Prove that the relation of refinement is a partial order on $\Pi_m$.
 >
@@ -1105,21 +1151,21 @@ $$
 >
 > (c) Construct the diagram of $(\Pi_m, \le)$ for n = 1,2,3, and 4.
 
-### Q(a)
+### EX47Q(a)
 
-自反性：对任意$\pi \sube \Pi_n$，显然$\pi \sube \pi$，满足自反性。
+自反性：对任意$\pi \subseteq \Pi_n$，显然$\pi \subseteq \pi$，满足自反性。
 
-反对称性：对于$\pi, \sigma \sube \Pi_n$，如果$\pi \sube \sigma$且$\sigma \sube \pi$，则$\pi = \sigma$，满足反对称性。
+反对称性：对于$\pi, \sigma \subseteq \Pi_n$，如果$\pi \subseteq \sigma$且$\sigma \subseteq \pi$，则$\pi = \sigma$，满足反对称性。
 
-传递性：对于$\pi, \rho, \sigma \sube \Pi_n$，如果$\pi \sube \rho,  \rho \sube \sigma$，则$\pi \sube \sigma$，满足传递性。
+传递性：对于$\pi, \rho, \sigma \subseteq \Pi_n$，如果$\pi \subseteq \rho,  \rho \subseteq \sigma$，则$\pi \subseteq \sigma$，满足传递性。
 
 因此加细关系是$\Pi_n$上的一个偏序关系。
 
-### Q(b)
+### EX47Q(b)
 
 unfinished
 
-### Q(c)
+### EX47Q(c)
 
 Hasse图如下所示。
 
@@ -1157,8 +1203,11 @@ B5---C7;
 B6---C3;
 B6---C4;
 B6---C5;
-
 ```
+
+### EX47注
+
+**EX47Q(c)必考**，务必记牢。
 
 ## EX48
 
@@ -1181,22 +1230,26 @@ $$
 传递性：取$(x, y),(y, z) \in R \cap S$，$x(R \cap S) y, y (R \cap S)z$，由R和S的传递性，有$xRz, xSz$，所以$x(R\cap S)z$，满足传递性；
 
 综上，$R \cap S$是等价关系。下面我们举例证明两个等价关系的并并不满足等价关系。
+
 $$
 X = \{1,2,3\}; R = \{(1,1),(2,2),(3,3), (1,2),(2,1)\};S = \{(1,1),(2,2),(3,3), (2,3),(3,2)\}
 $$
+
 可以验证R和S都是X上的等价关系，而
+
 $$
 R \cup S = \{(1,1),(2,2),(3,3), (1,2),(2,1),(2,3),(3,2)\}
 $$
+
 不满足等价关系，因为存在$(1,2), (2, 3) \in R \cup S$但$(1,3) \notin R \cup S$，所以$R \cup S$不是等价关系。
 
-### PS
+### EX49PS
 
 两个等价关系的并集不满足等价关系，需要从传递性方面反证，因为等价关系的并集自反性和对称性都是满足的。
 
 ## EX50
 
-> Consider the partially ordered set (X,$\sube$) of subsets of the set X = {a, b, c} of  three elements. How many linear extensions are there?
+> Consider the partially ordered set (X,$\subseteq$) of subsets of the set X = {a, b, c} of  three elements. How many linear extensions are there?
 
 ```mermaid
 graph BT
@@ -1234,22 +1287,36 @@ c---b,c;
 
 ### 不知所言的参考答案
 
-定义$\text{Inv}(\pi)$为排列$\pi$的逆序列集合，我们通过如下两个命题等价来验证当$\text{Inv}(\pi) \sube \text{Inv}(\sigma)$时，$\pi \le \sigma$。
+定义$\text{Inv}(\pi)$为排列$\pi$的逆序列集合，我们通过如下两个命题等价来验证当$\text{Inv}(\pi) \subseteq \text{Inv}(\sigma)$时，$\pi \le \sigma$。
 
 1. $\sigma$覆盖$\pi$
 2. 可以从$\pi$中翻转ab到ba（a<b）来获得$\sigma$
 
-先由1证2：我们假设$\pi \lt \sigma$，因此有$\text{Inv}(\pi) \sube \text{Inv}(\sigma)$，之后我们可以从$\sigma$中选择一个逆序ba（a<b，a是所有b逆序中最小的数）这个逆序不存在$\pi$中，即有
+先由1证2：我们假设$\pi \lt \sigma$，因此有$\text{Inv}(\pi) \subseteq \text{Inv}(\sigma)$，
+之后我们可以从$\sigma$中选择一个逆序ba（$a<b$，a是所有b逆序中最小的数）
+这个逆序不存在$\pi$中，即有
+
 $$
 \pi = \cdots a \cdots b \cdots \quad \sigma =  \cdots b \cdots a \cdots
 $$
-下证，b与a相邻，假设$\sigma =  \cdots b \cdots c \cdots a \cdots$，因此bc和ca是两对逆序，那么c在$\pi$中a的左侧，b的右侧，但这是不可能的，所以$\sigma =  \cdots b a \cdots$，进行翻转后，可以得到$p = \cdots ab \cdots, \pi \le p \lt \sigma$。由$\sigma$覆盖$\pi$，所以$\pi = p$，即可以从$\pi$中翻转ab到ba（a<b）来获得$\sigma$。
+
+下证，b与a相邻，假设$\sigma =  \cdots b \cdots c \cdots a \cdots$，
+因此bc和ca是两对逆序，那么c在$\pi$中a的左侧，b的右侧，但这是不可能的，
+所以$\sigma =  \cdots b a \cdots$，进行翻转后，
+可以得到$p = \cdots ab \cdots, \pi \le p \lt \sigma$。
+由$\sigma$覆盖$\pi$，所以$\pi = p$，即可以从$\pi$中翻转ab到ba（$a<b$）来获得$\sigma$。
 
 再由2证1：同上，我们有
+
 $$
 \pi = \cdots a  b \cdots \quad \sigma =  \cdots b  a \cdots
 $$
-除a和b的坐标外，其余坐标均相同，显然$|\text{Inv}(\pi)| + 1 = | \text{Inv}(\sigma)|$，并且$\text{Inv}(\pi) \sube \text{Inv}(\sigma), \pi \le \sigma$。$\pi, \sigma$之间不存在其他元素，所以$\sigma$覆盖$\pi$。
+
+除a和b的坐标外，其余坐标均相同，
+显然$|\text{Inv}(\pi)| + 1 = | \text{Inv}(\sigma)|$，
+并且$\text{Inv}(\pi) \subseteq \text{Inv}(\sigma), \pi \le \sigma$。
+$\pi, \sigma$之间不存在其他元素，所以$\sigma$
+覆盖$\pi$。
 
 ### 画$H_4$图
 
@@ -1262,7 +1329,7 @@ A---D[2,1,3,4]
 
 时间关系，$H_4$的图略。
 
-### PS
+### EX51PS
 
 也是感觉毫无逻辑。
 
@@ -1273,6 +1340,7 @@ A---D[2,1,3,4]
 ## EX52
 
 > Verify that a binary n-tuple $a_{n-1}\cdots a_1 a_0$ is in place k in the Gray code order  list where k is determined as follows: For i = 0,1, ... ,n-1, let
+>
 > $$
 > b_i =
 > \begin{cases}
@@ -1280,25 +1348,38 @@ A---D[2,1,3,4]
 > 1, \text{ if } a_{n-1} + \cdots + a_i \text{ is odd }
 > \end{cases}
 > $$
+>
 > Then
+>
 > $$
 > k = b_{n-1} \times 2^{n-1} + \cdots b_1 \times 2 + b_0 \times 2^0
 > $$
+>
 > Thus, $a_{n-1}\cdots a_1 a_0$ is in the same place in the Gray code order list of binary  n-tuples as $b_{n-1}\cdots b_1 b_0 $ is in the lexicographic order list of binary n-tuples.
 
 由题意，$b_{n-1}\cdots b_1 b_0$就是k的二进制串，下面采用数学归纳法证明$a_{n-1}\cdots a_1 a_0$位于Gray表中的第k个位置（从0开始），其中k为$b_{n-1}\cdots b_1 b_0$所对应的数。
 
 显然，当k=0时，$b_i = 0, 0\le i \le n-1$，且$a_i = 0$符合反射Gray码的第0项。
 
-假设当k=m时成立，如果$\displaystyle \sum_{i=0}^{n-1} a_i$为偶数，那么$b_0 = 0$，（m形如$b_{n-1}\cdots b_2b_1 0$），并且由Problem G知下一个反射Gray码是通过翻转$a_0$得到，其余位不变，那只翻转$b_0$，使$b_0 = 1$，此时$b_{n-1}\cdots b_1 b_0$所对应的k为m+1，（m+1形如$b_{n-1}\cdots b_2b_1 1$）；如果如果$\displaystyle \sum_{i=0}^{n-1} a_i$为奇数，那么$b_0 = 1$，并且可以知道下一个反射Gray码通过翻转最右边的1左侧一位$a_s, (a_{s-1}=1, a_{s-2}, \cdots a_1,a_0 = 0)$得到，其余位不变，（m形如$b_{n-1}\cdots 01\cdots1$），由于$a_j = 0, 0 \le j \le s-2$，可以推出$\displaystyle \sum_{i=j}^{n-1} a_i $为奇数，即$b_j = 1， 0 \le j \le s-1, b_s = 0$，此时翻转$b_i, 0 \le i \le s$，得到$b_j = 0， 0 \le j \le s-1, b_s = 1$，此时$b_{n-1}\cdots b_1 b_0$所对应的k为m+1，（m+1形如$b_{n-1}\cdots 10\cdots0$）。
+假设当k=m时成立，如果$\displaystyle \sum_{i=0}^{n-1} a_i$为偶数，那么$b_0 = 0$，（m形如$b_{n-1}\cdots b_2b_1 0$），
+并且由Problem G知下一个反射Gray码是通过翻转$a_0$得到，其余位不变，
+那只翻转$b_0$，使$b_0 = 1$，此时$b_{n-1}\cdots b_1 b_0$所对应的k为m+1，（m+1形如$b_{n-1}\cdots b_2b_1 1$）；
 
-### PS
+如果如果$\displaystyle \sum_{i=0}^{n-1} a_i$为奇数，那么$b_0 = 1$，
+并且可以知道下一个反射Gray码通过翻转最右边的1左侧一位$a_s, (a_{s-1}=1, a_{s-2}, \cdots a_1,a_0 = 0)$得到，
+其余位不变，（m形如$b_{n-1}\cdots 01\cdots1$），由于$a_j = 0, 0 \le j \le s-2$，
+可以推出$\displaystyle \sum_{i=j}^{n-1} a_i $为奇数，即$b_j = 1， 0 \le j \le s-1, b_s = 0$，
+此时翻转$b_i, 0 \le i \le s$，得到$b_j = 0， 0 \le j \le s-1, b_s = 1$，
+此时$b_{n-1}\cdots b_1 b_0$所对应的k为m+1，（m+1形如$b_{n-1}\cdots 10\cdots0$）。
+
+### EX52PS
 
 Problem B介绍了二进制的加法（自增+1）和减法（自减-1）求法；Problem G介绍了反射Gray码的前驱和后继求法（联系EX23和EX24）。
 
 ## EX53
 
 > Continuing with Exercise 52, show that $a_{n-1}\cdots a_1 a_0$ can be recovered from  $b_{n-1}\cdots b_1 b_0 $, by $a_{n-1} = b_{n-1}$ and for i = 0,1, ... , n-1,
+>
 > $$
 > a_i =
 > \begin{cases}
@@ -1307,7 +1388,7 @@ Problem B介绍了二进制的加法（自增+1）和减法（自减-1）求法�
 > \end{cases}
 > $$
 
-### 不知所言的参考答案
+### 吐槽
 
 **太迷惑了，以至于没整理。**甚至
 
@@ -1321,17 +1402,25 @@ Problem B介绍了二进制的加法（自增+1）和减法（自减-1）求法�
 
 UNFINISHED
 
-### PS
-
 又是感觉答案和题目毫无关系。
 
 ## EX54
 
-> Let $(X, \le)$ be a finite partially ordered set. By Theorem 4.5.2 we know that  $(X, \le)$ has a linear extension. Let a and b be incomparable elements of X.  Modify the proof of Theorem 4.5.2 to obtain a linear extension of  $(X, \le)$  such  that a < b. (Hint: First find a partial order $\le '$ on X such that whenever x $\le $  y,  then x $\le '$  y and, in addition, a $\le '$  b.)
+> Let $(X, \le)$ be a finite partially ordered set.
+> By Theorem 4.5.2 we know that  $(X, \le)$ has a linear extension.
+> Let a and b be incomparable elements of X.  
+> Modify the proof of Theorem 4.5.2 to obtain a linear extension of  $(X, \le)$  
+> such that $a < b$.
+> (Hint: First find a partial order $\le '$ on X such that whenever $x \le y$,  then $x \le ' y$ and, in addition, $a \le ' b$.)
 
-对于不可比元素a和b，我们可以通过定义b覆盖a（比如线性顺序列出），来找到X上的偏序关系$\le '$使得$a \le ' b$，并且由定理4.5.2可知，这样的偏序关系对有限集一定存在。因此，我们可以得到偏序集$(X, \le ')$。
+对于不可比元素a和b，我们可以通过定义b覆盖a（比如线性顺序列出），来找到X上的偏序关系$\le '$
+使得$a \le ' b$，并且由定理4.5.2可知，这样的偏序关系对有限集一定存在。因此，我们可以得到偏序集$(X, \le ')$。
 
-$(X, \le ')$由$(X, \le )$添加关系得到，该线性扩展也保留了原来所有的可比关系，也一定是原偏序集的一个线性扩展。同时，因为$a \le ' b$，所以$a \lt b$。综上，我们可以找到一种线性扩展，使偏序集$(X, \le)$中不可比的元素a和b，有$a \lt b$。
+$(X, \le ')$由$(X, \le )$添加关系得到，该线性扩展也保留了原来所有的可比关系，
+也一定是原偏序集的一个线性扩展。同时，因为$a \le ' b$，所以$a \lt b$。
+
+综上，我们可以找到一种线性扩展，使偏序集$(X, \le)$中不可比的元素a和b，
+有$a \lt b$。
 
 ### EX54参考链接
 
@@ -1341,9 +1430,13 @@ $(X, \le ')$由$(X, \le )$添加关系得到，该线性扩展也保留了原来
 
 > Use Exercise 54 to prove that a finite partially ordered set is the intersection of all its linear extensions.(see Exercise 37).
 
-由EX54的结论可知，对于不可比元素a和b，总能找到一个线性扩展使得a<b，满足关系R，同理，我们也能找到一个线性扩展使得b<a，满足关系S。
+由EX54的结论可知，对于不可比元素a和b，总能找到一个线性扩展使得$a<b$，满足关系R，
+同理，我们也能找到一个线性扩展使得$b<a$，满足关系S。
 
-因为$(a, b) \notin R, (b, a) \notin S$，所以$(a,b), (b, a) \notin R \cap S$，所以(a, b)和(b, a)都不在这两个线性扩展的交集之中。同理，所有不可比关系都会排除在线性扩展交集之外，因此所有线性扩展的交集只有原来包含的关系，即交集是$(X, \le)$。
+因为$(a, b) \notin R, (b, a) \notin S$，所以$(a,b), (b, a) \notin R \cap S$，
+所以(a, b)和(b, a)都不在这两个线性扩展的交集之中。
+同理，所有不可比关系都会排除在线性扩展交集之外，
+因此所有线性扩展的交集只有原来包含的关系，即交集是$(X, \le)$。
 
 ### EX55参考链接
 
@@ -1351,7 +1444,21 @@ $(X, \le ')$由$(X, \le )$添加关系得到，该线性扩展也保留了原来
 
 ## EX56
 
-> The *dimension* of a finite partially ordered set $(X, \le)$ is the smallest number of  its linear extensions whose intersection is $(X, \le)$. By Exercise 55, every partially ordered set has a dimension. Those that have dimension 1 are the linear orders.  Let n be a positive integer and let $i_1, i_2, \cdots, i_n$ be a permutation $\sigma$ of {1, 2, ... ,n}  that is different from 1, 2, ... ,n. Let X = $\{(1,i_1),(2, i_2), \cdots,(n, i_n)\}$. Now define  a relation R on X by $(k, i_k)R(l, i_l)$ if and only if $k \le l$ (ordinary integer inequality) and $i_k \le i_l$(again ordinary inequality); that is, $(i_k, i_l)$ is not an inversion of  $\sigma$. Thus, for instance, if n = 3 and $\sigma$ = 2,3,1, then X = {(1, 2), (2, 3), (3, 1)},  and (1,2)R(2, 3), but $(1,2)\not R(3,1)$. Prove that R is a partial order on X  and that the dimension of the partially ordered set (X, R) is 2, provided that  $i_1, i_2, \cdots, i_n$ is not the identity permutation 1,2, ... , n.
+> The *dimension* of a finite partially ordered set $(X, \le)$ is the smallest number
+> of its linear extensions whose intersection is $(X, \le)$.
+> By Exercise 55, every partially ordered set has a dimension.
+> Those that have dimension 1 are the linear orders.  
+> Let n be a positive integer and let $i_1, i_2, \cdots, i_n$ be a permutation
+> $\sigma$ of {1, 2, ... ,n} that is different from 1, 2, ... ,n.
+> Let X = $\{(1,i_1),(2, i_2), \cdots,(n, i_n)\}$.
+> Now define  a relation R on X by $(k, i_k)R(l, i_l)$ if and only if
+> $k \le l$ (ordinary integer inequality) and $i_k \le i_l$(again ordinary inequality);
+> that is, $(i_k, i_l)$ is not an inversion of  $\sigma$.
+> Thus, for instance, if n = 3 and $\sigma$ = 2,3,1,
+> then X = {(1, 2), (2, 3), (3, 1)},  and (1,2)R(2, 3), but
+> $(1,2)\not R(3,1)$. Prove that R is a partial order on X and
+> that the dimension of the partially ordered set (X, R) is 2,
+> provided that  $i_1, i_2, \cdots, i_n$ is not the identity permutation 1,2, ..., n.
 
 易证R是X上的偏序关系，
 
@@ -1365,7 +1472,7 @@ $(X, \le ')$由$(X, \le )$添加关系得到，该线性扩展也保留了原来
 
 显然$\le_1, \le_2$都是R的线性扩展，R是线性扩展的交集。因此R的维度不超过2，因为$i_1, i_2 ,\cdots, i_n$不同于恒等排列$1,2,\cdots, n$，所以R的维度至少为2，综上，R的维度为2。
 
-### PS
+### EX56PS
 
 我最讨厌的词就是Routine
 
@@ -1373,11 +1480,11 @@ $(X, \le ')$由$(X, \le )$添加关系得到，该线性扩展也保留了原来
 
 > Consider the set of all permutations $i_1, i_2, \cdots, i_n$ of 1,2, ... ,n such that $i_k \neq k$ for  k = 1,2, ... ,n. (Such permutations are called *derangements* and are discussed in  Chapter 6.) Describe an algorithm for generating a random derangement (modify  the algorithm given in Section 4.1 for generating a random permutation).
 
-### PS
+### EX57PS
 
 第六章讨论，那咱就别考了呗。
 
-### 参考链接
+### EX57参考链接
 
 回头整理。
 
@@ -1406,9 +1513,11 @@ PS买的答案也没看懂传递性。
 ## EX59
 
 > Let $n \ge 2$ be an integer. Prove that the total number of inversions of *all* n!  permutations of 1,2, ... ,n equals
+>
 > $$
 > \frac{1}{2}n!\binom{n}{2} = n!\frac{n(n-1)}{4}
 > $$
+>
 > (Hint: Pair up the permutations so that the number of inversions in each pair is  n(n - 1)/2.)
 
 第一步，计算逆序可能出现的组合数量：因为逆序是两两配对，逆序组合不超过$\dbinom{n}{2} = \dfrac{n(n-1)}{2}$个；(这一点可以参考EX8)
@@ -1416,6 +1525,7 @@ PS买的答案也没看懂传递性。
 第三步，排列其余n-2项，(n-2)!种方式。
 
 因此，所有排列中的逆序总数为
+
 $$
 \binom{n}{2} \cdot \binom{n}{2} \cdot (n-2)! = \frac{n(n-1)}{2} \times \frac{n(n-1)}{2} \times (n-2)! = n! \frac{n(n-1)}{4}
 $$

@@ -76,11 +76,14 @@ $$
 ## EX2
 
 > Prove that the nth Fibonacci number In is the integer that is closest to the number
+>
 > $$
 > \frac{1}{\sqrt{5}} {\left( \frac{1+\sqrt{5}}{2} \right)^n}
 > $$
+>
 
-设$a = \frac{1}{\sqrt{5}} {\left( \frac{1+\sqrt{5}}{2} \right)^n}$，并且知道$f_n = \frac{1}{\sqrt{5}} {\left( \frac{1+\sqrt{5}}{2} \right)^n} - \frac{1}{\sqrt{5}} {\left( \frac{1-\sqrt{5}}{2} \right)^n}$，那么$f_n$与a的距离为，
+设$a = \frac{1}{\sqrt{5}} {\left( \frac{1+\sqrt{5}}{2} \right)^n}$，
+并且知道$f_n = \frac{1}{\sqrt{5}} {\left( \frac{1+\sqrt{5}}{2} \right)^n} - \frac{1}{\sqrt{5}} {\left( \frac{1-\sqrt{5}}{2} \right)^n}$，那么$f_n$与a的距离为，
 
 $$
 \begin{aligned}
@@ -203,9 +206,11 @@ $$
 ## EX11
 
 > The Lucas numbers $l_0, l_1, l_2, \cdots, l_n, \cdots$ are defined using the same recurrence relation defining the Fibonacci numbers, but with different initial conditions:
+>
 > $$
 > l_n = l_{n-1} + l_{n-2}, \quad (n \ge 2), l_0 =2, l_1 = 1
 > $$
+>
 > Prove that
 >
 > (a) $l_n = f_{n-1} + f_{n+1} \text{ for } n \ge 1$
@@ -376,9 +381,11 @@ $$
 ## EX15
 
 > Determine the generating function for the sequence of cubes
+>
 > $$
 > 0, 1, 8, \cdots, n^3, \cdots
 > $$
+>
 
 由第5章EX20知，
 
@@ -414,7 +421,8 @@ $$
 
 ## EX16
 
->Formulate a combinatorial problem for which the generating function is
+> Formulate a combinatorial problem for which the generating function is
+>
 > $$
 > (1+x+x^2)(1+x^2+x^4+x^6)(1+x^2+x^4+\cdots)(x+x^2+x^3+\cdots)
 > $$
@@ -441,10 +449,11 @@ $$
 
 ## EX18
 
->Determine the generating function for the number $h_n$ of nonnegative integral solutions of
->$$
->2e_1+5e_2+e_3+7e_4=n
->$$
+> Determine the generating function for the number $h_n$ of nonnegative integral solutions of
+>
+> $$
+> 2e_1+5e_2+e_3+7e_4=n
+> $$
 
 令$f_1 = 2e_1, f_2 = 5e_2, f_3 = e_3, f_4 = 7e_4$，所以有$f_1 + f_2 + f_3 + f_4 = n$，其中$f_1$是2的倍数，$f_2$是5的倍数，$f_3$是1的倍数，$f_4$是7的倍数。有生成函数，
 
@@ -457,7 +466,7 @@ $$
 
 ## EX19
 
->Let $h_0, h_1, h_2, ... , h_n , ...$ be the sequence defined by $h_n = \dbinom{n}{2}, (n\ge 0)$. Determine the generating function for the sequence.
+> Let $h_0, h_1, h_2, ... , h_n , ...$ be the sequence defined by $h_n = \dbinom{n}{2}, (n\ge 0)$. Determine the generating function for the sequence.
 
 $$
 \begin{aligned}
@@ -493,7 +502,8 @@ $$
 
 ## EX22
 
->Determine the exponential generating function for the sequence of factorials: $0!, 1!, 2!, 3!, ... , n!, . ..$.
+> Determine the exponential generating function for the sequence of factorials:
+> $0!, 1!, 2!, 3!, ... , n!, \cdots$.
 
 $$
 \begin{aligned}
@@ -608,7 +618,7 @@ $$
 
 ## EX27
 
->Determine the number of n-digit numbers with all digits odd, such that 1 and 3 each occur a nonzero, even number of times.
+> Determine the number of n-digit numbers with all digits odd, such that 1 and 3 each occur a nonzero, even number of times.
 
 问题等价于$\{\infty \cdot 1, \infty \cdot 3, \infty \cdot 5, \infty \cdot 7, \infty \cdot 9\}$的多重集合n排列数，
 
@@ -621,6 +631,7 @@ G^{(e)}_{5}(x) = G^{(e)}_{7}(x) = G^{(e)}_{9}(x) = e^x
 $$
 
 指数生成函数为,
+
 $$
 \begin{aligned}
 g^{(e)}(x) =& G^{e}_1(x)G^{e}_3(x)\cdots G^{e}_9(x) \\
@@ -646,6 +657,7 @@ G^{(e)}_{5}(x) = G^{(e)}_{7}(x) = e^x - 1
 $$
 
 指数生成函数为，
+
 $$
 \begin{aligned}
 g^{(e)}(x) =& G^{e}_4(x)G^{e}_5(x)\cdots G^{e}_9(x) \\
@@ -663,9 +675,11 @@ $$
 ## EX29
 
 > We have used exponential generating functions to show that the number hn of n-digit numbers with each digit odd, where the digits 1 and 3 occur an even number of times, satisfies the formula
+>
 > $$
 > h_n = \frac{5^n + 2 \times 3^n + 1}{4}, \quad (n \ge 0)
 > $$
+>
 > Obtain an laternative derivation of this formula.
 
 根据n位数中1和3出现数量的奇偶性可以分类，
@@ -707,9 +721,11 @@ $$
 ## EX30
 
 > We have used exponential generating functions to show that the number hn of ways to color the squares of a 1-by-n board with the colors red, white, and blue, where the number of red squares is even and there is at least one blue square, satisfies the formula
+>
 > $$
 > h_n = \frac{3^n - 2^n + 1}{2}, \quad (n \ge 1)
 > $$
+>
 > with $h_0 = 0$. Obtain an alternative derivation of this formula by finding a recurrence relation satisfied by $h_n$ and then solving the recurrence relation.
 
 | 种类  | 红色 | 蓝色    |
@@ -718,9 +734,15 @@ $$
 | $b_n$ | 偶数 | $=0$    |
 | $h_n$ | 偶数 | $\ge 1$ |
 
-以$a_n$为例，考虑删除第一格。如果第一格为蓝色或白色，问题变为$2a_{n-1}$；如果第一格为红色，问题转化为从剩余n-1格中选出偶数个红格，总染色方案数为$3^{n-1}$，其中红色为奇数的方案是$a^{n-1}$，所以有$3^{n-1} - a_{n-1}$种方案选出偶数个红格。所以有$a_n = 2a_{n-1} + 3^{n-1} - a_{n-1} = a_{n-1} + 3^{n-1}$。
+以$a_n$为例，考虑删除第一格。如果第一格为蓝色或白色，问题变为$2a_{n-1}$；
+如果第一格为红色，问题转化为从剩余n-1格中选出偶数个红格，总染色方案数为$3^{n-1}$，
+其中红色为奇数的方案是$a^{n-1}$，
+所以有$3^{n-1} - a_{n-1}$种方案选出偶数个红格。
+所以有$a_n = 2a_{n-1} + 3^{n-1} - a_{n-1} = a_{n-1} + 3^{n-1}$。
 
-对于$b_n$，如果第一格为白色，问题转化为$b_{n-1}$，如果第一格为红色，同上有$2^{n-1} - b_{n-1}$，因此得$b_n = 2^{n-1}$。
+对于$b_n$，如果第一格为白色，问题转化为$b_{n-1}$，
+如果第一格为红色，同上有$2^{n-1} - b_{n-1}$，
+因此得$b_n = 2^{n-1}$。
 
 $a_n + b_n + h_n$为总方案数$3^n$，可以递推做差得$h_n - h_{n-1} = 3^{n-1} - 2^{n-1}$。解方程过程略。
 
@@ -841,13 +863,17 @@ $$
 
 ## EX40
 
->Let $a_n$ equal the number of ternary strings of length n made up of Os, ls, and 2s, such that the substrings 00, 01, 10, and 11 never occur. Prove that
->$$
-> a_n = a_{n-1} + 2a_{n-2}, \quad (n \ge 2),
->$$
->with $a_0 = 1$ and $a_1 = 3$. Then find a formula for $a_n$.
+> Let $a_n$ equal the number of ternary strings of length n made up of Os, ls, and 2s, such that the substrings 00, 01, 10, and 11 never occur. Prove that
+>
+> $$
+>  a_n = a_{n-1} + 2a_{n-2}, \quad (n \ge 2),
+> $$
+>
+> with $a_0 = 1$ and $a_1 = 3$. Then find a formula for $a_n$.
 
-按照第一字符是否为2进行划分，由题意，长度为n的串第一个字符是2，问题变为$a_{n-1}$；如果第一个字符不是2，那么只能是0或1，如果为0，则第二个字符只能是2（因为不存在00和01），同理第一格字符如果为1，则第二个字符只能为2，因此问题转化为$2a_{n-2}$。综上有，
+按照第一字符是否为2进行划分，由题意，长度为n的串第一个字符是2，问题变为$a_{n-1}$；
+如果第一个字符不是2，那么只能是0或1，如果为0，则第二个字符只能是2（因为不存在00和01），
+同理第一格字符如果为1，则第二个字符只能为2，因此问题转化为$2a_{n-2}$。综上有，
 
 $$
 a_n = a_{n-1} + 2a_{n-2}
@@ -859,7 +885,7 @@ $$
 
 > \* Let 2n equally spaced points be chosen on a circle. Let $h_n$ denote the number of ways to join these points in pairs so that the resulting line segments do not intersect. Establish a recurrence relation for $h_n$.
 
-![EX41](https://raw.githubusercontent.com/furtherun/imgs/main/img/C8EX1.png)
+![EX41](imgs/c7ex41.png)
 
 选择一端固定在1上的线段为基线，另一端指向2k，圆上的2n个点被分为两组，一组有2k-2个，另一组有2n-2k个，同时问题$h_n$被划分为$h_{k-1}$和$h_{n-k}$。所以有，
 
@@ -879,15 +905,18 @@ $$
 
 ## EX42
 
->Solve the monhomogeneous recurrence realtion
->$$
->\begin{aligned}
->& h_n = 4h_{n-1} + 4^n, \quad (n \ge 1) \\
->& h_0 = 3
->\end{aligned}
->$$
+> Solve the monhomogeneous recurrence realtion
+>
+> $$
+> \begin{aligned}
+> & h_n = 4h_{n-1} + 4^n, \quad (n \ge 1) \\
+> & h_0 = 3
+> \end{aligned}
+> $$
+>
 
 其次递推关系的解为$H_n = c_1 4^n$，因此设特解为$H_n^{*} = An4^n$，求出$A=1$，带入初始项求出，
+
 $$
 h_n = (n+3)4^n, \quad n \ge 0
 $$
@@ -898,63 +927,73 @@ $$
 
 ## EX43
 
->Solve the monhomogeneous recurrence realtion
->$$
->\begin{aligned}
->& h_n = 4h_{n-1} +3\times 2^n, \quad (n \ge 1) \\
->& h_0 = 1
->\end{aligned}
->$$
+> Solve the monhomogeneous recurrence realtion
+>
+> $$
+> \begin{aligned}
+> & h_n = 4h_{n-1} +3\times 2^n, \quad (n \ge 1) \\
+> & h_0 = 1
+> \end{aligned}
+> $$
+>
 
 略。
 
 ## EX44
 
->Solve the monhomogeneous recurrence realtion
->$$
->\begin{aligned}
->& h_n = 3h_{n-1} -2, \quad (n \ge 1) \\
->& h_0 = 1
->\end{aligned}
->$$
+> Solve the monhomogeneous recurrence realtion
+>
+> $$
+> \begin{aligned}
+> & h_n = 3h_{n-1} -2, \quad (n \ge 1) \\
+> & h_0 = 1
+> \end{aligned}
+> $$
+>
 
 略
 
 ## EX45
 
->Solve the monhomogeneous recurrence realtion
->$$
->\begin{aligned}
->& h_n = 2h_{n-1} +n, \quad (n \ge 1) \\
->& h_0 = 1
->\end{aligned}
->$$
+> Solve the monhomogeneous recurrence realtion
+>
+> $$
+> \begin{aligned}
+> & h_n = 2h_{n-1} +n, \quad (n \ge 1) \\
+> & h_0 = 1
+> \end{aligned}
+> $$
+>
 
 略
 
 ## EX46
 
->Solve the monhomogeneous recurrence realtion
->$$
->\begin{aligned}
->& h_n = 6h_{n-1} -9h_{n-2}+2n, \quad (n \ge 2) \\
->& h_0 = 1 \\
->& h_1 = 0
->\end{aligned}
->$$
+> Solve the monhomogeneous recurrence realtion
+>
+> $$
+> \begin{aligned}
+> & h_n = 6h_{n-1} -9h_{n-2}+2n, \quad (n \ge 2) \\
+> & h_0 = 1 \\
+> & h_1 = 0
+> \end{aligned}
+> $$
+>
 
 略
 
 ## EX47
 
->Solve the monhomogeneous recurrence realtion
->$$
->\begin{aligned}
->& h_n = 4h_{n-1} -4h_{n-2}+3n+1, \quad (n \ge 2) \\
->& h_0 = 1 \\
->& h_1 = 2
->\end{aligned}
->$$
+> Solve the monhomogeneous recurrence realtion
+>
+> $$
+> \begin{aligned}
+> & h_n = 4h_{n-1} -4h_{n-2}+3n+1, \quad (n \ge 2) \\
+> & h_0 = 1 \\
+> & h_1 = 2
+> \end{aligned}
+> $$
+>
 
 略
 
@@ -1047,6 +1086,7 @@ $$
 ## EX49
 
 > (q-binomial theorem) Prove that
+>
 > $$
 > (x+y)(x+qy)(x+q^2y)\cdots (x+q^{n-1}y) = \sum_{k=0}^{n} \binom{n}{k}_q x^{n-k} y^k,
 > $$
@@ -1058,9 +1098,12 @@ $$
 > $$
 > \binom{n}{k}_q = \frac{n!_q}{k!_q (n-k)!_q}
 > $$
+>
 > is the *q-binomial coefficient*.
 
-采用数学归纳法证明，当n=1时，左边等于$(x+y)$，右边等于$\displaystyle \sum_{k=0}^{1} \binom{1}{k}_q x^{1-k} y^k = \binom{1}{0}_q x + \binom{1}{1}_q y = x+y$，左右两边相等，成立。
+采用数学归纳法证明，当n=1时，左边等于$(x+y)$，
+右边等于$\displaystyle \sum_{k=0}^{1} \binom{1}{k}_q x^{1-k} y^k = \binom{1}{0}_q x + \binom{1}{1}_q y = x+y$，
+左右两边相等，成立。
 
 假设取n时等式成立，那么取n+1时，左右两边同时乘$(x+q^n y)$有，
 
@@ -1091,13 +1134,17 @@ $$
 ## EX50
 
 > Call a subset S of the integers {1, 2, ... ,n} extmordinary provided its smallest integer equals its size:
+>
 > $$
 > \min \{x: x \in S\} = |S|
 > $$
+>
 > For example, S = {3,7,8}, is extraordinary. Let $g_n$ be the number of extraordinary subsets of {1, 2, ..., n}. Prove that
+>
 > $$
 > g_n = g_{n-1} + g_{n-2} \quad (n \ge 3),
 > $$
+>
 > with $g_1 = 1$ and $g_2 = 1$.
 
 如果子集S是非凡的k子集，那么S中的最小元素是k，其余k-1个元素均比k大，因此非凡k子集的个数为$\dbinom{n-k}{k-1}$个，那么集合{1, 2, 3, ..., n}的所有非凡集为，
@@ -1118,12 +1165,14 @@ $$
 ## EX51
 
 > Solve the recurrence relation
+>
 > $$
 > \begin{aligned}
 > &h_n = 3h_{n-1} - 4n, (n \ge 1)
 > &h_0 = 2
 > \end{aligned}
 > $$
+>
 > from Section 7.6 using generating functions.
 
 要求使用生成函数求解非齐次递推关系。生成函数为$g(x) = h_0 + h_1 x + h_2 x^2 + \cdots + h_n x^n + \cdots$,计算
@@ -1158,6 +1207,7 @@ $$
 > (a) $h_n = 2h_{n-1} + 5^n, (n \ge 1)$ with $h_0 =3$
 >
 > (a) $h_n = 5h_{n-1} + 5^n, (n \ge 1)$ with $h_0 =3$
+>
 
 非齐次递推关系求解，略。
 
@@ -1196,6 +1246,7 @@ $$
 $$
 
 因此，
+
 $$
 h_n = 500(1.06)^n + \frac{100}{0.06}\big((1.06)^n - 1 \big)
 $$
