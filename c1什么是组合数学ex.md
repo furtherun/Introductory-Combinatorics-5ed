@@ -16,20 +16,23 @@
 
 > Consider an m-by-n chessboard with m and n both odd. To fix the notation,  suppose that the square in the upper left-hand corner is colored white. Show  that if a white square is cut out anywhere on the board, the resulting pruned  board has a perfect cover by dominoes.
 
-![image-20211012091704500](https://i.loli.net/2021/10/12/PmXsSEnOrD8TLHa.png)
+![EX2](imgs/c1ex2.png)
 
 因为左上角的颜色定为白色，可以大致确认棋盘形状如下，并可以得到等式
+
 $$
 \begin{cases}
 a + b + 1 = m \\
 x + y + 1 = n  
 \end{cases}
 $$
+
 因为m和n都是奇数，所以a+b是偶数，a与b的奇偶性相同；同理，x与y的奇偶性相同。
 
 因为剪掉的块（坐标是$(a+1, x+1)$）为白色，并且白色块的横纵坐标同奇偶，所以a与x的奇偶性也相同。
 
 这样，我们可以把盘面拆成如图中红线划分的四部分，并且保证每一部分至少有一条边为偶数。
+
 $$
 \begin{cases}
 a\times (x+1), \\
@@ -38,6 +41,7 @@ b\times (y+1), \\
 (b+1) \times x
 \end{cases}
 $$
+
 因此，只需要讨论a和x(或者y)的奇偶性即可。显然，我们可以列表计算
 
 |   a   |   x   | (a+1) | (x+1) | 图中四个分块 |
@@ -53,7 +57,7 @@ $$
 
 观察起点和终点的颜色相同，都为白色。每次移动时，方块的颜色会发生变化。一共移动了63次，颜色会发生63次变化，最后停留位置的颜色应为黑色。故该囚犯不能获得自由。
 
-![EX3](https://i.loli.net/2021/10/12/g1T7oFJXkrflGYO.png)
+![EX3](imgs/c1ex3.png)
 
 本题和完美覆盖无关，考察的是组合数学“一一对应”技术的转化思想。
 
@@ -66,33 +70,40 @@ $$
 ### EX4Q(a)
 
 画图归纳，可以发现f(n)符合斐波那契数列。
+
 $$
 f(n) = f(n-1) + f(n-2), f(1) = 1, f(2) = 2 \\
 \therefore f(12) =  233
 $$
+
 [这里](http://www.jade-cheng.com/uh/coursework/math-475/homework-01.pdf)有一个详细的证明过程，使f(n)的公式来的更加合理。
 
 参考下面提供的其他解法，也可以考虑最后一列是如何填充的，显然$f(n)$只有唯一方案转化成$f(n-1)$和$f(n-2)$。
 
 ### EX4Q(b)
 
-![image-20211012092139675](https://i.loli.net/2021/10/12/bVqgLd1ZM7fHrBQ.png)
+![EX4b](imgs/c1ex4b.png)
 
 显然n为奇数时不存在完美覆盖，g(1) = g(3) = g(5) = 0。
 
 当n为2时，g(2) = f(3) = 3，之后来讨论当n为偶数时，g(n)的计算过程。
 
 ~~容易观察得到等式(1)~~，
+
 $$
 g(n) = 3g(n-2) + 2[g(n-4) + \cdots + g(2)] \tag{1}
 $$
+
 上述式子中，我们把求解g(n)分解为两个完美覆盖的组合，第一种情况把n列划分为前n-2列和后两列，其中前n-2列的完美覆盖数g(n-2)，最后两列的完美覆盖数为3；第二种情况把n列划分为前n-4列和后四列，并且要求后四列不可拆分（无垂直断层线），防止与前者重复，经过画图总结，只有两种排版方式；同理，后面的划分也只有两种排版方式。
 
 由此，进一步可以得到式(2)，
+
 $$
 g(n-2) = 3g(n-4) + 2[g(n-6) + \cdots + g(2)] \tag{2}
 $$
+
 两者做差，化简可以得到式(3)，
+
 $$
 g(n) = 4g(n-2) - g(n-4) \tag{3}
 $$
@@ -106,13 +117,16 @@ $$
 
 *最后，通过英文互联网搜索到了[一种解法](https://math.stackexchange.com/questions/957560/perfect-coverings#)，该解法的逻辑更清晰，构造方式很直观，但化简方程组需要一些经验和技巧。*
 
-![image-20211012092247978](https://i.loli.net/2021/10/12/W7rQLGaq2J3Flfs.png)
+![其他解法](imgs/c1ex4pro.png)
 
 该方法设计了三种棋盘，我们要求解的就是第一种盘$a_n$。现在考虑填满最后一列，总共有三种方式，其中一种（三横）使$a_n$变成了$a_{n-2}$，另两种（一横一竖）均使$a_n$变成了$b_{n-1}$，故可以得到等式(4)，
+
 $$
 a_n = a_{n-2} + 2b_{n-1} \tag{4}
 $$
+
 同理，分析第二种棋盘和第三种棋盘可以分别得到等式(5)和等式(6)。
+
 $$
 b_n = a_{n-1} + c_{n-1} \tag{5}
 $$
@@ -188,7 +202,7 @@ $$
 
 举反例证明，取m=5, n=6, a=2, b=3，如图所示（两横三竖），该棋盘**只有不平凡的完美覆盖**。
 
-![EX9](https://i.loli.net/2021/10/12/x3vVsAmol61Ngri.png)
+![EX9](imgs/c1ex9.png)
 
 ## EX10
 
@@ -198,9 +212,9 @@ $$
 
 ## EX11
 
-> Use de la Loubere's method to construct a magic square of order 7
+> Use de la Loubere's method to construct a magic square of order 7.
 
-![EX11](https://i.loli.net/2021/10/12/xHQc4WioVS93M5Y.png)
+![EX11](imgs/c1ex11.png)
 
 ```cpp
 /* 
@@ -248,7 +262,7 @@ int main()
 
 > Use de la Loubere's method to construct a magic square of order 9.
 
-![EX12](https://i.loli.net/2021/10/12/hqojDtwdPxB7IuF.png)
+![EX12](imgs/c1ex12.png)
 
 ## EX13
 
@@ -256,9 +270,9 @@ int main()
 
 参考[Solving a Singly Even Magic Square](https://www.wikihow.com/Solve-a-Magic-Square)，根据"A singly even square has a number of boxes per side that is divisible by 2, but not 4"可以判断出，六阶幻方是单偶幻方，大致方法可以理解为将单偶幻方拆成4个奇幻方，按照ABCD的顺序（如图）进行填写幻方，再通过一定的规律进行交换部分项。
 
-![image-20211012102518349](https://i.loli.net/2021/10/12/ZTujmBr3LOdK6lg.png)
+![EX13](imgs/c1ex13.png)
 
-对于n阶单偶幻方，$ k =\lfloor n/4  \rfloor$，A和D的中间行不取第一块，而是取中心块。
+对于n阶单偶幻方，$k =\lfloor n/4  \rfloor$，A和D的中间行不取第一块，而是取中心块。
 
 *本链接同时还给出了双偶幻方的解法，如四阶幻方。至此，可以求解任意阶数的幻方。*
 
@@ -277,6 +291,7 @@ g & h & i
 $$
 
 由幻方的定义，求出三阶幻方的幻和为15，并得到如下等式。
+
 $$
 \begin{cases}
 a + e +i = 15 \\
@@ -286,7 +301,9 @@ b + e + h = 15 \\
 a + b + c + d + e + f + g + h + i = 45
 \end{cases}
 $$
+
 可以求出e = 15，并且验算出一组解。
+
 $$
 \left[
 \begin{matrix}
@@ -296,11 +313,13 @@ $$
 \end{matrix}
 \right]
 $$
+
 通过旋转和转置还可以求出另外7组类似的解，即三阶幻方一共有8个解。
 
 ## EX15
 
 > Can the following partial square be completed to obtain a magic square of order  4?
+>
 > $$
 > \left[
 > \begin{matrix}
@@ -325,7 +344,9 @@ j& k & l &m\\
 \end{matrix}
 \right]
 $$
+
 由幻和定义，可以得出，
+
 $$
 \begin{cases}
 2 + 3 + a + b = 34\\
@@ -337,19 +358,24 @@ a + b = 29\\
 f + j = 28
 \end{cases}
 $$
+
 a和b可能的取值为16+13，15+14；f和j的取值可能为16+12和15+13。
 
 考虑到幻方中所有的数均不相同，因此a和b只能取15+14，f和j只能取16+12。
 
 下面考虑其他线上的幻和，
+
 $$
 (2 + c+ h + m) + (3 + c + g + k) + (4 + c + d + e) = 34 \times 3 \Leftrightarrow
 3c + h + m + g + k + d + e = 93
 $$
+
 事实上，考虑剩余的数最大7个数只有13，11，10，9，8，7，6，因此，
+
 $$
 3c + h + m + g + k + d + e \le = 3 \times13 + 11 + 10 + 9 + 8 + 7 + 6 = 90 < 93
 $$
+
 综上，不能由该初始状态补全幻方。
 
 ## EX16
@@ -380,13 +406,13 @@ $$
 
 ## EX19
 
-> *Show that there is no magic cube of , order 4.
+> \* Show that there is no magic cube of , order 4.
 
 这里参考[What's known about magic cubes of order 4?](https://math.stackexchange.com/questions/951930/whats-known-about-magic-cubes-of-order-4)中提到的证明过程，先证明两条引理，最终也是像二阶幻方和二阶幻方体一样反证不存在。
 
 假设四阶幻方体存在，并记四阶幻方体的幻和为K，K = 130。
 
-![image-20211012104143861](https://i.loli.net/2021/10/12/7YcbLN2oAfaQHni.png)
+![EX19](imgs/c1ex19.png)
 
 引理1：四阶**幻方**（不是幻方体）的所有角之和为K。
 
@@ -395,9 +421,11 @@ $$
 引理2：四阶幻方体的同一条棱上的两个顶点之和为K/2。
 
 证明：设一条棱的顶点分别为a和b，与这条棱平行的两条棱顶点分别为c、d 和e、f。那么，abcd、abef和cdef都可以看作四阶幻方的四个顶点，因此有如下等式。
+
 $$
 (a + b+c+d) + (a+b+e+f ) + (c + d + e+f) = 3K
 $$
+
 进一步化简可以得到$a+b+(c+d+e+f) = 3K/2$，故$a+b = K/2$。
 
 根据引理2，四阶幻方中的某个顶点的值为x，那三个相邻的顶点值都应该为K/2-x，而幻方体中不存在重复的值，与假设矛盾。
@@ -414,13 +442,13 @@ $$
 
 当选择红白蓝三色时，他们有三种染色方案；而5的颜色可以和1或者10相同，有两种染色方案。综上，一共有6种染色方案。
 
-![image-20211012104242538](https://i.loli.net/2021/10/12/ZAK2mLYXpCzP9q5.png)
+![EX20](imgs/c1ex20.png)
 
 ## EX21
 
 > (a) Does there exist a magic hexagon of order 2? That is, is it possible to arrange  the numbers 1,2, ... ,7 in the following hexagonal array so that all of the nine  "line" sums (the sum of the numbers in the hexagonal boxes penetrated by a  line through midpoints of opposite sides) are the same?
 >
-> (b) * Construct a magic hexagon of order 3; that is, arrange the integers  1,2, ... ,19 in a hexagonal array (three integers on a side) in such a way that all  of the fifteen "line" sums are the same (namely, 38).
+> (b) \* Construct a magic hexagon of order 3; that is, arrange the integers  1,2, ... ,19 in a hexagonal array (three integers on a side) in such a way that all  of the fifteen "line" sums are the same (namely, 38).
 
 ### EX21Q(a)
 
@@ -429,6 +457,7 @@ $$
 ### 另一种思路
 
 还可以通过[幻六边形](https://en.wikipedia.org/wiki/Magic_hexagon)的“线”进行证明。如果存在2阶幻六边形。那么有，
+
 $$
 \begin{cases}
 a + b = s \\
@@ -437,9 +466,10 @@ e + d = s \\
 a + b + c + d + e + f + g = 28
 \end{cases}
 $$
+
 可以求出，$\displaystyle s = \frac{28}{3}$，而a和b都是正整数，矛盾，故不存在2阶幻六边形。
 
-![image-20211012105305492](https://i.loli.net/2021/10/12/X5meHR3ZrIgJd2U.png)
+![EX21a](imgs/c1ex21a.png)
 
 ### EX21Q(b)
 
@@ -450,6 +480,7 @@ $$
 > Construct a pair of orthogonal Latin squares of order 4.
 
 由练习EX24中的方法，可以得到第一个拉丁方L1，第二个拉丁方得到的方法是固定第一行（列），将剩下的行（列）向上（前）滚动。这个做法参考了视频[Construction of balanced incomplete block designs using mutually orthogonal Latin squares](https://www.youtube.com/watch?v=9tqjtudKMKQ)，但我并没有看懂其中的原理（参考10.4节）。
+
 $$
 L1 = \left[
 \begin{matrix}
@@ -469,6 +500,7 @@ L2=
 \end{matrix}
 \right]
 $$
+
 尽管视频[Orthogonal latin squares](https://www.youtube.com/watch?v=q4Wz84fj95g)中有很多错误，但似乎介绍了正交拉丁方的计算方式。考虑到书中并没有详细讨论求解正交拉丁方的原理，这里就不再展开。
 
 ### EX22PS
@@ -488,6 +520,7 @@ $$
 > Construct Latin squares of orders 5 and 6.
 
 每一行滚动写出即可。
+
 $$
 \left[
 \begin{matrix}
@@ -542,21 +575,21 @@ int main()
 
 如果没有断层线，那么图中每一条断层线都要切割多米诺骨牌，考虑填充第一列，至少需要两块横放的多米诺骨牌，因此$x_1 \ge 2$，同理其他线也至少穿过两块多米诺骨牌，因此10条线一共至少穿过20块多米诺骨牌，而最多只有18块多米诺骨牌，因此假设不成立。
 
-![EX25](https://i.loli.net/2021/10/13/6jcJivowftZ14la.png)
+![EX25](imgs/c1ex25.png)
 
 ## EX26
 
-> Construct a perfect cover of an 8-by-8 chessboard with dominoes having no  fault-line.
+> Construct a perfect cover of an 8-by-8 chessboard with dominoes having no fault-line.
 
 一点点从$8 \times 8$的方格中删除边，大致遵顼从上到下，依次拆除断层线，尽可能保持对称。
 
-![EX26](https://raw.githubusercontent.com/furtherun/imgs/main/img/c1ex25.png)
+![EX26](imgs/c1ex26.png)
 
 ## EX27
 
 > Determine all shortest routes from A to B in the system of intersections and  streets (graph) in the following diagram. The numbers on the streets represent  the lengths of the streets measured in terms of some unit.
 >
-> ![EX27](https://i.loli.net/2021/10/12/O6UXSgQr3kPNhdJ.png)
+> ![EX27](imgs/c1ex27.png)
 
 使用Dijkstra算法+DFS，记录结点的前驱，逆序输出。
 
@@ -654,6 +687,7 @@ A--2-->D
 > Eight people are at a party and pair off to form four teams of two. In how many  ways can this be done? (This is sort of an "unstructured" domino-covering  problem.)
 
 平均分组问题：
+
 $$
 \frac{
 \left(
@@ -687,14 +721,17 @@ $$
 $$
 
 答案的方法，给出递推关系，
+
 $$
 h_n = (2n-1)h_{n-1}
 $$
+
 其中n是形成的n对组合。当2n-2人已经形成好$h_{n-1}$种配对方式后，再来2个人，其中一人可以从已经选好的n-1组中拆出一组或者和刚加入的另一人组成新组，共有2n-1种方式。
 
 ### EX36PS
 
 学习过第二章后，可以考虑把问题转化为「把n个球放入k个无标签的盒子」，因此可以计算，
+
 $$
 \frac{8!}{4! \times (2!)^4} = 105
 $$
@@ -729,11 +766,13 @@ $$
 
 不知道是不是我对题目的理解有问题，这样的回答似乎并不能让老师满意。
 
+**需要改进！**。
+
 ## EX39
 
 > Consider an n-by-n board and L-tetrominoes (4 squares joined in the shape of an  L). Show that if there is a perfect cover of the n-by-n board with L-tetrominoes,  then n is divisible by 4. What about m-by-n-boards?
 
-![EX39](https://i.loli.net/2021/09/30/YlU8ZuwQskHP9Ce.png)
+![EX39](imgs/c1ex39.png)
 
 棋盘是L形四格拼板的完美覆盖，那一定是多米诺骨牌的完美覆盖，故n一定是偶数，记作$n=2m$。
 
@@ -749,7 +788,7 @@ $$
 
 该图在分析行（列）时，经常使用九宫格中的其他数字，限制3个位置的空格。
 
-[EX40](https://raw.githubusercontent.com/furtherun/imgs/main/img/40%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F.jpg))
+![EX40](imgs/c1ex40.jpg)
 
 ## EX41
 
@@ -757,13 +796,13 @@ $$
 
 比上一题容易许多。
 
-![EX41](https://raw.githubusercontent.com/furtherun/imgs/main/img/41%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F.jpg)
+![EX41](imgs/c1ex41.jpg)
 
 ## EX42
 
 > Let $S_n$ denote the staircase board with 1 + 2 + ... + n = n( n + 1) /2 squares. For  example, $S_4$ is
 >
-> ![EX42](https://i.loli.net/2021/10/12/cKWpkt4x5r9FmZS.png)
+> ![EX42](imgs/c1ex42.png)
 >
 > Prove that $S_n$ does not have a perfect cover with dominoes for any $n \ge 1$.
 
@@ -783,4 +822,4 @@ $$
 
 可以从切出的面来考虑，一共要切出来54对单位面积。
 
-![image-20211012112500940](https://i.loli.net/2021/10/12/Hatg9mDi6SUMoWh.png)
+![EX44](imgs/c1ex44.png)
