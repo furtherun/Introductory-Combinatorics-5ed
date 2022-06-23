@@ -1,11 +1,5 @@
 # 第4章 生成排列和组合
 
-## 序
-
-押的题目就考了EX1，命中率很低QAQ。本章的题目很难，特别后20道题，有的题目甚至不知道参考答案在说什么。
-而考试题目几乎都是从前30题中选的，可惜了后面需要琢磨的题目。
-时间关系，这一章我也有许多疏漏，~~恰好就漏了考试最后一题~~，不过应付考试应该是没问题的，有深度的神仙题目应该就留给后人填坑了。
-
 ## EX1
 
 > Which permutation of {1, 2, 3, 4, 5} follows 31524 in using the algorithm described in Section 4.1? Which permutation comes before 31524?
@@ -271,6 +265,7 @@ int main()
 ### EX7 Q(a)
 
 从大向小插，逆序数就是待插入数据前面的数字个数。
+
 $$
 \begin{aligned}
 &8 \\
@@ -994,7 +989,7 @@ $$
 
 ## EX39
 
-> Let $(J， \le)$ be the partially ordered set with J = {0, 1} and with 0 < 1. By  identifying the subsets of a set X of n elements with the n-tuples of 0s and  1s, prove that the partially ordered set $(X, \sube)$ can be identified with the n-fold  direct product  
+> Let $(J， \le)$ be the partially ordered set with J = {0, 1} and with 0 < 1. By  identifying the subsets of a set X of n elements with the n-tuples of 0s and  1s, prove that the partially ordered set $(X, \subseteq)$ can be identified with the n-fold  direct product  
 >
 > $$
 > (J, \le) \times (J, \le) \times \cdots \times (J, \le) \text{ (n factors).}
@@ -1012,8 +1007,8 @@ $$
 显然$f(x)$既是单射又是满射，
 即$J^n$与$\mathcal{P}(X)$满足一一映射（双射）关系。
 
-所以满足偏序关系$x \le y$当且仅当$f(x) \sube f(y)$，
-因此偏序集$(X, \sube)$
+所以满足偏序关系$x \le y$当且仅当$f(x) \subseteq f(y)$，
+因此偏序集$(X, \subseteq)$
 可以用n重直积$J^n$​表示。
 
 并且有如下等价命题，
@@ -1022,7 +1017,7 @@ $$
 2. 项的关系$x_i \le y_i, 1 \le i \le n$
 3. 如果项$x_i = 1$，那么一定有$y_i = 1, 1 \le i \le n$
 4. 如果下标$i \in f(x)$，那么一定有$i \in f(y), 1 \le i \le n$
-5. 集合关系$f(x) \sube f(y)$
+5. 集合关系$f(x) \subseteq f(y)$
 
 ### EX39PS
 
@@ -1044,11 +1039,11 @@ $$
 
 对于$x, y \in \mathcal{P}(X)$如下命题等价，
 
-1. $x \sube y$
+1. $x \subseteq y$
 2. $x_j \le y_j, 1 \le j \le m$
 3. 在偏序集$[n_1]\times[n_2]\times \cdots \times [n_m]$中$(x_1, x_2 , \cdots, x_m) \le (y_1, y_2, \cdots, y_m)$
 
-所以偏序集$(\mathcal{P}(X), \sube)$能用直积$[n_1]\times[n_2]\times \cdots \times [n_m]$表示。
+所以偏序集$(\mathcal{P}(X), \subseteq)$能用直积$[n_1]\times[n_2]\times \cdots \times [n_m]$表示。
 
 ### EX40PS
 
@@ -1082,7 +1077,7 @@ $$
 
 ## EX42
 
-> Describe the cover relation for the partial order $\sube$ on the collection $\mathcal{P}(X)$ of an  subsets of a set X.
+> Describe the cover relation for the partial order $\subseteq$ on the collection $\mathcal{P}(X)$ of an  subsets of a set X.
 
 记n = |X|，所有子集分布在n阶立方体上。
 
@@ -1158,11 +1153,11 @@ $$
 
 ### EX47Q(a)
 
-自反性：对任意$\pi \sube \Pi_n$，显然$\pi \sube \pi$，满足自反性。
+自反性：对任意$\pi \subseteq \Pi_n$，显然$\pi \subseteq \pi$，满足自反性。
 
-反对称性：对于$\pi, \sigma \sube \Pi_n$，如果$\pi \sube \sigma$且$\sigma \sube \pi$，则$\pi = \sigma$，满足反对称性。
+反对称性：对于$\pi, \sigma \subseteq \Pi_n$，如果$\pi \subseteq \sigma$且$\sigma \subseteq \pi$，则$\pi = \sigma$，满足反对称性。
 
-传递性：对于$\pi, \rho, \sigma \sube \Pi_n$，如果$\pi \sube \rho,  \rho \sube \sigma$，则$\pi \sube \sigma$，满足传递性。
+传递性：对于$\pi, \rho, \sigma \subseteq \Pi_n$，如果$\pi \subseteq \rho,  \rho \subseteq \sigma$，则$\pi \subseteq \sigma$，满足传递性。
 
 因此加细关系是$\Pi_n$上的一个偏序关系。
 
@@ -1254,7 +1249,7 @@ $$
 
 ## EX50
 
-> Consider the partially ordered set (X,$\sube$) of subsets of the set X = {a, b, c} of  three elements. How many linear extensions are there?
+> Consider the partially ordered set (X,$\subseteq$) of subsets of the set X = {a, b, c} of  three elements. How many linear extensions are there?
 
 ```mermaid
 graph BT
@@ -1292,12 +1287,12 @@ c---b,c;
 
 ### 不知所言的参考答案
 
-定义$\text{Inv}(\pi)$为排列$\pi$的逆序列集合，我们通过如下两个命题等价来验证当$\text{Inv}(\pi) \sube \text{Inv}(\sigma)$时，$\pi \le \sigma$。
+定义$\text{Inv}(\pi)$为排列$\pi$的逆序列集合，我们通过如下两个命题等价来验证当$\text{Inv}(\pi) \subseteq \text{Inv}(\sigma)$时，$\pi \le \sigma$。
 
 1. $\sigma$覆盖$\pi$
 2. 可以从$\pi$中翻转ab到ba（a<b）来获得$\sigma$
 
-先由1证2：我们假设$\pi \lt \sigma$，因此有$\text{Inv}(\pi) \sube \text{Inv}(\sigma)$，
+先由1证2：我们假设$\pi \lt \sigma$，因此有$\text{Inv}(\pi) \subseteq \text{Inv}(\sigma)$，
 之后我们可以从$\sigma$中选择一个逆序ba（$a<b$，a是所有b逆序中最小的数）
 这个逆序不存在$\pi$中，即有
 
@@ -1319,7 +1314,7 @@ $$
 
 除a和b的坐标外，其余坐标均相同，
 显然$|\text{Inv}(\pi)| + 1 = | \text{Inv}(\sigma)|$，
-并且$\text{Inv}(\pi) \sube \text{Inv}(\sigma), \pi \le \sigma$。
+并且$\text{Inv}(\pi) \subseteq \text{Inv}(\sigma), \pi \le \sigma$。
 $\pi, \sigma$之间不存在其他元素，所以$\sigma$
 覆盖$\pi$。
 
