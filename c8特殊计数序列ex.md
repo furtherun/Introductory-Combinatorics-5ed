@@ -27,12 +27,10 @@ $$
 > Prove that the number of 2-by-n arrays
 >
 > $$
-> \left[
 > \begin{matrix}
 > x_{11} & x_{12} & \cdots & x_{1n} \\
 > x_{21} & x_{22} & \cdots & x_{2n} \\
 > \end{matrix}
-> \right]
 > $$
 >
 > that can be made from the numbers 1,2, ..., 2n such that
@@ -218,10 +216,9 @@ $$
 >
 > are uniquely determined. (Cf. Theorem 8.2.2.)
 
-本题主要证明**唯一性**，假设存在不同的序列，
-$\{c_i\}_{i=0}^{m}$和
-$\{d_i\}_{i=0}^{m}$使得存在i满足
-$c_i \neq d_i, 0 \le i \le m$，
+本题主要证明**唯一性**，假设存在不同的序列$\{c_i\}_{i=0}^{m}$和
+序列$\{d_i\}_{i=0}^{m}$使得存在i满足
+$c_i \neq d_i$，其中$0 \le i \le m$，
 
 $$
 \begin{aligned}
