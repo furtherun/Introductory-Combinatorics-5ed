@@ -445,10 +445,11 @@ $$
 
 ## EX18
 
->Determine the generating function for the number $h_n$ of nonnegative integral solutions of
->$$
->2e_1+5e_2+e_3+7e_4=n
->$$
+> Determine the generating function for the number $h_n$ of nonnegative integral solutions of
+>
+> $$
+> 2e_1+5e_2+e_3+7e_4=n
+> $$
 
 令$f_1 = 2e_1, f_2 = 5e_2, f_3 = e_3, f_4 = 7e_4$，所以有$f_1 + f_2 + f_3 + f_4 = n$，其中$f_1$是2的倍数，$f_2$是5的倍数，$f_3$是1的倍数，$f_4$是7的倍数。有生成函数，
 
@@ -461,7 +462,7 @@ $$
 
 ## EX19
 
->Let $h_0, h_1, h_2, ... , h_n , ...$ be the sequence defined by $h_n = \dbinom{n}{2}, (n\ge 0)$. Determine the generating function for the sequence.
+> Let $h_0, h_1, h_2, ... , h_n , ...$ be the sequence defined by $h_n = \dbinom{n}{2}, (n\ge 0)$. Determine the generating function for the sequence.
 
 $$
 \begin{aligned}
@@ -497,7 +498,8 @@ $$
 
 ## EX22
 
->Determine the exponential generating function for the sequence of factorials: $0!, 1!, 2!, 3!, ... , n!, . ..$.
+> Determine the exponential generating function for the sequence of factorials:
+> $0!, 1!, 2!, 3!, ... , n!, \cdots$.
 
 $$
 \begin{aligned}
@@ -612,7 +614,7 @@ $$
 
 ## EX27
 
->Determine the number of n-digit numbers with all digits odd, such that 1 and 3 each occur a nonzero, even number of times.
+> Determine the number of n-digit numbers with all digits odd, such that 1 and 3 each occur a nonzero, even number of times.
 
 问题等价于$\{\infty \cdot 1, \infty \cdot 3, \infty \cdot 5, \infty \cdot 7, \infty \cdot 9\}$的多重集合n排列数，
 
@@ -625,6 +627,7 @@ G^{(e)}_{5}(x) = G^{(e)}_{7}(x) = G^{(e)}_{9}(x) = e^x
 $$
 
 指数生成函数为,
+
 $$
 \begin{aligned}
 g^{(e)}(x) =& G^{e}_1(x)G^{e}_3(x)\cdots G^{e}_9(x) \\
@@ -650,6 +653,7 @@ G^{(e)}_{5}(x) = G^{(e)}_{7}(x) = e^x - 1
 $$
 
 指数生成函数为，
+
 $$
 \begin{aligned}
 g^{(e)}(x) =& G^{e}_4(x)G^{e}_5(x)\cdots G^{e}_9(x) \\
@@ -667,9 +671,11 @@ $$
 ## EX29
 
 > We have used exponential generating functions to show that the number hn of n-digit numbers with each digit odd, where the digits 1 and 3 occur an even number of times, satisfies the formula
+>
 > $$
 > h_n = \frac{5^n + 2 \times 3^n + 1}{4}, \quad (n \ge 0)
 > $$
+>
 > Obtain an laternative derivation of this formula.
 
 根据n位数中1和3出现数量的奇偶性可以分类，
@@ -918,42 +924,49 @@ $$
 ## EX43
 
 > Solve the monhomogeneous recurrence realtion
+>
 > $$
 > \begin{aligned}
 > & h_n = 4h_{n-1} +3\times 2^n, \quad (n \ge 1) \\
 > & h_0 = 1
 > \end{aligned}
 > $$
+>
 
 略。
 
 ## EX44
 
 > Solve the monhomogeneous recurrence realtion
+>
 > $$
 > \begin{aligned}
 > & h_n = 3h_{n-1} -2, \quad (n \ge 1) \\
 > & h_0 = 1
 > \end{aligned}
 > $$
+>
 
 略
 
 ## EX45
 
 > Solve the monhomogeneous recurrence realtion
+>
 > $$
 > \begin{aligned}
 > & h_n = 2h_{n-1} +n, \quad (n \ge 1) \\
 > & h_0 = 1
 > \end{aligned}
 > $$
+>
 
 略
 
 ## EX46
 
 > Solve the monhomogeneous recurrence realtion
+>
 > $$
 > \begin{aligned}
 > & h_n = 6h_{n-1} -9h_{n-2}+2n, \quad (n \ge 2) \\
@@ -961,12 +974,14 @@ $$
 > & h_1 = 0
 > \end{aligned}
 > $$
+>
 
 略
 
 ## EX47
 
 > Solve the monhomogeneous recurrence realtion
+>
 > $$
 > \begin{aligned}
 > & h_n = 4h_{n-1} -4h_{n-2}+3n+1, \quad (n \ge 2) \\
@@ -974,6 +989,7 @@ $$
 > & h_1 = 2
 > \end{aligned}
 > $$
+>
 
 略
 
