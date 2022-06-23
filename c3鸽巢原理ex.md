@@ -138,7 +138,7 @@ $$
 ## EX8
 
 > Use the pigeonhole principle to prove that the decimal expansion of a rational  number min eventually is repeating. For example,
-> 
+>
 > $$
 > \frac{34,478}{99,900} = 0.34512512512512512· ...
 > $$
@@ -339,13 +339,13 @@ $$
 ## EX22
 
 > Prove that
-> 
+>
 > $$
 > r\underbrace{(3,3,\cdots, 3)}_{\text{k+1}} \le (k+1) (r\underbrace{(3,3,\cdots, 3)}_{\text{k}} - 1) + 2
 > $$
-> 
+>
 > Use this result to obtain an upper bound for
-> 
+>
 > $$
 > r\underbrace{(3,3,\cdots, 3)}_{\text{n}}
 > $$
@@ -474,11 +474,11 @@ A：我想说，要是不看前人的解答，我也想不出来。
 ## EX25
 
 > Let $q_1, q_2, \cdots, q_k, t$ be positive integers, where $q_1 \ge t, q_2 \ge t, \cdots, q_k \ge t$. Let m  be the largest of $q_1, q_2, \cdots, q_k$· Show that
-> 
+>
 > $$
 > r_t(m, m, \cdots , m) \ge r_t(q_1, q_2, \cdots, q_k)
 > $$
-> 
+>
 > Conclude that, to prove Ramsey's theorem, it is enough to prove it in the case  that $q_1 = q_2 = \cdots = q_k$.
 
 设$N = r_t(m, m, \cdots , m)$，
