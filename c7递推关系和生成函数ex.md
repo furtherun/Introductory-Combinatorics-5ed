@@ -206,9 +206,11 @@ $$
 ## EX11
 
 > The Lucas numbers $l_0, l_1, l_2, \cdots, l_n, \cdots$ are defined using the same recurrence relation defining the Fibonacci numbers, but with different initial conditions:
+>
 > $$
 > l_n = l_{n-1} + l_{n-2}, \quad (n \ge 2), l_0 =2, l_1 = 1
 > $$
+>
 > Prove that
 >
 > (a) $l_n = f_{n-1} + f_{n+1} \text{ for } n \ge 1$
@@ -379,9 +381,11 @@ $$
 ## EX15
 
 > Determine the generating function for the sequence of cubes
+>
 > $$
 > 0, 1, 8, \cdots, n^3, \cdots
 > $$
+>
 
 由第5章EX20知，
 
