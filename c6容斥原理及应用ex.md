@@ -399,14 +399,20 @@ $$
 ## EX16
 
 > Use combinatorial reasoning to derive the identity
+>
 > $$
 > n! = \binom{n}{0}D_0 + \binom{n}{1}D_{n-1} + \binom{n}{2} D_{n-2} + \cdots + \binom{n}{n-1}D_1 + \binom{n}{n}D_0
 > $$
+>
 > (Here,$D_0$ is defined to be 1.)
 
-记$S$为$\{1,2, \cdots , n\}$的全排列集合，$S_i$表示恰有i个元素在自然位置的排序，显然$\{S_i\}$划分了$S$，因此$|S| = \sum_{i=0}^{n}|S_i|$。
+记$S$为$\{1,2, \cdots , n\}$的全排列集合，
+$S_i$表示恰有i个元素在自然位置的排序，显然$\{S_i\}$划分了$S$，
+因此$|S| = \sum_{i=0}^{n}|S_i|$。
 
-全排列$|S| = n!$，恰有i个自然位置的错位排序（参考EX14），有$\binom{n}{i}D_{n-i}$个，因此等式成立。
+全排列$|S| = n!$，
+恰有i个自然位置的错位排序（参考EX14），
+有$\binom{n}{i}D_{n-i}$个，因此等式成立。
 
 ### EX16评注
 
@@ -912,9 +918,14 @@ ${aa, b, b, b, c, c, c, c, d,d,d,d,d}$的**循环排列**，即$\frac{1}{13} \ti
 
 $$
 \begin{aligned}
-    |\overline{A_1} \cap \overline{A_2} \cap \overline{A_3} \cap \overline{A_4}| =& |S| - \sum |A_i| + \sum |A_iA_j| - \sum|A_iA_jA_k| + \sum|A_i A_j A_k A_u| \\
-    =& \frac{1}{14} \times \frac{14!}{2! \cdot 3! \cdot 4! \cdot 5!} - (27720+6930+2520+1260) + (1260+504+280+168+105+60) - (42+30+20+12) + 6\\
-    =& 180180 - (27720+6930+2520+1260) + (1260+504+280+168+105+60) - (42+30+20+12) + 6 \\
+    |\overline{A_1} \cap \overline{A_2} \cap \overline{A_3} \cap \overline{A_4}|
+    =& |S| - \sum |A_i| + \sum |A_iA_j| - \sum|A_iA_jA_k| + \sum|A_i A_j A_k A_u| \\
+    =& \frac{1}{14} \times \frac{14!}{2! \cdot 3! \cdot 4! \cdot 5!} - \\
+    & (27720+6930+2520+1260) +\\
+    & (1260+504+280+168+105+60) -\\
+    & (42+30+20+12) + 6\\
+    =& 180180 - (27720+6930+2520+1260) +\\
+    &(1260+504+280+168+105+60) - (42+30+20+12) + 6 \\
     =& 144029
 \end{aligned}
 $$
