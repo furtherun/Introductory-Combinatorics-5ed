@@ -2,6 +2,8 @@
 
 黑皮书 组合数学第五版（Introductory-Combinatorics-5ed）作业
 
+GitHub支持$\LaTeX$数学公式后，重新调整了排版和图片。
+
 ## 文件说明
 
 - `/imgs`存放图片；
