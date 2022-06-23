@@ -190,6 +190,7 @@ $$
 ## EX5
 
 > Determine the number of 10-conbiations of the multiset
+>
 > $$
 > S = \{\infty \cdot a, 4\cdot b, 5\cdot c, 7 \cdot d\}
 > $$
@@ -220,9 +221,11 @@ $$
 > A bakery sells chocolate, cinnamon, and plain doughnuts and at a particular time has 6 chocolate, 6 cinnamon, and 3 plain. If a box contains 12 doughnuts, how many different options are there for a box of oughnuts?
 
 该问题可以转化为方程
+
 $$
 x_1 + x_2 + x_3 = 12
 $$
+
 在$0 \le x_1 \le 6, 0 \le x_2 \le 6, 0\le x_3 \le 3$的条件下整数解的个数。
 
 定义$A_1, A_2, A_3$分别表示$x_1 \ge 7, x_2 \ge 7, x_3 \ge 4$。
