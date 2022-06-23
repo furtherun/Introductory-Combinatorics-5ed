@@ -1406,7 +1406,12 @@ UNFINISHED
 
 ## EX54
 
-> Let $(X, \le)$ be a finite partially ordered set. By Theorem 4.5.2 we know that  $(X, \le)$ has a linear extension. Let a and b be incomparable elements of X.  Modify the proof of Theorem 4.5.2 to obtain a linear extension of  $(X, \le)$  such  that a < b. (Hint: First find a partial order $\le '$ on X such that whenever x $\le $  y,  then x $\le '$  y and, in addition, a $\le '$  b.)
+> Let $(X, \le)$ be a finite partially ordered set.
+> By Theorem 4.5.2 we know that  $(X, \le)$ has a linear extension.
+> Let a and b be incomparable elements of X.  
+> Modify the proof of Theorem 4.5.2 to obtain a linear extension of  $(X, \le)$  
+> such that $a < b$.
+> (Hint: First find a partial order $\le '$ on X such that whenever $x \le y$,  then $x \le ' y$ and, in addition, $a \le ' b$.)
 
 对于不可比元素a和b，我们可以通过定义b覆盖a（比如线性顺序列出），来找到X上的偏序关系$\le '$
 使得$a \le ' b$，并且由定理4.5.2可知，这样的偏序关系对有限集一定存在。因此，我们可以得到偏序集$(X, \le ')$。
@@ -1439,7 +1444,21 @@ $(X, \le ')$由$(X, \le )$添加关系得到，该线性扩展也保留了原来
 
 ## EX56
 
-> The *dimension* of a finite partially ordered set $(X, \le)$ is the smallest number of  its linear extensions whose intersection is $(X, \le)$. By Exercise 55, every partially ordered set has a dimension. Those that have dimension 1 are the linear orders.  Let n be a positive integer and let $i_1, i_2, \cdots, i_n$ be a permutation $\sigma$ of {1, 2, ... ,n}  that is different from 1, 2, ... ,n. Let X = $\{(1,i_1),(2, i_2), \cdots,(n, i_n)\}$. Now define  a relation R on X by $(k, i_k)R(l, i_l)$ if and only if $k \le l$ (ordinary integer inequality) and $i_k \le i_l$(again ordinary inequality); that is, $(i_k, i_l)$ is not an inversion of  $\sigma$. Thus, for instance, if n = 3 and $\sigma$ = 2,3,1, then X = {(1, 2), (2, 3), (3, 1)},  and (1,2)R(2, 3), but $(1,2)\not R(3,1)$. Prove that R is a partial order on X  and that the dimension of the partially ordered set (X, R) is 2, provided that  $i_1, i_2, \cdots, i_n$ is not the identity permutation 1,2, ... , n.
+> The *dimension* of a finite partially ordered set $(X, \le)$ is the smallest number
+> of its linear extensions whose intersection is $(X, \le)$.
+> By Exercise 55, every partially ordered set has a dimension.
+> Those that have dimension 1 are the linear orders.  
+> Let n be a positive integer and let $i_1, i_2, \cdots, i_n$ be a permutation
+> $\sigma$ of {1, 2, ... ,n} that is different from 1, 2, ... ,n.
+> Let X = $\{(1,i_1),(2, i_2), \cdots,(n, i_n)\}$.
+> Now define  a relation R on X by $(k, i_k)R(l, i_l)$ if and only if
+> $k \le l$ (ordinary integer inequality) and $i_k \le i_l$(again ordinary inequality);
+> that is, $(i_k, i_l)$ is not an inversion of  $\sigma$.
+> Thus, for instance, if n = 3 and $\sigma$ = 2,3,1,
+> then X = {(1, 2), (2, 3), (3, 1)},  and (1,2)R(2, 3), but
+> $(1,2)\not R(3,1)$. Prove that R is a partial order on X and
+> that the dimension of the partially ordered set (X, R) is 2,
+> provided that  $i_1, i_2, \cdots, i_n$ is not the identity permutation 1,2, ..., n.
 
 易证R是X上的偏序关系，
 
@@ -1494,9 +1513,11 @@ PS买的答案也没看懂传递性。
 ## EX59
 
 > Let $n \ge 2$ be an integer. Prove that the total number of inversions of *all* n!  permutations of 1,2, ... ,n equals
+>
 > $$
 > \frac{1}{2}n!\binom{n}{2} = n!\frac{n(n-1)}{4}
 > $$
+>
 > (Hint: Pair up the permutations so that the number of inversions in each pair is  n(n - 1)/2.)
 
 第一步，计算逆序可能出现的组合数量：因为逆序是两两配对，逆序组合不超过$\dbinom{n}{2} = \dfrac{n(n-1)}{2}$个；(这一点可以参考EX8)

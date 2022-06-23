@@ -1215,7 +1215,7 @@ $$
 
 $$
 \begin{aligned}
-&\frac{\binom{n}{1}\binom{n-1}{n-3}\dfrac{n!}{3!\cdot (1!)^{n-3}}+\binom{n}{2}\binom{n-2}{n-4}\dfrac{n!}{(2!)^2 \cdot (1!)^{n-2}}}{n^n} \times 100\% \\ 
+&\frac{\binom{n}{1}\binom{n-1}{n-3}\dfrac{n!}{3!\cdot (1!)^{n-3}}+\binom{n}{2}\binom{n-2}{n-4}\dfrac{n!}{(2!)^2 \cdot (1!)^{n-2}}}{n^n} \times 100\% \\
 =&\frac{\binom{n}{1}\binom{n-1}{2} \binom{n}{3} \times (n-3)!+ \binom{n}{2}\binom{n-2}{2} \binom{n}{2} \times(n-2)!/ 2}{n^n} \times 100\% \\
 =& \frac{(n-2)\binom{n}{2} \binom{n}{3} \times (n-3)!+ \binom{n}{2}\binom{n-2}{2} \binom{n}{2} \binom{n-2}{2}\times (n-4)!}{n^n} \times 100\%
 \end{aligned}

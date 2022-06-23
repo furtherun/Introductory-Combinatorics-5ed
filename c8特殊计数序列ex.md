@@ -25,6 +25,7 @@ $$
 ## EX2
 
 > Prove that the number of 2-by-n arrays
+>
 > $$
 > \left[
 > \begin{matrix}
@@ -33,6 +34,7 @@ $$
 > \end{matrix}
 > \right]
 > $$
+>
 > that can be made from the numbers 1,2, ..., 2n such that
 >
 > $$
@@ -85,8 +87,8 @@ $$
 
 ## EX6
 
-> Let the sequence $h_0, h_1, ... , h_n, \cdots$ be defined 
-> by $h_n = 2n^2 - n + 3, (n  \ge 0)$. 
+> Let the sequence $h_0, h_1, ... , h_n, \cdots$ be defined
+> by $h_n = 2n^2 - n + 3, (n  \ge 0)$.
 > Determine the difference table, and find a formula for $\displaystyle \sum_{k=0}^{n} h_k$.
 
 $h_n$是2次多项式，因此有$\Delta^3 h_n = 0$，
@@ -113,9 +115,10 @@ $$
 
 ## EX7
 
-> The general term $h_n$ of a sequence is a polynomial in n of degree 3. 
-> If the first four entries of the Oth row of its difference table are 1, -1, 3, 10, 
-> determine $h_n$ and a formula for $\displaystyle \sum_{k=0}^{n} h_k$·
+> The general term $h_n$ of a sequence is a polynomial in n of degree 3.
+> If the first four entries of the Oth row of its difference table are 1, -1, 3, 10,
+> determine $h_n$ and a formula
+> for $\displaystyle \sum_{k=0}^{n} h_k$·
 
 由题意，$h_n$是3次多项式，那么$\Delta^4 h_n=0$，求出差分表第0条对角线，
 
@@ -171,11 +174,11 @@ $$
 
 > Prove that the following formula holds for the kth-order differences of a sequence
 > $h_0, h_1, \cdots, h_n, \cdots$:
-> 
+>
 > $$
 > \Delta^k h_n = \sum_{j=0}^{k}(-1)^{k-j} \binom{k}{j} h_{n+j}
 > $$
-> 
+>
 
 采用数学归纳法证明，当k=0时，有
 
@@ -208,19 +211,22 @@ $$
 ## EX10
 
 > If $h_n$ is a polynomial in n of degree m, prove that the constants $c_0, c_1, \cdots, c_m$ such that
-> 
+>
 > $$
 > h_n = c_0 \binom{n}{0} + c_1 \binom{n}{1} + \cdots + c_m \binom{n}{m}
 > $$
-> 
+>
 > are uniquely determined. (Cf. Theorem 8.2.2.)
 
-本题主要证明**唯一性**，假设存在不同的序列，$\{c_i\}_{i=0}^{m}$和$\{d_i\}_{i=0}^{m}$使得存在i满足$c_i \neq d_i, 0 \le i \le m$，
+本题主要证明**唯一性**，假设存在不同的序列，
+$\{c_i\}_{i=0}^{m}$和
+$\{d_i\}_{i=0}^{m}$使得存在i满足
+$c_i \neq d_i, 0 \le i \le m$，
 
 $$
 \begin{aligned}
-  h_n =& c_0 \binom{n}{0} + c_1 \binom{n}{1} + \cdots + c_m \binom{n}{m} \\
-  =& d_0 \binom{n}{0} + d_1 \binom{n}{1} + \cdots + d_m \binom{n}{m}
+h_n =& c_0 \binom{n}{0} + c_1 \binom{n}{1} + \cdots + c_m \binom{n}{m} \\
+=& d_0 \binom{n}{0} + d_1 \binom{n}{1} + \cdots + d_m \binom{n}{m}
 \end{aligned}
 $$
 
@@ -340,11 +346,11 @@ $$
 ## EX13
 
 > Let X be a p-element set and let Y be a k-element set. Prove that the number of functions $f : X \rightarrow Y$ which map X onto Y equals
-> 
+>
 > $$
 > k! S(p, k) = S^{\sharp}(p, k)
 > $$
-> 
+>
 
 X映射到Y是满射，映射函数等价于把p个元素放入到k个**可区分**的盒子中，即有$S^{\sharp}(p, k)$个；
 同时由可区分盒子与不可区分盒子划分的关系，有$S^{\sharp}(p, k) = k!S(p, k)$，
@@ -361,11 +367,11 @@ X映射到Y是满射，映射函数等价于把p个元素放入到k个**可区�
 ## EX15
 
 > The number of partitions of a set of n elements into k **distinguishable** boxes (some of which may be empty) is $k_n$. By counting in a different way, prove that
-> 
+>
 > $$
 > k^n = \binom{k}{1} 1! S(n, 1) + \binom{k}{2} 2! S(n, 2) + \cdots + \binom{k}{n} n! S(n, n)
 > $$
-> 
+>
 > If $k \ge n$, define $S(n, k)$ to be 0.
 
 方法一：考虑把n个元素分别放在k个盒子中，每个元素有k种放置放法，因此共$k^n$种方法。
@@ -524,7 +530,7 @@ $[n]_p$的定义形式$[n]_p = n(n-1)(n-2) \cdots (n-(p-1)), p \ge 1$，当n=0�
 带入$p = n$显然有$[n]_n = n!, n \ge 0$。
 
 $[n]_p$与第一类Stirling数的关系，
-$\displaystyle [n]_p = \sum_{k=0}^{p} (-1)^{k-p} s(p, k) n^k$，
+$[n]_p = \displaystyle \sum_{k=0}^{p} (-1)^{k-p} s(p, k) n^k$，
 
 带入$p = n$有，
 
@@ -552,9 +558,11 @@ $$
 
 ## EX22
 
-> (a) Calculate the partition number $p_6$ and construct the diagram of the set $\mathcal{P}_6$, partially ordered by majorization.
+> (a) Calculate the partition number $p_6$ and construct the diagram of the
+> set $\mathcal{P}_6$, partially ordered by majorization.
 >
-> (b) Calculate the partition number $p_7$ and construct the diagram of the set $\mathcal{P}_7$, partially ordered by majorization.
+> (b) Calculate the partition number $p_7$ and construct the diagram of the
+> set $\mathcal{P}_7$, partially ordered by majorization.
 
 ### EX22(a)
 
@@ -583,17 +591,17 @@ $$
 ## EX25
 
 > Let $t_1, t_2, \cdots, t_m$ be distinct positive integers, and let
-> 
+>
 > $$
 > q_n = q_n(t_1, t_2, \cdots, t_m)
 > $$
-> 
+>
 > equal the number of partitions of n in which all parts are taken from $t_1, t_2, \cdots, t_m$. Define $q_0 = 1$. Show that the generating function for $q_0, q_1, \cdots, q_n, \cdots$ is
-> 
+>
 > $$
 > \prod_{k=1}^{m}(1-x^{t_k})^{-1}
 > $$
-> 
+>
 
 $$
 \begin{aligned}
@@ -668,7 +676,7 @@ $$
 即有$\mu_k^{\ast} \gt \lambda_k^{\ast}$，记$u = \mu_k^{\ast}, v = \lambda_k^{\ast}$。又因为$\mu^*$和$\lambda^{\ast}$都是n的分拆，所以有
 
 $$
-\mu_{k+1}^{\ast} + \mu_{k+2}^{\ast} + \cdots   \le \lambda_{k+1}^{\ast} + \lambda_{k+2}^{\ast} + \cdots 
+\mu_{k+1}^{\ast} + \mu_{k+2}^{\ast} + \cdots   \le \lambda_{k+1}^{\ast} + \lambda_{k+2}^{\ast} + \cdots
 $$
 
 如图，由互换行列前后的关系可得，
@@ -695,7 +703,11 @@ $$
 
 ## EX29
 
-> Prove that the number of partitions of the positive integer n into parts each of which is at most 2 equals $\lfloor n/2 \rfloor +1$. (Remark: There is a formula, namely the nearest integer to $\frac{(n+3)^2}{12}, for the number of partitions of n into parts each of which is at most 3 but it is much more difficult to prove. There is also one for partitions with no part more than 4, but it is even more complicated and difficult to prove.)
+> Prove that the number of partitions of the positive integer n into parts each of which is at most 2
+> equals $\lfloor n/2 \rfloor +1$.
+> (Remark: There is a formula, namely the nearest integer to $\frac{(n+3)^2}{12},
+> for the number of partitions of n into parts each of which is at most 3 but it is much more difficult to prove.
+> There is also one for partitions with no part more than 4, but it is even more complicated and difficult to prove.)
 
 当$n=2r$时，每一部分至多是2的分拆为
 
@@ -716,7 +728,7 @@ $$
 ## EX30
 
 > Prove that the partition function satisfies
-> 
+>
 > $$
 > p_n \gt p_{n-1} \quad (n \ge 2)
 > $$
