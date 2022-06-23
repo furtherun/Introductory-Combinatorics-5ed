@@ -346,7 +346,7 @@ $$
 > $$
 > 
 
-X映射到Y是满射，映射函数等价于把p个元素放入到k个**可区分**的盒子中，即有$S^{\#}(p, k)$个；
+X映射到Y是满射，映射函数等价于把p个元素放入到k个**可区分**的盒子中，即有$S^{\sharp}(p, k)$个；
 同时由可区分盒子与不可区分盒子划分的关系，有$S^{\sharp}(p, k) = k!S(p, k)$，
 因此映射函数的个数也等于$k!S(p, k)$。
 
@@ -361,17 +361,19 @@ X映射到Y是满射，映射函数等价于把p个元素放入到k个**可区�
 ## EX15
 
 > The number of partitions of a set of n elements into k **distinguishable** boxes (some of which may be empty) is $k_n$. By counting in a different way, prove that
+> 
 > $$
 > k^n = \binom{k}{1} 1! S(n, 1) + \binom{k}{2} 2! S(n, 2) + \cdots + \binom{k}{n} n! S(n, n)
 > $$
+> 
 > If $k \ge n$, define $S(n, k)$ to be 0.
 
 方法一：考虑把n个元素分别放在k个盒子中，每个元素有k种放置放法，因此共$k^n$种方法。
 
-方法二：先区分盒子是否非空，从k个盒子中选出i个非空盒子，问题变为把n个元素放入i个可区分盒子且盒子非空中的方法数，即为$S^{\#}(n, i)$，i可能的取值为$i=1,2, \cdots, k$，
+方法二：先区分盒子是否非空，从k个盒子中选出i个非空盒子，问题变为把n个元素放入i个可区分盒子且盒子非空中的方法数，即为$S^{\sharp}(n, i)$，i可能的取值为$i=1,2, \cdots, k$，
 
 $$
-\sum_{i=1}^{k} \binom{k}{i} S^{\#} (n, i) = \sum_{i=1}^{k} \binom{k}{i} i! S(n, i)
+\sum_{i=1}^{k} \binom{k}{i} S^{\sharp} (n, i) = \sum_{i=1}^{k} \binom{k}{i} i! S(n, i)
 $$
 
 方法一和方法二是同一问题的两种解决方法，因此等价，所以有，
@@ -645,7 +647,7 @@ $$
 
 ## EX28
 
-> Prove that conjugation reverses the order of majorization; that is, if $\lambda$ and $\mu$ are partitions of n and $\lambda$ is majorized by $\mu$, then $\mu^{*}$ is majorized by $\lambda^{*}$.
+> Prove that conjugation reverses the order of majorization; that is, if $\lambda$ and $\mu$ are partitions of n and $\lambda$ is majorized by $\mu$, then $\mu^{\ast}$ is majorized by $\lambda^{\ast}$.
 
 由题意，当$\lambda$被$\mu$优超时，有
 
@@ -653,20 +655,20 @@ $$
 \lambda_1 + \lambda_2 + \cdots + \lambda_i \le \mu_1 + \mu_2 + \mu_i, \quad 1 \le i \le k \tag{1}
 $$
 
-假设$\mu^{*} \not \le \lambda^{*}$，即存在k使，
+假设$\mu^{} \not \le \lambda^{\ast}$，即存在k使，
 
 $$
-\mu_1^{*} + \mu_2^{*} + \cdots + \mu_{i}^{*} \le \lambda_1^{*} + \lambda_2^{*} + \cdots + \lambda_i^{*}, \quad 1 \le i \lt k
+\mu_1^{\ast} + \mu_2^{\ast} + \cdots + \mu_{i}^{\ast} \le \lambda_1^{\ast} + \lambda_2^{\ast} + \cdots + \lambda_i^{\ast}, \quad 1 \le i \lt k
 $$
 
 $$
-\mu_1^{*} + \mu_2^{*} + \cdots + \mu_{k}^{*} \gt \lambda_1^{*} + \lambda_2^{*} + \cdots + \lambda_k^{*}
+\mu_1^{\ast} + \mu_2^{\ast} + \cdots + \mu_{k}^{\ast} \gt \lambda_1^{\ast} + \lambda_2^{\ast} + \cdots + \lambda_k^{\ast}
 $$
 
-即有$\mu_k^{*} \gt \lambda_k^{*}$，记$u = \mu_k^{*}, v = \lambda_k^{*}$。又因为$\mu^*$和$\lambda^{*}$都是n的分拆，所以有
+即有$\mu_k^{\ast} \gt \lambda_k^{\ast}$，记$u = \mu_k^{\ast}, v = \lambda_k^{\ast}$。又因为$\mu^*$和$\lambda^{\ast}$都是n的分拆，所以有
 
 $$
-\mu_{k+1}^{*} + \mu_{k+2}^{*} + \cdots   \le \lambda_{k+1}^{*} + \lambda_{k+2}^{*} + \cdots 
+\mu_{k+1}^{\ast} + \mu_{k+2}^{\ast} + \cdots   \le \lambda_{k+1}^{\ast} + \lambda_{k+2}^{\ast} + \cdots 
 $$
 
 如图，由互换行列前后的关系可得，
@@ -674,7 +676,7 @@ $$
 ![EX28](imgs/c8ex28.drawio.png)
 
 $$
-\mu_{k+1}^{*} + \mu_{k+2}^{*}  \cdots = \sum_{1}^{u} (u_i - k), \; \lambda_{k+1}^{*} + \lambda_{k+2}^{*} + \cdots = \sum_{i=1}^{v} (\lambda_i - k)
+\mu_{k+1}^{\ast} + \mu_{k+2}^{\ast}  \cdots = \sum_{1}^{u} (u_i - k), \; \lambda_{k+1}^{\ast} + \lambda_{k+2}^{\ast} + \cdots = \sum_{i=1}^{v} (\lambda_i - k)
 $$
 
 根据放缩，

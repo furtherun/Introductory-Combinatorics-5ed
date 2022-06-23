@@ -2,13 +2,17 @@
 
 黑皮书 组合数学第五版（Introductory-Combinatorics-5ed）作业
 
-文中大多数图片都是在PPT中绘制，使用图片的放在note文件下的PPT中。
-之后尝试使用drawio进行绘图，图片可以使用drawio插件进行二次编辑，部分新图片放在imgs文件中。
-图片有些名字写错了，内容是对应的。
+## 文件说明
+
+- `/imgs`存放图片；
+- `/notes`下存放原本用ppt制作的图片和一些整理的笔记；
 
 使用VScode编辑
 
-![组合数学第五版](imgs/introducotory-combinatorics-cover.png)
+## 参考资料
+
+![Introductory Combinatorics 5ed](imgs/introducotory-combinatorics-cover.png)
+![组合数学第五版](imgs/introductory-combinartorics-cn-cover.jpg)
 
 ## 已知问题
 
