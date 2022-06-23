@@ -42,15 +42,15 @@
 >
 > (c) $10^{10}$
 
-### Q(a)
+### EX4Q(a)
 
 3、5、7和11都是素数，共有$5 \times 3 \times 7 \times 2 = 210$个不同的正因子。
 
-### Q(b)
+### EX4Q(b)
 
 先进行质因数分解，卡西欧计算器可以直接使用Fact，$620 = 2^2 \times 5 \times 31$，一共有$3 \times 2 \times 2 = 12$个不同的正因子。
 
-### Q(c)
+### EX4Q(c)
 
 $10^{10} = 2^{10} \times 5^{10}$，有$11 \times 11=121$个不同的正因子。
 
@@ -64,7 +64,7 @@ $10^{10} = 2^{10} \times 5^{10}$，有$11 \times 11=121$个不同的正因子。
 
 数字末尾0的数量等于10因子的数量，10因子的数量又受限于5因子的数量，下面考虑有多少个5因子。
 
-### Q(a)
+### EX5Q(a)
 
 5的倍数（一个5因子），每十个数中有2个，总共有10个。
 
@@ -74,7 +74,7 @@ $10^{10} = 2^{10} \times 5^{10}$，有$11 \times 11=121$个不同的正因子。
 
 总共10+2=12个，50!末尾有12个0。
 
-### Q(b)
+### EX5Q(b)
 
 一个5因子：共200个。
 
@@ -103,6 +103,7 @@ $10^{10} = 2^{10} \times 5^{10}$，有$11 \times 11=121$个不同的正因子。
 |number| $7\times P(7,7)$ | $7\times P(7,6)$ | $7\times P(7,5)$ | $7\times P(7,4)$ |
 
 对于4位数，进行分类：第一类是以{6, 8, 9}开头的；第二类是以5开头，第二位是{6, 8, 9}；第三类是以54开头的所有数。
+
 $$
 S_4 = 3 \times P(7,3) + 1\times 3 \times P(6,2) + 1 \times 1 \times P(6,2)
 $$
@@ -155,13 +156,13 @@ A先入座，之后B从与A不相邻的12个座位中选择一个位置，剩下
 
 选出三个数一共有$\dbinom{20}{3}$种方案，减掉1开头，2开头……等两个连续数和随机第三个数的方案$19 \times 18$种，还需要补回重复减去的三个连续数$18$种，总计816种。
 
-![blue_balls](https://i.stack.imgur.com/V1TL7.png)
+![blue_balls](imgs/c2ex11a.png)
 
 另一种思考是，把问题考虑成排列3个绿球和17个蓝球，要求绿球不能相邻。排序之后，绿球对应的位置即为所选的数字。
 
 显然，这种是在蓝球间的空位进行插入，一共有$\dbinom{18}{3}= 816$种。两种解法答案一致，进一步验证了结果。
 
-![blue_and_green_balls](https://i.stack.imgur.com/tYE52.png)
+![blue_and_green_balls](imgs/c2ex11b.png)
 
 *参考答案给出的方法是构造出方程的解。*
 
@@ -170,6 +171,7 @@ A先入座，之后B从与A不相邻的12个座位中选择一个位置，剩下
 > A football team of 11 players is to be selected from a set of 15 players, 5 of  whom can play only in the backfield, 8 of whom can play only on the line, and  2 of whom can play either in the backfield or on the line. Assuming a football  team has 7 men on the line and 4 men in the backfield, determine the number  of football teams possible.
 
 不选双位球员（既能踢后卫又能踢边卫的球员）；选一个双位球员踢后卫；选两个双位球员踢后卫；后卫和边卫各有一个双位球员；边卫有一个双位球员；边卫有两个双位球员。
+
 $$
 \binom{5}{4}  \binom{8}{7} + \binom{5}{3}\binom{2}{1} \binom{8}{7} + \binom{5}{2}\binom{2}{2} \binom{8}{7} + \\
 \binom{5}{3}\binom{2}{1} \binom{8}{6}\binom{2}{1} + \binom{5}{4}\binom{8}{6}\binom{2}{1} + \binom{5}{4}\binom{8}{5}\binom{2}{2} = 1400
@@ -183,14 +185,15 @@ $$
 >
 > (b) Suppose that, of the 100 students, 50 are men and 50 are women and that  A is an all-men's dorm, B is an all-women's dorm, and C is co-ed. How  many ways are there to fill the dormitories?
 
-### Q(a)
+### EX13Q(a)
 
 A、B和C依次分配。
+
 $$
 \binom{100}{25}\binom{75}{35}\binom{40}{40}
 $$
 
-### Q(b)
+### EX13Q(b)
 
 $$
 \binom{50}{25}\binom{50}{35}\binom{40}{40}
@@ -213,16 +216,18 @@ $$
 >
 > (b) How many ways are there to form 10 couples consisting of one man and  one woman?
 
-### Q(a)
+### EX15Q(a)
 
 女多男少，以男性为基准，每名男性从女性中选择一位进行配对。
+
 $$
 P(20, 15) = 20 \times 19 \cdots \times 5
 $$
 
-### Q(b)
+### EX15Q(b)
 
 从男性和女性中各选10人进行配对。
+
 $$
 \binom{15}{10}\binom{20}{10}\times 10!
 $$
@@ -230,10 +235,10 @@ $$
 ## EX16
 
 > Prove that
+>
 > $$
 > \binom{n}{r} = \binom{n}{n-r}
 > $$
->
 >
 > by using a combinatorial argument and not the values of these numbers as given  in Theorem 3.3.1.
 
@@ -252,6 +257,7 @@ $$
 > In how many ways can two red and four blue rooks be placed on an 8-by-8 board  so that no two rooks can attack one another?
 
 选择棋盘占用的行数、占用的列数，对于每一行选择不同列进行摆放，最后决定每一列的染色。
+
 $$
 \binom{8}{6} \binom{8}{6} \times P(6,6) \times  \binom{6}{2}\binom{4}{4}  = 8467200
 $$
@@ -268,25 +274,29 @@ $$
 >
 > (b) In how many ways can the eight rooks be placed on a 12-by-12 chessboard  so that no two rooks can attack one another?
 
-### Q(a)
+### EX19Q(a)
 
 与EX17的思想相同。
+
 $$
 \binom{8}{8} \binom{8}{8} \times P(8,8) \times \binom{8}{3} = 2257920
 $$
+
 也可以直接使用定理2.4.4的公式，
+
 $$
 \frac{(8!)^2}{3! \times 5!} = 2257920
 $$
 
-### Q(b)
+### EX19Q(b)
 
 与EX18思想相同。
+
 $$
 \binom{12}{8} \binom{12}{8} \times P(8,8) \times \binom{8}{3} = 55324684800
 $$
 
-### PS
+### EX19PS
 
 **21年考试题目，稍有修改**。
 
@@ -295,6 +305,7 @@ $$
 > Determine the number of circular permutations of {0, 1,2, ... ,9} in which 0 and  9 are not opposite. (Hint: Count those in which 0 and 9 are opposite.)
 
 逆向思维，总的排列数减去0和9相对的排列数。
+
 $$
 P(10, 10)/10 - P(8,8) = 322560
 $$
@@ -306,9 +317,11 @@ $$
 多重集合$\{1 \cdot A, 2 \cdot D, 2 \cdot E, 1 \cdot R, 3 \cdot S \}$的9排列。
 
 依照定理2.4.2，代入公式
+
 $$
 \frac{9!}{1! \cdot 2! \cdot 2! \cdot 1! \cdot 3!} = 15120
 $$
+
 多重集合$\{1 \cdot A, 2 \cdot D, 2 \cdot E, 1 \cdot R, 3 \cdot S \}$的8排列，按照缺少的字母进行分类求解。
 
 |                             集合                             |                            排列数                            |
@@ -321,7 +334,7 @@ $$
 
 因此，总的8排列数是15120。
 
-### PS
+### EX21PS
 
 9排列（全排列）和8排列是相同的。
 
@@ -361,11 +374,12 @@ P(20, 4) \times P(16, 4) \times P(12, 4) \times P(8, 4) \times P(4, 4) = 20!
 $$
 
 事实上，当区分前后左右时，每个位置都是不同的。Alice不想和Bob坐同一个车厢，先选择Alice的位置；排除掉同一个车厢中的3个位置，再给Bob选择位置；其他人按序就坐。有些类似EX9。
+
 $$
 20 \times 16 \times 18!= 320 \times 18!
 $$
 
-### PS
+### EX24PS
 
 参考答案讨论了是否区分左右的问题。
 
@@ -374,11 +388,12 @@ $$
 > A ferris wheel(大缆车) has five cars, each containing four seats in a row. There are 20  people ready for a ride. In how many ways can the ride begin? What if a certain  two people want to sit in different cars?
 
 对每个位子都进行区分，并且1号车厢与5号车厢相邻（其实车厢没有编号）。那么总的排列数为$\dfrac{20!}{5}$。同上，Alice不想和Bob坐同一个车厢，先选择Alice的位置；排除掉同一个车厢中的3个位置，再给Bob选择位置；其他人按序就坐。
+
 $$
 \frac{20}{5} \times 16 \times 18! = 64 \times 18!
 $$
 
-### PS
+### EX25PS
 
 同样是道英语问题，roller coaster是过山车，ferries wheel是大缆车，这是书上的翻译。后者通俗来说叫“摩天轮”就不会产生疑惑了。
 
@@ -392,21 +407,23 @@ $$
 >
 > (b) Determine the number of ways if the teams don't have names.
 
-### Q(a)
+### EX26Q(a)
 
 每个队依次选择n个人，或者看作多重集合$\{n \cdot A, n \cdot B, \cdots, n \cdot M\}$的排列问题。
+
 $$
 \binom{mn}{n} \binom{mn-n}{n} \cdots \binom{n}{n} = \frac{(mn)!} {(n!)^m}
 $$
 
-### Q(b)
+### EX26Q(b)
 
 变成了平均分组问题。
+
 $$
 \frac{(mn)!} {m! \cdot (n!)^m}
 $$
 
-### PS
+### EX26PS
 
 本题考查定理2.4.3，a和b的区别是据盒子有没有标签。
 
@@ -431,20 +448,21 @@ $$
 >
 > (b) How many different routes are possible if the one block in the easterly  direction, which begins four blocks east and three blocks north of his home,  is under water (and he can't swim)? (Hint: Count the routes that use the  block under water.)
 
-### Q(a)
+### EX28Q(a)
 
 一共要走17个街区，其中9次向东，8次向北。
 $$
 \binom{17}{9} = 24310
 $$
 
-### Q(b)
+### EX28Q(b)
 
 根据答案推测，所谓“街区”是ABCD围成的块，每次移动都在点上移动，题目要求不能经过ABCD任意一点。
 
-![image-20211004170853485](https://i.loli.net/2021/10/04/yzZ3kwU7exDmuo2.png)
+![EX28b](imgs/c2ex28.png)
 
 那么考虑删除以A、B、C和D作为中间节点的路径即可。其中，D节点为中间节点的路径中不包括A节点，那么他只能从节点X上**转移**过来，同理B的上一个节点只能是Y，不存在以C为中间节点的路径。
+
 $$
 \binom{17}{9} - (\binom{7}{4}\binom{10}{5} + \binom{7}{3} \binom{9}{4} + \binom{7}{2} \binom{9}{4}) = 24310 - 15876 = 8434
 $$
@@ -452,11 +470,13 @@ $$
 ## EX29
 
 > Let S be a multiset with repetition numbers $n_1, n_2, \dots , n_k$, where $n_1 = 1$. Let  $n =  n_2 + \cdots + n_k$. Prove that the number of circular permutations of S equals
+> 
 > $$
 > \frac{n!}{ n_2! \cdots n_k !}
 > $$
 
 因为$n_1 = 1$，可以通过先放置数量为1的元素，来把循环排列问题转化成线性排列问题。从a处剪开环还有n（不包括$n_1$）个位置，剩下的部分就是n元素的多重集合排列，即为
+
 $$
 \frac{n!}{n_2! \cdots n_k !}
 $$
@@ -466,16 +486,18 @@ $$
 > We are to seat five boys, five girls, and one parent in a circular arrangement  around a table. In how many ways can this be done if no boy is to sit next to a  boy and no girl is to sit next to a girl? What if there are two parents?
 
 先考虑男生的座位，满足循环排列，有$\dfrac{P(5, 5)}{5} $种排法；之后考虑女生的排列，要求男生旁边不是男生，女生旁边不是女生，两个男生之间必须安排一名女生且最多是一名女生，有P(5, 5)种排法；最后，家长可以排在任意两人之间，有10种排法。
+
 $$
 s = \frac{P(5, 5)}{5} \times P(5, 5) \times 10 = 28800
 $$
+
 当两名家长中间人数为奇数时，第二名家长有5个插入点，并且中间的人不能交换性别。一共有$5 \times s$种排列方式。
 
 当两名家长中间人数为偶数时，第二名家长有5个插入点，并且调整一侧的性别顺序，使家长相邻的均是男孩（女孩）。一共有$5 \times 2 \times s$种排列方式。
 
 因此，一共有432000种排列方式。
 
-### PS
+### EX30PS
 
 两名家长的情况，最好先分析家长，之后再分析男生和女生。
 
@@ -484,11 +506,12 @@ $$
 > In a soccer tournament of 15 teams, the top three teams are awarded gold, silver,  and bronze cups, and the last three teams are dropped to a lower league. We  regard two outcomes of the tournament as the same if the teams that receive  the gold, silver, and bronze cups, respectively, are identical and the teams which  drop to a lower league are also identical. How many different possible outcomes  are there for the tournament?
 
 前三名有序，后三名无序。
+
 $$
 P(15,3)\times \binom{12}{3} = \frac{15!}{3! \cdot 9!} = 600600
 $$
 
-### PS
+### EX31PS
 
 参考答案的分母漏掉了$9!$，分析逻辑是没有问题的。
 
@@ -506,7 +529,7 @@ $$
 
 该多重集合的11排列为27720。
 
-### PS
+### EX32PS
 
 该题进一步验证，n元素多重集合的n排列数和n-1排列数相等。
 
@@ -525,7 +548,7 @@ $$
 
 10排列共有17850种。
 
-### PS
+### EX33PS
 
 21年考试题目。
 
@@ -561,12 +584,15 @@ $$
 > A bakery sells six different kinds of pastry. If the bakery has at least a dozen of  each kind, how many different options for a dozen of pastries are there? What  if a box is to contain at least one of each kind of pastry?
 
 可以把题目抽象为多重集合$\{12 \cdot a, 12 \cdot b, 12 \cdot c, 12 \cdot d, 12 \cdot e, 12 \cdot f\}$的12组合问题，满足定理2.5.1。
+
 $$
 \binom{12+6-1}{5} = 6188
 $$
+
 以上问题可以抽象为求方程$ x_1 + x_2 + \cdots + x_k = r$的非负整数解个数。
 
 如果每种酥皮糕点至少有一块，可以令$y_i = x_i-1$，问题转化成求方程$y_1 + y_2 + \cdots + y_6 = 6$的非负整数解个数。
+
 $$
 \binom{6 + 6-1}{5} = 462
 $$
@@ -576,6 +602,7 @@ $$
 > How many integral solutions of   $ x_1 + x_2 + x_3 + x_4 = r30$ satisfy $x_1 \ge 2, x_2 \ge 0, x_3 \ge -5, x_4 \ge 8$?
 
 记$y_1 = x_1 - 2, y_2 = x_2, y_3 = x_3 + 5, y_4 = x_4 - 8$，问题转化为求方程$y_1 + y_2 +y_3 +y_4 = 25$的非负整数解个数。
+
 $$
 \binom{25 + 4-1}{3} = 3276
 $$
@@ -583,9 +610,11 @@ $$
 ## EX39
 
 > There are 20 identical sticks lined up in a row occupying 20 distinct places as  follows:  
+> 
 > $$
 > \text{| | | | | | | | | | | | | | | | | | | | | | | | |}
 > $$
+> 
 > Six of them are to be chosen.
 >
 > (a) How many choices are there?  
@@ -594,11 +623,11 @@ $$
 >
 > (c) How many choices are there if there must be at least two sticks between  each pair of chosen sticks?
 
-### Q(a)
+### EX39Q(a)
 
 简单选择，$\dbinom{20}{6} = 38760$。
 
-### Q(b)
+### EX39Q(b)
 
 问题转化成向14个方块的间隔中插入6根棍子，$\dbinom{15}{6} = 5005$。
 
@@ -607,12 +636,14 @@ $$
 x_1 + (x_2-1) + (x_3-1) + (x_4-1) + (x_5-1) + (x_6-1) + x_7 = 14-5 = 9
 $$
 
-### Q(c)
+### EX39Q(c)
 
 中间部分至少是2，即$x_2 ,\cdots , x_6 \ge 2$。
+
 $$
 y_1 + y_2 + y_3 + y_4 + y_5 + y_6 + y_7 = 14 - 5\times2 = 4
 $$
+
 因此有$\dbinom{7+4-1}{7-1} = \dbinom{10}{6}  = 210$种选择。
 
 ## EX40
@@ -625,24 +656,28 @@ $$
 >
 > (c) How many choices are there if there must be at least I sticks between each  pair of chosen sticks?
 
-### Q(a)
+### EX40Q(a)
 
 显然，$k \le n$， 一共有$\dbinom{n}{k}$种选法。
 
-### Q(b)
+### EX40Q(b)
 
 考虑成把剩余的n-k根棍k+1部分，每一部分的数量是$x_i$，中间的部分至少是1，即$x_2 ,\cdots , x_{k} \ge 1$。
+
 $$
 x_1 + \sum_{i=2}^{k}(x_i-1) + + x_{k+1} = n-{k-1} = n-k-(k-1) = n+1-2k
 $$
+
 一共有$\dbinom{n+1-2k+(k+1-1)}{k+1-1} = \dbinom{n-k+1}{k}$种选法。
 
-### Q(c)
+### EX40Q(c)
 
 中间部分至少是$l$，即$x_2 ,\cdots , x_6 \ge l$。
+
 $$
 y_1 + \sum_{i=2}^{k} + y_{k+1} = n-k-l(k-1)
 $$
+
 因此有$\dbinom{n-k-l(k-1) +(k+1-1)}{k+1-1} = \dbinom{n-l(k-1)}{k}$种选择。
 
 ## EX41
@@ -658,6 +693,7 @@ $$
 > Determine the number of ways to distribute 10 orange drinks, 1 lemon drink,  and 1 lime drink to four thirsty students so that each student gets at least one  drink, and the lemon and lime drinks go to different students.
 
 先选择两名学生分配柠檬汁和酸橙汁，有P(4, 2)种分配方式；之后给剩余两名学生各发1罐橘子汁，确保每人都有一罐饮料；最后把剩余的橘子汁进行分配。
+
 $$
 P(4, 2) \times \binom{8+4-1}{4-1} = 1980
 $$
@@ -711,22 +747,25 @@ $$
 >
 > (b) Now suppose that there is an odd number 2n + 1 of people at the party  with everyone but one person talking with someone. How many different  pairings are there?
 
-### Q(a)
+### EX46Q(a)
 
 平均分组问题，分成n个组。
+
 $$
 \frac{(2n)!}{n! (2!)^n} = \frac{(2n-1)!! \cdot 2^n \cdot n!}{n! \cdot 2^n} = (2n-1)!!
 $$
+
 阶乘展开化简，还需要双阶乘。
 
-### Q(b)
+### EX46Q(b)
 
 排除1人，剩下人进行平均分组。
+
 $$
 (2n+1) \times \frac{(2n)!}{n! (2!)^n} = \frac{(2n+1)!}{n! (2!)^n} = (2n+1)!!
 $$
 
-### PS
+### EX46PS
 
 本题和第一章题目[EX36](https://www.yuque.com/furtherun/math-note/hub56k#EX36)大同小异。
 
@@ -745,6 +784,7 @@ $$
 ## EX48
 
 > Prove that the number of permutations of m A's and at most n B's equals
+> 
 > $$
 > \binom{m+n+1}{m+1}
 > $$
@@ -752,10 +792,13 @@ $$
 其实难理解的地方——什么是at most n(最多n个)，这里是说所有小于等于n的排列数之和。
 
 容易知道m个A和k个B的排列数是$\dbinom{m+k}{m}$，那么m个A和不超过n个B的排列数则是$\displaystyle \sum_{k=0}^{n}\binom{m+k}{m}$。即证，
+
 $$
 \binom{m+n+1}{m+1} =  \sum_{k=0}^{n}\binom{m+k}{m}
 $$
+
 事实上，由笛卡尔公式（定理2.3.3）代换，可以得到，
+
 $$
 \begin{aligned}
 \binom{m+n+1}{m+1} &= \binom{m+n}{m} + \binom{m+n}{m+1} \\
@@ -764,20 +807,25 @@ $$
 & = \sum_{k=0}^{n} \binom{m+k}{m}
 \end{aligned}
 $$
+
 QED. 本题参考[链接](https://math.stackexchange.com/questions/65947/combinatorics-number-of-permutations-of-m-as-and-at-most-n-bs)。参考答案采用双射（一一对应）进行构造，截断m+1个A和n个B的排列中最后一个A及其右边的B。
 
 ## EX49
 
 > Prove that the number of permutations of at most m A's and at most n B's  equals
+> 
 > $$
 > \binom{m+n+2}{m+1} -1
 > $$
 
 对于每一个A（at most k A's），根据EX48的结论有
+
 $$
 \binom{k+n+1}{k+1} = \binom{k+n+1}{n}
 $$
+
 因此，把所有的情况加和，
+
 $$
 \begin{aligned}
 \sum_{k=0}^{m} \binom{k+n+1}{n} =& \binom{n+1}{n} + \binom{n+2}{n} + \cdots + \binom{n+(m+1)}{n} \\
@@ -814,6 +862,7 @@ $$
 > Consider the multiset $\{n \cdot a, n \cdot b, 1, 2, 3, \cdots,  n+1 \}$ of size 3n + 1. Determine the  number of its n-combinations.
 
 $S = \{1, 2, \cdots, n+1\}$，记k为从集合S中取出元素的数量，有$\dbinom{n+1}{k}$种选法；剩余n-k项从a和b中选择，有n-k+1种选法（定理2.5,1）。因此，一共有$(n-k+1)\dbinom{n+1}{k}$种选法。
+
 $$
 \begin{aligned}
 \sum_{k=0}^{n}(n-k+1)\dbinom{n+1}{k}&=\sum_{k=0}^{n}(n-k+1)\frac{(n+1)!}{(n+1-k)! \cdot k!} \\
@@ -822,33 +871,42 @@ $$
 &=(n+1)2^n
 \end{aligned}
 $$
+
 本题参考[链接](https://math.stackexchange.com/questions/203583/number-combinations-multi-set)。
 
 ## EX53
 
 > Find a one-to-one correspondence between the permutations of the set $\{ 1, 2, 3, \cdots,  n \}$ and the towers $A_0 \subset A_1 \subset A_2 \cdots \subset A_n$ where $|A_k| = k$ for $k=0, 1, 2, \dots, n$.
 
-记集合$\{ 1, 2, 3, \cdots,  n \}$的排列为$x_1x_2x_3 \cdots x_n$，对应的塔集则为$\emptyset \subset {x_1} \subset \{x_1, x_2\} \cdots \subset \{x_1, x_2, x_3, \cdots, x_n\}$。
+记集合$\{1, 2, 3, \cdots,  n \}$
+的排列为$x_1 x_2 x_3 \cdots x_n$，
+对应的塔集则为$\emptyset \subset {x_1} \subset \{x_1, x_2\} \cdots \subset \{x_1, x_2, x_3, \cdots, x_n\}$。
 
 ## EX54
 
 > Determine the number of towers of the form $\emptyset \subseteq A \subseteq B \subseteq \{ 1, 2, 3, \cdots,  n \}$.
 
 当$|B|=k$时，B有$\dbinom{n}{k}$种组合；A是B的子集，A有$2^k$种组合。因此塔集有，
+
 $$
 \sum_{k=0}^{n} \binom{n}{k} \cdot 2^k
 $$
+
 由二项式定理，可以发现，
+
 $$
 (x+1)^n = \sum_{k=0}^{n} \binom{n}{k}x^k\cdot 1^{n-k} = \sum_{k=0}^{n} \binom{n}{k}x^k
 $$
+
 带入$x=2$得，
+
 $$
 \sum_{k=0}^{n} \binom{n}{k} \cdot 2^k = 3^n
 $$
+
 因此塔集总数为$3^n$。
 
-### PS
+### EX54PS
 
 **21年考试题目。**
 
@@ -868,7 +926,7 @@ $$
 
 题目都是多重集合的排序问题，提供一个[在线Python](https://www.online-python.com/online_python_compiler)。
 
-### Q(a)
+### EX55Q(a)
 
 ```python
 from collections import Counter
@@ -882,7 +940,7 @@ $$
 \frac{17!}{(3!)^2 \cdot 2! \cdot (1!)^{14}} = \frac{17!}{2 \times(3!)^2}
 $$
 
-### Q(b)
+### EX55Q(b)
 
 ```python
 from collections import Counter
@@ -895,7 +953,7 @@ $$
 \frac{29!}{9! \cdot 4! \cdot (3!)^2 \cdot (2!)^3}
 $$
 
-### Q(c)
+### EX55Q(c)
 
 ```python
 from collections import Counter
@@ -908,7 +966,7 @@ $$
 \frac{45!}{9! \cdot (6!)^2 \cdot (4!)^2 \cdot 3! \cdot (2!)^5}
 $$
 
-### Q(d)
+### EX55Q(d)
 
 ```python
 from collections import Counter
@@ -925,12 +983,15 @@ $$
 
 What is the probability that a poker hand contains a *flush* (that is, five cards of  the same suit)?
 
-本题计算概率，样本空间的大小为$\dbinom{52}{5}$；事件集是同花$4 \times \dbinom{13}{5}$。因此抽出同花的概率为
+本题计算概率，样本空间的大小为$\dbinom{52}{5}$；
+事件集是同花$4 \times \dbinom{13}{5}$。
+因此抽出同花的概率为
+
 $$
 \frac{4 \times \dbinom{13}{5}}{\dbinom{52}{5}} \times 100 \% = 0.198\%
 $$
 
-### PS
+### EX56PS
 
 参考[Texas hold 'em](https://en.wikipedia.org/wiki/Texas_hold_%27em)中对flush牌型的解释，flush应该是同花（书上翻译为同花顺），德州扑克的总牌数是52张。
 
@@ -940,7 +1001,10 @@ $$
 
 > What is the probability that a poker hand contains exactly one pair (that is, a  poker hand with exactly four different ranks)?
 
-5张牌中仅有2张号一样，样本空间大小仍为$\dbinom{52}{5}$；事件集大小为$13\times \dbinom{4}{2} \times \dbinom{12}{3} \times 4^3$。因此抽出一对的概率为
+5张牌中仅有2张号一样，样本空间大小仍为$\dbinom{52}{5}$；
+事件集大小为$13\times \dbinom{4}{2} \times \dbinom{12}{3} \times 4^3$。
+因此抽出一对的概率为
+
 $$
 \frac{13\times \dbinom{4}{2} \times \dbinom{12}{3} \times 4^3}{\dbinom{52}{5}} \times 100 \% = 42.3\%
 $$
@@ -954,11 +1018,12 @@ $$
 去掉同花，去掉顺子，其中同花顺被减了两次，要加回来。
 
 5张不同的牌事件集大小为$\dbinom{13}{5} \times4^5$；顺子的事件集大小为$10 \times 4^5$；同花顺的事件集大小为$4 \times 10$。因此抽出的牌型不含同花和顺子的概率为
+
 $$
 \frac{\dbinom{13}{5}\times4^5 - 10 \times 4^5 - \dbinom{13}{5} \times 4  + 4 \times 10}{\dbinom{52}{5}} \times 100 \% = 50.1\%
 $$
 
-### PS
+### EX58PS
 
  [Straight](https://en.wikipedia.org/wiki/Texas_hold_%27em) :  Sequence of 5 cards in increasing value (Ace can precede 2 and follow up King) ，顺子有10种，从A开头到10开头。
 
@@ -968,7 +1033,9 @@ $$
 
 ### 满堂红
 
-样本空间$|S| = \dbinom{40}{5}$，所谓满堂红是“三带二”的牌型，$10 \times \dbinom{4}{3} \times 9 \times \dbinom{4}{2}$。
+样本空间$|S| = \dbinom{40}{5}$，
+所谓满堂红是“三带二”的牌型，$10 \times \dbinom{4}{3} \times 9 \times \dbinom{4}{2}$。
+
 $$
 \frac{10 \times \dbinom{4}{3} \times 9 \times \dbinom{4}{2}}{\dbinom{40}{5}} \times 100 \% =0.328 \%
 $$
@@ -976,6 +1043,7 @@ $$
 ### 顺子
 
 事件E的集合大小为$7 \times 4^5$。
+
 $$
 \frac{7 \times 4^5}{\dbinom{40}{5}} \times 100 \%= 1.09 \%
 $$
@@ -990,6 +1058,7 @@ $$
 ### 两个对
 
 从牌中选出2种数字作为对，每一对要选2个颜色，从剩余牌号中选出1张，事件集E的大小为$\dbinom{10}{2} \times \dbinom{4}{2} \dbinom{4}{2} \times 32$。
+
 $$
 \frac{\dbinom{10}{2} \times \dbinom{4}{2} \dbinom{4}{2} \times 32}{\dbinom{40}{5}} \times 100 \%= 7.88 \%
 $$
@@ -997,6 +1066,7 @@ $$
 ### 至少有一个A
 
 使用减法原理逆向求解，求事件F：没有A的事件概率，F的集合大小为$\dbinom{36}{5}$，事件E的概率则是
+
 $$
 1 - \frac{\dbinom{36}{5}}{\dbinom{40}{5}} \times 100 \% = 42.7%
 $$
@@ -1005,9 +1075,13 @@ $$
 
 > A bagel store sells six different kinds of bagels. Suppose you choose 15 bagels at  random. What is the probability that your choice contains at least one bagel of  each kind? If one of the kinds of bagels is Sesame, what is the probability that  your choice contains at least three Sesame bagels?
 
-设每种百吉饼的有$x_i$张，并且有$\displaystyle \sum_{i= 1}^6 x_i = 15, x_i \ge 0$，因此样本空间的大小就是该方程的非负整数解的个数$\dbinom{15+6-1}{6-1} = 15504$。
+设每种百吉饼的有$x_i$张，
+并且有$\displaystyle \sum_{i= 1}^6 x_i = 15, x_i \ge 0$，
+因此样本空间的大小就是该方程的非负整数解的个数$\dbinom{15+6-1}{6-1} = 15504$。
 
-事件E：每种百吉饼至少一张，要求$x_i \ge 1$，方程转化为$\displaystyle \sum_{i= 1}^6 y_i = 9, y_i = x_i -1 \ge 0$。事件E的集合大小为$\dbinom{9+6-1}{6-1} = 2002$，因此事件E的概率为12.9%。
+事件E：每种百吉饼至少一张，要求$x_i \ge 1$，
+方程转化为$\displaystyle \sum_{i= 1}^6 y_i = 9, y_i = x_i -1 \ge 0$。
+事件E的集合大小为$\dbinom{9+6-1}{6-1} = 2002$，因此事件E的概率为12.9%。
 
 事件F：芝麻味的百吉饼至少三张，不妨假设$x_1 \ge 3$，事件F的集合大小为$\dbinom{12+6-1}{6-1} = 6188$，事件F的概率是，39.9%。
 
@@ -1035,13 +1109,13 @@ $$
 >
 > (f) seven cards each of different rank
 
-### Q(a)
+### EX62Q(a)
 
 $$
 \frac{8\times 4^7}{\dbinom{52}{7}} \times 100\% = 0.0980 \%
 $$
 
-### Q(b)
+### EX62Q(b)
 
 $$
 \frac{13 \times 1 \times 12 \times \dbinom{4}{3}}{\dbinom{52}{7}} \times 100\% = 0.000466 \%
@@ -1049,25 +1123,25 @@ $$
 
 对比EX59两个对。
 
-### Q(c)
+### EX62Q(c)
 
 $$
 \frac{13 \times \dbinom{4}{3} \times \dbinom{12}{2} \times (\dbinom{4}{2})^2}{\dbinom{52}{7}} \times 100\% = 0.0924 \%
 $$
 
-### Q(d)
+### EX62Q(d)
 
 $$
 \frac{ \dbinom{13}{3} \times (\dbinom{4}{2})^3 \times 10 \times 4}{\dbinom{52}{7}} \times 100\% = 1.85 \%
 $$
 
-### Q(e)
+### EX62Q(e)
 
 $$
 \frac{13 \times\dbinom{4}{3}  \times \dbinom{12}{4} \times (\dbinom{4}{1})^4}{\dbinom{52}{7}} \times 100\% = 1.23\%
 $$
 
-### Q(f)
+### EX62Q(f)
 
 $$
 \frac{\dbinom{13}{7}  \times 4^7}{\dbinom{52}{7}} \times 100\% = 21.0\%
@@ -1087,34 +1161,36 @@ $$
 >
 > (e) The probability that there are exactly two different numbers of dots shown
 
-### Q(a)
+### EX63Q(a)
 
 记每个骰子🎲的点数分别为$x_i≥1$，$\sum x_i = 6$等价于$\sum y_i = 2$的非负整数解个数$\dbinom{2+4-1}{2}= 10$。样本空间大小为$6^4$，概率为$\dfrac{10}{6^4} \times 100 \% = 0.772 \%$。
 
-### Q(b)
+### EX63Q(b)
 
 $$
 \frac{5^4+\dbinom{4}{1}\times 5^3 + \dbinom{4}{2} \times5^2}{6^4} \times 100\% = 98.4\%
 $$
 
-### Q(c)
+### EX63Q(c)
 
 $$
 \frac{5^4}{6^4} \times 100\% = 48.2\%
 $$
 
-### Q(d)
+### EX63Q(d)
 
 $$
 \frac{P(6,4)}{6^4} \times 100\% = 27.8\%
 $$
 
-### Q(e)
+### EX63Q(e)
 
 这里再次感觉书上的翻译很别扭，应该是正好有两种点数，形如(a, a, a, b)或(a, a, b, b)。
+
 $$
 \frac{\dbinom{4}{3} \times 6 \times 5 + \dbinom{4}{2} \times \dbinom{6}{2} }{6^4} \times 100\% = 16.2\%
 $$
+
 前一类是不对称分组，后一类是对称分组。
 
 ## EX64
@@ -1125,19 +1201,22 @@ $$
 >
 > (b) What is the probability that the sequence contains exactly n - 3 different  integers?
 
-### Q(a)
+### EX64Q(a)
 
 可能是一个数出现3次，n-3个数出现1次；或者是两个数各出现2次，n-4个数出现1次。
+
 $$
 \frac{\dbinom{n}{1}\dbinom{n-1}{n-3}\dfrac{n!}{3!\cdot (1!)^{n-3}}+\dbinom{n}{2}\dbinom{n-2}{n-4}\dfrac{n!}{(2!)^2 \cdot (1!)^{n-2}}}{n^n} \times 100\% =\\
 \frac{\dbinom{n}{1}\dbinom{n-1}{2} \dbinom{n}{3} \times (n-3)!+ \dbinom{n}{2}\dbinom{n-2}{2} \dbinom{n}{2} \times(n-2)!/ 2}{n^n} \times 100\% = \\
 \frac{(n-2)\dbinom{n}{2} \dbinom{n}{3} \times (n-3)!+ \dbinom{n}{2}\dbinom{n-2}{2} \dbinom{n}{2} \dbinom{n-2}{2}\times (n-4)!}{n^n} \times 100\%
 $$
+
 验证了答案与参考答案一致，思路没有问题。
 
-### Q(b)
+### EX64Q(b)
 
 可能是一个数出现4次，n-4个数出现1次；或者1个数出现3次，另一个数出现2次，n-5个数出现1次；或者三个数出现2次，n-6个数出现1次。
+
 $$
 \frac{\dbinom{n}{1}\dbinom{n-1}{n-4}\dfrac{n!}{4!\cdot (1!)^{n-4}}+\dbinom{n}{1}\dbinom{n-1}{1}\dbinom{n-2}{n-5}\dfrac{n!}{3!\cdot 2!\cdot (1!)^{n-5}} +\dbinom{n}{3}\dbinom{n-3}{n-6} \dfrac{n!}{(2!)^3 (1!)^{n-6}}}{n^n} \times 100\% =\\
 \frac{\dbinom{n}{1}\dbinom{n-1}{3}\dbinom{n}{4}  (n-4)!+\dbinom{n}{1}\dbinom{n-1}{1}\dbinom{n-2}{3}\dbinom{n}{3} (n-3)!/2 +\dbinom{n}{3}\dbinom{n-3}{3} \dbinom{n}{2}(n-2)!/4}{n^n} \times 100\%
