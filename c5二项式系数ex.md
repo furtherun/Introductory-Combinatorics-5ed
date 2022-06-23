@@ -107,7 +107,9 @@ $$
 
 > What is the coefficient of $x^5y^{13}$ in the expansion of $(3x - 2y)^{18}$? What is the  coefficient of $x^8y^9?$ (There is not a misprint in this last question!)
 
-从18项中选择5项x，其余项为y，因此$x^5y^{13}$的系数为$\dbinom{18}{5}\times3^5\times (-2)^{13} = -17055940608$；$8+9 \neq 18$，不存在$x^8 y^9$的项。
+从18项中选择5项x，其余项为y，因此$x^5y^{13}$的系数为
+$\dbinom{18}{5}\times3^5\times (-2)^{13} = -17055940608$；$8+9 \neq 18$，
+不存在$x^8 y^9$的项。
 
 ## EX7
 
@@ -210,7 +212,7 @@ $$
 
 我们给出直观的图来判断集合之间的关系：
 
-![EX11](imgs/C5EX11.drawio.png)
+![EX11](imgs/c5ex11.drawio.png)
 
 两种解法等价，因此有，
 
@@ -223,7 +225,11 @@ $$
 > Let n be a positive integer. Prove that
 >
 > $$
-> \sum_{k=0}^n (-1)^k \binom{n}{k}^2 = \begin{cases}  0, & \text{ if n is odd} \\(-1)^n \binom{2m}{m} & \text{ if n=2m.} \end{cases}
+> \sum_{k=0}^n (-1)^k \binom{n}{k}^2 = 
+> \begin{cases}  
+> 0, & \text{ if n is odd} \\
+> (-1)^n \dbinom{2m}{m} & \text{ if n=2m.} 
+> \end{cases}
 > $$
 >
 > (Hint: For n = 2m, consider the coefficient of $x^n$ in $(1-x^2)^n = (1+x)^n (1-x)^n$.)
@@ -245,7 +251,10 @@ $$
 \sum_{k=0}^n (-1)^k \binom{n}{k}^2  = 0
 $$
 
-当$n = 2m, n \ge 0$时，对比两式$x^n$的系数，前者k取m，有$\displaystyle  (-1)^m \binom{n}{m} x^{2m}$，后者前半部分取k阶时，后半部分只能取n-k阶，因此有$\displaystyle \sum_{k=0}^n \binom{n}{k}(-x)^k \binom{n}{n-k} x^{n-k} = \sum_{k=0}^n (-1)^k \binom{n}{k}^2 x^{n}$，代换n=2m，进而有，
+当$n = 2m, n \ge 0$时，对比两式$x^n$的系数，前者k取m，有$(-1)^m \dbinom{n}{m} x^{2m}$，
+后者前半部分取k阶时，后半部分只能取n-k阶，
+因此有$\displaystyle \sum_{k=0}^n \binom{n}{k}(-x)^k \binom{n}{n-k} x^{n-k} = \sum_{k=0}^n (-1)^k \binom{n}{k}^2 x^{n}$，
+代换n=2m，进而有，
 
 $$
 \sum_{k=0}^n (-1)^k \binom{n}{k}^2  = (-1)^m \binom{2m}{m}
@@ -265,7 +274,8 @@ $$
 
 $$
 \begin{aligned}
-\text{原式}=&(\binom{n}{k} + \binom{n}{k-1}) + 2  (\binom{n}{k-1} +  \binom{n}{k-2}) +  (\binom{n}{k-2}+ \binom{n}{k-3}) \\  =& \binom{n+1}{k} + 2\binom{n+1}{k-1} +  \binom{n+1}{k-2} \\
+\text{原式}=&(\binom{n}{k} + \binom{n}{k-1}) + 2  (\binom{n}{k-1} +  \binom{n}{k-2}) +  (\binom{n}{k-2}+ \binom{n}{k-3}) \\  
+=& \binom{n+1}{k} + 2\binom{n+1}{k-1} +  \binom{n+1}{k-2} \\
 =&\binom{n+2}{k} + \binom{n+2}{k-1} \\
 =& \binom{n+3}{k}
 \end{aligned}
@@ -300,17 +310,16 @@ $$
 > $$
 > \binom{n}{1} - 2\binom{n}{2} + 3\binom{n}{3} + \cdots + (-1)^{n-1} n \binom{n}{n} = 0
 > $$
+> 
 
 $$
 (x+1)^n = \sum_{k=0}^{n} \binom{n}{k} x^k
-
 $$
 
 两边同时求一阶导数，
 
 $$
 n(x+1)^{n-1} = \sum_{k=1}^n k \binom{n}{k} x^{k-1}
-
 $$
 
 两边同时带入x=-1，即证明上式。
@@ -350,7 +359,14 @@ $$
 对于$\dfrac{1}{k+1} \dbinom{n}{k}$，通过式(5.2)进行变换，
 
 $$
-\begin{aligned}\dfrac{1}{k+1} \dbinom{n}{k} =& \frac{1}{k+1} \frac{n}{k} \binom{n-1}{k-1} \\=& \frac{1}{k+1} \frac{n}{k} \frac{(n-1)!}{(k-1)!(n-k)!} \\ =& \frac{n!}{(k+1)!(n-k)!} \\ =& \frac{1}{n+1} \frac{(n+1)!}{(k+1)!(n-k)!}\\ =& \frac{1}{n+1} \binom{n+1}{k+1} \end{aligned}
+\begin{aligned}
+\dfrac{1}{k+1} \dbinom{n}{k} 
+=& \frac{1}{k+1} \frac{n}{k} \binom{n-1}{k-1} \\
+=& \frac{1}{k+1} \frac{n}{k} \frac{(n-1)!}{(k-1)!(n-k)!} \\ 
+=& \frac{n!}{(k+1)!(n-k)!} \\ 
+=& \frac{1}{n+1} \frac{(n+1)!}{(k+1)!(n-k)!}\\ 
+=& \frac{1}{n+1} \binom{n+1}{k+1} 
+\end{aligned}
 $$
 
 因此，提出公共部分，由式(5.3)可得，
@@ -362,6 +378,7 @@ $$
 ## EX18
 
 > Evaluate the sum
+> 
 > $$
 > 1 -\frac{1}{2}\binom{n}{1}  + \frac{1}{3}\binom{n}{2} -\frac{1}{4}\binom{n}{3} +  \cdots + (-1)^n \frac{1}{n+1} \binom{n}{n}
 > $$
@@ -403,7 +420,6 @@ $$
 >
 > $$
 > m^3 = a \binom{m}{3} + b \binom{m}{2} + c \binom{m}{1}
->
 > $$
 >
 > for all m. Then sum the series $1^3 +2^3 + 3^3 + \cdots + n^3$.
@@ -415,13 +431,22 @@ $$
 所以有方程组，
 
 $$
-\begin{cases} \displaystyle \frac{a}{6} = 1 \\ \displaystyle -\frac{a}{2}+  \frac{b}{2} = 0\\ \displaystyle \frac{a}{3} - \frac{b}{2} + c = 0 \\ \end{cases}
+\begin{cases} 
+\displaystyle \frac{a}{6} = 1 \\
+\displaystyle -\frac{a}{2}+  \frac{b}{2} = 0\\ 
+\displaystyle \frac{a}{3} - \frac{b}{2} + c = 0 \\ 
+\end{cases}
 $$
 
 所以，$a=6,b= 6,c=1$；参考EX19有
 
 $$
-\begin{aligned}\sum_{j=1}^n  j^3 =& \sum_{j=0}^n (6\binom{j}{3} + 6 \binom{j}{2} + \binom{j}{1}) \\ =& 6 \binom{n+1}{4} + 6 \binom{n+1}{3} + \binom{n+1}{2} \\=& \frac{n^2(n+1)^2}{4}\end{aligned}
+\begin{aligned}
+\sum_{j=1}^n  j^3 
+=& \sum_{j=0}^n (6\binom{j}{3} + 6 \binom{j}{2} + \binom{j}{1}) \\
+=& 6 \binom{n+1}{4} + 6 \binom{n+1}{3} + \binom{n+1}{2} \\
+=& \frac{n^2(n+1)^2}{4}
+\end{aligned}
 $$
 
 ## EX21
@@ -435,7 +460,8 @@ $$
 当$k \lt 0$时，二项式为0，当$k \ge 0$时，
 
 $$
-\begin{aligned} \binom{-r}{k} =& \frac{(-r)(-r-1) \cdots (-r-k+1)}{k!} \\=& (-1)^{k} \frac{r(r+1) \cdots (r+k-1)}{k!} \\
+\begin{aligned} \binom{-r}{k} =& \frac{(-r)(-r-1) \cdots (-r-k+1)}{k!} \\
+=& (-1)^{k} \frac{r(r+1) \cdots (r+k-1)}{k!} \\
 =&(-1)^k \binom{r+k-1}{k}\end{aligned}
 $$
 
@@ -450,7 +476,11 @@ $$
 当$m \lt 0$或者$k \lt 0$时，二项式为0，当$0 \le k \le m$时，
 
 $$
-\begin{aligned}\binom{r}{m} \binom{m}{k} =& \frac{r(r-1) \cdots (r-m+1)}{m!} \times \frac{m!}{k!(m-k)!}  \\=& \frac{r(r-1) \cdots (r-k+1)}{k!} \frac{(r-k)(r-k-1) \cdots (r-m+1)}{(m-k)!} \\ =& \binom{r}{k} \binom{r-k}{m-k}\end{aligned}
+\begin{aligned}\binom{r}{m} \binom{m}{k} 
+=& \frac{r(r-1) \cdots (r-m+1)}{m!} \times \frac{m!}{k!(m-k)!}  \\
+=& \frac{r(r-1) \cdots (r-k+1)}{k!} \frac{(r-k)(r-k-1) \cdots (r-m+1)}{(m-k)!} \\ 
+=& \binom{r}{k} \binom{r-k}{m-k}
+\end{aligned}
 $$
 
 ## EX23
@@ -527,7 +557,11 @@ $$
 由EX25可知，
 
 $$
-\begin{aligned} \sum_{k=1}^n \binom{n}{k} \binom{n}{k-1} =& \binom{n}{0}\binom{n}{-1} + \sum_{k=1}^n \binom{n}{k} \binom{n}{k-1} + \binom{n}{n+1}\binom{n}{n} \\=& \sum_{k=0}^{n+1} \binom{n}{k}\binom{n}{n+1-k} \\=& \binom{2n}{n+1}\end{aligned}
+\begin{aligned} 
+\sum_{k=1}^n \binom{n}{k} \binom{n}{k-1} 
+=& \binom{n}{0}\binom{n}{-1} + \sum_{k=1}^n \binom{n}{k} \binom{n}{k-1} + \binom{n}{n+1}\binom{n}{n} \\
+=& \sum_{k=0}^{n+1} \binom{n}{k}\binom{n}{n+1-k} \\=& \binom{2n}{n+1}
+\end{aligned}
 $$
 
 即证，
@@ -554,9 +588,15 @@ $$
 
 还是使用学生的例子从n名同学中，先预选k名班委，再在k名班委中选出班长与学习委员（可以为同一人）。
 
-由上面的例子，可以确定选出k名班委有$\dbinom{n}{k}$种方案；从班委中选出班长和学习委员各有k种方案；由乘法法则，一共有$k^2 \dbinom{n}{k}$种方案。对于k可能的取值为1，2，…，n，每一个k之间符合加法法则，因此共有$\displaystyle \sum_{k=1}^n k^2 \binom{n}{k}$种方案。
+由上面的例子，可以确定选出k名班委有$\dbinom{n}{k}$种方案；
+从班委中选出班长和学习委员各有k种方案；
+由乘法法则，一共有$k^2 \dbinom{n}{k}$种方案。
+对于k可能的取值为1，2，…，n，每一个k之间符合加法法则，
+因此共有$\displaystyle \sum_{k=1}^n k^2 \binom{n}{k}$种方案。
 
-下面进行逆向思考，先委任班长与学习委员。如果班长与学习委员为同一人，其余人要么是班委，要么不是班委，一共有$n  2^{n-1}$种方案；如果班长与学习委员不是同一人，则有$n(n-1)2^{n-2}$种方案。合计共$n(n+1)2^{n-2}$种方案。
+下面进行逆向思考，先委任班长与学习委员。
+如果班长与学习委员为同一人，其余人要么是班委，要么不是班委，一共有$n  2^{n-1}$种方案；
+如果班长与学习委员不是同一人，则有$n(n-1)2^{n-2}$种方案。合计共$n(n+1)2^{n-2}$种方案。
 
 两种解法求解的是同一问题，因此结果等价，题目得证。
 
@@ -570,7 +610,9 @@ $$
 
 从n名男同学和n名女同学中选出n名班委，其中必须有一位女同学担任班长。
 
-从女同学中选出k名班委，再从男同学中选出n-k名班委，k名女同学中选出一人为班长，有$k \dbinom{n}{k} \dbinom{n}{n-k}$种方法，对于每一个k，符合加法法则，共有$\displaystyle \sum_{k=1}^n k \binom{n}{k}^2$种方法。
+从女同学中选出k名班委，再从男同学中选出n-k名班委，k名女同学中选出一人为班长，
+有$k \dbinom{n}{k} \dbinom{n}{n-k}$种方法，
+对于每一个k，符合加法法则，共有$\sum_{k=1}^n k \dbinom{n}{k}^2$种方法。
 
 或者，先从n名女同学中选出班长，再从剩余2n-1名同学中选择n-1名班委，即$n \dbinom{2n-1}{n-1}$种选法，两种解法等价，题目得证。
 
@@ -720,6 +762,7 @@ $$
 >Prove the identity of Exercise 25 using the binomial theorem and the relation $(1+x)^{m_l}(1+x)^{m_2} = (1+x)^{m_1+m_2}$.
 
 两端展开，对比$x^n$的系数可得，
+
 $$
 \sum_{k=0}^{n} \binom{m_1}{k} \binom{m_2}{n-k} = \binom{m_1+m_2}{n}
 $$
@@ -727,9 +770,11 @@ $$
 ## EX37
 
 > Use the multinomial theorem to show that, for positive integers nand t,
+> 
 > $$
 > t^n = \sum\binom{n}{n_1 n_2 \cdots n_t},
 > $$
+> 
 > where the summation extends over all nonnegative integral solutions $n_1, n_2, ... , n_t$ of $n_1 + n_2 + ... + n_t = n$.
 
 由多项式定理，直接带入，
@@ -756,6 +801,7 @@ $$
 ## EX39
 
 > Determine the coefficient of $x_1^3 x_2 x_3^4 x_5^2$ in the expansion of
+> 
 > $$
 > (x_1 + x_2 + x_3 + x_4 + x_5) ^{10}
 > $$
@@ -765,6 +811,7 @@ $$
 ## EX40
 
 > What is the coefficient of $x_1^3 x_2^3 x_3 x_4^2$ in the expansion of
+> 
 > $$
 > (x_1 - x_2 + 2 x_3 -2x_4)^9
 > $$
@@ -776,9 +823,11 @@ $$
 ## EX41
 
 > Expand $(x_1 + x_2 + x_3)^n$ by boserving that
+> 
 > $$
 > (x_1 + x_2 + x_3)^n = ((x_1 + x_2) + x_3)^n
 > $$
+> 
 > and then using the binomial theorem.
 
 $$
@@ -794,8 +843,9 @@ $$
 
 $$
 \begin{aligned}
-    (x_1 + x_2 + x_3)^n =& \sum_{n_1 + n_2} ^ {n_1 + n_2 + n_3} \sum_{n_1} ^{n_1 + n_2} \frac{n!}{n_1 ! \times n_2! \times n_3!} x_1^{n_1} x_2^{n_2} x_3^{n_3} \\
-    =&  \underset{n_1 + n_2 + n_3 = n}{\sum} \binom{n}{n_1 \; n_2 \; n_3} x_1^{n_1} x_2^{n_2} x_3^{n_3}
+(x_1 + x_2 + x_3)^n 
+=& \sum_{n_1 + n_2} ^ {n_1 + n_2 + n_3} \sum_{n_1} ^{n_1 + n_2} \frac{n!}{n_1 ! \times n_2! \times n_3!} x_1^{n_1} x_2^{n_2} x_3^{n_3} \\
+=&  \underset{n_1 + n_2 + n_3 = n}{\sum} \binom{n}{n_1 \; n_2 \; n_3} x_1^{n_1} x_2^{n_2} x_3^{n_3}
 \end{aligned}
 $$
 
@@ -803,23 +853,32 @@ $$
 
 > Prove the identity (5.21) by a combinatorial argument. (Hint: Consider the permutations of a multiset of objects of t different types with repetition numbers $n_l, n_2, ... ,n_t$, respectively. Partition these permutations according to what type of object is in the first position.)
 
-多重集合$\{n_1 \cdot x_1, n_2 \cdot x_2, \cdots, n_t \cdot x_t\}$的n排列，其中$n_1 + n_2 + \cdots + n_t = n$，多重集合n排列满足结论$\dfrac{n!}{n_1 ! n_2 ! \cdots n_t!}$，得到左式。
+多重集合$\{n_1 \cdot x_1, n_2 \cdot x_2, \cdots, n_t \cdot x_t\}$的n排列，
+其中$n_1 + n_2 + \cdots + n_t = n$，多重集合n排列满足结论$\dfrac{n!}{n_1 ! n_2 ! \cdots n_t!}$，得到左式。
 
-之后采用另一种算法，优先决定第一个位置放哪种元素，有t种情况，之后对剩余的n-1个元素进行n-1排列，假如第一个位置选择$x_2$，那么对应的n-1排列则为$\dfrac{(n-1)!}{n_1! (n_2-1)! \cdots n_t!}$，即等于$\dbinom{n-1}{n_1\;(n_2-1)\;\cdots \; n_t}$，对t种情况进行求和，得到右式。
+之后采用另一种算法，优先决定第一个位置放哪种元素，有t种情况，之后对剩余的n-1个元素进行n-1排列，
+假如第一个位置选择$x_2$，那么对应的n-1排列则为$\dfrac{(n-1)!}{n_1! (n_2-1)! \cdots n_t!}$，
+即等于$\dbinom{n-1}{n_1\;(n_2-1)\;\cdots \; n_t}$，对t种情况进行求和，得到右式。
+
 综上，证毕。
 
 ## EX43
 
 > Prove by induction on n that, for n a positive integer,
+> 
 > $$
 > \frac{1}{(1-z)^n} = \sum_{k=0}^{\infty} \binom{n+k-1}{k} z^k, \quad |z| \lt 1
 > $$
+> 
 > Assume the validity of
+> 
 > $$
 > \frac{1}{1-z} = \sum_{k=0}^{\infty} z^k, \quad |z| \lt 1
 > $$
+> 
 
 当n=1是显然成立；假设对正整数n上式仍然成立（$n \ge 1$），对于正整数n+1有
+
 $$
 \begin{aligned}
     \frac{1}{(1-z)^{n+1}} =& \frac{1}{n}(\frac{1}{(1-z)^n})' \\
@@ -830,6 +889,7 @@ $$
     =& \sum_{k=0}^{\infty} \binom{(n+1)+k-1}{k} z^k
 \end{aligned}
 $$
+
 综上，证毕。
 
 ### EX43PS
@@ -841,9 +901,11 @@ $$
 ## EX44
 
 > Prove that
+> 
 > $$
 > \underset{n_1 + n_2 + n_3 = n}{\sum} \binom{n}{n_1 \, n_2 \, n_3} (-1)^{n_1-n_2 + n_3} = (-3)^n
 > $$
+> 
 > where the summation extends over all nonnegative integral solutions of $n_1 + n_2 + n_3 = n$.
 
 由EX41可以得到公式，
@@ -870,9 +932,11 @@ $$
 ## EX45
 
 > Prove that
+> 
 > $$
 > \underset{n_1 + n_2 + n_3 + n_4= n}{\sum} \binom{n}{n_1 \, n_2 \, n_3 \, n_4} (-1)^{n_2 + n_4} = 0
 > $$
+> 
 
 相比上一题，本题更为直接，没有倒数需要处理。
 
@@ -894,6 +958,7 @@ $$
 > Use Newton's binomial theorem to approximate $\sqrt{30}$.
 
 参考正文P91，
+
 $$
 \begin{aligned}
     \sqrt{30} =& 5(1 + z)^{\frac{1}{2}}  \quad z = \frac{1}{5} \\
@@ -951,9 +1016,13 @@ $$
 
 > Use the result of the previous exercise to show that a sequence of mn + 1 real numbers either contains an increasing subsequence of m + 1 numbers or a decreasing subsequence of n + 1 numbers (see Application 9 of Section 2.2).
 
-取mn+1个实数$\{a_i\}_{i=0}^{mn}$，用X表示有序对集合$\{(i,a_i)| 0 \le i \le mn\}$，并定义X上的偏序关系：对于X上不同的元素$x=(i, a_i), y = (j, a_j)$，如果有$i \lt j, a_i \le a_j$则$x \lt y$。
+取mn+1个实数$\{a_i\}_{i=0}^{mn}$，
+用X表示有序对集合$\{(i,a_i)| 0 \le i \le mn\}$，并定义X上的偏序关系：
+对于X上不同的元素$x=(i, a_i), y = (j, a_j)$，
+如果有$i \lt j, a_i \le a_j$则$x \lt y$。
 
-可以发现：链对应递增子序列$\{a_i\}_{i=0}^{mn}$，反链对应递减子序列$\{a_i\}_{i=0}^{mn}$。
+可以发现：链对应递增子序列$\{a_i\}_{i=0}^{mn}$，
+反链对应递减子序列$\{a_i\}_{i=0}^{mn}$。
 由上题可知，一定能找到长度为m+1的链或n+1的反链，相应地，也一定有长度为m+1的递增子序列或长度为n+1的递减子序列。
 
 ### EX49PS
@@ -968,7 +1037,7 @@ $$
 > (a) Determine a chain of largest size and a partition of X into the smallest number of antichains.
 > (b) Determine an antichain of largest size and a partition of X into the smallest number of chains.
 
-### Q(a)
+### EX50Q(a)
 
 ```mermaid
 graph BT;
@@ -989,7 +1058,7 @@ $$
 \end{aligned}
 $$
 
-## Q(b)
+## EX50Q(b)
 
 最大大小的反链为7, 8, 9, 10, 11, 12，（选出度为0的所有结点）反链长为6，链的划分如下，
 

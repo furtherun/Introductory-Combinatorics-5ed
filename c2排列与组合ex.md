@@ -1215,9 +1215,9 @@ $$
 
 $$
 \begin{aligned}
-&\frac{\dbinom{n}{1}\dbinom{n-1}{n-3}\dfrac{n!}{3!\cdot (1!)^{n-3}}+\dbinom{n}{2}\dbinom{n-2}{n-4}\dfrac{n!}{(2!)^2 \cdot (1!)^{n-2}}}{n^n} \times 100\% \\ 
-=&\frac{\dbinom{n}{1}\dbinom{n-1}{2} \dbinom{n}{3} \times (n-3)!+ \dbinom{n}{2}\dbinom{n-2}{2} \dbinom{n}{2} \times(n-2)!/ 2}{n^n} \times 100\% \\
-=& \frac{(n-2)\dbinom{n}{2} \dbinom{n}{3} \times (n-3)!+ \dbinom{n}{2}\dbinom{n-2}{2} \dbinom{n}{2} \dbinom{n-2}{2}\times (n-4)!}{n^n} \times 100\%
+&\frac{\binom{n}{1}\binom{n-1}{n-3}\dfrac{n!}{3!\cdot (1!)^{n-3}}+\binom{n}{2}\binom{n-2}{n-4}\dfrac{n!}{(2!)^2 \cdot (1!)^{n-2}}}{n^n} \times 100\% \\ 
+=&\frac{\binom{n}{1}\binom{n-1}{2} \binom{n}{3} \times (n-3)!+ \binom{n}{2}\binom{n-2}{2} \binom{n}{2} \times(n-2)!/ 2}{n^n} \times 100\% \\
+=& \frac{(n-2)\binom{n}{2} \binom{n}{3} \times (n-3)!+ \binom{n}{2}\binom{n-2}{2} \binom{n}{2} \binom{n-2}{2}\times (n-4)!}{n^n} \times 100\%
 \end{aligned}
 $$
 
@@ -1229,7 +1229,7 @@ $$
 
 $$
 \begin{aligned}
-&\frac{\dbinom{n}{1}\dbinom{n-1}{n-4}\dfrac{n!}{4!\cdot (1!)^{n-4}}+\dbinom{n}{1}\dbinom{n-1}{1}\dbinom{n-2}{n-5}\dfrac{n!}{3!\cdot 2!\cdot (1!)^{n-5}} +\dbinom{n}{3}\dbinom{n-3}{n-6} \dfrac{n!}{(2!)^3 (1!)^{n-6}}}{n^n} \times 100\% \\
-=&\frac{\dbinom{n}{1}\dbinom{n-1}{3}\dbinom{n}{4}  (n-4)!+\dbinom{n}{1}\dbinom{n-1}{1}\dbinom{n-2}{3}\dbinom{n}{3} (n-3)!/2 +\dbinom{n}{3}\dbinom{n-3}{3} \dbinom{n}{2}(n-2)!/4}{n^n} \times 100\%
+&\frac{\binom{n}{1}\binom{n-1}{n-4}\dfrac{n!}{4!\cdot (1!)^{n-4}}+\binom{n}{1}\binom{n-1}{1}\binom{n-2}{n-5}\dfrac{n!}{3!\cdot 2!\cdot (1!)^{n-5}} +\binom{n}{3}\binom{n-3}{n-6} \dfrac{n!}{(2!)^3 (1!)^{n-6}}}{n^n} \times 100\% \\
+=&\frac{\binom{n}{1}\binom{n-1}{3}\binom{n}{4}  (n-4)!+\binom{n}{1}\binom{n-1}{1}\binom{n-2}{3}\binom{n}{3} (n-3)!/2 +\binom{n}{3}\binom{n-3}{3} \binom{n}{2}(n-2)!/4}{n^n} \times 100\%
 \end{aligned}
 $$
