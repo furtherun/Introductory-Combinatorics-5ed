@@ -204,6 +204,7 @@ $$
 > A classroom has two rows of eight seats each. There are 14 students, 5 of whom  always sit in the front row and 4 of whom always sit in the back row. In how  many ways can the students be seated?
 
 座位是有序的，需要使用排列。
+
 $$
 P(8,5)\times P(8,4) \times P(7,5) = \frac{(8!)^2 \cdot 7!}{3! \cdot 4! \cdot 2!} = 28449792000
 $$
@@ -470,7 +471,7 @@ $$
 ## EX29
 
 > Let S be a multiset with repetition numbers $n_1, n_2, \dots , n_k$, where $n_1 = 1$. Let  $n =  n_2 + \cdots + n_k$. Prove that the number of circular permutations of S equals
-> 
+>
 > $$
 > \frac{n!}{ n_2! \cdots n_k !}
 > $$
@@ -557,6 +558,7 @@ $$
 > Determine the number of 11-permutations of the multiset  S = {3·a,  3·b, 3·c, 3·d}.
 
 多重集合大小为12，11排列数等于12排列数。
+
 $$
 \frac{12!}{(3!)^4} = 369600
 $$
@@ -610,16 +612,16 @@ $$
 ## EX39
 
 > There are 20 identical sticks lined up in a row occupying 20 distinct places as  follows:  
-> 
+>
 > $$
 > \text{| | | | | | | | | | | | | | | | | | | | | | | | |}
 > $$
-> 
+>
 > Six of them are to be chosen.
 >
 > (a) How many choices are there?  
 >
-> (b) How many choices are there if no two of the chosen sticks can be consecutive?  
+> (b) How many choices are there if no two of the chosen sticks can be consecutive?
 >
 > (c) How many choices are there if there must be at least two sticks between  each pair of chosen sticks?
 
@@ -632,6 +634,7 @@ $$
 问题转化成向14个方块的间隔中插入6根棍子，$\dbinom{15}{6} = 5005$。
 
 或者考虑成把剩余的14根棍由新插入的6根棍划分成7部分，每一部分的数量是$x_i$，中间的部分至少是1，即$x_2 ,\cdots , x_6 \ge 1$。
+
 $$
 x_1 + (x_2-1) + (x_3-1) + (x_4-1) + (x_5-1) + (x_6-1) + x_7 = 14-5 = 9
 $$
@@ -784,14 +787,16 @@ $$
 ## EX48
 
 > Prove that the number of permutations of m A's and at most n B's equals
-> 
+>
 > $$
 > \binom{m+n+1}{m+1}
 > $$
 
 其实难理解的地方——什么是at most n(最多n个)，这里是说所有小于等于n的排列数之和。
 
-容易知道m个A和k个B的排列数是$\dbinom{m+k}{m}$，那么m个A和不超过n个B的排列数则是$\displaystyle \sum_{k=0}^{n}\binom{m+k}{m}$。即证，
+容易知道m个A和k个B的排列数是$\dbinom{m+k}{m}$，
+那么m个A和不超过n个B的排列数则是$\displaystyle \sum_{k=0}^{n}\binom{m+k}{m}$。
+即证，
 
 $$
 \binom{m+n+1}{m+1} =  \sum_{k=0}^{n}\binom{m+k}{m}
@@ -813,7 +818,7 @@ QED. 本题参考[链接](https://math.stackexchange.com/questions/65947/combina
 ## EX49
 
 > Prove that the number of permutations of at most m A's and at most n B's  equals
-> 
+>
 > $$
 > \binom{m+n+2}{m+1} -1
 > $$
@@ -876,7 +881,10 @@ $$
 
 ## EX53
 
-> Find a one-to-one correspondence between the permutations of the set $\{ 1, 2, 3, \cdots,  n \}$ and the towers $A_0 \subset A_1 \subset A_2 \cdots \subset A_n$ where $|A_k| = k$ for $k=0, 1, 2, \dots, n$.
+> Find a one-to-one correspondence between the permutations of
+> the set $\{ 1, 2, 3, \cdots,  n \}$ and
+> the towers $A_0 \subset A_1 \subset A_2 \cdots \subset A_n$ where $|A_k| = k$
+> for $k=0, 1, 2, \dots, n$.
 
 记集合$\{1, 2, 3, \cdots,  n \}$
 的排列为$x_1 x_2 x_3 \cdots x_n$，
@@ -1206,9 +1214,11 @@ $$
 可能是一个数出现3次，n-3个数出现1次；或者是两个数各出现2次，n-4个数出现1次。
 
 $$
-\frac{\dbinom{n}{1}\dbinom{n-1}{n-3}\dfrac{n!}{3!\cdot (1!)^{n-3}}+\dbinom{n}{2}\dbinom{n-2}{n-4}\dfrac{n!}{(2!)^2 \cdot (1!)^{n-2}}}{n^n} \times 100\% =\\
-\frac{\dbinom{n}{1}\dbinom{n-1}{2} \dbinom{n}{3} \times (n-3)!+ \dbinom{n}{2}\dbinom{n-2}{2} \dbinom{n}{2} \times(n-2)!/ 2}{n^n} \times 100\% = \\
+\begin{aligned}
+\frac{\dbinom{n}{1}\dbinom{n-1}{n-3}\dfrac{n!}{3!\cdot (1!)^{n-3}}+\dbinom{n}{2}\dbinom{n-2}{n-4}\dfrac{n!}{(2!)^2 \cdot (1!)^{n-2}}}{n^n} \times 100\% = &\\
+\frac{\dbinom{n}{1}\dbinom{n-1}{2} \dbinom{n}{3} \times (n-3)!+ \dbinom{n}{2}\dbinom{n-2}{2} \dbinom{n}{2} \times(n-2)!/ 2}{n^n} \times 100\% = &\\
 \frac{(n-2)\dbinom{n}{2} \dbinom{n}{3} \times (n-3)!+ \dbinom{n}{2}\dbinom{n-2}{2} \dbinom{n}{2} \dbinom{n-2}{2}\times (n-4)!}{n^n} \times 100\%
+\end{aligned}
 $$
 
 验证了答案与参考答案一致，思路没有问题。
@@ -1218,6 +1228,8 @@ $$
 可能是一个数出现4次，n-4个数出现1次；或者1个数出现3次，另一个数出现2次，n-5个数出现1次；或者三个数出现2次，n-6个数出现1次。
 
 $$
-\frac{\dbinom{n}{1}\dbinom{n-1}{n-4}\dfrac{n!}{4!\cdot (1!)^{n-4}}+\dbinom{n}{1}\dbinom{n-1}{1}\dbinom{n-2}{n-5}\dfrac{n!}{3!\cdot 2!\cdot (1!)^{n-5}} +\dbinom{n}{3}\dbinom{n-3}{n-6} \dfrac{n!}{(2!)^3 (1!)^{n-6}}}{n^n} \times 100\% =\\
+\begin{aligned}
+\frac{\dbinom{n}{1}\dbinom{n-1}{n-4}\dfrac{n!}{4!\cdot (1!)^{n-4}}+\dbinom{n}{1}\dbinom{n-1}{1}\dbinom{n-2}{n-5}\dfrac{n!}{3!\cdot 2!\cdot (1!)^{n-5}} +\dbinom{n}{3}\dbinom{n-3}{n-6} \dfrac{n!}{(2!)^3 (1!)^{n-6}}}{n^n} \times 100\% =& \\
 \frac{\dbinom{n}{1}\dbinom{n-1}{3}\dbinom{n}{4}  (n-4)!+\dbinom{n}{1}\dbinom{n-1}{1}\dbinom{n-2}{3}\dbinom{n}{3} (n-3)!/2 +\dbinom{n}{3}\dbinom{n-3}{3} \dbinom{n}{2}(n-2)!/4}{n^n} \times 100\%
+\end{aligned}
 $$
