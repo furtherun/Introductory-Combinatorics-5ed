@@ -105,7 +105,8 @@ $$
 
 ## EX6
 
-> What is the coefficient of $x^5y^{13}$ in the expansion of $(3x - 2y)^{18}$? What is the  coefficient of $x^8y^9?$ (There is not a misprint in this last question!)
+> What is the coefficient of $x^5y^{13}$ in the expansion of $(3x - 2y)^{18}$ ?
+> What is the  coefficient of $x^8y^9$ ? (There is not a misprint in this last question!)
 
 从18项中选择5项x，其余项为y，因此$x^5y^{13}$的系数为
 $\dbinom{18}{5}\times3^5\times (-2)^{13} = -17055940608$；$8+9 \neq 18$，
@@ -212,7 +213,7 @@ $$
 
 我们给出直观的图来判断集合之间的关系：
 
-![EX11](imgs/c5ex11.drawio.png)
+![EX11](imgs/c5ex11.drawio.svg)
 
 两种解法等价，因此有，
 
@@ -225,10 +226,10 @@ $$
 > Let n be a positive integer. Prove that
 >
 > $$
-> \sum_{k=0}^n (-1)^k \binom{n}{k}^2 = 
+> \sum_{k=0}^n (-1)^k \binom{n}{k}^2 =
 > \begin{cases}  
 > 0, & \text{ if n is odd} \\
-> (-1)^n \dbinom{2m}{m} & \text{ if n=2m.} 
+> (-1)^n \dbinom{2m}{m} & \text{ if n=2m.}
 > \end{cases}
 > $$
 >
@@ -310,7 +311,7 @@ $$
 > $$
 > \binom{n}{1} - 2\binom{n}{2} + 3\binom{n}{3} + \cdots + (-1)^{n-1} n \binom{n}{n} = 0
 > $$
-> 
+>
 
 $$
 (x+1)^n = \sum_{k=0}^{n} \binom{n}{k} x^k
@@ -360,12 +361,12 @@ $$
 
 $$
 \begin{aligned}
-\dfrac{1}{k+1} \dbinom{n}{k} 
+\dfrac{1}{k+1} \dbinom{n}{k}
 =& \frac{1}{k+1} \frac{n}{k} \binom{n-1}{k-1} \\
-=& \frac{1}{k+1} \frac{n}{k} \frac{(n-1)!}{(k-1)!(n-k)!} \\ 
-=& \frac{n!}{(k+1)!(n-k)!} \\ 
-=& \frac{1}{n+1} \frac{(n+1)!}{(k+1)!(n-k)!}\\ 
-=& \frac{1}{n+1} \binom{n+1}{k+1} 
+=& \frac{1}{k+1} \frac{n}{k} \frac{(n-1)!}{(k-1)!(n-k)!} \\
+=& \frac{n!}{(k+1)!(n-k)!} \\
+=& \frac{1}{n+1} \frac{(n+1)!}{(k+1)!(n-k)!}\\
+=& \frac{1}{n+1} \binom{n+1}{k+1}
 \end{aligned}
 $$
 
@@ -378,7 +379,7 @@ $$
 ## EX18
 
 > Evaluate the sum
-> 
+>
 > $$
 > 1 -\frac{1}{2}\binom{n}{1}  + \frac{1}{3}\binom{n}{2} -\frac{1}{4}\binom{n}{3} +  \cdots + (-1)^n \frac{1}{n+1} \binom{n}{n}
 > $$
@@ -395,7 +396,6 @@ $$
 >
 > $$
 > m^2 = 2\binom{m}{2} + \binom{m}{1}
->
 > $$
 >
 > and using the identity (5.19).
@@ -407,7 +407,13 @@ $$
 因此每个平方数都可以写成组合数和的形式，
 
 $$
-\begin{aligned}\sum_{k=1}^n k^2 =& \sum_{k=1}^n (2\binom{k}{2} + \binom{k}{1}) \\=& 2\sum_{k=0}^n \binom{k}{2} + \sum_{k=0}^n \binom{k}{1} \\=& 2\binom{n+1}{3} + \binom{n+1}{2} \\=& \frac{n(n+1)(2n+1)}{6}\end{aligned}
+\begin{aligned}
+\sum_{k=1}^n k^2
+=& \sum_{k=1}^n (2\binom{k}{2} + \binom{k}{1}) \\
+=& 2\sum_{k=0}^n \binom{k}{2} + \sum_{k=0}^n \binom{k}{1} \\
+=& 2\binom{n+1}{3} + \binom{n+1}{2} \\
+=& \frac{n(n+1)(2n+1)}{6}
+\end{aligned}
 $$
 
 ### EX19注
@@ -431,10 +437,10 @@ $$
 所以有方程组，
 
 $$
-\begin{cases} 
+\begin{cases}
 \displaystyle \frac{a}{6} = 1 \\
-\displaystyle -\frac{a}{2}+  \frac{b}{2} = 0\\ 
-\displaystyle \frac{a}{3} - \frac{b}{2} + c = 0 \\ 
+\displaystyle -\frac{a}{2}+  \frac{b}{2} = 0\\
+\displaystyle \frac{a}{3} - \frac{b}{2} + c = 0 \\
 \end{cases}
 $$
 
@@ -442,7 +448,7 @@ $$
 
 $$
 \begin{aligned}
-\sum_{j=1}^n  j^3 
+\sum_{j=1}^n  j^3
 =& \sum_{j=0}^n (6\binom{j}{3} + 6 \binom{j}{2} + \binom{j}{1}) \\
 =& 6 \binom{n+1}{4} + 6 \binom{n+1}{3} + \binom{n+1}{2} \\
 =& \frac{n^2(n+1)^2}{4}
@@ -476,9 +482,9 @@ $$
 当$m \lt 0$或者$k \lt 0$时，二项式为0，当$0 \le k \le m$时，
 
 $$
-\begin{aligned}\binom{r}{m} \binom{m}{k} 
+\begin{aligned}\binom{r}{m} \binom{m}{k}
 =& \frac{r(r-1) \cdots (r-m+1)}{m!} \times \frac{m!}{k!(m-k)!}  \\
-=& \frac{r(r-1) \cdots (r-k+1)}{k!} \frac{(r-k)(r-k-1) \cdots (r-m+1)}{(m-k)!} \\ 
+=& \frac{r(r-1) \cdots (r-k+1)}{k!} \frac{(r-k)(r-k-1) \cdots (r-m+1)}{(m-k)!} \\
 =& \binom{r}{k} \binom{r-k}{m-k}
 \end{aligned}
 $$
@@ -557,8 +563,8 @@ $$
 由EX25可知，
 
 $$
-\begin{aligned} 
-\sum_{k=1}^n \binom{n}{k} \binom{n}{k-1} 
+\begin{aligned}
+\sum_{k=1}^n \binom{n}{k} \binom{n}{k-1} \\
 =& \binom{n}{0}\binom{n}{-1} + \sum_{k=1}^n \binom{n}{k} \binom{n}{k-1} + \binom{n}{n+1}\binom{n}{n} \\
 =& \sum_{k=0}^{n+1} \binom{n}{k}\binom{n}{n+1-k} \\=& \binom{2n}{n+1}
 \end{aligned}
@@ -698,7 +704,12 @@ $$
 
 ## EX32
 
-> \* Let S be a set of n elements. Prove that, if n is even, the only antichain of size $\binom{n}{\lfloor n/2 \rfloor}$ is the antichain of all $\frac{n}{2}$-subsets; if n is odd, prove that the only antichains of this size are the antichain of all $\frac{n-1}{2}$-subsets and the antichain of all $\frac{n+1}{2}$-subsets.
+> \* Let S be a set of n elements. Prove that, if n is even,
+> the only antichain of size $\binom{n}{\lfloor n/2 \rfloor}$ is the antichain
+> of all $\frac{n}{2}$-subsets; if n is odd,
+> prove that the only antichains of this size are the antichain of
+> all $\frac{n-1}{2}$-subsets and the antichain of
+> all $\frac{n+1}{2}$-subsets.
 
 略
 
@@ -715,13 +726,27 @@ $$
 
 $$
 \begin{aligned}
-&\emptyset , 1, 12, 123, 1234 \\& 4, 14, 124 \\&2, 23, 234 \\&24 \\&3, 13, 134 \\&34
+&\emptyset , 1, 12, 123, 1234 \\
+& 4, 14, 124 \\
+&2, 23, 234 \\
+&24 \\
+&3, 13, 134 \\
+&34
 \end{aligned}
 $$
 
 $$
 \begin{aligned}
-&\emptyset, 1, 12,123,1234,12345 \\& 5,15,125,1235\\&4,14,124,1245\\&45,145\\&2,23,234,2345\\&25,235\\&24,245\\&3,13,134,1345\\&35,135\\&34,345
+&\emptyset, 1, 12,123,1234,12345 \\
+&5,15,125,1235\\
+&4,14,124,1245\\
+&45,145\\
+&2,23,234,2345\\
+&25,235\\
+&24,245\\
+&3,13,134,1345\\
+&35,135\\
+&34,345
 \end{aligned}
 $$
 
@@ -770,11 +795,11 @@ $$
 ## EX37
 
 > Use the multinomial theorem to show that, for positive integers nand t,
-> 
+>
 > $$
 > t^n = \sum\binom{n}{n_1 n_2 \cdots n_t},
 > $$
-> 
+>
 > where the summation extends over all nonnegative integral solutions $n_1, n_2, ... , n_t$ of $n_1 + n_2 + ... + n_t = n$.
 
 由多项式定理，直接带入，
@@ -794,14 +819,15 @@ $$
 $$
 \begin{aligned}
     (x_1 + x_2 +x_3)^4 =& \sum \binom{4}{n_1 n_2 n_3} x_1^{n_1} x_2^{n_2} x_3^{n_3} \\
-    =& (x_1^4 + x_2^4 + x_3^4) + 4(x_1^3x_2 + x_2^3x_3 + x_3^3x_1) + 6(x_1^2 x_2^2 + x_1^2 x_3^2 + x_2^2 x_3^2) + 12(x_1^2x_2x_3 + x_1x_2^2x_3 + x_1x_2x_3^2)
+    =& (x_1^4 + x_2^4 + x_3^4) + 4(x_1^3x_2 + x_2^3x_3 + x_3^3x_1) + \\
+    &6(x_1^2 x_2^2 + x_1^2 x_3^2 + x_2^2 x_3^2) + 12(x_1^2x_2x_3 + x_1x_2^2x_3 + x_1x_2x_3^2)
 \end{aligned}
 $$
 
 ## EX39
 
 > Determine the coefficient of $x_1^3 x_2 x_3^4 x_5^2$ in the expansion of
-> 
+>
 > $$
 > (x_1 + x_2 + x_3 + x_4 + x_5) ^{10}
 > $$
@@ -811,7 +837,7 @@ $$
 ## EX40
 
 > What is the coefficient of $x_1^3 x_2^3 x_3 x_4^2$ in the expansion of
-> 
+>
 > $$
 > (x_1 - x_2 + 2 x_3 -2x_4)^9
 > $$
@@ -823,11 +849,11 @@ $$
 ## EX41
 
 > Expand $(x_1 + x_2 + x_3)^n$ by boserving that
-> 
+>
 > $$
 > (x_1 + x_2 + x_3)^n = ((x_1 + x_2) + x_3)^n
 > $$
-> 
+>
 > and then using the binomial theorem.
 
 $$
@@ -843,7 +869,7 @@ $$
 
 $$
 \begin{aligned}
-(x_1 + x_2 + x_3)^n 
+(x_1 + x_2 + x_3)^n
 =& \sum_{n_1 + n_2} ^ {n_1 + n_2 + n_3} \sum_{n_1} ^{n_1 + n_2} \frac{n!}{n_1 ! \times n_2! \times n_3!} x_1^{n_1} x_2^{n_2} x_3^{n_3} \\
 =&  \underset{n_1 + n_2 + n_3 = n}{\sum} \binom{n}{n_1 \; n_2 \; n_3} x_1^{n_1} x_2^{n_2} x_3^{n_3}
 \end{aligned}
@@ -865,17 +891,17 @@ $$
 ## EX43
 
 > Prove by induction on n that, for n a positive integer,
-> 
+>
 > $$
 > \frac{1}{(1-z)^n} = \sum_{k=0}^{\infty} \binom{n+k-1}{k} z^k, \quad |z| \lt 1
 > $$
-> 
+>
 > Assume the validity of
-> 
+>
 > $$
 > \frac{1}{1-z} = \sum_{k=0}^{\infty} z^k, \quad |z| \lt 1
 > $$
-> 
+>
 
 当n=1是显然成立；假设对正整数n上式仍然成立（$n \ge 1$），对于正整数n+1有
 
@@ -901,11 +927,11 @@ $$
 ## EX44
 
 > Prove that
-> 
+>
 > $$
 > \underset{n_1 + n_2 + n_3 = n}{\sum} \binom{n}{n_1 \, n_2 \, n_3} (-1)^{n_1-n_2 + n_3} = (-3)^n
 > $$
-> 
+>
 > where the summation extends over all nonnegative integral solutions of $n_1 + n_2 + n_3 = n$.
 
 由EX41可以得到公式，
@@ -932,11 +958,11 @@ $$
 ## EX45
 
 > Prove that
-> 
+>
 > $$
 > \underset{n_1 + n_2 + n_3 + n_4= n}{\sum} \binom{n}{n_1 \, n_2 \, n_3 \, n_4} (-1)^{n_2 + n_4} = 0
 > $$
-> 
+>
 
 相比上一题，本题更为直接，没有倒数需要处理。
 
