@@ -265,24 +265,29 @@ $$
 > Determine the number of solutions of the equation $x_1 + x_2 + x_3 + x_4 + x_5 = 14$ in positive integers $x_1, x_2, x_3, x_4$, and $x_5$ not exceeding 5.
 
 类似上一题，不过本题强调**正**（**positive**）整数，取值范围因此是$1 \le x_i \le 5$，先平移变成$0 \le y_i \le 4$，求解方程$\sum y_i = 9$。
+
 $$
 \begin{aligned}
-    |\overline{A_1} \cap \overline{A_2} \cap \overline{A_3} \cap \overline{A_4}  \cap \overline{A_5}| =& \binom{13}{4} - 5\binom{8}{4} + \binom{5}{2} \binom{3}{4}\\
-    =& 715 - 5 \times 70 + 10 \times 0\\
-    =& 365
+|\overline{A_1} \cap \overline{A_2} \cap \overline{A_3} \cap \overline{A_4}  \cap \overline{A_5}| =& \binom{13}{4} - 5\binom{8}{4} + \binom{5}{2} \binom{3}{4}\\
+=& 715 - 5 \times 70 + 10 \times 0\\
+=& 365
 \end{aligned}
 $$
 
 ## EX9
 
 > Determine the number of integral solutions of the equation
+>
 > $$
 > x_1 + x_2 + x_3 + x_4 = 20
 > $$
+>
 > that satisfy
+>
 > $$
 > 1 \le x_1 \le 6, 0 \le x_2 \le 7, 4\le x_3 \le 8, 2 \le x_4 \le 6
 > $$
+>
 
 过程略，答案96。
 
@@ -410,10 +415,13 @@ $$
 ## EX17
 
 > Determine the number of permutations of the multiset
+>
 > $$
 > S = \{3\cdot a, 4 \cdot b, 2 \cdot c\}
 > $$
-> where, for each type of letter, the letters of the same type do not appear consecutively. (Thus *abbbbcaca* is not allowed, but *abbbacacb* is.)
+>
+> where, for each type of letter, the letters of the same type do not appear consecutively.
+> (Thus *abbbbcaca* is not allowed, but *abbbacacb* is.)
 
 设$A_i, i = 1, 2, 3$分别表示出现了*aaa*、*bbbb*和*cc*，$A_1$可以当作${aaa, b, b, b, b, c, c}$的排列，即$\binom{7}{1 \; 4\; 2} = 105$。
 
@@ -442,18 +450,22 @@ $$
 ## EX18
 
 > Verify the factorial formula
+>
 > $$
 > n! = (n-1)((n-2)! + (n-1)!), \qquad (n=2,3,4, ...).
 > $$
+>
 
-没太看懂这题想干什么。
+没太看懂这题想干什么，难道是数学归纳法。
 
 ## EX19
 
 > Using the evaluation of the derangement numbers as given in Theorem 6.3.1, provide a proof of the relation
+>
 > $$
 > D_n = (n-1)(D_{n-2} + D_{n-1}), \quad (n=3,4,5, ...).
 > $$
+>
 
 展开合并同类项即可，
 
@@ -472,6 +484,7 @@ $$
 $$
 
 将$D_{n-1}$与$D_{n-2}$求和，
+
 $$
     D_{n-1} + D_{n-2} = n \cdot (n-2)! \sum_{i=0}^{n-2} \frac{(-1)^i}{i!} + (-1)^{n-1}
 $$
@@ -481,6 +494,7 @@ $$
 $$
 
 将$D_n$拆分为上述形式，
+
 $$
 \begin{aligned}
     D_n =& n!  \sum_{i=0}^{n} \frac{(-1)^i}{i!} \\
@@ -545,11 +559,13 @@ $$
 ## EX22
 
 > Show that the numbers $Q_n$ of Section 6.5 can be rewritten in the form
+>
 > $$
 > Q_n = (n-1)! (n- \frac{n-1}{1!} + \frac{n-2}{2}  - \frac{n-3}{3!} + \cdots + \frac{(-1)^{n-1}}{(n-1)!})
 > $$
 
 对$Q_n$定义的变形，
+
 $$
 \begin{aligned}
     Q_n = & n! - \binom{n-1}{1}(n-1)! + \binom{n-1}{2}(n-2)! + \cdots + (-1)^{n-1} \binom{n-1}{n-1} 1! \\
@@ -587,7 +603,8 @@ $$
 
 ### EX23注
 
-该解法需要使用$D_n = (n-1)(D_{n-1} + D_{n-2})$的化简技巧，答案的则是巧妙地添加了一个为0的项$(-1)^n \dfrac{n-n}{n!}$，进而，
+该解法需要使用$D_n = (n-1)(D_{n-1} + D_{n-2})$的化简技巧，
+答案的则是巧妙地添加了一个为0的项$(-1)^n \dfrac{n-n}{n!}$，进而，
 
 $$
 Q_{n} = (n-1)! \sum_{k=0}^n (-1)^k \frac{n-k}{k!}
@@ -598,7 +615,7 @@ $$
 ## EX24
 
 > What is the number of ways to place six nonattacking rooks on the 6-by-6 boards with forbidden positions as shown?
-> ![EX24](https://raw.githubusercontent.com/furtherun/imgs/main/img/C6EX24.png)
+> ![EX24](imgs/c6ex24.png)
 
 设$r_k$为在k个禁止位上摆放棋子的方法数，
 
@@ -625,11 +642,23 @@ $$
 ### EX24 Q(b)
 
 $$
-r_2 = 3\times 2 + \binom{3}{2} \times 4^2 = 54 \\
-r_3 = \binom{3}{1} \times 2 \times \binom{2}{1} \times 4 + 4^3 = 112 \\
-r_4 = \binom{3}{2} \times 2^2 + \binom{3}{1} \times 2 \times 4^2 = 108 \\
-r_5 = \binom{3}{2} \times 2^2 \times 4 = 48 \\
-r+6 = 2^3 = 8
+r_2 = 3\times 2 + \binom{3}{2} \times 4^2 = 54
+$$
+
+$$
+r_3 = \binom{3}{1} \times 2 \times \binom{2}{1} \times 4 + 4^3 = 112
+$$
+
+$$
+r_4 = \binom{3}{2} \times 2^2 + \binom{3}{1} \times 2 \times 4^2 = 108
+$$
+
+$$
+r_5 = \binom{3}{2} \times 2^2 \times 4 = 48
+$$
+
+$$
+r_6 = 2^3 = 8
 $$
 
 |  $k$  |   0   |   1   |   2   |   3   |   4   |   5   |   6   |
@@ -637,7 +666,9 @@ $$
 | $r_k$ |   1   |  12   |  54   |  112  |  108  |  48   |   8   |
 
 $$
-\sum_{k=0}^{n} r_k (-1)^k (n-k)! = 1 \times 6! - 12 \times 5! + 54 \times 4! - 112 \times 3! + 108 \times 2! - 48 \times 1! + 8 \times 0!= 80
+\sum_{k=0}^{n} r_k (-1)^k (n-k)! =
+1 \times 6! - 12 \times 5! + 54 \times 4! - 112 \times 3! + 108 \times 2! - 48 \times 1! + 8 \times 0!
+= 80
 $$
 
 ### EX24 Q(c)
@@ -685,7 +716,7 @@ $$
 \sum_{k=0}^{n} r_k (-1)^k (n-k)! = 1 \times 6! - 8 \times 5! + 20 \times 4! - 20 \times 3! + 7 \times 2! - 0 \times 1! + 0 \times 0!= 134
 $$
 
-![EX25 & EX26](https://raw.githubusercontent.com/furtherun/imgs/main/img/C6EX25-26.png)
+![EX25 & EX26](imgs/c6ex25ex26.png)
 
 ### EX25注
 
@@ -726,19 +757,28 @@ $$
 
 设8个位置的座位编号分别为$1,2, ..., 8$，并且i号座位面向i+1号座位（$1 \le i \le 7$），8号座位面向1号座位。
 
-第i个女孩分别坐在i号座位上，重排后坐到$s_i$号座位上，并且要求$s_i$不能面向$s_{i+1}$，（$s_8$不能面向$s_1$）。
+第i个女孩分别坐在i号座位上，重排后坐到$s_i$号座位上，并且要求$s_i$不能面向$s_{i+1}$，
+（$s_8$不能面向$s_1$）。
 
-记$A_i$表示排列$s_1s_2 \cdots s_8$中$s_i$面向$s_{i+1}$（$1 \le i \le 7$），$A_8$表示表示排列$s_1s_2 \cdots s_8$中$s_8$面向$s_1$。
+记$A_i$表示排列$s_1s_2 \cdots s_8$中$s_i$面向$s_{i+1}$
+（其中$1 \le i \le 7$），
+$A_8$表示表示排列$s_1s_2 \cdots s_8$中$s_8$面向$s_1$。
 
-对于$|A_1|$，有8种方式决定$s_1$，$s_2$只能在前面，有1种方式，其余可以随意排列。因此$|A_1| = 8 \times 1 \times 6!$。$|A_i|$同理。
+对于$|A_1|$，
+有8种方式决定$s_1$，
+$s_2$只能在前面，有1种方式，其余可以随意排列。
+因此$|A_1| = 8 \times 1 \times 6!$。$|A_i|$同理。
 
-对于$|A_1 \cap A_2|$，有8种方式决定$s_1s_2s_3$；其余可以随意排列。因此$|A_1 \cap A_2| = 8 \times 5!$，其余$|A_i \cap A_j|$同理。
+对于$|A_1 \cap A_2|$，
+有8种方式决定$s_1s_2s_3$；其余可以随意排列。
+因此$|A_1 \cap A_2| = 8 \times 5!$，
+其余$|A_i \cap A_j|$同理。
 
 $$
 \begin{aligned}
-    |\overline{A_1} \cap \overline{A_2} \cap \cdots \cap \overline{A_4}| = & |S| - \sum|A_i| + \sum |A_i A_j| - \cdots +  \sum|A_1 A_2 \cdots A_7 A_8| \\
-    =& 8! - \binom{8}{1} \times 8 \times 6! + \binom{8}{2} \times 8 \times 5! - \cdots + 8\\
-    =& 13000
+|\overline{A_1} \cap \overline{A_2} \cap \cdots \cap \overline{A_4}| = & |S| - \sum|A_i| + \sum |A_i A_j| - \cdots +  \sum|A_1 A_2 \cdots A_7 A_8| \\
+=& 8! - \binom{8}{1} \times 8 \times 6! + \binom{8}{2} \times 8 \times 5! - \cdots + 8\\
+=& 13000
 \end{aligned}
 $$
 
@@ -752,11 +792,23 @@ $$
 
 > A carousel has eight seats, each representing a different animal. Eight boys are seated on the carousel but facing inward, so that each boy faces another (each boy looks at another boy's front). In how many ways can the boys change seats so that each faces a different boy? How does the problem change if all the seats are dentical?
 
-第i个男孩坐在i号座位上，重排后坐到$s_i$号座位上。设$A_i$表示$s_i$与$s_{i+4}$面对面（$1\le i \le 4$），因此需要求所有i与i+4没有面对面的情况，即$|\overline{A_1} \cap \overline{A_2} \cap \overline{A_3} \cap \overline{A_4}|$。
+第i个男孩坐在i号座位上，重排后坐到$s_i$号座位上。
+设$A_i$表示$s_i$与$s_{i+4}$
+面对面（$1\le i \le 4$），
+因此需要求所有i与i+4没有面对面的情况，
+即$|\overline{A_1} \cap \overline{A_2} \cap \overline{A_3} \cap \overline{A_4}|$。
 
-对于$|A_1|$，有8种方式决定$s_1$，$s_5$只能在对面，有1种方式，其余可以随意排列。因此$|A_1| = 8 \times 1 \times 6!$。$|A_2|, |A_3| , |A_4|$同理。
+对于$|A_1|$，
+有8种方式决定$s_1$，
+$s_5$只能在对面，有1种方式，其余可以随意排列。
+因此$|A_1| = 8 \times 1 \times 6!$。
+$|A_2|, |A_3| , |A_4|$同理。
 
-对于$|A_1 \cap A_2|$，有8种方式决定$s_1$，$s_5$随之确定；有6种方式确定$s_2$，$s_6$也随之确定，其余可以随意排列。因此$|A_1 \cap A_2| = 8\times 6 \times 4!$，其余$|A_i \cap A_j|$同理。
+对于$|A_1 \cap A_2|$，
+有8种方式决定$s_1$，$s_5$随之确定；
+有6种方式确定$s_2$，$s_6$也随之确定，其余可以随意排列。
+因此$|A_1 \cap A_2| = 8\times 6 \times 4!$，
+其余$|A_i \cap A_j|$同理。
 
 $$
 \begin{aligned}
@@ -772,7 +824,10 @@ $$
 
 > A subway has six stops on its route from its base location. There are 10 people on the subway as it departs its base location. Each person exits the subway at one of its six stops, and at each stop at least one person exits. In how many ways can this happen?
 
-如果没有任何限制，10个人一共有$6^{10}$种下车方案。设$A_i$表示没人在i车站下车，所以有$|A_i| = 5^{10}$；对于$|A_i \cap A_j| = 4^{10}$。同理，可以计算多个子集车站没人下车的情况。
+如果没有任何限制，10个人一共有$6^{10}$种下车方案。
+设$A_i$表示没人在i车站下车，所以有$|A_i| = 5^{10}$；
+对于$|A_i \cap A_j| = 4^{10}$。
+同理，可以计算多个子集车站没人下车的情况。
 
 $$
 \begin{aligned}
@@ -786,12 +841,16 @@ $$
 ## EX30
 
 > How many circular permutations are there of the multiset
+>
 > $$
 > \{3 \cdot a,4\cdot b, 2 \cdot c, 1 \cdot d\},
 > $$
+>
 > where, for each type of letter, all letters of that type do not appear consecutively?
 
-设$A_i, i = 1, 2, 3$分别表示出现了*aaa*、*bbbb*和*cc*，$A_1$可以当作${aaa, b, b, b, b, c, c, d}$的**循环排列**，即$\frac{1}{8} \times \binom{8}{1 \; 4\; 2} = 105$。
+设$A_i, i = 1, 2, 3$分别表示出现了*aaa*、*bbbb*和*cc*，
+$A_1$可以当作${aaa, b, b, b, b, c, c, d}$的**循环排列**，
+即$\frac{1}{8} \times \binom{8}{1 \; 4\; 2} = 105$。
 
 |           set           | size  |
 | :---------------------: | :---: |
@@ -830,7 +889,8 @@ $$
 >
 > where, for each type of letter, all letters of that type do not appear consecutively?
 
-设$A_i, i = 1, 2, 3, 4$分别表示出现了*aa*、*bbb*、*ccccc*和*ddddd*，$A_1$可以当作${aa, b, b, b, c, c, c, c, d,d,d,d,d}$的**循环排列**，即$\frac{1}{13} \times \binom{13}{1 \; 3\; 4 \; 5} = 27720$。
+设$A_i, i = 1, 2, 3, 4$分别表示出现了*aa*、*bbb*、*ccccc*和*ddddd*，$A_1$可以当作
+${aa, b, b, b, c, c, c, c, d,d,d,d,d}$的**循环排列**，即$\frac{1}{13} \times \binom{13}{1 \; 3\; 4 \; 5} = 27720$。
 
 |               set                | size  |
 | :------------------------------: | :---: |
@@ -865,10 +925,6 @@ $$
 
 其中EX33是加星题目（\*）；EX36是带有禁止位置的放车问题，虽然指明了用6.5中的解题方法。但用EX24中的方法也能很快做出答案（6种）。
 
-### 重要补充&考后谈
+### 重要补充
 
 EX32这题虽然带着**欧拉**的关键字，但老师似乎并不认为是6.5小结的题目，所以考了这道题。
-
-毕竟是数学考试，不能没背就不会吧。姑且我在考场上，猜测了一下构造方法——正所谓，「向答案证明」，既然要用容斥原理，那我就把所有的连乘拆成累加，正好凑出了$(-1)^k$，只需要再去观察一下每一项究竟是什么含义，或者说是谁和谁的交集，大约就能猜出来不少。
-
-结果对不对不重要，重要的是猜题的过程。让我想起了我在「大学最后一场考试」那篇文章里提到的编造热膨胀系数，考试中的心理斗争很有趣，与今天很类似。
