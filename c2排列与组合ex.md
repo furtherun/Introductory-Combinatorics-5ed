@@ -10,7 +10,7 @@
 >
 > Note that there are four problems here: $\emptyset$ (no further restriction), {a} (property  (a) holds), {b} (property (b) holds), {a,b} (both properties (a) and (b) hold)
 
-当条件a和条件b都不满足时，每一位都可以取任意数，共$4^5$种。
+当条件a和条件b都不满足时，每一位都可以取任意数，共$5^4$种。
 
 当只满足条件a时，总共有$P(5,4) = 120$种。
 

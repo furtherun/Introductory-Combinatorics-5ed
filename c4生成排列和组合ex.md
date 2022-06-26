@@ -1290,10 +1290,11 @@ c---b,c;
 定义$\text{Inv}(\pi)$为排列$\pi$的逆序列集合，我们通过如下两个命题等价来验证当$\text{Inv}(\pi) \subseteq \text{Inv}(\sigma)$时，$\pi \le \sigma$。
 
 1. $\sigma$覆盖$\pi$
-2. 可以从$\pi$中翻转ab到ba（a<b）来获得$\sigma$
+2. 可以从$\pi$中翻转ab到ba（$a<b$）来获得$\sigma$
 
-先由1证2：我们假设$\pi \lt \sigma$，因此有$\text{Inv}(\pi) \subseteq \text{Inv}(\sigma)$，
-之后我们可以从$\sigma$中选择一个逆序ba（$a<b$，a是所有b逆序中最小的数）
+先由1证2：我们假设$\pi \lt \sigma$，因此有$\text{Inv}(\pi) \subseteq \text{Inv}(\sigma)$。
+
+之后我们可以从$\sigma$中选择一个逆序ba（$a \lt b$，a是所有b逆序中最小的数）
 这个逆序不存在$\pi$中，即有
 
 $$
@@ -1304,7 +1305,7 @@ $$
 因此bc和ca是两对逆序，那么c在$\pi$中a的左侧，b的右侧，但这是不可能的，
 所以$\sigma =  \cdots b a \cdots$，进行翻转后，
 可以得到$p = \cdots ab \cdots, \pi \le p \lt \sigma$。
-由$\sigma$覆盖$\pi$，所以$\pi = p$，即可以从$\pi$中翻转ab到ba（$a<b$）来获得$\sigma$。
+由$\sigma$覆盖$\pi$，所以$\pi = p$，即可以从$\pi$中翻转ab到ba（$a \lt b$）来获得$\sigma$。
 
 再由2证1：同上，我们有
 
@@ -1430,8 +1431,8 @@ $(X, \le ')$由$(X, \le )$添加关系得到，该线性扩展也保留了原来
 
 > Use Exercise 54 to prove that a finite partially ordered set is the intersection of all its linear extensions.(see Exercise 37).
 
-由EX54的结论可知，对于不可比元素a和b，总能找到一个线性扩展使得$a<b$，满足关系R，
-同理，我们也能找到一个线性扩展使得$b<a$，满足关系S。
+由EX54的结论可知，对于不可比元素a和b，总能找到一个线性扩展使得$a \lt b$，满足关系R，
+同理，我们也能找到一个线性扩展使得$b \lt a$，满足关系S。
 
 因为$(a, b) \notin R, (b, a) \notin S$，所以$(a,b), (b, a) \notin R \cap S$，
 所以(a, b)和(b, a)都不在这两个线性扩展的交集之中。
