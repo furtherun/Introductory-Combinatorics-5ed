@@ -1290,7 +1290,7 @@ c---b,c;
 定义$\text{Inv}(\pi)$为排列$\pi$的逆序列集合，我们通过如下两个命题等价来验证当$\text{Inv}(\pi) \subseteq \text{Inv}(\sigma)$时，$\pi \le \sigma$。
 
 1. $\sigma$覆盖$\pi$
-2. 可以从$\pi$中翻转ab到ba（$a<b$）来获得$\sigma$
+2. 可以从$\pi$中翻转ab到ba（$a \lt b$）来获得$\sigma$
 
 先由1证2：我们假设$\pi \lt \sigma$，因此有$\text{Inv}(\pi) \subseteq \text{Inv}(\sigma)$。
 
