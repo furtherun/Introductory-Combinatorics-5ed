@@ -1,6 +1,8 @@
 {
     "recommendations": [
         "bierner.markdown-mermaid",
-        "hediet.vscode-drawio"
+        "hediet.vscode-drawio",
+        "dbaeumer.vscode-eslint",
+        "huacnlee.autocorrect"
     ]
 }

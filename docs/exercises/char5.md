@@ -227,7 +227,7 @@ $$
 >
 > $$
 > \sum_{k=0}^n (-1)^k \binom{n}{k}^2 =
-> \begin{cases}  
+> \begin{cases}
 > 0, & \text{ if n is odd} \\
 > (-1)^n \dbinom{2m}{m} & \text{ if n=2m.}
 > \end{cases}
@@ -275,7 +275,7 @@ $$
 
 $$
 \begin{aligned}
-\text{原式}=&(\binom{n}{k} + \binom{n}{k-1}) + 2  (\binom{n}{k-1} +  \binom{n}{k-2}) +  (\binom{n}{k-2}+ \binom{n}{k-3}) \\  
+\text{原式}=&(\binom{n}{k} + \binom{n}{k-1}) + 2  (\binom{n}{k-1} +  \binom{n}{k-2}) +  (\binom{n}{k-2}+ \binom{n}{k-3}) \\
 =& \binom{n+1}{k} + 2\binom{n+1}{k-1} +  \binom{n+1}{k-2} \\
 =&\binom{n+2}{k} + \binom{n+2}{k-1} \\
 =& \binom{n+3}{k}
@@ -1070,7 +1070,7 @@ graph BT;
     1-->2; 1-->3; 1-->5; 1-->7; 1-->11;
     2-->4; 2-->6; 2-->10; 3-->6; 3-->9;
     4-->8; 4-->12; 5-->10; 6-->12;
-    
+
 ```
 
 最大大小的链为1,2,4 8，最大链长为4，反链划分如下，

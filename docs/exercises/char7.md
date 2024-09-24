@@ -31,7 +31,7 @@ int main()
         p = q;
         q = fibList.back();
     }
-    
+
     int odd_total = 0, even_total = 0, alter_total = 0, square_total;
     int flag = 1;
     printf("idx \t sum_odd \t sum_total \t sum_alter \t sum_square \n");

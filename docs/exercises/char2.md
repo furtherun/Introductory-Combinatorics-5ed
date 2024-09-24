@@ -1,10 +1,10 @@
-# 第2章 排列与组合EX
+# 第2章 排列与组合
 
 ## EX1
 
-> For each of the four subsets of the two properties (a) and (b), count the number  of four-digit numbers whose digits are either 1,2,3,4, or 5:  
+> For each of the four subsets of the two properties (a) and (b), count the number  of four-digit numbers whose digits are either 1,2,3,4, or 5:
 >
-> (a) The digits are distinct.  
+> (a) The digits are distinct.
 >
 > (b) The number is even.
 >
@@ -34,9 +34,9 @@
 
 ## EX4
 
-> How many distinct positive divisors does each of the following numbers have?  
+> How many distinct positive divisors does each of the following numbers have?
 >
-> (a) $3^4 \times 5^2 \times 7^6 \times 11$  
+> (a) $3^4 \times 5^2 \times 7^6 \times 11$
 >
 > (b) 620
 >
@@ -88,7 +88,7 @@ $10^{10} = 2^{10} \times 5^{10}$，有$11 \times 11=121$个不同的正因子。
 
 ## EX6
 
-> How many integers greater than 5400 have both of the following properties?  
+> How many integers greater than 5400 have both of the following properties?
 >
 > (a) The digits are distinct.
 >
@@ -179,9 +179,9 @@ $$
 
 ## EX13
 
-> There are 100 students at a school and three dormitories, A, B, and C, with  capacities 25, 35 and 40, respectively.  
+> There are 100 students at a school and three dormitories, A, B, and C, with  capacities 25, 35 and 40, respectively.
 >
-> (a) How many ways are there to fill the dormitories?  
+> (a) How many ways are there to fill the dormitories?
 >
 > (b) Suppose that, of the 100 students, 50 are men and 50 are women and that  A is an all-men's dorm, B is an all-women's dorm, and C is co-ed. How  many ways are there to fill the dormitories?
 
@@ -269,9 +269,9 @@ $$
 
 ## EX19
 
-> We are given eight rooks, five of which are red and three of which are blue.  
+> We are given eight rooks, five of which are red and three of which are blue.
 >
-> (a) In how many ways can the eight rooks be placed on an 8-by-8 chessboard  so that no two rooks can attack one another?  
+> (a) In how many ways can the eight rooks be placed on an 8-by-8 chessboard  so that no two rooks can attack one another?
 >
 > (b) In how many ways can the eight rooks be placed on a 12-by-12 chessboard  so that no two rooks can attack one another?
 
@@ -445,7 +445,7 @@ $$
 
 > A secretary works in a building located nine blocks east and eight blocks north  of h.is home. Every day he walks 17 blocks to work. (See the map that follows.)
 >
-> (a) How many different routes are possible for him?  
+> (a) How many different routes are possible for him?
 >
 > (b) How many different routes are possible if the one block in the easterly  direction, which begins four blocks east and three blocks north of his home,  is under water (and he can't swim)? (Hint: Count the routes that use the  block under water.)
 
@@ -611,7 +611,7 @@ $$
 
 ## EX39
 
-> There are 20 identical sticks lined up in a row occupying 20 distinct places as  follows:  
+> There are 20 identical sticks lined up in a row occupying 20 distinct places as  follows:
 >
 > $$
 > \text{| | | | | | | | | | | | | | | | | | | | | | | | |}
@@ -619,7 +619,7 @@ $$
 >
 > Six of them are to be chosen.
 >
-> (a) How many choices are there?  
+> (a) How many choices are there?
 >
 > (b) How many choices are there if no two of the chosen sticks can be consecutive?
 >
@@ -651,11 +651,11 @@ $$
 
 ## EX40
 
-> There are n sticks lined up in a row, and k of them are to be chosen.  
+> There are n sticks lined up in a row, and k of them are to be chosen.
 >
 > (a) How many choices are there?
 >
-> (b) How many choices are there if no two of the chosen sticks can be consecutive?  
+> (b) How many choices are there if no two of the chosen sticks can be consecutive?
 >
 > (c) How many choices are there if there must be at least I sticks between each  pair of chosen sticks?
 
@@ -720,11 +720,11 @@ $$
 
 ## EX45
 
-> Twenty different books are to be put on five book shelves, each of which holds  at least twenty books.  
+> Twenty different books are to be put on five book shelves, each of which holds  at least twenty books.
 >
 > (a) How many different arrangements are there if you only care about the  number of books on the shelves (and not which book is where)?
 >
-> (b) How many different arrangements are there if you care about which books  are where, but the order of the books on the shelves doesn't matter?  
+> (b) How many different arrangements are there if you care about which books  are where, but the order of the books on the shelves doesn't matter?
 >
 > (c) How many different arrangements are there if the order on the shelves does  matter?
 
@@ -746,7 +746,7 @@ $$
 
 ## EX46
 
-> (a) There is an even number 2n of people at a party, and they talk together  in pairs, with everyone talking with someone (so n pairs). In how many  different ways can the 2n people be talking like this?  
+> (a) There is an even number 2n of people at a party, and they talk together  in pairs, with everyone talking with someone (so n pairs). In how many  different ways can the 2n people be talking like this?
 >
 > (b) Now suppose that there is an odd number 2n + 1 of people at the party  with everyone but one person talking with someone. How many different  pairings are there?
 
@@ -920,13 +920,13 @@ $$
 
 ## EX55
 
-> How many permutations are there of the letters in the words  
+> How many permutations are there of the letters in the words
 >
 > (a) TRISKAIDEKAPHOBIA (fear of the number 13)?
 >
 > (b) FLOCCINAUCINIHILIPILIFICATION (estimating something as worthless)?
 >
-> (c) PNEUMONOULTRAMICROSCOPICSILICOVOLCANOCONIOSIS (a lung disease  caused by inhaling fine particles of silica)? (This word is, by some accounts,  the longest word in the English language.)  
+> (c) PNEUMONOULTRAMICROSCOPICSILICOVOLCANOCONIOSIS (a lung disease  caused by inhaling fine particles of silica)? (This word is, by some accounts,  the longest word in the English language.)
 >
 > (d) DERMATOGLYPHICS (skin patterns or the study of them)? (This word  is the (current) longest word in the English language that doesn't repeat a  letter; another word of the same length is UNCOPYRIGHTABLE)
 
@@ -1103,17 +1103,17 @@ $$
 
 ## EX62
 
-> Suppose a poker hand contains seven cards rather than five. Compute the probabilities of the following poker hands:  
+> Suppose a poker hand contains seven cards rather than five. Compute the probabilities of the following poker hands:
 >
-> (a) a seven-card straight  
+> (a) a seven-card straight
 >
-> (b) four cards of one rank and three of a different rank  
+> (b) four cards of one rank and three of a different rank
 >
 > (c) three cards of one rank and two cards of each of two different ranks
 >
-> (d) two cards of each of three different ranks, and a card of a fourth rank  
+> (d) two cards of each of three different ranks, and a card of a fourth rank
 >
-> (e) three cards of one rank and four cards of each of four different ranks  
+> (e) three cards of one rank and four cards of each of four different ranks
 >
 > (f) seven cards each of different rank
 
@@ -1157,15 +1157,15 @@ $$
 
 ## EX63
 
-> Four (standard) dice (cubes with 1, 2,3, 4, 5, 6, respectively, dots on their six  faces), each of a different color, are tossed, each landing with one of its faces up,  thereby showing a number of dots. Determine the following probabilities:  
+> Four (standard) dice (cubes with 1, 2,3, 4, 5, 6, respectively, dots on their six  faces), each of a different color, are tossed, each landing with one of its faces up,  thereby showing a number of dots. Determine the following probabilities:
 >
-> (a) The probability that the total number of dots shown is 6  
+> (a) The probability that the total number of dots shown is 6
 >
-> (b) The probability that at most two of the dice show exactly one dot  
+> (b) The probability that at most two of the dice show exactly one dot
 >
-> (c) The probability that each die shows at least two dots  
+> (c) The probability that each die shows at least two dots
 >
-> (d) The probability that the four numbers of dots shown are all different  
+> (d) The probability that the four numbers of dots shown are all different
 >
 > (e) The probability that there are exactly two different numbers of dots shown
 
@@ -1203,9 +1203,9 @@ $$
 
 ## EX64
 
-> Let n be a positive integer. Suppose we choose a sequence $i_1, i_2, \cdots, i_n$ of integers  between 1 and n at random.  
+> Let n be a positive integer. Suppose we choose a sequence $i_1, i_2, \cdots, i_n$ of integers  between 1 and n at random.
 >
-> (a) What is the probability that the sequence contains exactly n - 2 different  integers?  
+> (a) What is the probability that the sequence contains exactly n - 2 different  integers?
 >
 > (b) What is the probability that the sequence contains exactly n - 3 different  integers?
 

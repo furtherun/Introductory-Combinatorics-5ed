@@ -70,12 +70,12 @@ void output(vector<int>& vi) {
 
 int main()
 {
-    
+
     int n;
     scanf("%d", &n);
     vector<int> permList;
     for(int i = 1; i <= n; ++ i) permList.emplace_back(i);
-    
+
     //use 0 for left and 1 for right
     vector<bool> state(n+1, false);
     while(true) {
@@ -96,9 +96,9 @@ int main()
                 }
             }
         }
-        
+
         if(maxMovIdx == -1) break; //no moveable variables
-        
+
         if(!state[maxMovVal]) { //swap with left
             swap(permList[maxMovIdx], permList[maxMovIdx-1]);
         } else { //swap with right
@@ -119,7 +119,7 @@ int main()
 
 ## EX2
 
-> Determine the mobile integers in  
+> Determine the mobile integers in
 >
 > $$
 > \overrightarrow{4} \;\overleftarrow{8}\; \overrightarrow{3} \; \overleftarrow{1} \; \overrightarrow{6} \; \overleftarrow{7}\; \overleftarrow{2} \; \overrightarrow{5} \;.
@@ -129,7 +129,7 @@ int main()
 
 ## EX3
 
-> Use the algorithm of Section 4.1 to generate the first 50 permutations {I, 2, 3, 4, 5},  
+> Use the algorithm of Section 4.1 to generate the first 50 permutations {I, 2, 3, 4, 5},
 > starting with $\overleftarrow{1} \;\overleftarrow{2} \;\overleftarrow{3} \;\overleftarrow{4} \;\overleftarrow{5}$.
 
 我们调整一下EX1中的代码，可以获得50个输出。
@@ -147,12 +147,12 @@ void output(vector<int>& vi) {
 
 int main()
 {
-    
+
     int n;
     scanf("%d", &n);
     vector<int> permList;
     for(int i = 1; i <= n; ++ i) permList.emplace_back(i);
-    
+
     //use 0 for left and 1 for right
     vector<bool> state(n+1, false);
     int cnt = 50;
@@ -175,9 +175,9 @@ int main()
                 }
             }
         }
-        
+
         if(maxMovIdx == -1) break; //no moveable variables
-        
+
         if(!state[maxMovVal]) { //swap with left
             swap(permList[maxMovIdx], permList[maxMovIdx-1]);
         } else { //swap with right
@@ -195,16 +195,16 @@ int main()
 ### 输出结果
 
 ```output
-1 2 3 4 5 ; 1 2 3 5 4 ; 1 2 5 3 4 ; 1 5 2 3 4 ; 5 1 2 3 4 ; 
-5 1 2 4 3 ; 1 5 2 4 3 ; 1 2 5 4 3 ; 1 2 4 5 3 ; 1 2 4 3 5 ; 
-1 4 2 3 5 ; 1 4 2 5 3 ; 1 4 5 2 3 ; 1 5 4 2 3 ; 5 1 4 2 3 ; 
-5 4 1 2 3 ; 4 5 1 2 3 ; 4 1 5 2 3 ; 4 1 2 5 3 ; 4 1 2 3 5 ; 
-4 1 3 2 5 ; 4 1 3 5 2 ; 4 1 5 3 2 ; 4 5 1 3 2 ; 5 4 1 3 2 ; 
-5 1 4 3 2 ; 1 5 4 3 2 ; 1 4 5 3 2 ; 1 4 3 5 2 ; 1 4 3 2 5 ; 
-1 3 4 2 5 ; 1 3 4 5 2 ; 1 3 5 4 2 ; 1 5 3 4 2 ; 5 1 3 4 2 ; 
-5 1 3 2 4 ; 1 5 3 2 4 ; 1 3 5 2 4 ; 1 3 2 5 4 ; 1 3 2 4 5 ; 
-3 1 2 4 5 ; 3 1 2 5 4 ; 3 1 5 2 4 ; 3 5 1 2 4 ; 5 3 1 2 4 ; 
-5 3 1 4 2 ; 3 5 1 4 2 ; 3 1 5 4 2 ; 3 1 4 5 2 ; 3 1 4 2 5 ; 
+1 2 3 4 5 ; 1 2 3 5 4 ; 1 2 5 3 4 ; 1 5 2 3 4 ; 5 1 2 3 4 ;
+5 1 2 4 3 ; 1 5 2 4 3 ; 1 2 5 4 3 ; 1 2 4 5 3 ; 1 2 4 3 5 ;
+1 4 2 3 5 ; 1 4 2 5 3 ; 1 4 5 2 3 ; 1 5 4 2 3 ; 5 1 4 2 3 ;
+5 4 1 2 3 ; 4 5 1 2 3 ; 4 1 5 2 3 ; 4 1 2 5 3 ; 4 1 2 3 5 ;
+4 1 3 2 5 ; 4 1 3 5 2 ; 4 1 5 3 2 ; 4 5 1 3 2 ; 5 4 1 3 2 ;
+5 1 4 3 2 ; 1 5 4 3 2 ; 1 4 5 3 2 ; 1 4 3 5 2 ; 1 4 3 2 5 ;
+1 3 4 2 5 ; 1 3 4 5 2 ; 1 3 5 4 2 ; 1 5 3 4 2 ; 5 1 3 4 2 ;
+5 1 3 2 4 ; 1 5 3 2 4 ; 1 3 5 2 4 ; 1 3 2 5 4 ; 1 3 2 4 5 ;
+3 1 2 4 5 ; 3 1 2 5 4 ; 3 1 5 2 4 ; 3 5 1 2 4 ; 5 3 1 2 4 ;
+5 3 1 4 2 ; 3 5 1 4 2 ; 3 1 5 4 2 ; 3 1 4 5 2 ; 3 1 4 2 5 ;
 ```
 
 ### PS
@@ -234,7 +234,7 @@ int main()
 
 > Determine the inversion sequences of the following permutations of {1, 2, ... ,8}:
 >
-> (a) 35168274  
+> (a) 35168274
 >
 > (b) 83476215
 
@@ -256,9 +256,9 @@ int main()
 
 ## EX7
 
-> Construct the permutations of {1, 2, ... ,8} whose inversion sequences are  
+> Construct the permutations of {1, 2, ... ,8} whose inversion sequences are
 >
-> (a) 2,5,5,0,2,1,1,0  
+> (a) 2,5,5,0,2,1,1,0
 >
 > (b) 6,6,1,4,2,1,0,0
 
@@ -298,11 +298,11 @@ $$
 
 ## EX8
 
-> How many permutations of {1, 2, 3, 4, 5, 6} have  
+> How many permutations of {1, 2, 3, 4, 5, 6} have
 >
-> (a) exactly 15 inversions?  
+> (a) exactly 15 inversions?
 >
-> (b) exactly 14 inversions?  
+> (b) exactly 14 inversions?
 >
 > (c) exactly 13 inversions?
 
@@ -454,7 +454,7 @@ void reflectedGrayCode(vector<int>& vi, int n, int cnt, bool isEven) {
     if(cnt == n) return;
     printf("%d :\t", cnt+1);
     output(vi);
-    
+
     if(isEven) { //
         vi[0] = !vi[0];
     } else {
@@ -466,7 +466,7 @@ void reflectedGrayCode(vector<int>& vi, int n, int cnt, bool isEven) {
         }
     }
     reflectedGrayCode(vi, n, cnt+1, !isEven);
-} 
+}
 int main()
 {
     int n;
@@ -525,9 +525,9 @@ Gray码：每个顶点访问一次；
 
 ## EX21
 
-> Construct the reflected Gray code of order 5 by  
+> Construct the reflected Gray code of order 5 by
 >
-> (a) using the inductive definition, and  
+> (a) using the inductive definition, and
 >
 > (b) using the Gray code algorithm.
 
@@ -543,9 +543,9 @@ Gray码：每个顶点访问一次；
 
 > Determine the immediate successors of the following 9-tuples in the reflected  Gray code of order 9:
 >
-> (a) 010100110  
+> (a) 010100110
 >
-> (b) 110001100  
+> (b) 110001100
 >
 > (c) 111111111
 
@@ -686,13 +686,13 @@ int main()
     scanf("%d", &n);
     vector<int> permList;
     for(int i = 1; i <= n; ++ i) permList.emplace_back(i);
-    
+
     //use 0 for left and 1 for right
     vector<bool> state(n+1, false);
-    
+
     //inversion list
     vector<int> invList(n+1, 0);
-    
+
     while(true) {
         for(auto item: permList) {
             printf("%d ", item);
@@ -702,7 +702,7 @@ int main()
             printf("%d ", invList[permList[i]]);
         }
         printf("\n\n");
-        
+
         int maxMovVal = -1;
         int maxMovIdx = -1;
         for(int i = 0; i < n; ++ i) {
@@ -719,9 +719,9 @@ int main()
                 }
             }
         }
-        
+
         if(maxMovIdx == -1) break; //no moveable variables
-        
+
         if(!state[maxMovVal]) { //swap with left
             swap(permList[maxMovIdx], permList[maxMovIdx-1]);
             invList[maxMovVal] ++;
@@ -759,9 +759,9 @@ void output(vector<int>& vi) {
 void generatePermutation(vector<int> permList, int n) {
     vector<bool> state(n+1, false);
     while(true) {
-        
+
         output(permList);
-        
+
         int maxMovVal = -1;
         int maxMovIdx = -1;
         for(int i = 0; i < n; ++ i) {
@@ -778,9 +778,9 @@ void generatePermutation(vector<int> permList, int n) {
                 }
             }
         }
-        
+
         if(maxMovIdx == -1) break; //no moveable variables
-        
+
         if(!state[maxMovVal]) { //swap with left
             swap(permList[maxMovIdx], permList[maxMovIdx-1]);
         } else { //swap with right
@@ -858,7 +858,7 @@ $$
 
 ## EX34
 
-> Consider the r-subsets of {1, 2, ... , n} in lexicographic order.  
+> Consider the r-subsets of {1, 2, ... , n} in lexicographic order.
 >
 > (a) What are the first (n - r + 1) r-subsets?
 >
@@ -967,7 +967,7 @@ $$
 > $$
 > X_1 \times X_2 = \{(x_1, x_2): x_1 \;\text{in } \; X_1, x_2 \;\text{in } \; X_2\}
 > $$
->  
+>
 > by
 >
 > $$
@@ -989,7 +989,7 @@ $$
 
 ## EX39
 
-> Let $(J， \le)$ be the partially ordered set with J = {0, 1} and with 0 < 1. By  identifying the subsets of a set X of n elements with the n-tuples of 0s and  1s, prove that the partially ordered set $(X, \subseteq)$ can be identified with the n-fold  direct product  
+> Let $(J， \le)$ be the partially ordered set with J = {0, 1} and with 0 < 1. By  identifying the subsets of a set X of n elements with the n-tuples of 0s and  1s, prove that the partially ordered set $(X, \subseteq)$ can be identified with the n-fold  direct product
 >
 > $$
 > (J, \le) \times (J, \le) \times \cdots \times (J, \le) \text{ (n factors).}
@@ -1147,7 +1147,7 @@ $$
 >
 > (a) Prove that the relation of refinement is a partial order on $\Pi_m$.
 >
-> (b) By Theorem 4.5.3, we know that there is a one-to-one correspondence between $\Pi_m$ and the set $\Lambda_n$ of all equivalence relations on {1, 2, ... ,n}. What  is the partial order on $\Lambda_n$ that corresponds to this partial order on $\Pi_m$?  
+> (b) By Theorem 4.5.3, we know that there is a one-to-one correspondence between $\Pi_m$ and the set $\Lambda_n$ of all equivalence relations on {1, 2, ... ,n}. What  is the partial order on $\Lambda_n$ that corresponds to this partial order on $\Pi_m$?
 >
 > (c) Construct the diagram of $(\Pi_m, \le)$ for n = 1,2,3, and 4.
 
@@ -1408,8 +1408,8 @@ UNFINISHED
 
 > Let $(X, \le)$ be a finite partially ordered set.
 > By Theorem 4.5.2 we know that  $(X, \le)$ has a linear extension.
-> Let a and b be incomparable elements of X.  
-> Modify the proof of Theorem 4.5.2 to obtain a linear extension of  $(X, \le)$  
+> Let a and b be incomparable elements of X.
+> Modify the proof of Theorem 4.5.2 to obtain a linear extension of  $(X, \le)$
 > such that $a < b$.
 > (Hint: First find a partial order $\le '$ on X such that whenever $x \le y$,  then $x \le ' y$ and, in addition, $a \le ' b$.)
 
@@ -1447,7 +1447,7 @@ $(X, \le ')$由$(X, \le )$添加关系得到，该线性扩展也保留了原来
 > The *dimension* of a finite partially ordered set $(X, \le)$ is the smallest number
 > of its linear extensions whose intersection is $(X, \le)$.
 > By Exercise 55, every partially ordered set has a dimension.
-> Those that have dimension 1 are the linear orders.  
+> Those that have dimension 1 are the linear orders.
 > Let n be a positive integer and let $i_1, i_2, \cdots, i_n$ be a permutation
 > $\sigma$ of {1, 2, ... ,n} that is different from 1, 2, ... ,n.
 > Let X = $\{(1,i_1),(2, i_2), \cdots,(n, i_n)\}$.

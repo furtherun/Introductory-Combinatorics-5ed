@@ -259,7 +259,7 @@ int main() {
     auto stirList = vector<vector<int>>(10, vector<int>(10, 0));
     for(int p = 1; p < 10; ++ p) {
         stirList[p][p] = 1;
-    } 
+    }
     for(int p = 2; p < 10; ++ p) {
         for(int k = 1; k < p; ++ k) {
             stirList[p][k] = stirList[p-1][k] * k + stirList[p-1][k-1];
@@ -271,7 +271,7 @@ int main() {
         }
         printf("\n");
     }
-    
+
     printf("\n S(8, k), k = 0, 1, 2, ..., 8\n");
     for(int k = 0; k <= 8; ++ k) {
         printf("%d\t", stirList[8][k]);
@@ -411,7 +411,7 @@ int main() {
     auto stirList = vector<vector<int>>(10, vector<int>(10, 0));
     for(int p = 1; p < 10; ++ p) {
         stirList[p][p] = 1;
-    } 
+    }
     for(int p = 2; p < 10; ++ p) {
         for(int k = 1; k < p; ++ k) {
             stirList[p][k] = stirList[p-1][k] * k + stirList[p-1][k-1];
@@ -423,7 +423,7 @@ int main() {
         }
         printf("\n");
     }
-    
+
     printf("\n S(8, k), k = 0, 1, 2, ..., 8\n");
     int bellNum = 0;
     for(int k = 0; k <= 8; ++ k) {
@@ -458,10 +458,10 @@ int main() {
     auto firstStirList = vector<vector<int>>(10, vector<int>(10, 0));
     for(int p = 1; p < 10; ++ p) {
         firstStirList[p][p] = 1;
-    } 
+    }
     for(int p = 2; p < 10; ++ p) {
         for(int k = 1; k < p; ++ k) {
-            firstStirList[p][k] = firstStirList[p-1][k] * (p-1) 
+            firstStirList[p][k] = firstStirList[p-1][k] * (p-1)
                                 + firstStirList[p-1][k-1];
         }
     }
@@ -471,7 +471,7 @@ int main() {
         }
         printf("\n");
     }
-    
+
     printf("\n s(7, k), k = 0, 1, 2, ..., 7\n");
     for(int k = 0; k <= 7; ++ k) {
         printf("%d\t", firstStirList[7][k]);

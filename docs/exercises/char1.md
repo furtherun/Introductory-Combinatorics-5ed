@@ -1,4 +1,4 @@
-# 第1章 什么是组合数学EX
+# 第1章 什么是组合数学
 
 ## EX1
 
@@ -23,7 +23,7 @@
 $$
 \begin{cases}
 a + b + 1 = m \\
-x + y + 1 = n  
+x + y + 1 = n
 \end{cases}
 $$
 
@@ -63,7 +63,7 @@ $$
 
 ## EX4
 
-> (a) Let f(n) count the number of different perfect covers of a 2-by-n chessboard  by dominoes. Evaluate f(1), f(2), f(3), f(4), and f(5). Try to find (and verify)  a simple relation that the counting function f satisfies. Use this relation to  compute f(12).  
+> (a) Let f(n) count the number of different perfect covers of a 2-by-n chessboard  by dominoes. Evaluate f(1), f(2), f(3), f(4), and f(5). Try to find (and verify)  a simple relation that the counting function f satisfies. Use this relation to  compute f(12).
 >
 > (b) \* Let g(n) be the number of different perfect covers of a 3-by-n chessboard  by dominoes. Evaluate g(1), g(2), ... , g(6).
 
@@ -218,7 +218,7 @@ $$
 ![EX11](imgs/c1ex11.png)
 
 ```cpp
-/* 
+/*
 验证程序
 */
 #include <iostream>
@@ -235,7 +235,7 @@ void output(vector<vector<int>>& vi, int size) {
 }
 int main()
 {
-    
+
     int n; //输入幻方的大小，为奇数
     scanf("%d", &n);
     vector<vector<int>> magicSquare(n, vector<int>(n, 0));
@@ -389,9 +389,9 @@ $$
 
 ## EX17
 
-> Let n be a positive integer divisible by 4, say n = 4m. Consider the following  construction of an n-by-n array:  
+> Let n be a positive integer divisible by 4, say n = 4m. Consider the following  construction of an n-by-n array:
 >
-> (1) Proceeding from left to right and from first row to nth row, fill in the places  of the array with the integers $1,2,\dots, n^2$ in order.  
+> (1) Proceeding from left to right and from first row to nth row, fill in the places  of the array with the integers $1,2,\dots, n^2$ in order.
 >
 > (2) Partition the resulting square array into $m^2$ 4-by-4 smaller arrays. Replace  each number a on the two diagonals of each of the 4-by-4 arrays with its  "complement" $n^2 + 1 - a$.
 >
