@@ -1,3 +1,4 @@
+// https://vitepress-sidebar.cdget.com/zhHans/guide/getting-started
 import { generateSidebar } from 'vitepress-sidebar'
 
 const vitepressSidebarOptions = [
@@ -15,6 +16,7 @@ const vitepressSidebarOptions = [
     resolvePath: '/extras/',
     useTitleFromFileHeading: true,
     useFolderTitleFromIndexFile: true,
+    useTitleFromFrontmatter: true,
     sortMenusByFrontmatterOrder: true,
   },
   {

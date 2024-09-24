@@ -21,12 +21,14 @@ export default defineConfig({
     },
   },
   cleanUrls: true,
-
+  // rewrites: {
+  //   'extras/notes/:page': 'notes/:page',
+  // },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '本篇', link: '/exercises' },
-      { text: '额外内容', link: '/extras/' },
+      { text: '额外内容', link: '/extras' },
       { text: '交流', link: '/contribute' },
     ],
     search: { provider: 'local' },
@@ -44,7 +46,7 @@ export default defineConfig({
     footer: {
       message: '本站基于 <a href="https://vitepress.dev/">VitePress</a> 搭建',
       copyright:
-        'Copyright © 2024 Furtherun  | <a href="">MIT License</a>',
+        'Copyright © 2024 Furtherun  | <a href="https://github.com/furtherun/Introductory-Combinatorics-5ed?tab=License-1-ov-file#">MIT License</a>',
     },
   },
 })
