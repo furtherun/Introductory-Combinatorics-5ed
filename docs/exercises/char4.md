@@ -917,7 +917,7 @@ $$
 
 ## EX36
 
-> Let X be a set of n elements. How many different relations on X are there? How  many of these relations are reflexive? Symmetric? Antisymmetric? Reflexive  and symmetric? Reflexive and anti-symmetric?
+> Let X be a set of n elements. How many different relations on X are there? How many of these relations are reflexive? Symmetric? Antisymmetric? Reflexive and symmetric? Reflexive and anti-symmetric?
 
 有序对(a,b)一共有$n^2$种选择方式，每个有序对有相关和不相关两种关系，因此共有$2^{(n^2)}$种关系（relation）；
 
@@ -927,7 +927,7 @@ $$
 
 反对称（Antisymmetric）关系： (a, a)可以任意出现共有n个；(x, y)和(y, x)（其中$x \neq y$）只能有一个出现，或者都不出现，有$\dbinom{n}{2}$个，因此一共有$2^n \cdot 3^{\frac{n(n-1)}{2}}$种关系。
 
-自反且对称：(a, a)必须都在；(x, y)和(y, x)（其中$x \neq y$）必须成对出现，合计有$ (n^2-n)/2$可选项，因此一共有$2^{\frac{n(n-1)}{2}}$​种关系。
+自反且对称：(a, a)必须都在；(x, y)和(y, x)（其中$x \neq y$）必须成对出现，合计有$(n^2-n)/2$可选项，因此一共有$2^{\frac{n(n-1)}{2}}$种关系。
 
 自反且反对称：(a, a)必须都在；(x, y)和(y, x)（其中$x \neq y$）只能有一个出现，或者都不出现，因此一共有$3^{\frac{n(n-1)}{2}}$种关系。
 
@@ -963,7 +963,7 @@ $$
 
 ## EX38
 
-> Let $(X_1, \le_1)$ and $(X_2, \le_2)$ be partially ordered sets. Define a relation T on the  set
+> Let $(X_1, \le_1)$ and $(X_2, \le_2)$ be partially ordered sets. Define a relation T on the set
 >
 > $$
 > X_1 \times X_2 = \{(x_1, x_2): x_1 \;\text{in } \; X_1, x_2 \;\text{in } \; X_2\}
@@ -975,14 +975,19 @@ $$
 > (x_1, x_2)T(x_1', x_2') \text{ if and only if } x_1 \le_1 x_1' \text{ and } x_2 \le_2 x_2'
 > $$
 >
-> Prove that $(X_1 \times X_2, T)$ is a partially ordered set. $(X_1 \times X_2, T)$ is called the *direct  product* of $(X_1, \le_1)$ and $(X_2, \le_2)$  and is also denoted by  $(X_1, \le_1) \times (X_2, \le_2)$.
-> More generally, prove that the direct product $(X_1, \le_1) \times (X_2, \le_2) \times \cdots \times (X_M ,\le_m)$  of partially ordered sets is also a partially ordered set.
+> Prove that $(X_1 \times X_2, T)$ is a partially ordered set. $(X_1 \times X_2, T)$ is called the *direct product* of $(X_1, \le_1)$ and $(X_2, \le_2)$ and is also denoted by $(X_1, \le_1) \times (X_2, \le_2)$. More generally, prove that the direct product $(X_1, \le_1) \times (X_2, \le_2) \times \cdots \times (X_M ,\le_m)$ of partially ordered sets is also a partially ordered set.
 
-自反性：取$x = (x_1, x_2) \in X_1 \times X_2$，$x_1 \in X_1$​，$x_1$满足偏序关系有$x_1 \le_1 x_1$，同理，$x_2 \le_2 x_2$，所以得出T满足自反性。
+自反性：取$x = (x_1, x_2) \in X_1 \times X_2$，$x_1 \in X_1$，
+$x_1$满足偏序关系有$x_1 \le_1 x_1$，同理，$x_2 \le_2 x_2$，所以得出T满足自反性。
 
-反对称性：取$x = (x_1, x_2), x' = (x_1', x_2') \in X_1 \times X_2$，并且设$x_1 \le_1 x_1', x_2 \le_2 x_2’$，由偏序关系知，如果$x_1'  \le_1 x_1, x_2'  \le_2 x_2$，那么一定有$x_1 = x_1', x_2 = x_2 '$，所以T满足反对称性。
+反对称性：取$x = (x_1, x_2), x' = (x_1', x_2') \in X_1 \times X_2$，
+并且设$x_1 \le_1 x_1', x_2 \le_{2} x_2'$，
+由偏序关系知，如果$x_1' \le_1 x_1, x_2' \le_2 x_2$，
+那么一定有$x_1 = x_1', x_2 = x_2 '$，所以T满足反对称性。
 
-传递性：取$x = (x_1, x_2), x' = (x_1', x_2'),x'' = (x_1'', x_2'') \in X_1 \times X_2$，由偏序关系知，$x_1 \le_1 x_1', x_1' \le_1 x_1''$，所以$x_1 \le_1 x_1''$，同理$x_2 \le_2 x_2 ''$​，T有传递性。
+传递性：取$x = (x_1, x_2), x' = (x_1', x_2'),x'' = (x_1'', x_2'') \in X_1 \times X_2$，
+由偏序关系知，$x_1 \le_1 x_1', x_1' \le_1 x_1''$，
+所以$x_1 \le_1 x_1^{''}$，同理$x_2 \le_2 x_2^{''}$，所以T有传递性。
 
 综上，T满足偏序关系且$(X_1 \times X_2, T)$是偏序集。
 
@@ -990,7 +995,7 @@ $$
 
 ## EX39
 
-> Let $(J， \le)$ be the partially ordered set with J = {0, 1} and with 0 < 1. By  identifying the subsets of a set X of n elements with the n-tuples of 0s and  1s, prove that the partially ordered set $(X, \subseteq)$ can be identified with the n-fold  direct product
+> Let $(J， \le)$ be the partially ordered set with J = {0, 1} and with 0 < 1. By identifying the subsets of a set X of n elements with the n-tuples of 0s and 1s, prove that the partially ordered set $(X, \subseteq)$ can be identified with the n-fold direct product
 >
 > $$
 > (J, \le) \times (J, \le) \times \cdots \times (J, \le) \text{ (n factors).}
@@ -1010,7 +1015,7 @@ $$
 
 所以满足偏序关系$x \le y$当且仅当$f(x) \subseteq f(y)$，
 因此偏序集$(X, \subseteq)$
-可以用n重直积$J^n$​表示。
+可以用n重直积$J^n$表示。
 
 并且有如下等价命题，
 
@@ -1052,7 +1057,7 @@ $$
 
 ## EX41
 
-> Show that a partial order on a finite set is uniquely determined by its cover  relation.
+> Show that a partial order on a finite set is uniquely determined by its cover relation.
 
 有限集X上的偏序关系$\le$由覆盖关系唯一确定需要证明如下引理。
 
@@ -1066,7 +1071,7 @@ $$
 要求S中的元素满足$x_1 = x, x_r = y, x_{i-1} \lt x_i$，因为X是有限集，
 那么S也是有限集，并且S至少包含序列(x, y)，所以S非空。
 
-因此，我们可以从S中选择出大小为r的序列，使之满足覆盖条件$x_i$覆盖$x_{i-1}, 2 \le i \le r$​。
+因此，我们可以从S中选择出大小为r的序列，使之满足覆盖条件$x_i$覆盖$x_{i-1}, 2 \le i \le r$。
 
 再由2证1，因为$x_i$能覆盖$x_{i-1}$，并且由传递性可得$x\lt y$。
 
