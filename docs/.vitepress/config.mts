@@ -46,7 +46,7 @@ export default defineConfig({
     footer: {
       message: '本站基于 <a href="https://vitepress.dev/">VitePress</a> 搭建',
       copyright:
-        'Copyright © 2024 Furtherun  | <a href="https://github.com/furtherun/Introductory-Combinatorics-5ed?tab=License-1-ov-file#">MIT License</a>',
+        'Copyright © 2024 <a href="https://github.com/furtherun">Furtherun</a> | <a href="https://github.com/furtherun/Introductory-Combinatorics-5ed?tab=MIT-1-ov-file">MIT License</a>',
     },
   },
 })

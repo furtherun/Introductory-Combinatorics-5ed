@@ -10,10 +10,12 @@
     "lint:fix": "eslint . --fix"
   },
   "keywords": [
-    "组合数学"
+    "组合数学", "组合数学攻略", "组合数学黑皮书", "组合数学第五版",
+    "Introductory Combinatorics", "Introductory Combinatorics 5th Edition",
+    "Solutions to Introductory Combinatorics 5th Edition"
   ],
   "author": "Furtherun",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@antfu/eslint-config": "^3.7.1",
     "eslint": "^9.11.1",
