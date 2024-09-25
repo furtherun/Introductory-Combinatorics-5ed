@@ -1,10 +1,8 @@
 name: Deploy to GitHub Pages
-
 on:
   push:
     branches:
       - main
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -15,16 +13,23 @@ jobs:
         with:
           node-version: 20
           cache: pnpm
-
       - name: Install dependencies
         run: pnpm install
-
       - name: Build project
         run: pnpm run docs:build
-
+      - name: Clean up old deployments
+        run: |
+          git fetch origin gh-pages
+          git checkout gh-pages
+          if [ $(git rev-list --count gh-pages) -gt 3 ]; then
+            git reset --hard HEAD~3
+            git push origin gh-pages --force
+          fi
+        shell: bash
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs/.vitepress/dist
           publish_branch: gh-pages
+          commit_message: 'auto deploy'
