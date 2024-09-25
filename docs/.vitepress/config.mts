@@ -1,8 +1,9 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 import mySidebar from './sidebar'
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+const vpConfig = defineConfig({
   title: '组合数学攻略',
   description: '组合数学第五版练习题解析',
   base: '/Introductory-Combinatorics-5ed/',
@@ -49,4 +50,13 @@ export default defineConfig({
         'Copyright © 2024 <a href="https://github.com/furtherun">Furtherun</a> | <a href="https://github.com/furtherun/Introductory-Combinatorics-5ed?tab=MIT-1-ov-file">MIT License</a>',
     },
   },
+  mermaid: {
+    // https://emersonbottero.github.io/vitepress-plugin-mermaid/guide/getting-started.html
+  },
+  mermaidPlugin: {
+    class: 'mermaid my-class',
+  },
+
 })
+
+export default withMermaid(vpConfig)
