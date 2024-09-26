@@ -1,4 +1,4 @@
-# 第6章 容斥原理及应用
+# 第 6 章 容斥原理及应用
 
 ## 错位排序的一些结论
 
@@ -11,6 +11,8 @@ $$
 ### 常数
 
 可以使用上面的递推公式求出来错位排序常用的一些数值，$D_1 = 0, D_2 = 1, D_3 = 2, D_4 = 9, D_5 = 44, D_6 = 265, D_7= 1854$。
+
+:::details 验算代码
 
 ```cpp
 #include <iostream>
@@ -33,17 +35,19 @@ int main()
 }
 ```
 
+:::
+
 ## EX1
 
 > Find the number of integers between 1 and 10,000 inclusive that are not divisible by 4,5, or 6.
 
 本题写的详细些，后面类似的题目就不再解释太多细节。
 
-设$A_i, i=1,2,3$分别为1到10，000之间能被4、5和6整除的个数。
+设$A_i, i=1,2,3$分别为 1 到 10，000 之间能被 4、5 和 6 整除的个数。
 
-计算集合大小时采用**向下取整**，例如$\lfloor \dfrac{10000}{6}  \rfloor = 1666$，表明还取不到下一个6的倍数。
+计算集合大小时采用**向下取整**，例如$\lfloor \dfrac{10000}{6}  \rfloor = 1666$，表明还取不到下一个 6 的倍数。
 
-$A_1 \cap A_3$表示既是4的倍数，也是6的倍数，4和6的最小公倍数是12，即能被12整除的数。
+$A_1 \cap A_3$表示既是 4 的倍数，也是 6 的倍数，4 和 6 的最小公倍数是 12，即能被 12 整除的数。
 
 |           set           | size  |
 | :---------------------: | :---: |
@@ -67,7 +71,7 @@ $$
 
 > Find the number of integers between 1 and 10,000 inclusive that are not divisible by 4, 6, 7, or 10.
 
-### 验证代码
+:::details 验证代码
 
 ```cpp
 #include <iostream>
@@ -98,11 +102,13 @@ int main()
 }
 ```
 
+:::
+
 ## EX3
 
 > Find the number of integers between 1 and 10,000 that are neither perfect squares nor perfect cubes.
 
-**既是完全平方数也是完全立方数的数一定能拆分成6个相同数的乘积。**
+**既是完全平方数也是完全立方数的数一定能拆分成 6 个相同数的乘积。**
 
 计算满足$x^2 \le 10000, \quad y^3 \le 10000, \quad z^6 \le 10000$的最大整数解，得$x=100, y = 21, z = 4$。
 
@@ -277,7 +283,7 @@ $$
 \end{aligned}
 $$
 
-## EX9
+## EX9 :ghost:
 
 > Determine the number of integral solutions of the equation
 >
@@ -292,21 +298,20 @@ $$
 > $$
 >
 
-过程略，答案96。
+过程略，答案 96。
 
 ## EX10
 
 > Let S be a multiset with k distinct objects with given repetition numbers $n_l, n_2, ... ,n_k$, respectively. Let r be a positive integer such that there is at least one r-combination of S. Show that, in applying the inclusion-exclusion principle to determine the number of r-combinations of S, one has $A_1 \cap A_2 \cap ... \cap A_k = \emptyset$.
 
-多重集合r组合问题转化为方程$\displaystyle \sum_{i=0}^{k} x_i = r, 0 \le x_i \le n_i$的整数解问题。
+多重集合 r 组合问题转化为方程$\displaystyle \sum_{i=0}^{k} x_i = r, 0 \le x_i \le n_i$的整数解问题。
 
 假设存在一组解，因此有$r \le \displaystyle \sum_{i=0}^k n_i$，记$A_i$为满足$x_i \gt n_i$的集合。
 
 当$A_1 \cap A_2 \cap ... \cap A_k \neq \emptyset$，即存在$r = \displaystyle \sum_{i=0}^{k} x_i \gt \displaystyle \sum_{i=0}^{k} n_i  \ge r$，产生矛盾，所以$A_1 \cap A_2 \cap ... \cap A_k = \emptyset$。
 
-### EX10吐槽
-
-本题的奇怪之处就在于题目没告诉这些$A_1$、$A_2$等究竟是什么。
+> [!CAUTION]
+> 本题的奇怪之处就在于题目没告诉这些$A_1$、$A_2$等究竟是什么，这是参考答案中**突然**定义的。
 
 ## EX11
 
@@ -324,7 +329,7 @@ $$
 
 > Determine the number of permutations of {1, 2, ... ,8} in which exactly four integers are in their natural positions.
 
-选出4个数放入自然位置，剩余4个数进行错位排序。
+选出 4 个数放入自然位置，剩余 4 个数进行错位排序。
 
 $$
 D_4 = 4! (1-\frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} + \frac{1}{4!}) = 9
@@ -336,19 +341,21 @@ $$
 \binom{8}{4} \times D_4 = 70 \times 9 = 630
 $$
 
-### EX12注
+<!-- ### EX12 注 -->
 
-n元素错位排序可以直接使用公式，
+:::tip
+n 元素错位排序可以直接使用公式，
 
 $$
 D_n = n! (1 - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} + \cdots + (-1)^{n} \frac{1}{n!})
 $$
+:::
 
 ## EX13
 
 > Determine the number of permutations of {1, 2, ... ,9} in which at least one odd integer is in its natural position.
 
-设$A_i$表示i在自然位置上，
+设$A_i$表示 i 在自然位置上，
 
 |                    set                    | size  |
 | :---------------------------------------: | :---: |
@@ -366,15 +373,16 @@ $$
 \end{aligned}
 $$
 
-### EX13注
+:::tip
 
-本题考查定理6.1.2（正文p102）「至少具有性质」的计数。大多数题目还是考察定理6.1.1「不具有性质」的容斥原理。
+本题考查定理 6.1.2（正文 p102）**至少具有性质**的计数。大多数题目还是考察定理 6.1.1 **不具有性质**的容斥原理。
+:::
 
 ## EX14
 
 > Determine a general formula for the number of permutations of the set {1, 2, ... , n} in which exactly k integers are in their natural positions.
 
-选k个放到自然位置，其余n-k个进行错位排序。
+选 k 个放到自然位置，其余 n-k 个进行错位排序。
 
 $$
 \binom{n}{k} D_{n-k}
@@ -410,16 +418,17 @@ $$
 > (Here,$D_0$ is defined to be 1.)
 
 记$S$为$\{1,2, \cdots , n\}$的全排列集合，
-$S_i$表示恰有i个元素在自然位置的排序，显然$\{S_i\}$划分了$S$，
+$S_i$表示恰有 i 个元素在自然位置的排序，显然$\{S_i\}$划分了$S$，
 因此$|S| = \sum_{i=0}^{n}|S_i|$。
 
 全排列$|S| = n!$，
-恰有i个自然位置的错位排序（参考EX14），
+恰有 i 个自然位置的错位排序（参考 EX14），
 有$\binom{n}{i}D_{n-i}$个，因此等式成立。
 
-### EX16评注
+<!-- ### EX16 评注 -->
 
-本题定义了$D_0=1$，而本身的错位排序$D_1=0$。
+> [!NOTE]
+> 本题定义了$D_0=1$，而本身的错位排序$D_1=0$。
 
 ## EX17
 
@@ -452,9 +461,11 @@ $$
 \end{aligned}
 $$
 
-### EX17注
+<!-- ### EX17 注 -->
 
+:::tip
 本题是求的**多重集合排序**问题和上面的多重集合组合问题进行区分。
+:::
 
 ## EX18
 
@@ -465,7 +476,7 @@ $$
 > $$
 >
 
-没太看懂这题想干什么，难道是数学归纳法。
+没太看懂这题想干什么，难道是数学归纳法？
 
 ## EX19
 
@@ -525,9 +536,9 @@ $$
 D_{n} =  n! \sum_{i=0}^{n} \frac{(-1)^i}{i!}
 $$
 
-当n=1时，1只能放在自然位置，没有错位排序，所以错位排序数为0，且$D_1 = 1! \times (1 - 1) = 0$成立。
+当 n=1 时，1 只能放在自然位置，没有错位排序，所以错位排序数为 0，且$D_1 = 1! \times (1 - 1) = 0$成立。
 
-当$n \ge 2$时，假设等式成立，对于n+1有
+当$n \ge 2$时，假设等式成立，对于 n+1 有
 
 $$
 \begin{aligned}
@@ -544,26 +555,30 @@ $$
 
 > Prove that $D_n$ is an even number if and only if n is an odd number.
 
-语句p：n为奇数；语句q：$D_n$为偶数。
-原题目可以转化为证明如下两个命题：若p成立，则q也成立；若q成立，则p也成立。
+语句 p：n 为奇数；语句 q：$D_n$为偶数。
+原题目可以转化为证明如下两个命题：若 p 成立，则 q 也成立；若 q 成立，则 p 也成立。
 
 我们先考虑命题二，对于命题二我们验证它的「逆否命题」，若$\neg q$成立，则$\neg p$也成立。
-命题转化为，n为偶数时，$D_n$为奇数。
+命题转化为，n 为偶数时，$D_n$为奇数。
 
-观察式子$D_n = n D_{n-1} + (-1)^n$，当n为偶数时，$nD_{n-1}$项为偶数，$(-1)^n = 1$，显然$D_n$为奇数，命题二的逆否命题为真，命题二也为真。
+观察式子$D_n = n D_{n-1} + (-1)^n$，当 n 为偶数时，$nD_{n-1}$项为偶数，$(-1)^n = 1$，显然$D_n$为奇数，命题二的逆否命题为真，命题二也为真。
 
-对于命题一，我们采用数学归纳法证明。当n为奇数时，
-并且当n=1时，有$D_1 = 0$，显然成立；
+对于命题一，我们采用数学归纳法证明。当 n 为奇数时，
+并且当 n=1 时，有$D_1 = 0$，显然成立；
 
-当n=2k+1($\ge 1$)时，设$D_{2k+1}$为偶数；那么当$n=2k+3$时，$D_{2k+3} = (2k+3)D_{2k+2} + (-1)^{(2k+3)} = (2k+3)D_{2k+2} - 1$，由命题二的逆否命题可知$D_{2k+2}$一定为奇数，进而两个奇数的乘积$(2k+3)D_{2k+2}$也为奇数，减一后为偶数。
+当 n=2k+1($\ge 1$) 时，设$D_{2k+1}$为偶数；那么当$n=2k+3$时，$D_{2k+3} = (2k+3)D_{2k+2} + (-1)^{(2k+3)} = (2k+3)D_{2k+2} - 1$，由命题二的逆否命题可知$D_{2k+2}$一定为奇数，进而两个奇数的乘积$(2k+3)D_{2k+2}$也为奇数，减一后为偶数。
 
-综上，当n为奇数时，命题得证。
+综上，当 n 为奇数时，命题得证。
 
-因为命题一和命题二均为真，因此可以说，$D_n$是偶数当且仅当n是奇数。
+因为命题一和命题二均为真，因此可以说，$D_n$是偶数当且仅当 n 是奇数。
 
-### EX21吐槽
+<!-- ### EX21 吐槽 -->
 
-颇有点压轴题的感觉，证明「若n为奇数，则$D_n$为偶数」这个命题前需要先证明「若n为偶数，则$D_n$为奇数」。如果有前一问的引导，难度会小一些；若是直接跳跃性地构造最后一问，难度就大很多。
+:::info 简评
+颇有点压轴题的感觉，证明**若 n 为奇数，则$D_n$为偶数**这个命题前，
+需要先证明**若 n 为偶数，则$D_n$为奇数**。
+如果有前一问的引导，难度会小一些；若是直接跳跃性地构造最后一问，难度就大很多。
+:::
 
 ## EX22
 
@@ -610,27 +625,29 @@ $$
 \end{aligned}
 $$
 
-### EX23注
+<!-- ### EX23 注 -->
 
+:::tip
 该解法需要使用$D_n = (n-1)(D_{n-1} + D_{n-2})$的化简技巧，
-答案的则是巧妙地添加了一个为0的项$(-1)^n \dfrac{n-n}{n!}$，进而，
+答案的则是巧妙地添加了一个为 0 的项$(-1)^n \dfrac{n-n}{n!}$，进而，
 
 $$
 Q_{n} = (n-1)! \sum_{k=0}^n (-1)^k \frac{n-k}{k!}
 $$
 
 在之后的展开项中则分别是$D_n, D_{n-1}$的定义形式。
+:::
 
 ## EX24
 
 > What is the number of ways to place six nonattacking rooks on the 6-by-6 boards with forbidden positions as shown?
 > ![EX24](imgs/c6ex24.png)
 
-设$r_k$为在k个禁止位上摆放棋子的方法数，
+设$r_k$为在 k 个禁止位上摆放棋子的方法数，
 
 ### EX24 Q(a)
 
-显然，$r_0 =1, r_1 = 6$，禁止位置的集合可以划分为3个独立的部分，每一部分最多只能放置一辆车。
+显然，$r_0 =1, r_1 = 6$，禁止位置的集合可以划分为 3 个独立的部分，每一部分最多只能放置一辆车。
 
 因此，$r_2 = \dbinom{3}{2} \times 2^2 = 12, r_3 = \dbinom{3}{3} 2^3 = 8$。
 
@@ -706,9 +723,9 @@ $$
 
 > Count the permutations $i_1i_2i_3i_4i_5i_6$ of {1, 2, 3, 4, 5, 6}, where $i_1 \neq 1,5, i_3 \neq 2,3,5; i_4 \neq 4;$ and $i_6\neq 5,6$.
 
-该问题等价于棋盘问题，可以把不等式转化为每一行（列）限制的序号，本题画出图像后可以发现，有4个大小为1的禁止块，2个大小为2的禁止块。
+该问题等价于棋盘问题，可以把不等式转化为每一行（列）限制的序号，本题画出图像后可以发现，有 4 个大小为 1 的禁止块，2 个大小为 2 的禁止块。
 
-从行的角度来思考，最多放置4个车，因为只有4行有禁止位，所以$r_5 = r_6 = 0$。
+从行的角度来思考，最多放置 4 个车，因为只有 4 行有禁止位，所以$r_5 = r_6 = 0$。
 
 对于$r_2$的计算方法是：先固定一个，寻找另一个可能的位置，因此$r_2 = 6 + 4 + 3 + 3 + 2 + 2 = 20$。
 
@@ -727,7 +744,7 @@ $$
 
 ![EX25 & EX26](imgs/c6ex25ex26.png)
 
-### EX25注
+### EX25PS
 
 本题与其他禁止位放车问题的区别是：本题不太容易拆分成几个独立的部分。
 
@@ -735,7 +752,7 @@ $$
 
 > Count the permutations $i_1i_2i_3i_4i_5i_6$ of {1, 2, 3, 4,5, 6}, where $i_1 \neq 1,2,3; i_2 \neq 1; i_3 \neq 1; i_5 \neq 5,6$ and $i_6 \neq 5,6$.
 
-题目转化过程同EX25，不过这次计算类似EX24。将棋盘禁止位置划分为$F_1 , F_2$。
+题目转化过程同 EX25，不过这次计算类似 EX24。将棋盘禁止位置划分为$F_1 , F_2$。
 
 对于每一部分，先计算摆放车可能的种类数，
 
@@ -764,9 +781,9 @@ $$
 
 > A carousel has eight seats, each representing a different animal. Eight girls are seated on the carousel facing forward (each girl ooks at another girl's back). In how many ways can the girls change seats so that each has a different girl in front of her? How does the problem change if all the seats are identical?
 
-设8个位置的座位编号分别为$1,2, ..., 8$，并且i号座位面向i+1号座位（$1 \le i \le 7$），8号座位面向1号座位。
+设 8 个位置的座位编号分别为$1,2, ..., 8$，并且 i 号座位面向 i+1 号座位（$1 \le i \le 7$），8 号座位面向 1 号座位。
 
-第i个女孩分别坐在i号座位上，重排后坐到$s_i$号座位上，并且要求$s_i$不能面向$s_{i+1}$，
+第 i 个女孩分别坐在 i 号座位上，重排后坐到$s_i$号座位上，并且要求$s_i$不能面向$s_{i+1}$，
 （$s_8$不能面向$s_1$）。
 
 记$A_i$表示排列$s_1s_2 \cdots s_8$中$s_i$面向$s_{i+1}$
@@ -774,12 +791,12 @@ $$
 $A_8$表示表示排列$s_1s_2 \cdots s_8$中$s_8$面向$s_1$。
 
 对于$|A_1|$，
-有8种方式决定$s_1$，
-$s_2$只能在前面，有1种方式，其余可以随意排列。
+有 8 种方式决定$s_1$，
+$s_2$只能在前面，有 1 种方式，其余可以随意排列。
 因此$|A_1| = 8 \times 1 \times 6!$。$|A_i|$同理。
 
 对于$|A_1 \cap A_2|$，
-有8种方式决定$s_1s_2s_3$；其余可以随意排列。
+有 8 种方式决定$s_1s_2s_3$；其余可以随意排列。
 因此$|A_1 \cap A_2| = 8 \times 5!$，
 其余$|A_i \cap A_j|$同理。
 
@@ -791,31 +808,33 @@ $$
 \end{aligned}
 $$
 
-当所有座位都相同时，第一个选择座位的女孩只有1种选法，破环后，其余人选法不变，因此排列总数为$13000/8 = 1625$。
+当所有座位都相同时，第一个选择座位的女孩只有 1 种选法，破环后，其余人选法不变，因此排列总数为$13000/8 = 1625$。
 
-### EX27注
+### EX27PS
 
-参考答案给的符号有些歧义，$A_i$和$A_s$表示的含义不一样，但符号相同，如$|A_1|$对前者（$|A_{i=1}|$）来说，是$s_1$面向$s_2$的情况；对于后者（$|A_{s=1}|$）来说则是所有1个交集的情况$\sum |A_i|$。
+参考答案给的符号有些歧义，$A_i$和$A_s$表示的含义不一样，但符号相同，
+如 $|A_1|$ 对前者（$|A_{i=1}|$）来说，是$s_1$面向$s_2$的情况；
+对于后者（$|A_{s=1}|$）来说则是所有 1 个交集的情况$\sum |A_i|$。
 
 ## EX28
 
 > A carousel has eight seats, each representing a different animal. Eight boys are seated on the carousel but facing inward, so that each boy faces another (each boy looks at another boy's front). In how many ways can the boys change seats so that each faces a different boy? How does the problem change if all the seats are dentical?
 
-第i个男孩坐在i号座位上，重排后坐到$s_i$号座位上。
+第 i 个男孩坐在 i 号座位上，重排后坐到$s_i$号座位上。
 设$A_i$表示$s_i$与$s_{i+4}$
 面对面（$1\le i \le 4$），
-因此需要求所有i与i+4没有面对面的情况，
+因此需要求所有 i 与 i+4 没有面对面的情况，
 即$|\overline{A_1} \cap \overline{A_2} \cap \overline{A_3} \cap \overline{A_4}|$。
 
 对于$|A_1|$，
-有8种方式决定$s_1$，
-$s_5$只能在对面，有1种方式，其余可以随意排列。
+有 8 种方式决定$s_1$，
+$s_5$只能在对面，有 1 种方式，其余可以随意排列。
 因此$|A_1| = 8 \times 1 \times 6!$。
-$|A_2|, |A_3| , |A_4|$同理。
+$|A_2|，|A_3| , |A_4|$同理。
 
 对于$|A_1 \cap A_2|$，
-有8种方式决定$s_1$，$s_5$随之确定；
-有6种方式确定$s_2$，$s_6$也随之确定，其余可以随意排列。
+有 8 种方式决定$s_1$，$s_5$随之确定；
+有 6 种方式确定$s_2$，$s_6$也随之确定，其余可以随意排列。
 因此$|A_1 \cap A_2| = 8\times 6 \times 4!$，
 其余$|A_i \cap A_j|$同理。
 
@@ -833,8 +852,8 @@ $$
 
 > A subway has six stops on its route from its base location. There are 10 people on the subway as it departs its base location. Each person exits the subway at one of its six stops, and at each stop at least one person exits. In how many ways can this happen?
 
-如果没有任何限制，10个人一共有$6^{10}$种下车方案。
-设$A_i$表示没人在i车站下车，所以有$|A_i| = 5^{10}$；
+如果没有任何限制，10 个人一共有$6^{10}$种下车方案。
+设$A_i$表示没人在 i 车站下车，所以有$|A_i| = 5^{10}$；
 对于$|A_i \cap A_j| = 4^{10}$。
 同理，可以计算多个子集车站没人下车的情况。
 
@@ -880,13 +899,14 @@ $$
 \end{aligned}
 $$
 
-### EX30顺便一提
+:::info 顺便一提
 
-参考答案认为一个d本身就是所有的d连续出现。
+参考答案认为一个 d 本身就是所有的 d 连续出现。
 
 *Since d appears in the multiset with multiplicity one, it is vacuously true that for any circular permutation of the multiset, all occurrences of d will appear consecutively.*
 
-当然，最后解题时还是认为连续最起码要有一前一后的两项才算连续，所谓「连续」，参考EX17，甚至本题数据和结果都与这题一致。
+当然，最后解题时还是认为连续最起码要有一前一后的两项才算连续，所谓**连续**，参考 EX17，甚至本题数据和结果都与这题一致。
+:::
 
 ## EX31
 
@@ -933,12 +953,16 @@ $$
 \end{aligned}
 $$
 
-## EX32-40说明
+## EX32-40 说明 :construction: :ghost:
 
-后面的题目似乎都是6.5小结莫比乌斯反演的练习题，~~因为不考，所以不写也不列给题目~~。
+后面的题目似乎都是 6.5 小结莫比乌斯反演的练习题。
 
-其中EX33是加星题目（\*）；EX36是带有禁止位置的放车问题，虽然指明了用6.5中的解题方法。但用EX24中的方法也能很快做出答案（6种）。
+<!-- ~~因为不考，所以不写也不列给题目~~。 -->
 
-### 重要补充
+其中 EX32 是关键的 :key: 题目；
+EX33 是加星题目（\*）；
+EX36 是带有禁止位置的放车问题，虽然指明了用 6.5 中的解题方法。但用 EX24 中的方法也能很快做出答案（6 种）。
 
-EX32这题虽然带着**欧拉**的关键字，但老师似乎并不认为是6.5小结的题目，所以考了这道题。
+<!-- ### 重要补充
+
+EX32 这题虽然带着**欧拉**的关键字，但老师似乎并不认为是 6.5 小结的题目，所以考了这道题。 -->
