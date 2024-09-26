@@ -1,4 +1,4 @@
-# 第8章 特殊计数序列
+# 第 8 章 特殊计数序列
 
 ## EX1
 
@@ -6,7 +6,7 @@
 
 ![EX1](imgs/c8ex1.png)
 
-记该问题的解为$h_n$，选择一端固定在1上的线段为基线，另一端指向2k，圆上的2n个点被分为两组，一组有2k-2个，另一组有2n-2k个，同时问题$h_n$被划分为$h_{k-1}$和$h_{n-k}$。所以有，
+记该问题的解为$h_n$，选择一端固定在 1 上的线段为基线，另一端指向 2k，圆上的 2n 个点被分为两组，一组有 2k-2 个，另一组有 2n-2k 个，同时问题$h_n$被划分为$h_{k-1}$和$h_{n-k}$。所以有，
 
 $$
 h_n = \sum_{k=1}^{n}h_{k-1}h_{n-k}, \quad n \ge 1, h_0 = h_1 = 1
@@ -18,9 +18,9 @@ $$
 h_n = \frac{1}{n+1} \binom{2n}{n}
 $$
 
-### EX1注
-
-本题与第7章EX41是类似的问题
+:::info
+本题与[第 7 章 EX41](./char7.md#ex41) 是类似的问题
+:::
 
 ## EX2
 
@@ -46,16 +46,16 @@ $$
 >
 > equals the $n$th Catalan number, $C_n$.
 
-将数组第一行的元素标记为+1，第二行元素标记为-1。
-问题可以转化为：将+1和-1按照从左到右的顺序排列，并且保证第i个+1在第i个-1前面，即$x_{1i} \le x_{2i}$（$1\le i \le n$）。
+将数组第一行的元素标记为 +1，第二行元素标记为 -1。
+问题可以转化为：将 +1 和 -1 按照从左到右的顺序排列，并且保证第 i 个 +1 在第 i 个 -1 前面，即$x_{1i} \le x_{2i}$（$1\le i \le n$）。
 
-这与前k项和满足
+这与前 k 项和满足
 
 $$
 a_1 + a_2 + \cdots + a_k \ge 0
 $$
 
-等价，该问题与卡特兰数的组合意义相同，解即为第n个卡特兰数。
+等价，该问题与卡特兰数的组合意义相同，解即为第 n 个卡特兰数。
 
 ## EX3
 
@@ -75,13 +75,23 @@ $$
 
 ### EX4(a)
 
-以EX4(a)为例，步骤同上一题，
+以 EX4(a) 为例，步骤同上一题，
 
 ![EX4](imgs/c8ex4.png)
 
-## EX5
+## EX5 :star:
 
-加星题，略。
+> \* Let m and n be nonnegative integers with n $\le$ m.
+> There are m + n people in line to get into a theater for which admission is 50 cents.
+> Of the m + n people, n have a 50-cent piece and m have a \$1 dollar bill.
+> The box office opens with an empty cash register.
+> Show that the number of ways the people can line up so that change is available when needed is
+>
+> $$
+> \frac{n-m+1}{n+1} \binom{m+n}{m}
+> $$
+>
+> (The case m = n is the case treated in Section 8.1.)
 
 ## EX6
 
@@ -89,9 +99,9 @@ $$
 > by $h_n = 2n^2 - n + 3, (n  \ge 0)$.
 > Determine the difference table, and find a formula for $\displaystyle \sum_{k=0}^{n} h_k$.
 
-$h_n$是2次多项式，因此有$\Delta^3 h_n = 0$，
+$h_n$是 2 次多项式，因此有$\Delta^3 h_n = 0$，
 
-计算$h_0 =3, h_1 = 4, h_2 = 9$，一阶差分$\Delta^1 h_0 = 1, \Delta^1 h_1 = 5$, 二阶差分$\Delta^2 h_0 = 4$，即得到第0条对角线。
+计算$h_0 =3, h_1 = 4, h_2 = 9$，一阶差分$\Delta^1 h_0 = 1, \Delta^1 h_1 = 5$, 二阶差分$\Delta^2 h_0 = 4$，即得到第 0 条对角线。
 
 $$
 \begin{array}{cccc}
@@ -118,7 +128,7 @@ $$
 > determine $h_n$ and a formula
 > for $\displaystyle \sum_{k=0}^{n} h_k$·
 
-由题意，$h_n$是3次多项式，那么$\Delta^4 h_n=0$，求出差分表第0条对角线，
+由题意，$h_n$是 3 次多项式，那么$\Delta^4 h_n=0$，求出差分表第 0 条对角线，
 
 $$
 \begin{array}{ccccc}
@@ -135,7 +145,7 @@ $$
 $$
 \begin{aligned}
     \sum_{k=0}^{n} h_k =&  \sum_{k=0}^{n} \binom{k}{0}  -2 \sum_{k=0}^{n} \binom{k}{1} + 6 \sum_{k=0}^{n} \binom{k}{2} -3 \sum_{k=0}^{n} \binom{k}{3} \\
-    =&  \binom{n+1}{1} -2 \binom{n+1}{2} + 6 \binom{n+1}{3} -3 \binom{n+1}{4} \quad n \ge 0k
+    =&  \binom{n+1}{1} -2 \binom{n+1}{2} + 6 \binom{n+1}{3} -3 \binom{n+1}{4} \quad n \ge 0
 \end{aligned}
 $$
 
@@ -143,7 +153,7 @@ $$
 
 >Find the sum of the fifth powers of the first n positive integers.
 
-设$h_n = n^5$，那么它的六阶差分为0，求出差分表，
+设$h_n = n^5$，那么它的六阶差分为 0，求出差分表，
 
 $$
 \begin{array}{ccccc}
@@ -178,7 +188,7 @@ $$
 > $$
 >
 
-采用数学归纳法证明，当k=0时，有
+采用数学归纳法证明，当 k=0 时，有
 
 $$
 \Delta h_n = (-1)^0 \binom{0}{0} h_{0} = h_0
@@ -217,7 +227,7 @@ $$
 > are uniquely determined. (Cf. Theorem 8.2.2.)
 
 本题主要证明**唯一性**，假设存在不同的序列$\{c_i\}_{i=0}^{m}$和
-序列$\{d_i\}_{i=0}^{m}$使得存在i满足
+序列$\{d_i\}_{i=0}^{m}$使得存在 i 满足
 $c_i \neq d_i$，其中$0 \le i \le m$，
 
 $$
@@ -237,7 +247,7 @@ $$
 
 >Compute the Stirling numbers of the second kind S(8, k), (k = 0, 1, ..., 8).
 
-第二类Stirling数的性质，
+第二类 Stirling 数的性质，
 
 1. $S(p, 0) = 0, p \ge 1$
 2. $S(p, p) = 1, p \ge 0$
@@ -248,7 +258,7 @@ $$
 | --------- | --- | --- | --- | --- | ---- | ---- | --- | --- | --- |
 | $S(8, k)$ | 0   | 1   | 127 | 966 | 1701 | 1050 | 266 | 28  | 1   |
 
-### EX11 验证程序
+:::details 验证程序
 
 ```cpp
  #include <iostream>
@@ -280,6 +290,8 @@ int main() {
 }
 ```
 
+:::
+
 ## EX12
 
 > Prove that the Stirling numbers of the second kind satisfy the following relations:
@@ -294,8 +306,8 @@ int main() {
 
 ### EX12(a)
 
-由定理8.2.5知$S(p, k)$是把p个元素集合划分到k个不可区分的盒子且没有空盒子的划分个数。
-因此，$S(p, 1)$是把p个元素划分到1个盒子且没有空盒子的划分个数，显然只有1种。
+由定理 8.2.5 知$S(p, k)$是把 p 个元素集合划分到 k 个不可区分的盒子且没有空盒子的划分个数。
+因此，$S(p, 1)$是把 p 个元素划分到 1 个盒子且没有空盒子的划分个数，显然只有 1 种。
 
 ### EX12(b)
 
@@ -318,7 +330,7 @@ $$
 
 ### EX12(c)
 
-使用数学归纳法证明，当n=1时，$S(1, 0) = 0 = \binom{1}{2}$，显然成立。假设当$n=k$时有$S(k,k-1) = \binom{k}{2}$，当$n=k+1$时有，
+使用数学归纳法证明，当 n=1 时，$S(1, 0) = 0 = \binom{1}{2}$，显然成立。假设当$n=k$时有$S(k,k-1) = \binom{k}{2}$，当$n=k+1$时有，
 
 $$
 \begin{aligned}
@@ -334,9 +346,9 @@ $$
 
 ### EX12(d)
 
-考虑问题：将n个元素划分到n-2个不可区分的盒子且没有空盒子的个数S(n, n-2)。
+考虑问题：将 n 个元素划分到 n-2 个不可区分的盒子且没有空盒子的个数 S(n, n-2)。
 
-如果有一个盒子中有三个元素，有$\binom{n}{3}$种情况；如果有两个盒子各有两个元素，先从n个元素中选出2个，再从剩余n-2个元素中选出2个，两种情况对称，因此是$\displaystyle \frac{\binom{n}{2}\binom{n-2}{2}}{2!} = 3\binom{n}{4}$。
+如果有一个盒子中有三个元素，有$\binom{n}{3}$种情况；如果有两个盒子各有两个元素，先从 n 个元素中选出 2 个，再从剩余 n-2 个元素中选出 2 个，两种情况对称，因此是$\displaystyle \frac{\binom{n}{2}\binom{n-2}{2}}{2!} = 3\binom{n}{4}$。
 
 因此有$S(n, n-2) = \displaystyle \binom{n}{3} + 3\binom{n}{4}$。
 
@@ -349,17 +361,26 @@ $$
 > $$
 >
 
-X映射到Y是满射，映射函数等价于把p个元素放入到k个**可区分**的盒子中，即有$S^{\sharp}(p, k)$个；
+X 映射到 Y 是满射，映射函数等价于把 p 个元素放入到 k 个**可区分**的盒子中，即有$S^{\sharp}(p, k)$个；
 同时由可区分盒子与不可区分盒子划分的关系，有$S^{\sharp}(p, k) = k!S(p, k)$，
 因此映射函数的个数也等于$k!S(p, k)$。
 
-### EX13吐槽
+> [!IMPORTANT] 翻译错误
+> 中文版中**满射（onto）**被错译成**到上函数**
 
-**到上函数**是什么鬼？没想到**onto**竟然是满射的意思，学到了。
+<!-- ### EX13 吐槽
 
-## EX14
+**到上函数**是什么鬼？没想到**onto**竟然是满射的意思，学到了。 -->
 
-加星题，略。
+## EX14 :star:
+
+> \* Find and verify a general formula for
+>
+> $$
+> \sum_{k=0}^{n} k^p
+> $$
+>
+> involving Stirling numbers of the second kind.
 
 ## EX15
 
@@ -371,9 +392,9 @@ X映射到Y是满射，映射函数等价于把p个元素放入到k个**可区�
 >
 > If $k \ge n$, define $S(n, k)$ to be 0.
 
-方法一：考虑把n个元素分别放在k个盒子中，每个元素有k种放置放法，因此共$k^n$种方法。
+方法一：考虑把 n 个元素分别放在 k 个盒子中，每个元素有 k 种放置放法，因此共$k^n$种方法。
 
-方法二：先区分盒子是否非空，从k个盒子中选出i个非空盒子，问题变为把n个元素放入i个可区分盒子且盒子非空中的方法数，即为$S^{\sharp}(n, i)$，i可能的取值为$i=1,2, \cdots, k$，
+方法二：先区分盒子是否非空，从 k 个盒子中选出 i 个非空盒子，问题变为把 n 个元素放入 i 个可区分盒子且盒子非空中的方法数，即为$S^{\sharp}(n, i)$，i 可能的取值为$i=1,2, \cdots, k$，
 
 $$
 \sum_{i=1}^{k} \binom{k}{i} S^{\sharp} (n, i) = \sum_{i=1}^{k} \binom{k}{i} i! S(n, i)
@@ -385,22 +406,20 @@ $$
 k^n = \binom{k}{1} 1! S(n, 1) + \binom{k}{2} 2! S(n, 2) + \cdots + \binom{k}{n} n! S(n, n)
 $$
 
-### EX15注
-
-本题中文书中有翻译错误，把可区分写成了不可区分。
-EX13应该也是翻译错误（onto）。
+> [!IMPORTANT] 翻译错误
+本题中文书中有翻译错误，把**可区分**写成了**不可区分**。
 
 ## EX16
 
 > Compute the Bell number $B_8$. (Cf. Exercise 11.)
 
-Bell数$B_p$是第p行的第二类Stirling数$S(p, k)$之和。
+Bell 数$B_p$是第 p 行的第二类 Stirling 数$S(p, k)$之和。
 
 $$
 0+1+127+966+1701+1050+266+28+1=4140
 $$
 
-### EX16验证程序
+:::details 程序验证
 
 ```cpp
 #include <iostream>
@@ -435,19 +454,21 @@ int main() {
 }
 ```
 
+:::
+
 ## EX17
 
 > Compute the triangle of Stirling numbers of the first kind s(n, k) up to n = 7.
 
-第一类Stirling数的递推关系为，
+第一类 Stirling 数的递推关系为，
 
 $$
 s(p, k) = (p-1) s(p-1, k) + s(p-1, k-1)
 $$
 
-初始条件与第二类Stirling数相同，$s(p, p) = 1, s(p, 0) = 0, p \ge 1, s(0, 0) = 1$。
+初始条件与第二类 Stirling 数相同，$s(p, p) = 1, s(p, 0) = 0, p \ge 1, s(0, 0) = 1$。
 
-### EX17验证程序
+:::details 程序验证
 
 ```cpp
 #include <iostream>
@@ -480,11 +501,13 @@ int main() {
 }
 ```
 
-### EX17考试说明
+:::
 
-第一类Stirling数本次考试不考，当然是在我做完第一类Stirling数的题目后才通知的。~~感觉亏了一个亿~~。
+<!-- ### EX17 考试说明
 
-总体来说不是很难，也是通过递推式做计算。
+第一类 Stirling 数本次考试不考，当然是在我做完第一类 Stirling 数的题目后才通知的。~~感觉亏了一个亿~~。
+
+总体来说不是很难，也是通过递推式做计算。 -->
 
 ## EX18
 
@@ -508,7 +531,7 @@ $$
 \end{aligned}
 $$
 
-## EX19
+## EX19 :ghost:
 
 > Prove that the Stirling numbers of the first kind satisfy the following formulas:
 >
@@ -522,11 +545,11 @@ $$
 
 > VerifY that $[n]_n$ = n!, and write n! as a polynomial in n using the Stirling numbers of the first kind. Do this explicitly for n = 6.
 
-$[n]_p$的定义形式$[n]_p = n(n-1)(n-2) \cdots (n-(p-1)), p \ge 1$，当n=0时，$[n]_0 = 1$。
+$[n]_p$的定义形式$[n]_p = n(n-1)(n-2) \cdots (n-(p-1)), p \ge 1$，当 n=0 时，$[n]_0 = 1$。
 
 带入$p = n$显然有$[n]_n = n!, n \ge 0$。
 
-$[n]_p$与第一类Stirling数的关系，
+$[n]_p$与第一类 Stirling 数的关系，
 $[n]_p = \displaystyle \sum_{k=0}^{p} (-1)^{k-p} s(p, k) n^k$，
 
 带入$p = n$有，
@@ -535,7 +558,7 @@ $$
 n! = [n]_n = \sum_{k=0}^{n} (-1)^{n-k} s(p, k) n^k
 $$
 
-当$n=6$时，结合s(p, k)三角形有，
+当$n=6$时，结合 s(p, k) 三角形有，
 
 $$
 6! = 6^6 -15 \times 6^5 + 85 \times 6^4 - 225 \times 6^3 + 274 \times 6^2 -120 \times 6^1 + 0 \times 6^0
@@ -545,15 +568,15 @@ $$
 
 > For each integer n = 1,2,3,4,5, construct the diagram of the set $\mathcal{P}_n$ of partitions of n, partially ordered by majorization.
 
-~~这里的图（diagram）指的是Ferrers图，这是很容易画出的，以$5=4+1$为例，~~
+~~这里的图（diagram）指的是 Ferrers 图，这是很容易画出的，以$5=4+1$为例，~~
 
 ![EX21](imgs/c8ex21.drawio.png)
 
-### EX21注
+:::info
+本题应该是优超（majorize）关系的 Hasse 图。
+:::
 
-本题应该是优超（majorize）关系的Hasse图。
-
-## EX22
+## EX22 :ghost:
 
 > (a) Calculate the partition number $p_6$ and construct the diagram of the
 > set $\mathcal{P}_6$, partially ordered by majorization.
@@ -563,7 +586,7 @@ $$
 
 ### EX22(a)
 
-以(a)为例，6对应的分拆为，
+以 (a) 为例，6 对应的分拆为，
 
 $$
 6, \; 51, \; 42, \;411,\;33,\;321,\;3111,\;222,\;2211,\;21111,\;111111
@@ -575,15 +598,18 @@ $$
 
 > A total order on a finite set has a unique maximal element (a largest element) and a unique minimal element (a smallest element). What are the largest partition and smallest partition in the lexicographic order on $\mathcal{P}_n$ (a total order)?
 
-最大分拆为n，最小分拆为$n=1+1+\cdots+1$。
+最大分拆为 n，最小分拆为$n=1+1+\cdots+1$。
 
-## EX24
+## EX24 :construction:
 
 > A partial order on a finite set may have many maximal elements and minimal elements. In the set $\mathcal{P}_n$ of partitions of n partially ordered by majorization, prove that there is a unique maximal element and a unique minimal element.
 
-### EX24说明
+:::info 简评
+看了几份答案，似乎都不是严格的证明，
+只是稍微解释了$n$比其它都大，$\underbrace{1+1+\cdots+1}_{n\text{个}}$比其它都小。
 
-看了几份答案，似乎都不是严格的证明，只是稍微解释了$n$比其它都大，$\underbrace{1+1+\cdots+1}_{n\text{个}}$比其它都小。
+待完善
+:::
 
 ## EX25
 
@@ -616,7 +642,7 @@ $$
 \prod_{k=1}^{m} (1-x^{t_k})^{k}
 $$
 
-## EX26
+## EX26 :ghost:
 
 > Determine the conjugate of each of the following partitions:
 >
@@ -632,7 +658,7 @@ $$
 
 ### EX26(a)
 
-以(a)为例，先画出Ferrrers图，再画出共轭分拆的图，
+以 (a) 为例，先画出 Ferrrers 图，再画出共轭分拆的图，
 
 ![EX26](imgs/c8ex26.drawio.svg)
 
@@ -642,11 +668,11 @@ $$
 
 > For each integer n > 2, determine a self-conjugate partition of n that has at least two parts.
 
-设$\lambda$是n的分拆$n_1 + n_2 + \cdots + n_k$，当n为奇数时，取$n_1 = \frac{(n+1)}{2}, n_2 = n_3 = \cdots = n_{k} = 1, k = \frac{n+1}{2}$。
+设$\lambda$是 n 的分拆$n_1 + n_2 + \cdots + n_k$，当 n 为奇数时，取$n_1 = \frac{(n+1)}{2}, n_2 = n_3 = \cdots = n_{k} = 1, k = \frac{n+1}{2}$。
 
-当n为偶数时，取$n_1 = \frac{n}{2}, n_2 = 2, n_3 = n_4 = \cdots = n_k = 1, k = \frac{n}{2}$。
+当 n 为偶数时，取$n_1 = \frac{n}{2}, n_2 = 2, n_3 = n_4 = \cdots = n_k = 1, k = \frac{n}{2}$。
 
-以n=7和n=8分别为奇数和偶数的例子，如图，
+以 n=7 和 n=8 分别为奇数和偶数的例子，如图，
 
 ![EX27](imgs/c8ex27.drawio.png)
 
@@ -660,7 +686,7 @@ $$
 \lambda_1 + \lambda_2 + \cdots + \lambda_i \le \mu_1 + \mu_2 + \mu_i, \quad 1 \le i \le k \tag{1}
 $$
 
-假设$\mu^{} \not \le \lambda^{\ast}$，即存在k使，
+假设$\mu^{} \not \le \lambda^{\ast}$，即存在 k 使，
 
 $$
 \mu_1^{\ast} + \mu_2^{\ast} + \cdots + \mu_{i}^{\ast} \le \lambda_1^{\ast} + \lambda_2^{\ast} + \cdots + \lambda_i^{\ast}, \quad 1 \le i \lt k
@@ -670,7 +696,7 @@ $$
 \mu_1^{\ast} + \mu_2^{\ast} + \cdots + \mu_{k}^{\ast} \gt \lambda_1^{\ast} + \lambda_2^{\ast} + \cdots + \lambda_k^{\ast}
 $$
 
-即有$\mu_k^{\ast} \gt \lambda_k^{\ast}$，记$u = \mu_k^{\ast}, v = \lambda_k^{\ast}$。又因为$\mu^*$和$\lambda^{\ast}$都是n的分拆，所以有
+即有$\mu_k^{\ast} \gt \lambda_k^{\ast}$，记$u = \mu_k^{\ast}, v = \lambda_k^{\ast}$。又因为$\mu^*$和$\lambda^{\ast}$都是 n 的分拆，所以有
 
 $$
 \mu_{k+1}^{\ast} + \mu_{k+2}^{\ast} + \cdots   \le \lambda_{k+1}^{\ast} + \lambda_{k+2}^{\ast} + \cdots
@@ -696,7 +722,7 @@ $$
 \mu_1 + \mu_2 + \cdots + \mu_v \lt \lambda_1 + \lambda_2 + \cdots + \lambda_v \tag{2}
 $$
 
-其中(1)式与(2)式矛盾，因此假设不成立，综上，证毕。
+其中 (1) 式与 (2) 式矛盾，因此假设不成立，综上，证毕。
 
 ## EX29
 
@@ -706,21 +732,21 @@ $$
 > for the number of partitions of n into parts each of which is at most 3 but it is much more difficult to prove.
 > There is also one for partitions with no part more than 4, but it is even more complicated and difficult to prove.)
 
-当$n=2r$时，每一部分至多是2的分拆为
+当$n=2r$时，每一部分至多是 2 的分拆为
 
 $$
 1^n, \; 2^1 1^{n-2}, \; 2^2 1^{n-4}, \; \cdots, \; 2^r
 $$
 
-当$n=2r+1$时，每一部分最多是2的分拆为
+当$n=2r+1$时，每一部分最多是 2 的分拆为
 
 $$
 1^n, \; 2^1 1^{n-2}, \; 2^2 1^{n-4}, \; \cdots, \; 2^r1^1
 $$
 
-不论奇偶，都是分拆为r+1个部分，当r为偶数时，$r+1 = \frac{n}{2} + 1 = \lfloor n/2 \rfloor + 1$，当r为奇数时，$r+1 = \frac{n-1}{2} + 1 = \lfloor (n+1)/2 \rfloor = \lfloor n /2 \rfloor + 1$。
+不论奇偶，都是分拆为 r+1 个部分，当 r 为偶数时，$r+1 = \frac{n}{2} + 1 = \lfloor n/2 \rfloor + 1$，当 r 为奇数时，$r+1 = \frac{n-1}{2} + 1 = \lfloor (n+1)/2 \rfloor = \lfloor n /2 \rfloor + 1$。
 
-综上，分拆成每一部分至多是2的分拆数等于$\lfloor n/2 \rfloor$。
+综上，分拆成每一部分至多是 2 的分拆数等于$\lfloor n/2 \rfloor$。
 
 ## EX30
 
@@ -730,9 +756,9 @@ $$
 > p_n \gt p_{n-1} \quad (n \ge 2)
 > $$
 
-考虑n-1的分拆数和n的分拆数，显然所有n-1的分拆数+1都是n的分拆数，此外n还有它自己作为分拆数，因此一定有$p_n \gt p_{n-1}$。
+考虑 n-1 的分拆数和 n 的分拆数，显然所有 n-1 的分拆数 +1 都是 n 的分拆数，此外 n 还有它自己作为分拆数，因此一定有$p_n \gt p_{n-1}$。
 
-## EX31
+## EX31 :construction:
 
 > Evaluate $h_{k-1}^{(k)}$ the number of regions into which k-dimensional space is partitioned by k - 1 hyperplanes in general position.
 
@@ -740,15 +766,15 @@ $$
 h_{k-1}^{(k)} = \binom{k-1}{0} + \binom{k-1}{1} + \cdots + \binom{k-1}{k-1} + \binom{k-1}{k} = 2^{k-1}
 $$
 
-### EX31注
+<!-- ### EX31 注
 
-超平面是8.4节的内容，本次考试不涉及。
+超平面是 8.4 节的内容，本次考试不涉及。 -->
 
 ## EX32
 
 > Use the recurrence relation (8.31) to compute the small Schroder numbers $s_8$ and $s_9$.
 
-小Schroder数的性质：
+小 Schroder 数的性质：
 
 1. $s_1 = s_2 = 1$
 2. $(n+2) s_{n+2} -3(2n+1)x_{n+1} + (n-1)s_n = 0, n \ge 1$
@@ -765,7 +791,7 @@ $$
 
 > Use the recurrence relation (8.32) to compute the large Schroder numbers $R_7$ and $R_8$. Verify that $R_7 = 2s_8$ and $R_8 = 2s_9$, as stated in Corollary 8.5.8.
 
-大Schroder数的性质：
+大 Schroder 数的性质：
 
 $$
 R_n = \sum_{r=0}^{n} \frac{1}{n-r+1} \frac{(2n-r)!}{r![(n-r)!]^2}
@@ -781,27 +807,28 @@ R_7 =& \sum_{r=0}^{7} \frac{1}{8-r} \frac{(14-r)!}{r![(7-r)!]^2} \\
 \end{aligned}
 $$
 
-### EX33注
+:::tip
 
-题目要求使用**递推关系**计算，大Schroder数的递推关系为，
+题目要求使用**递推关系**计算，大 Schroder 数的递推关系为，
 
 $$
 R_n = R_{n-1} + \sum_{k=1}^{n} R_{k-1} R_{n-k}
 $$
 
-注意与Catalan数进行区分。
+注意与 Catalan 数进行区分。
+:::
 
 ## EX34
 
 > Use the generating function for the large Schroder numbers to compute the first few large Schroder numbers.
 
-大Schroder数序列的生成函数为
+大 Schroder 数序列的生成函数为
 
 $$
 \sum_{n=0}^{\infty} R_n x^n = \frac{1}{2x} (-(x-1) - \sqrt{x^2 -6x + 1})
 $$
 
-$\sqrt{x^2-6x+1}$在x=0处的泰勒级数为$1-3x-4x^2-12x^3-44x^4+\cdots$，
+$\sqrt{x^2-6x+1}$在 x=0 处的泰勒级数为$1-3x-4x^2-12x^3-44x^4+\cdots$，
 
 因此，
 
@@ -819,7 +846,7 @@ $$
 
 > Use the generating function for the small Schroder numbers to compute the first few small Schroder numbers.
 
-小Schroder数序列的生成函数为
+小 Schroder 数序列的生成函数为
 
 $$
 \sum_{n=1}^{\infty} s_n x^n = \frac{1}{4}(1+x-\sqrt{x^2 - 6x + 1})
@@ -840,10 +867,14 @@ $$
 
 > Prove that the Catalan number $C_n$ equals the number of lattice paths from (0,0) to (2n, 0) using only upsteps (1, 1) and downsteps (1, -1) that never go above the horizontal axis (so there are as many up steps as there are downsteps). (These are sometimes called *Dyck paths*.)
 
-记上行步(1,1)为-1，下行步(1,-1)为+1，步行序列为$a_1, a_2, \cdots, a_{2n}$。
+记上行步 (1,1) 为 -1，下行步 (1,-1) 为 +1，步行序列为$a_1, a_2, \cdots, a_{2n}$。
 
-因为起点y坐标与终点y坐标相同，那么一定有n个上行步（+1）和n个下行步（-1），并且从不经过水平轴上方的格路径，即前k项和$a_1 + a_2 + \cdots + a_k \ge 0, 1 \le k \le 2n$，该问题与第n个Catalan数的组合意义相同，因此等于$C_n$。
+因为起点 y 坐标与终点 y 坐标相同，那么一定有 n 个上行步（+1）和 n 个下行步（-1），并且从不经过水平轴上方的格路径，即前 k 项和$a_1 + a_2 + \cdots + a_k \ge 0, 1 \le k \le 2n$，该问题与第 n 个 Catalan 数的组合意义相同，因此等于$C_n$。
 
-## EX37
+## EX37 :star:
 
-加星题，略。
+> \* The large Schroder number $C_n$ counts the number of subdiagonal HVD-lattice paths from (0,0) to (n, n).
+> The small Schroder number counts the number of dissections of a convex polygonal region of n + 1.
+> Since $R_n = 2s_{n+1}$ for n $\le$ 1,
+> there are as many subdiagonal HVD-lattice paths from (0,0) to (n, n) as there are dissections of a convex polygonal region of n + 1 sides.
+> Find a one-to-one correspondence between these lattice paths and these dissections.
