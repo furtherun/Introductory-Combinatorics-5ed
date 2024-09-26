@@ -21,7 +21,7 @@
   "author": "Furtherun",
   "license": "MIT",
   "devDependencies": {
-    "@antfu/eslint-config": "^3.7.1",
+    "@antfu/eslint-config": "^3.7.2",
     "@braintree/sanitize-url": "^7.1.0",
     "cytoscape": "^3.30.2",
     "cytoscape-cose-bilkent": "^4.1.0",
@@ -32,7 +32,7 @@
     "mermaid": "^11.2.1",
     "vitepress": "^1.3.4",
     "vitepress-plugin-mermaid": "^2.0.17",
-    "vitepress-sidebar": "^1.27.0",
+    "vitepress-sidebar": "^1.27.1",
     "vue": "^3.5.8"
   },
   "packageManager": "pnpm@9.11.0+sha512.0a203ffaed5a3f63242cd064c8fb5892366c103e328079318f78062f24ea8c9d50bc6a47aa3567cabefd824d170e78fa2745ed1f16b132e16436146b7688f19b"
