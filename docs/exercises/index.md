@@ -16,6 +16,10 @@
 | :pill:           | 不正确的解法             |
 | :speech_balloon: | 与题目相关的讨论         |
 | :key:            | 某种意味上较为重要的题目 |
+| :ghost:          | 平淡、重复而跳过的题目   |
+
+> [!IMPORTANT]
+> :construction: 和 :ghost: 标记的题目最需要帮助完善和整理。
 
 中文版封面
 
