@@ -1,4 +1,4 @@
-# 第7章 递推关系和生成函数
+# 第 7 章 递推关系和生成函数
 
 ## EX1
 
@@ -12,10 +12,11 @@
 >
 > (d)$f_0^2 + f_1^2 + \cdots + f_n^2$
 
-### EX1(a)
+### EX1(a)(b)
 
 先打表找规律，
 
+:::details 打表程序
 ```cpp
 #include <iostream>
 #include <vector>
@@ -47,12 +48,13 @@ int main()
     return 0;
 }
 ```
+:::
 
 可以发现：$f_1 + f_3 + \cdots + f_{2n-1} = f_{2n}$，$f_0 + f_2 + \cdots + f_{2n} = f_{2n+1}-1$，$f_0 - f_1 + f_2 - \cdots + (-1)^n f_n = -1 + (-1)^n f_{n-1}$，$f_0^2 + f_1^2 + \cdots + f_n^2 = f_n f_{n+1}$。
 
 数学归纳证明过程略。
 
-### EX1(C)
+### EX1(c)
 
 $$
 f_0 - f_1 + f_2 - \cdots + (-1)^n f_n = -1 + (-1)^n f_{n-1}, \quad (n \ge 1)
@@ -83,7 +85,7 @@ $$
 >
 
 设$a = \frac{1}{\sqrt{5}} {\left( \frac{1+\sqrt{5}}{2} \right)^n}$，
-并且知道$f_n = \frac{1}{\sqrt{5}} {\left( \frac{1+\sqrt{5}}{2} \right)^n} - \frac{1}{\sqrt{5}} {\left( \frac{1-\sqrt{5}}{2} \right)^n}$，那么$f_n$与a的距离为，
+并且知道$f_n = \frac{1}{\sqrt{5}} {\left( \frac{1+\sqrt{5}}{2} \right)^n} - \frac{1}{\sqrt{5}} {\left( \frac{1-\sqrt{5}}{2} \right)^n}$，那么$f_n$与 a 的距离为，
 
 $$
 \begin{aligned}
@@ -110,11 +112,11 @@ $$
 
 ### EX3(b)
 
-$f_0 = 0,f_1 = f_2 = 1, f_3 = 2, f_4 = 3, \cdots$，$f_0$能被3整除，且n=0可被4整除。并且$f_1, f_2, f_3$均不能被3整除，$f_4=3$可被3整除，且n=4被4整除。
+$f_0 = 0,f_1 = f_2 = 1, f_3 = 2, f_4 = 3, \cdots$，$f_0$能被 3 整除，且 n=0 可被 4 整除。并且$f_1, f_2, f_3$均不能被 3 整除，$f_4=3$可被 3 整除，且 n=4 被 4 整除。
 
-下面使用数学归纳法证明，当n被4整除时，$f_n$一定被3整除。
+下面使用数学归纳法证明，当 n 被 4 整除时，$f_n$一定被 3 整除。
 
-设$f_{4m}$被3整除，且$m \ge 1$。
+设$f_{4m}$被 3 整除，且$m \ge 1$。
 
 $$
 \begin{aligned}
@@ -124,11 +126,11 @@ $$
 \end{aligned}
 $$
 
-因此$f_n$与$f_{n-4}$模三同余，即$f_n \equiv f_{n-4} (mod~3)$，并且$f_0=0,f_1 =f_2 = 1, f_3 = 2, f_4 = 3$，因而$f_n$被3整除当且仅当n可被4整除。
+因此$f_n$与$f_{n-4}$模三同余，即$f_n \equiv f_{n-4} (mod~3)$，并且$f_0=0,f_1 =f_2 = 1, f_3 = 2, f_4 = 3$，因而$f_n$被 3 整除当且仅当 n 可被 4 整除。
 
 ### EX3PS
 
-从「周期性」的角度入手，验证了当$n$为4的倍数时$f_n$可被3整除，并且当$n$不是4的倍数时，$f_n$也一定不能被3整除。
+从**周期性**的角度入手，验证了当$n$为 4 的倍数时$f_n$可被 3 整除，并且当$n$不是 4 的倍数时，$f_n$也一定不能被 3 整除。
 
 ## EX4
 
@@ -149,17 +151,22 @@ $$
 \end{aligned}
 $$
 
-因此$a_n$与$a_{n-5}$模5同余，即$a_n \equiv a_{n-5} (mod~5)$。并且由$a_0=0,a_1 = 1, a_2=1, a_3=2,a_4=3$可知，当且仅当n被5整除时，$f_{n}~mod~5=0$。
+因此$a_n$与$a_{n-5}$模 5 同余，即$a_n \equiv a_{n-5} (mod~5)$。并且由$a_0=0,a_1 = 1, a_2=1, a_3=2,a_4=3$可知，当且仅当 n 被 5 整除时，$f_{n}~mod~5=0$。
 
 ## EX5
 
 > By examining the Fibonacci sequence, make a conjecture about when $f_n$ is divisible by 7 and then prove your conjecture.
 
-对斐波那契数列$f_n$能被7整除，当且仅当n能被8整除。
+对斐波那契数列$f_n$能被 7 整除，当且仅当 n 能被 8 整除。
 
-## EX6-7
+## EX6 :star:
 
-越来越懒了，**加星题**，题目都不想抄了。
+> \* Let m and n be positive integers. Prove that if m is divisible by n, then $f_m$ is divisible by $f_n$.
+
+## EX7 :star:
+
+> \* Let m and n be positive integers whose greatest common divisor is d.
+> Prove that the greatest common divisor of the Fibonacci numbers $f_m$ and $f_n$ is the Fibonacci number $f_d$.
 
 ## EX8
 
@@ -191,17 +198,19 @@ $$
 
 > Suppose that, in his problem, Fibonacci had placed two pairs of rabbits in the enclosure at the beginning of a year. Find the number of pairs of rabbits in the enclosure after one year. More generally, find the number of pairs of rabbits in the enclosure after n months.
 
-设第t个月时有$g_t$个兔子，满足$g_t = g_{t-1} + g_{t-2}, g_0 = 0, g_1 = 2$，可以求出通解，
+设第 t 个月时有$g_t$个兔子，满足$g_t = g_{t-1} + g_{t-2}, g_0 = 0, g_1 = 2$，可以求出通解，
 
 $$
 g_t = \frac{2}{\sqrt{5}} \left( \frac{1+\sqrt{5}}{2} \right)^t - \frac{2}{\sqrt{5}} \left( \frac{1-\sqrt{5}}{2} \right)^t = 2f_t
 $$
 
-第一个月再过n个月是第n+1月，因此有$g_{n+1}$对兔子。
+第一个月再过 n 个月是第 n+1 月，因此有$g_{n+1}$对兔子。
 
-### EX10注
+<!-- ### EX10 注 -->
 
-本题以n作为一个常量（n个月后），为了区分就需要把未知量设为t。
+:::tip
+本题以 n 作为一个常量（n 个月后），为了区分就需要把未知量设为 t。
+:::
 
 ## EX11
 
@@ -320,7 +329,7 @@ $$
 
 ## EX14
 
-> Let S be the multiset $\{\infty \cdot e_1, \infty \cdot e_2, \infty \cdot e_3, \infty \cdot e_4\}$ Determine the generating function for the sequence $h_0, h_1, h_2, \cdots, h_n， \cdots$, where $h_n$ is the number of n-combinations of S with the following added restrictions:
+> Let S be the multiset $\{\infty \cdot e_1, \infty \cdot e_2, \infty \cdot e_3, \infty \cdot e_4\}$ Determine the generating function for the sequence $h_0, h_1, h_2, \cdots, h_n, \cdots$, where $h_n$ is the number of n-combinations of S with the following added restrictions:
 >
 > (a) Each $e_i$ occurs an odd number of times.
 >
@@ -387,7 +396,7 @@ $$
 > $$
 >
 
-由第5章EX20知，
+由第 5 章 EX20 知，
 
 $$
 n^3 = 6 \binom{n}{3} + 6 \binom{n}{2} + \binom{n}{1}
@@ -403,7 +412,7 @@ $$
 \end{aligned}
 $$
 
-由第5章EX43知，
+由第 5 章 EX43 知，
 
 $$
 \frac{1}{(1-z)^m} = \sum_{n=0}^{\infty} \binom{m+n-1}{n}z^n, \quad |z| \lt 1
@@ -427,7 +436,7 @@ $$
 > (1+x+x^2)(1+x^2+x^4+x^6)(1+x^2+x^4+\cdots)(x+x^2+x^3+\cdots)
 > $$
 
-果篮中苹果、香蕉、西瓜和桃子，求苹果不超过2个，香蕉为不超过6个且为偶数，西瓜是偶数个，桃子至少有1个的组合数。
+果篮中苹果、香蕉、西瓜和桃子，求苹果不超过 2 个，香蕉为不超过 6 个且为偶数，西瓜是偶数个，桃子至少有 1 个的组合数。
 
 ## EX17
 
@@ -443,9 +452,10 @@ $$
 
 因此$h_n = (n+1)$。
 
-### EX17注
-
-注意原书题干中的印刷错误，至多有两个橙子。
+> [!IMPORTANT] 翻译错误
+> 注意黑皮书题干中的**翻译**错误，英文原意是至多有两个橙子。
+>
+> 不管怎么描述，本题都是可解的。在做题时需要认真读清题目。
 
 ## EX18
 
@@ -455,7 +465,7 @@ $$
 > 2e_1+5e_2+e_3+7e_4=n
 > $$
 
-令$f_1 = 2e_1, f_2 = 5e_2, f_3 = e_3, f_4 = 7e_4$，所以有$f_1 + f_2 + f_3 + f_4 = n$，其中$f_1$是2的倍数，$f_2$是5的倍数，$f_3$是1的倍数，$f_4$是7的倍数。有生成函数，
+令$f_1 = 2e_1, f_2 = 5e_2, f_3 = e_3, f_4 = 7e_4$，所以有$f_1 + f_2 + f_3 + f_4 = n$，其中$f_1$是 2 的倍数，$f_2$是 5 的倍数，$f_3$是 1 的倍数，$f_4$是 7 的倍数。有生成函数，
 
 $$
 \begin{aligned}
@@ -478,9 +488,9 @@ $$
 \end{aligned}
 $$
 
-### EX19注
-
-本题可以算是EX15的一个子问题
+:::info 简评
+本题可以算是 EX15 的一个子问题
+:::
 
 ## EX20
 
@@ -496,9 +506,14 @@ $$
 \end{aligned}
 $$
 
-## EX21
+## EX21 :star:
 
-加星题，略。
+> \*  Let $h_n$ denote the number of regions into which a convex polygonal region with n + 2 sides is divided by its diagonals,
+> assuming no three diagonals have a common point. Define $h_0$ = 0. Show that
+> $$
+> h_n = h_{n-1} + \binom{n+1}{3} + n, \quad (n \ge 1)
+> $$
+> Then determine the generating function and obtain a formula for $h_n$.
 
 ## EX22
 
@@ -529,7 +544,7 @@ $$
 
 ## EX24
 
-> Let S be the multiset $\{\infty \cdot e_1, \infty \cdot e_2, \infty \cdot e_3, \cdots, \infty \cdot e_k\}$ Determine the exponential generating function for the sequence $h_0, h_1, h_2, \cdots, h_n， \cdots$, where $h_0=1$ and, for $n \ge 1$,
+> Let S be the multiset $\{\infty \cdot e_1, \infty \cdot e_2, \infty \cdot e_3, \cdots, \infty \cdot e_k\}$ Determine the exponential generating function for the sequence $h_0, h_1, h_2, \cdots, h_n, \cdots$, where $h_0=1$ and, for $n \ge 1$,
 >
 > (a) $h_n$ equals the number of n-permutations of S in which each object occurs an odd number of times.
 >
@@ -584,7 +599,7 @@ $$
 
 ## EX25
 
->Let $h_n$ denote the number of ways to color the squares of a 1-by-n board with the colors red, white, blue, and green in such a way that the number of squares colored red is even and the number of squares colored white is odd. Determine the exponential generating function for the sequence $h_0, h_1, h_2, \cdots, h_n， \cdots$, and then find a simple formula for $h_n$.
+>Let $h_n$ denote the number of ways to color the squares of a 1-by-n board with the colors red, white, blue, and green in such a way that the number of squares colored red is even and the number of squares colored white is odd. Determine the exponential generating function for the sequence $h_0, h_1, h_2, \cdots, h_n, \cdots$, and then find a simple formula for $h_n$.
 
 $$
 \begin{aligned}
@@ -597,7 +612,7 @@ $$
 \end{aligned}
 $$
 
-因此$h_n = 4^{n-1}, (n \ge 1)$，当n=0时，$h_0 = 1$。
+因此$h_n = 4^{n-1}, (n \ge 1)$，当 n=0 时，$h_0 = 1$。
 
 ## EX26
 
@@ -614,13 +629,13 @@ $$
 \end{aligned}
 $$
 
-因此$h_n = 4^{n-1}+2^{n-1}, (n \ge 1)$，当n=0时，$h_0 = 1$。
+因此$h_n = 4^{n-1}+2^{n-1}, (n \ge 1)$，当 n=0 时，$h_0 = 1$。
 
 ## EX27
 
 > Determine the number of n-digit numbers with all digits odd, such that 1 and 3 each occur a nonzero, even number of times.
 
-问题等价于$\{\infty \cdot 1, \infty \cdot 3, \infty \cdot 5, \infty \cdot 7, \infty \cdot 9\}$的多重集合n排列数，
+问题等价于$\{\infty \cdot 1, \infty \cdot 3, \infty \cdot 5, \infty \cdot 7, \infty \cdot 9\}$的多重集合 n 排列数，
 
 $$
 G^{(e)}_{1}(x) = G^{(e)}_{3}(x) = \frac{x^2}{2!}+\frac{x^{4}}{{4}!} + \cdots = \frac{e^x + e^{-x}}{2} -1
@@ -630,7 +645,7 @@ $$
 G^{(e)}_{5}(x) = G^{(e)}_{7}(x) = G^{(e)}_{9}(x) = e^x
 $$
 
-指数生成函数为,
+指数生成函数为，
 
 $$
 \begin{aligned}
@@ -646,7 +661,7 @@ $$
 
 >Determine the number of n-digit numbers with all digits at least 4, such that 4 and 6 each occur an even number of times, and 5 and 7 each occur at least once, there being no restriction on the digits 8 and 9.
 
-问题等价于$\{\infty \cdot 4, \infty \cdot 5, \infty \cdot 6, \infty \cdot 7, \infty \cdot 8, \infty \cdot 9\}$的多重集合n排列数。
+问题等价于$\{\infty \cdot 4, \infty \cdot 5, \infty \cdot 6, \infty \cdot 7, \infty \cdot 8, \infty \cdot 9\}$的多重集合 n 排列数。
 
 $$
 G^{(e)}_{4}(x) = G^{(e)}_{6}(x) = 1+ \frac{x^2}{2!}+\frac{x^{4}}{{4}!} + \cdots = \frac{e^x + e^{-x}}{2}
@@ -668,9 +683,9 @@ $$
 
 因此$\displaystyle h_n = \frac{6^n-2\times 5^n + 3\times 4^n -4 \times 3^n +3 \times 2^n - 2}{4}, (n \ge 0)$， $h_0 = 0$。
 
-### EX28强调
-
-根据题目的意义来决定初始项$h_0$是什么，本题$h_0$是0位数中满足性质的个数，而0位数不可能满足**5和7至少出现一次**。
+> [!NOTE] 强调
+> 需要根据题目的意义来决定初始项$h_0$，
+> 本题$h_0$是 0 位数中满足性质的个数，而 0 位数不可能满足**5 和 7 至少出现一次**。
 
 ## EX29
 
@@ -682,16 +697,16 @@ $$
 >
 > Obtain an laternative derivation of this formula.
 
-根据n位数中1和3出现数量的奇偶性可以分类，
+根据 n 位数中 1 和 3 出现数量的奇偶性可以分类，
 
-| 种类  | 1的数量 | 3的数量 |
+| 种类  | 1 的数量 | 3 的数量 |
 | ----- | ------- | ------- |
 | $a_n$ | 奇数    | 奇数    |
 | $b_n$ | 奇数    | 偶数    |
 | $c_n$ | 偶数    | 奇数    |
 | $h_n$ | 偶数    | 偶数    |
 
-对于$a_n$考虑移除最低位的数字，可以划分为三种情况：移除的数字为1，问题变为$c_{n-1}$；移除的数字为3，问题变为$b_{n-1}$，移除的数字是5、7或9，问题变为$3a_{n-1}$。
+对于$a_n$考虑移除最低位的数字，可以划分为三种情况：移除的数字为 1，问题变为$c_{n-1}$；移除的数字为 3，问题变为$b_{n-1}$，移除的数字是 5、7 或 9，问题变为$3a_{n-1}$。
 即有$a_n = c_{n-1} + b_{n-1} + 3a_{n-1}$。此外所有的可能总数是$5^n$。可以得到方程组，
 
 $$
@@ -712,7 +727,7 @@ $$
 
 所以通解为$h_n = c_1 3^n + c_2 + \frac{5^n}{4}$。
 
-对于1位数，$h_1 = 3$。带入$h_0 = 1, h_1=3$，解得$c_1 = \frac{1}{2}, c_2 = \frac{1}{4}$。进而求出，
+对于 1 位数，$h_1 = 3$。带入$h_0 = 1, h_1=3$，解得$c_1 = \frac{1}{2}, c_2 = \frac{1}{4}$。进而求出，
 
 $$
 h_n = \frac{5^n+2\times 3^n + 1}{4}
@@ -735,7 +750,7 @@ $$
 | $h_n$ | 偶数 | $\ge 1$ |
 
 以$a_n$为例，考虑删除第一格。如果第一格为蓝色或白色，问题变为$2a_{n-1}$；
-如果第一格为红色，问题转化为从剩余n-1格中选出偶数个红格，总染色方案数为$3^{n-1}$，
+如果第一格为红色，问题转化为从剩余 n-1 格中选出偶数个红格，总染色方案数为$3^{n-1}$，
 其中红色为奇数的方案是$a^{n-1}$，
 所以有$3^{n-1} - a_{n-1}$种方案选出偶数个红格。
 所以有$a_n = 2a_{n-1} + 3^{n-1} - a_{n-1} = a_{n-1} + 3^{n-1}$。
@@ -748,10 +763,10 @@ $a_n + b_n + h_n$为总方案数$3^n$，可以递推做差得$h_n - h_{n-1} = 3^
 
 初始值$h_0 = 1$。
 
-### EX30注
-
+:::tip
 1. 利用好奇偶两种对立状态。
 2. 题目强调要写出$h_n$的递推式，实际上容易先求出$a_n$，然后带入$a_n + b_n + h_n = 3^n$求出$h_n$，但这样不满足题目要求的解法。
+:::
 
 ## EX31
 
@@ -803,25 +818,25 @@ $h_n = (c_1+c_2 n) + c_3 (-2)^n$，带入初始值有$\displaystyle h_n = (\frac
 
 $h_n = (c_1 n^2+c_2 n + c_3)2^n + c_4 (-1)^n$，带入初始值有$\displaystyle h_n = (-\frac{n^2}{24} + \frac{7n}{72} + \frac{8}{27})2^n -\frac{8\cdot (-1)^n}{27}, (n \ge 0)$。
 
-### EX36注
-
+:::info 简评
 分解方程和求解四元一次方程组的计算量很大。
+:::
 
 ## EX37
 
 >Determine a recurrence relation for the number an of ternary strings (made up of 0s, 1s, and 2s) of length n that do not contain two consecutive 0s or two consecutive 1s. Then find a formula for $a_n$.
 
-对长度为n且符合题目要求的字符串$T_n$进行切片，按照前两个字符是否相同进行分类；如果前两个字符相同，那么只能切出22和$T_{n-2}$，如果前两个字符不同，每一个字符（0、1或2）都有两种符合题意的$T_{n-1}$。
+对长度为 n 且符合题目要求的字符串$T_n$进行切片，按照前两个字符是否相同进行分类；如果前两个字符相同，那么只能切出 22 和$T_{n-2}$，如果前两个字符不同，每一个字符（0、1 或 2）都有两种符合题意的$T_{n-1}$。
 
 因此得到递推公式：$a_n = a_{n-2} + 2a_{n-1}, (n \ge 2)$，容易知道初始值$a_0 = 1, a_1 = 3$。
 
 因此求出$a_n = \displaystyle \frac{(1+\sqrt{2})^{n+1}}{2} + \frac{(1-\sqrt{2})^{n+1}}{2}, (n \ge 0)$。
 
-### EX37注
+:::tip 联想 :bulb:
+对比 EX37、EX40 和 EX9
+:::
 
-对比EX37、EX40和EX9
-
-## EX38
+## EX38 :ghost:
 
 >Solve the following recurrence relations by examining the first few values for a formula and then proving your conjectured formula by induction.
 >
@@ -835,11 +850,11 @@ $h_n = (c_1 n^2+c_2 n + c_3)2^n + c_4 (-1)^n$，带入初始值有$\displaystyle
 >
 >(e) $h_n = 2h_{n-1}+1, \quad (n \ge 1); h_0 = 1$
 
-以EX38(b)为例，先求出通项，再用数学归纳法验证，其余同理。
+以 EX38(b) 为例，先求出通项，再用数学归纳法验证，其余同理。
 
 ### EX38(b)
 
-先求其次递推关系的解，$H_n = c_1 (1)^n$，后面的非齐次部分是一次多项式，同时隐含也是以1为底的指数。因此设$H_n^{*} = (An+B)n$。
+先求其次递推关系的解，$H_n = c_1 (1)^n$，后面的非齐次部分是一次多项式，同时隐含也是以 1 为底的指数。因此设$H_n^{*} = (An+B)n$。
 
 带入递推关系求出$A=-\frac{1}{2}, B = \frac{5}{2}$，带入初始量得$h_n = \frac{4+5n-n^2}{2}$。
 
@@ -857,9 +872,11 @@ $$
 h_n = h_{n-1} + h_{n-3}
 $$
 
-### EX39吐槽
+<!-- ### EX39 吐槽 -->
 
+:::details 简评
 头一次看到专门强调只推出关系不求解的题目。
+:::
 
 ## EX40
 
@@ -871,15 +888,15 @@ $$
 >
 > with $a_0 = 1$ and $a_1 = 3$. Then find a formula for $a_n$.
 
-按照第一字符是否为2进行划分，由题意，长度为n的串第一个字符是2，问题变为$a_{n-1}$；
-如果第一个字符不是2，那么只能是0或1，如果为0，则第二个字符只能是2（因为不存在00和01），
-同理第一格字符如果为1，则第二个字符只能为2，因此问题转化为$2a_{n-2}$。综上有，
+按照第一字符是否为 2 进行划分，由题意，长度为 n 的串第一个字符是 2，问题变为$a_{n-1}$；
+如果第一个字符不是 2，那么只能是 0 或 1，如果为 0，则第二个字符只能是 2（因为不存在 00 和 01），
+同理第一格字符如果为 1，则第二个字符只能为 2，因此问题转化为$2a_{n-2}$。综上有，
 
 $$
 a_n = a_{n-1} + 2a_{n-2}
 $$
 
-长度为0的串，长度为1的串显然都不含有00、01、10和11，$a_0 = 1, a_1 = 3$。
+长度为 0 的串，长度为 1 的串显然都不含有 00、01、10 和 11，$a_0 = 1, a_1 = 3$。
 
 ## EX41
 
@@ -887,7 +904,8 @@ $$
 
 ![EX41](imgs/c7ex41.png)
 
-选择一端固定在1上的线段为基线，另一端指向2k，圆上的2n个点被分为两组，一组有2k-2个，另一组有2n-2k个，同时问题$h_n$被划分为$h_{k-1}$和$h_{n-k}$。所以有，
+选择一端固定在 1 上的线段为基线，另一端指向 2k，圆上的 2n 个点被分为两组，一组有 2k-2 个，
+另一组有 2n-2k 个，同时问题$h_n$被划分为$h_{k-1}$和$h_{n-k}$。所以有，
 
 $$
 h_n = \sum_{k=1}h_{k-1}h_{n-k}, \quad n \ge 1, h_0 = h_1 = 1
@@ -899,11 +917,11 @@ $$
 h_n = \frac{1}{n+1} \binom{2n}{n}
 $$
 
-### EX41吐槽
+<!-- ### EX41 吐槽
 
-为什么这个加星题抄题了呢？做到第8章的题目就知道了。
+为什么这个加星题抄题了呢？做到第 8 章的题目就知道了。 -->
 
-## EX42
+## EX42 :ghost:
 
 > Solve the monhomogeneous recurrence realtion
 >
@@ -921,11 +939,12 @@ $$
 h_n = (n+3)4^n, \quad n \ge 0
 $$
 
-### EX42注
+:::info 简评
+虽然参考答案秀了技巧，把非齐次方程转化为$h_n - 8 h_{n-1} + 16 h_{n-2} = 0$。
+但着实没有必要，按照非齐次的模板解题速度一样很快。
+:::
 
-虽然参考答案秀了技巧，把非齐次方程转化为$h_n - 8 h_{n-1} + 16 h_{n-2} = 0$。但着实没有必要，按照非齐次的模板解题速度一样很快。
-
-## EX43
+## EX43 :ghost:
 
 > Solve the monhomogeneous recurrence realtion
 >
@@ -939,7 +958,7 @@ $$
 
 略。
 
-## EX44
+## EX44 :ghost:
 
 > Solve the monhomogeneous recurrence realtion
 >
@@ -953,7 +972,7 @@ $$
 
 略
 
-## EX45
+## EX45 :ghost:
 
 > Solve the monhomogeneous recurrence realtion
 >
@@ -967,7 +986,7 @@ $$
 
 略
 
-## EX46
+## EX46 :ghost:
 
 > Solve the monhomogeneous recurrence realtion
 >
@@ -982,7 +1001,7 @@ $$
 
 略
 
-## EX47
+## EX47 :ghost:
 
 > Solve the monhomogeneous recurrence realtion
 >
@@ -997,7 +1016,7 @@ $$
 
 略
 
-## EX48
+## EX48 :ghost:
 
 > Solve the following recurrence relations by using the method of generating functions as described in Section 7.4:
 >
@@ -1013,11 +1032,11 @@ $$
 >
 > (f) $h_n = 5h_{n-1}-6h_{n-2}-4h_{n-3}+8h_{n-4}, (n \ge 4); h_0 = 0, h_1 = 1, h_2 = 1, h_3 = 2$
 
-以EX48(b)和EX48(f)为例，其余题目略。
+以 EX48(b) 和 EX48(f) 为例，其余题目略。
 
 ### EX48(b)
 
-设生成函数为$g(x) = h_0 + h_1 x + h_2 x^2 + \cdots$，分别用$-x$和$-x^2$乘以g(x)得到，
+设生成函数为$g(x) = h_0 + h_1 x + h_2 x^2 + \cdots$，分别用$-x$和$-x^2$乘以 g(x) 得到，
 
 $$
 \begin{aligned}
@@ -1047,7 +1066,7 @@ $$
 
 ### EX48(f)
 
-设生成函数为$g(x) = h_0 + h_1 x + h_2 x^2 + \cdots$，分别用$-5x$、$6x^2$、$4x^3$和$-8x^4$乘以g(x)化简得到，
+设生成函数为$g(x) = h_0 + h_1 x + h_2 x^2 + \cdots$，分别用$-5x$、$6x^2$、$4x^3$和$-8x^4$乘以 g(x) 化简得到，
 
 $$
 \begin{aligned}
@@ -1075,13 +1094,16 @@ $$
 g(x) = \frac{1}{27} \frac{17x^2 - 29 x - 8}{(1-2x)^3} + \frac{8}{(1+x)}
 $$
 
-#### EX48(f)注
+<!-- #### EX48(f) 注 -->
 
-从上面的过程可以看出使用生成函数求解的计算量极大，因此考试如果不是强调使用该方法，不要考虑使用它。
+:::tip
+从上面的过程可以看出使用生成函数求解的计算量极大，因此如果题目不是强调使用该方法，不要考虑使用它。
+:::
 
-### EX48说明
+<!-- ### EX48 说明
 
-上课的时候听老师说不推荐使用该方法，不清楚到底考不考这个方法。并且也在(f)题中看到结果很难算出来（我也只是算了一半），不过流程还是要掌握一下。
+上课的时候听老师说不推荐使用该方法，不清楚到底考不考这个方法。
+并且也在 (f) 题中看到结果很难算出来（我也只是算了一半），不过流程还是要掌握一下。 -->
 
 ## EX49
 
@@ -1101,11 +1123,11 @@ $$
 >
 > is the *q-binomial coefficient*.
 
-采用数学归纳法证明，当n=1时，左边等于$(x+y)$，
+采用数学归纳法证明，当 n=1 时，左边等于$(x+y)$，
 右边等于$\displaystyle \sum_{k=0}^{1} \binom{1}{k}_q x^{1-k} y^k = \binom{1}{0}_q x + \binom{1}{1}_q y = x+y$，
 左右两边相等，成立。
 
-假设取n时等式成立，那么取n+1时，左右两边同时乘$(x+q^n y)$有，
+假设取 n 时等式成立，那么取 n+1 时，左右两边同时乘$(x+q^n y)$有，
 
 $$
 \begin{aligned}
@@ -1117,9 +1139,9 @@ $$
 \end{aligned}
 $$
 
-即取n+1时等式仍成立，综上，证毕。
+即取 n+1 时等式仍成立，综上，证毕。
 
-### EX49注
+### EX49PS
 
 下面验证，
 
@@ -1127,7 +1149,7 @@ $$
 \binom{n+1}{k}_q = \binom{n}{k}_q + q^n \binom{n}{k-1}_q
 $$
 
-### EX49参考
+### EX49 参考
 
 [q-binomial coefficients](https://www.coursera.org/lecture/enumerative-combinatorics/recurrence-relation-for-q-binomial-coefficients-1-YPwMg)
 
@@ -1147,7 +1169,7 @@ $$
 >
 > with $g_1 = 1$ and $g_2 = 1$.
 
-如果子集S是非凡的k子集，那么S中的最小元素是k，其余k-1个元素均比k大，因此非凡k子集的个数为$\dbinom{n-k}{k-1}$个，那么集合{1, 2, 3, ..., n}的所有非凡集为，
+如果子集 S 是非凡的 k 子集，那么 S 中的最小元素是 k，其余 k-1 个元素均比 k 大，因此非凡 k 子集的个数为$\dbinom{n-k}{k-1}$个，那么集合{1, 2, 3, ..., n}的所有非凡集为，
 
 $$
 \begin{aligned}
@@ -1200,7 +1222,7 @@ $$
 
 所以$h_n = 2n+3-3^n, (n \ge 0)$。
 
-## EX52
+## EX52 :ghost:
 
 > Solve the following two recurrence relations:
 >
@@ -1251,11 +1273,11 @@ $$
 h_n = 500(1.06)^n + \frac{100}{0.06}\big((1.06)^n - 1 \big)
 $$
 
-### EX53说明
+:::tip
+(\*) 式不留常数凑成$\frac{x}{1-x}$的形式方便下面的分解。
+:::
 
-(\*)式不留常数凑成$\frac{x}{1-x}$的形式方便下面的分解。
-
-### EX53另解
+### EX53 另解 :bulb:
 
 $$
 \begin{aligned}
