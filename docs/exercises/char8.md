@@ -550,7 +550,7 @@ $[n]_p$ 的定义形式 $[n]_p = n(n-1)(n-2) \cdots (n-(p-1)), p \ge 1$，当 n=
 带入 $p = n$ 显然有$[n]_n = n!, n \ge 0$。
 
 $[n]_p$ 与第一类 Stirling 数的关系，
-$[n]_p = \displaystyle \sum_{k=0}^{p} (-1)^{k-p} s(p, k) n^k$，
+$[n]_p = \displaystyle \sum_{k=0}^{p} (-1)^{p-k} s(p, k) n^k$，
 
 带入 $p = n$ 有，
 
