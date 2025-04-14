@@ -564,6 +564,10 @@ $$
 6! = 6^6 -15 \times 6^5 + 85 \times 6^4 - 225 \times 6^3 + 274 \times 6^2 -120 \times 6^1 + 0 \times 6^0
 $$
 
+### EX20PS
+
+感谢 [@S-tanley](https://github.com/S-tanley) 提交的 [PR #5](https://github.com/furtherun/Introductory-Combinatorics-5ed/pull/5) 修改贡献。
+
 ## EX21
 
 > For each integer n = 1,2,3,4,5, construct the diagram of the set $\mathcal{P}_n$ of partitions of n, partially ordered by majorization.
