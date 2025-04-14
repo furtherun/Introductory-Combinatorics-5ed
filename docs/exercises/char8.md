@@ -543,22 +543,22 @@ $$
 
 ## EX20
 
-> VerifY that $[n]_n$ = n!, and write n! as a polynomial in n using the Stirling numbers of the first kind. Do this explicitly for n = 6.
+> Verify that $[n]_n$ = n!, and write n! as a polynomial in n using the Stirling numbers of the first kind. Do this explicitly for n = 6.
 
-$[n]_p$的定义形式$[n]_p = n(n-1)(n-2) \cdots (n-(p-1)), p \ge 1$，当 n=0 时，$[n]_0 = 1$。
+$[n]_p$ 的定义形式 $[n]_p = n(n-1)(n-2) \cdots (n-(p-1)), p \ge 1$，当 n=0 时，$[n]_0 = 1$。
 
-带入$p = n$显然有$[n]_n = n!, n \ge 0$。
+带入 $p = n$ 显然有$[n]_n = n!, n \ge 0$。
 
-$[n]_p$与第一类 Stirling 数的关系，
+$[n]_p$ 与第一类 Stirling 数的关系，
 $[n]_p = \displaystyle \sum_{k=0}^{p} (-1)^{k-p} s(p, k) n^k$，
 
-带入$p = n$有，
+带入 $p = n$ 有，
 
 $$
-n! = [n]_n = \sum_{k=0}^{n} (-1)^{n-k} s(p, k) n^k
+n! = [n]_n = \sum_{k=0}^{n} (-1)^{n-k} s(n, k) n^k
 $$
 
-当$n=6$时，结合 s(p, k) 三角形有，
+当 $n=6$ 时，结合 s(p, k) 三角形有，
 
 $$
 6! = 6^6 -15 \times 6^5 + 85 \times 6^4 - 225 \times 6^3 + 274 \times 6^2 -120 \times 6^1 + 0 \times 6^0
