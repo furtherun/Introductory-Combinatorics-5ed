@@ -1,6 +1,6 @@
 {
   "name": "introductory-combinatorics-5ed",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "组合数学（第五版）攻略",
   "scripts": {
     "docs:dev": "vitepress dev docs",

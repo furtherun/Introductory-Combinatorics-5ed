@@ -550,7 +550,7 @@ $[n]_p$ 的定义形式 $[n]_p = n(n-1)(n-2) \cdots (n-(p-1)), p \ge 1$，当 n=
 带入 $p = n$ 显然有$[n]_n = n!, n \ge 0$。
 
 $[n]_p$ 与第一类 Stirling 数的关系，
-$[n]_p = \displaystyle \sum_{k=0}^{p} (-1)^{k-p} s(p, k) n^k$，
+$[n]_p = \displaystyle \sum_{k=0}^{p} (-1)^{p-k} s(p, k) n^k$，
 
 带入 $p = n$ 有，
 
@@ -563,6 +563,10 @@ $$
 $$
 6! = 6^6 -15 \times 6^5 + 85 \times 6^4 - 225 \times 6^3 + 274 \times 6^2 -120 \times 6^1 + 0 \times 6^0
 $$
+
+### EX20PS
+
+感谢 [@S-tanley](https://github.com/S-tanley) 提交的 [PR #5](https://github.com/furtherun/Introductory-Combinatorics-5ed/pull/5) 修改贡献。
 
 ## EX21
 
