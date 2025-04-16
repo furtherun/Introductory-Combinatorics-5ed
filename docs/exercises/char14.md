@@ -2,35 +2,30 @@
 
 ## EX1 :construction:
 
-> Let $f = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 & 6 \\ 6 & 4 & 2 & 1 & 5 & 3 \end{pmatrix}$ and $g = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 & 6 \\ 3 & 5 & 6 & 2 & 4 & 1 \end{pmatrix}$.  
-> Determine:  
-> (a) $f \circ g$ and $g \circ f$  
-> (b) $f^{-1}$ and $g^{-1}$  
-> (c) $f^2$, $g^5$  
-> (d) $f \circ g \circ g$  
+> Let $f = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 & 6 \\ 6 & 4 & 2 & 1 & 5 & 3 \end{pmatrix}$ and $g = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 & 6 \\ 3 & 5 & 6 & 2 & 4 & 1 \end{pmatrix}$.
+> Determine:
+> (a) $f \circ g$ and $g \circ f$
+> (b) $f^{-1}$ and $g^{-1}$
+> (c) $f^2$, $g^5$
+> (d) $f \circ g \circ g$
 > (e) $g^3$ and $f \circ g^3 \circ f^{-1}$
-
 
 ## EX2 :construction:
 
-> Prove that permutation composition is associative:  
+> Prove that permutation composition is associative:
 > $(f \circ g) \circ h = f \circ (g \circ h)$
-
 
 ## EX3 :construction:
 
 > Determine the symmetry group and corner-symmetry group of an equilateral triangle.
 
-
 ## EX4 :construction:
 
 > Determine the symmetry group and corner-symmetry group of a triangle that is isosceles but not equilateral.
 
-
 ## EX5 :construction:
 
 > Determine the symmetry group and corner-symmetry group of a triangle that is neither equilateral nor isosceles.
-
 
 ## EX6 :construction:
 
@@ -40,76 +35,54 @@
 
 > Determine the corner-symmetry group of a regular tetrahedron.
 
----
-
 ## EX8 :construction:
 
 > Determine the edge-symmetry group of a regular tetrahedron.
-
----
 
 ## EX9 :construction:
 
 > Determine the face-symmetry group of a regular tetrahedron.
 
----
-
 ## EX10 :construction:
 
 > Determine the symmetry group and the corner-symmetry group of a rectangle that is not a square.
-
----
 
 ## EX11 :construction:
 
 > Compute the corner-symmetry group of a regular hexagon (the dihedral group $D_6$ of order 12).
 
----
-
 ## EX12 :construction:
 
 > Determine all the permutations in the edge-symmetry group of a square.
 
----
-
 ## EX13 :construction:
 
-> Let $f$ and $g$ be the permutations in Exercise 1. Consider the coloring $c = (R, B, B, R, R, R)$ of $1,2,3,4,5,6$ with the colors $R$ and $B$.  
-> Determine the following actions on $c$:  
-> (a) $f * c$  
-> (b) $f^{-1} * c$  
-> (c) $g * c$  
-> (d) $(g \circ f) * c$ and $(f \circ g) * c$  
+> Let $f$ and $g$ be the permutations in Exercise 1. Consider the coloring $c = (R, B, B, R, R, R)$ of $1,2,3,4,5,6$ with the colors $R$ and $B$.
+> Determine the following actions on $c$:
+> (a) $f * c$
+> (b) $f^{-1} * c$
+> (c) $g * c$
+> (d) $(g \circ f) * c$ and $(f \circ g) * c$
 > (e) $(g^2 \circ f) * c$
-
----
 
 ## EX14 :construction:
 
-> By examining all possibilities, determine the number of nonequivalent colorings of the corners of an equilateral triangle with the colors red and blue.  
+> By examining all possibilities, determine the number of nonequivalent colorings of the corners of an equilateral triangle with the colors red and blue.
 > (Then do so with the colors red, white, and blue.)
-
----
 
 ## EX15 :construction:
 
-> By examining all possibilities, determine the number of nonequivalent colorings of the corners of a regular tetrahedron with the colors red and blue.  
+> By examining all possibilities, determine the number of nonequivalent colorings of the corners of a regular tetrahedron with the colors red and blue.
 > (Then do so with the colors red, white, and blue.)
-
----
 
 ## EX16 :construction:
 
 > Characterize the cycle factorizations of those permutations $f$ in $S_n$ for which $f^{-1} = f$, that is, for which $f^2 = \iota$.
 
----
-
 ## EX17 :construction:
 
-> In Section 14.2 it is stated that there are eight nonequivalent colorings of the corners of a regular pentagon with the colors red and blue.  
+> In Section 14.2 it is stated that there are eight nonequivalent colorings of the corners of a regular pentagon with the colors red and blue.
 > Explicitly determine all eight nonequivalent colorings.
-
----
 
 ## EX18 :construction:
 
