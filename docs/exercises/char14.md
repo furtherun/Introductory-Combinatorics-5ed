@@ -1,3 +1,7 @@
+---
+order: 14
+---
+
 # 第 14 章 Pólya Counting
 
 ## EX1 :construction:
