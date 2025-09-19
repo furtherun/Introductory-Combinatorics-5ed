@@ -471,7 +471,7 @@ $$
 
 ### EX20PS
 
-@Tenryon 指出本题解答中的错误（#10）。
+[@Tenryon](https://github.com/Tenryon) 指出本题解答中的错误（[#10](https://github.com/furtherun/Introductory-Combinatorics-5ed/issues/10)）。
 
 ## EX21
 
