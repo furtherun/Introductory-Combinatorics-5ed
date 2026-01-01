@@ -292,6 +292,10 @@ $$
 \end{aligned}
 $$
 
+### EX13 相关讨论
+
+[范德蒙德卷积](https://github.com/furtherun/Introductory-Combinatorics-5ed/discussions/12)
+
 ## EX14
 
 > Prove that
