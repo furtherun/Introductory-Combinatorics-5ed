@@ -14,13 +14,21 @@ order: 2
 >
 > Note that there are four problems here: $\emptyset$ (no further restriction), {a} (property  (a) holds), {b} (property (b) holds), {a,b} (both properties (a) and (b) hold)
 
-当条件 a 和条件 b 都不满足时，每一位都可以取任意数，共$4^5$种。
+当条件 a 和条件 b 都不满足时，
+每一位都可以从 {$1,2,3,4,5$} 中任选一个，并且可以重复。每一位都有 5 种选择，
+$5 \times 5 \times 5 \times 5 = 5^4$。
 
 当只满足条件 a 时，总共有$P(5,4) = 120$种。
 
 当只满足条件 b 时，总共有$2\times 5^3 = 250$种。
 
 当同时满足条件 a 和条件 b 时，总共有$2 \times P(4,3) = 48$种。
+
+### EX1PS
+
+时隔多年，简单的第一小问，反复改了两次。见于
+[Issue #1](https://github.com/furtherun/Introductory-Combinatorics-5ed/issues/1) 和
+[Issue #13](https://github.com/furtherun/Introductory-Combinatorics-5ed/issues/13)。
 
 ## EX2
 
